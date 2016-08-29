@@ -1,5 +1,9 @@
 const {execSync} = require('child_process')
 
+const argsToString = function(args) {
+  return args.join(" ")
+}
+
 const runCommand = function (cmd, callback){
   try {
     execSync(cmd, {stdio:[0,1,2]})
@@ -10,5 +14,6 @@ const runCommand = function (cmd, callback){
 }
 
 module.exports = {
-  runCommand: runCommand
+  runCommand: runCommand,
+  argsToString: argsToString
 }
