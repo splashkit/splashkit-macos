@@ -8,8 +8,13 @@ execute = function (argv, callback) {
   const userArgs = utils.argsToString(argv['original_string'])
   const clangArgs = `-L${splashkitLib} -I ${cppBuild}/include -l splashkit -framework IOKit -framework ForceFeedback -framework CoreFoundation -framework Cocoa -framework Carbon -framework AudioUnit -framework AudioToolbox -framework CoreAudio -framework CoreVideo -lcurl`
 
-  utils.runCommand(`clang++ ${clangArgs} ${userArgs}`, callback)
-  callback(null, 'Successfully built CPP SplashKit project using clang++')
+  utils.runCommand(`clang++ ${clangArgs} ${userArgs}`, function (err, data) {
+      if (err) {
+          callback(err)
+      } else {
+          callback()
+      }
+  })
 }
 
  module.exports = {

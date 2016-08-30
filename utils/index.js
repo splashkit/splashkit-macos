@@ -5,11 +5,15 @@ const argsToString = function(args) {
 }
 
 const runCommand = function (cmd, callback){
+  let errMsg
   try {
     execSync(cmd, {stdio:[0,1,2]})
   }
   catch (ex) {
-    callback(ex.message)
+    errMsg = ex.message
+  }
+  finally {
+      callback(errMsg)
   }
 }
 
