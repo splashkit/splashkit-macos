@@ -9,8 +9,10 @@
 #ifndef __circle_drawing_h
 #define __circle_drawing_h
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 void draw_circle(color clr, const circle &c);
 void draw_circle(color clr, const circle &c, drawing_options opts);

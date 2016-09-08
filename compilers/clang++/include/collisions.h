@@ -11,8 +11,10 @@
 #include "matrix_2d.h"
 #include "sprites.h"
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 bool bitmap_point_collision(bitmap bmp, const matrix_2d &translation, const point_2d &pt);
 bool bitmap_point_collision(bitmap bmp, int cell, const matrix_2d &translation, const point_2d &pt);

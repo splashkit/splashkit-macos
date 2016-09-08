@@ -8,8 +8,10 @@
 
 #ifndef __networking_h
 #define __networking_h
+
 #include <string>
 using std::string;
+
 
 string dec_to_hex(unsigned int a_dec);
 string hex_str_to_ipv4(const string &a_hex);

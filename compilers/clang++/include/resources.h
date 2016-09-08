@@ -8,8 +8,10 @@
 
 #ifndef __resources_h
 #define __resources_h
+
 #include <string>
 using std::string;
+
 
 typedef enum {
     SOUND_RESOURCE,

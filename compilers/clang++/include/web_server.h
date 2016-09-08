@@ -8,8 +8,10 @@
 
 #ifndef __web_server_h
 #define __web_server_h
+
 #include <string>
 using std::string;
+
 
 struct _server_request_data;
 typedef struct _server_request_data *server_request;

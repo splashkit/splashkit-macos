@@ -9,8 +9,10 @@
 #ifndef __animations_h
 #define __animations_h
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 int animation_count(animation_script script);
 int animation_current_cell(animation anim);

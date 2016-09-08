@@ -9,8 +9,10 @@
 #ifndef __matrix_2d_h
 #define __matrix_2d_h
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 typedef struct {
     double elements[3][3];

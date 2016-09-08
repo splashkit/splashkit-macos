@@ -8,8 +8,10 @@
 
 #ifndef __web_h
 #define __web_h
+
 #include <string>
 using std::string;
+
 
 struct _http_request_data;
 typedef struct _http_request_data *http_request;

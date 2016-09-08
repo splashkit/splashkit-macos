@@ -9,8 +9,10 @@
 #ifndef __window_manager_h
 #define __window_manager_h
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 struct _window_data;
 typedef struct _window_data *window;

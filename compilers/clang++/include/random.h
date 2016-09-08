@@ -8,8 +8,10 @@
 
 #ifndef __random_h
 #define __random_h
+
 #include <string>
 using std::string;
+
 
 float rnd();
 int rnd(int ubound);

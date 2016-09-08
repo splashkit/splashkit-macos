@@ -9,8 +9,10 @@
 #ifndef __images_h
 #define __images_h
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 point_2d bitmap_cell_center(bitmap bmp);
 circle bitmap_cell_circle(bitmap bmp, float x, float y);

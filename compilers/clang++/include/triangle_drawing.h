@@ -8,8 +8,10 @@
 
 #ifndef __triangle_drawing_h
 #define __triangle_drawing_h
+
 #include <string>
 using std::string;
+
 
 
 #endif /* __triangle_drawing_h */

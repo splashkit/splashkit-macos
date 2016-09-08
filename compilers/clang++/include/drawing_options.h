@@ -8,8 +8,10 @@
 
 #ifndef __drawing_options_h
 #define __drawing_options_h
+
 #include <string>
 using std::string;
+
 
 
 #endif /* __drawing_options_h */

@@ -8,8 +8,10 @@
 
 #ifndef __music_h
 #define __music_h
+
 #include <string>
 using std::string;
+
 
 struct _music_data;
 typedef struct _music_data *music;

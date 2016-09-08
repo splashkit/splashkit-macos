@@ -8,8 +8,10 @@
 
 #ifndef __bundles_h
 #define __bundles_h
+
 #include <string>
 using std::string;
+
 
 void free_resource_bundle(const string name);
 bool has_resource_bundle(const string &name);

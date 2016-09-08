@@ -8,8 +8,10 @@
 
 #ifndef __json_h
 #define __json_h
+
 #include <string>
 using std::string;
+
 
 struct _json_data;
 typedef struct _json_data *json;

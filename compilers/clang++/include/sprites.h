@@ -10,8 +10,10 @@
 #define __sprites_h
 #include "matrix_2d.h"
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 struct _sprite_data;
 typedef struct _sprite_data *sprite;

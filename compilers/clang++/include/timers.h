@@ -8,8 +8,10 @@
 
 #ifndef __timers_h
 #define __timers_h
+
 #include <string>
 using std::string;
+
 
 struct _timer_data;
 typedef struct _timer_data *timer;

@@ -8,8 +8,10 @@
 
 #ifndef __input_h
 #define __input_h
+
 #include <string>
 using std::string;
+
 
 void process_events();
 

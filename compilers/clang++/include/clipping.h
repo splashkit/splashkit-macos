@@ -8,8 +8,10 @@
 
 #ifndef __clipping_h
 #define __clipping_h
+
 #include <string>
 using std::string;
+
 
 
 #endif /* __clipping_h */

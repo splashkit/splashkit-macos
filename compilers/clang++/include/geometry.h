@@ -8,8 +8,10 @@
 
 #ifndef __geometry_h
 #define __geometry_h
+
 #include <string>
 using std::string;
+
 
 float cosine(float degrees);
 float sine(float degrees);

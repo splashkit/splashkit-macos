@@ -9,8 +9,10 @@
 #ifndef __rectangle_geometry_h
 #define __rectangle_geometry_h
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 rectangle intersection(const rectangle &rect1, const rectangle &rect2);
 rectangle rectangle_around(const triangle &t);

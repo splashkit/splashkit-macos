@@ -8,8 +8,10 @@
 
 #ifndef __text_h
 #define __text_h
+
 #include <string>
 using std::string;
+
 
 
 #endif /* __text_h */

@@ -9,8 +9,10 @@
 #ifndef __vector_2d_h
 #define __vector_2d_h
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 float dot_product(const vector_2d &v1, const vector_2d &v2);
 bool is_zero_vector(const vector_2d &v);

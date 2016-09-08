@@ -8,8 +8,10 @@
 
 #ifndef __database_h
 #define __database_h
+
 #include <string>
 using std::string;
+
 
 struct _database_data;
 typedef struct _database_data *database;

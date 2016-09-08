@@ -10,8 +10,10 @@
 #define __camera_h
 #include "sprites.h"
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 point_2d camera_position();
 float camera_x();

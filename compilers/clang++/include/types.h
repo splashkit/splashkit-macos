@@ -8,8 +8,10 @@
 
 #ifndef __types_h
 #define __types_h
+
 #include <string>
 using std::string;
+
 
 struct _animation_data;
 typedef struct _animation_data *animation;
@@ -47,8 +49,8 @@ typedef struct {
 } circle;
 typedef struct {
     float r;
-    float g;
     float b;
+    float g;
     float a;
 } color;
 typedef struct {

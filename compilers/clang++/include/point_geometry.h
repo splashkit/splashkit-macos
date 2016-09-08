@@ -10,8 +10,10 @@
 #define __point_geometry_h
 #include "types.h"
 #include "window_manager.h"
+
 #include <string>
 using std::string;
+
 
 point_2d point_at_origin();
 bool point_in_circle(const point_2d &pt, const circle &c);

@@ -8,8 +8,10 @@
 
 #ifndef __audio_h
 #define __audio_h
+
 #include <string>
 using std::string;
+
 
 bool audio_ready();
 void close_audio();

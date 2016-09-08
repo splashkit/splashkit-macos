@@ -8,8 +8,10 @@
 
 #ifndef __line_drawing_h
 #define __line_drawing_h
+
 #include <string>
 using std::string;
+
 
 
 #endif /* __line_drawing_h */

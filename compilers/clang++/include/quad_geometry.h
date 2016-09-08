@@ -10,8 +10,10 @@
 #define __quad_geometry_h
 #include "matrix_2d.h"
 #include "types.h"
+
 #include <string>
 using std::string;
+
 
 quad quad_from(const rectangle &rect, const matrix_2d &transform);
 quad quad_from(const rectangle &rect);

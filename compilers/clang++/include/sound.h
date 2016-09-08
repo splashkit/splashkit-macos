@@ -8,8 +8,10 @@
 
 #ifndef __sound_h
 #define __sound_h
+
 #include <string>
 using std::string;
+
 
 struct _sound_effect_data;
 typedef struct _sound_effect_data *sound_effect;

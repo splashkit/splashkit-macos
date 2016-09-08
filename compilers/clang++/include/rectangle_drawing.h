@@ -8,8 +8,10 @@
 
 #ifndef __rectangle_drawing_h
 #define __rectangle_drawing_h
+
 #include <string>
 using std::string;
+
 
 
 #endif /* __rectangle_drawing_h */
