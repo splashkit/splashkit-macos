@@ -48,8 +48,8 @@ typedef struct {
     float radius;
 } circle;
 typedef struct {
-    float r;
     float b;
+    float r;
     float g;
     float a;
 } color;

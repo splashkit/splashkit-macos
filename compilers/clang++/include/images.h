@@ -33,6 +33,10 @@ int bitmap_height(bitmap bmp);
 int bitmap_height(string name);
 string bitmap_name(bitmap bmp);
 bitmap bitmap_named(string name);
+void draw_bitmap(bitmap bmp, float x, float y);
+void draw_bitmap(bitmap bmp, float x, float y, drawing_options opts);
+void draw_bitmap(string name, float x, float y);
+void draw_bitmap(string name, float x, float y, drawing_options opts);
 bool pixel_drawn_at_point(bitmap bmp, float x, float y);
 bool pixel_drawn_at_point(bitmap bmp, int cell, float x, float y);
 
