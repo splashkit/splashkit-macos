@@ -11,5 +11,6 @@
 #include <string>
 using std::string;
 
+void process_events();
 
 #endif /* __input_h */

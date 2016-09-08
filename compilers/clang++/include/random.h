@@ -11,5 +11,7 @@
 #include <string>
 using std::string;
 
+float rnd();
+int rnd(int ubound);
 
 #endif /* __random_h */

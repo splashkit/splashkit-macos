@@ -46,8 +46,8 @@ typedef struct {
     float radius;
 } circle;
 typedef struct {
-    float g;
     float r;
+    float g;
     float b;
     float a;
 } color;
