@@ -4,7 +4,7 @@ const {homedir} = require('os')
 execute = function (argv, callback) {
   const cppBuild = `${homedir()}/.splashkit/splashkit-macos/compilers/clang++`
   const sklibs = {
-    static: `${homedir()}/.splashkit/splashkit-macos/compilers/clang++/lib`
+    static: `${homedir()}/.splashkit/splashkit-macos/compilers/clang++/lib`,
     dynamic: `${homedir()}/.splashkit/splashkit-macos/lib`
   }
 
