@@ -1,38 +1,29 @@
-//
-//  web_server.h
-//  splashkit
-//
-//  Created by James Armstrong on 21/08/2016.
-//  Copyright © 2016 Andrew Cain. All rights reserved.
-//
+/*
+ * SplashKit Web Server
+ *
+ * This file is generated from the SplashKit source.
+ * Modifying it will cause failures.
+ *
+ */
 
-#ifndef web_server_h_
-#define web_server_h_
-
-#include "types.h"
-
+#ifndef __web_server_h
+#define __web_server_h
 #include <string>
+using std::string;
 
-using namespace std;
-
-typedef struct sk_web_server *web_server;
-typedef struct sk_server_request *server_request;
-typedef struct sk_server_response *server_response;
-
-web_server start_web_server(string port);
-
-web_server start_web_server();
-
+struct _server_request_data;
+typedef struct _server_request_data *server_request;
+struct _server_response_data;
+typedef struct _server_response_data *server_response;
+struct _web_server_data;
+typedef struct _web_server_data *web_server;
 bool has_waiting_requests(web_server server);
-
+server_request next_web_request(web_server server);
+string request_get_uri(server_request r);
+void send_response(server_request r, server_response resp);
+void send_response(server_request r, string message);
+web_server start_web_server();
+web_server start_web_server(string port);
 void stop_web_server(web_server server);
 
-server_request next_web_request(web_server server);
-
-void send_response(server_request r, server_response resp);
-
-void send_response(server_request r, string message);
-
-string request_get_uri(server_request r);
-
-#endif /* web_server_h_ */
+#endif /* __web_server_h */

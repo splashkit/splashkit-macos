@@ -1,21 +1,15 @@
-//
-//  random.hpp
-//  splashkit
-//
-//  Created by Andrew Cain on 24/07/2016.
-//  Copyright © 2016 Andrew Cain. All rights reserved.
-//
+/*
+ * SplashKit Random
+ *
+ * This file is generated from the SplashKit source.
+ * Modifying it will cause failures.
+ *
+ */
 
-#ifndef random_hpp
-#define random_hpp
+#ifndef __random_h
+#define __random_h
+#include <string>
+using std::string;
 
-/// Generates a random number between 0 and 1.
-///
-float rnd();
 
-/// Generates a random integer up to (but not including) ubound. Effectively,
-/// the ubound value specifies the number of random values to create.
-///
-int rnd(int ubound);
-
-#endif /* random_hpp */
+#endif /* __random_h */

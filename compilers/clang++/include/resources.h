@@ -1,33 +1,27 @@
-//
-//  resources.hpp
-//  splashkit
-//
-//  Created by Andrew Cain on 12/07/2016.
-//  Copyright © 2016 Andrew Cain. All rights reserved.
-//
+/*
+ * SplashKit Resources
+ *
+ * This file is generated from the SplashKit source.
+ * Modifying it will cause failures.
+ *
+ */
 
-#ifndef resources_hpp
-#define resources_hpp
-
+#ifndef __resources_h
+#define __resources_h
 #include <string>
+using std::string;
 
-using namespace std;
-
-enum resource_kind
-{
-    AUDIO_RESOURCE,
+typedef enum {
+    SOUND_RESOURCE,
+    MUSIC_RESOURCE,
     ANIMATION_RESOURCE,
+    BUNDLE_RESOURCE,
     DATABASE_RESOURCE,
     IMAGE_RESOURCE,
     FONT_RESOURCE,
+    TIMER_RESOURCE,
+    JSON_RESOURCE,
     OTHER_RESOURCE
-};
+} resource_kind;
 
-void set_resources_path(string path);
-string path_to_resources();
-
-string path_to_resources(resource_kind kind);
-
-string path_to_resource(const string filename, resource_kind kind);
-
-#endif /* resources_hpp */
+#endif /* __resources_h */

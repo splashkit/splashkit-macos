@@ -1,28 +1,19 @@
-//
-//  web.hpp
-//  splashkit
-//
-//  Created by Andrew Cain on 26/07/2016.
-//  Copyright © 2016 Andrew Cain. All rights reserved.
-//
+/*
+ * SplashKit Web
+ *
+ * This file is generated from the SplashKit source.
+ * Modifying it will cause failures.
+ *
+ */
 
-#ifndef web_hpp
-#define web_hpp
-
-#include "types.h"
-
+#ifndef __web_h
+#define __web_h
 #include <string>
-using namespace std;
+using std::string;
 
+struct _http_request_data;
 typedef struct _http_request_data *http_request;
+struct _http_response_data;
 typedef struct _http_response_data *http_response;
 
-http_response http_get(string url, unsigned short port);
-
-bitmap download_image(string name, string url, unsigned short port);
-
-string http_response_to_string(http_response response);
-void save_response_to_file(http_response response, string path);
-void free_response (http_response response);
-
-#endif /* web_hpp */
+#endif /* __web_h */

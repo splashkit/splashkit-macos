@@ -1,23 +1,15 @@
-//
-//  utils.hpp
-//  splashkit
-//
-//  Created by Andrew Cain on 23/07/2016.
-//  Copyright © 2016 Andrew Cain. All rights reserved.
-//
+/*
+ * SplashKit Utils
+ *
+ * This file is generated from the SplashKit source.
+ * Modifying it will cause failures.
+ *
+ */
 
-#ifndef utils_hpp
-#define utils_hpp
-
-/// Puts the program to sleep for a specified number of
-/// milliseconds.
-///
-void delay(unsigned int milliseconds);
-
-/// Gets the number of milliseconds that have passed since the progrma was started.
-///
-unsigned int current_ticks();
+#ifndef __utils_h
+#define __utils_h
+#include <string>
+using std::string;
 
 
-
-#endif /* utils_hpp */
+#endif /* __utils_h */

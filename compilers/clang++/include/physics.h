@@ -1,16 +1,15 @@
-//
-//  physics.hpp
-//  splashkit
-//
-//  Created by Clancy Light Townsend on 18/08/2016.
-//  Copyright © 2016 Andrew Cain. All rights reserved.
-//
+/*
+ * SplashKit Physics
+ *
+ * This file is generated from the SplashKit source.
+ * Modifying it will cause failures.
+ *
+ */
 
-#ifndef physics_hpp
-#define physics_hpp
+#ifndef __physics_h
+#define __physics_h
+#include <string>
+using std::string;
 
-#include "matrix_2d.h"
-#include "vector_2d.h"
-#include "collisions.h"
 
-#endif /* physics_hpp */
+#endif /* __physics_h */
