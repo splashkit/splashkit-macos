@@ -29,15 +29,15 @@ typedef enum {
     DRAW_DEFAULT
 } drawing_dest;
 typedef enum {
-    ALIGN_LEFT,
-    ALIGN_CENTER,
-    ALIGN_RIGHT
+    ALIGN_LEFT = 1,
+    ALIGN_CENTER = 2,
+    ALIGN_RIGHT = 4
 } font_alignment;
 typedef enum {
-    NORMAL_FONT,
-    BOLD_FONT,
-    ITALIC_FONT,
-    UNDERLINE_FONT
+    NORMAL_FONT = 0,
+    BOLD_FONT = 1,
+    ITALIC_FONT = 2,
+    UNDERLINE_FONT = 4
 } font_style;
 typedef struct {
     float x;
@@ -48,9 +48,9 @@ typedef struct {
     float radius;
 } circle;
 typedef struct {
-    float b;
     float r;
     float g;
+    float b;
     float a;
 } color;
 typedef struct {
