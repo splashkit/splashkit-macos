@@ -2,10 +2,10 @@ const utils = require('../../utils')
 const {homedir} = require('os')
 
 execute = function (argv, callback) {
-  const cppBuild = `${homedir()}/.splashkit/splashkit-macos/compilers/clang++`
+  const cppBuild = `${homedir()}/.splashkit/compilers/clang++`
   const sklibs = {
-    static: `${homedir()}/.splashkit/splashkit-macos/compilers/clang++/lib`,
-    dynamic: `${homedir()}/.splashkit/splashkit-macos/lib`
+    static: `${homedir()}/.splashkit/compilers/clang++/lib`,
+    dynamic: `${homedir()}/.splashkit/lib`
   }
 
   const userArgs = utils.argsToString(argv['original_string'])
