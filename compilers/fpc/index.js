@@ -1,11 +1,21 @@
+const utils = require('../../utils')
+const home = process.env.HOME
 
 execute = function (path, callback) {
-  const includes = `${path}/CPP/include`
+  const cppBuild = `${home}/.splashkit/splashkit-macos/compilers/clang++`
+  const sklibs = `${home}/.splashkit/splashkit-macos/lib`
+  const skPasUnits = `${home}/.splashkit/splashkit-macos/compilers/fpc`
 
-  runCommand(`clang++ -o program`, callback)
+  const userArgs = utils.argsToString(argv['original_string'])
+  const fpcArgs = `-Fu${skPasUnits} -k-llibSplashKit.dylib -k"-L${sklibs.static}" -k"-rpath @loader_path -rpath ${sklibs.dynamic} -rpath /usr/local/lib"`
 
-//   `-L${path}/lib -I ${path}/CPP/include -l splashkit -framework IOKit -framework ForceFeedback -framework CoreFoundation -framework Cocoa -framework Carbon -framework AudioUnit -framework AudioToolbox -framework CoreAudio -framework CoreVideo -lcurl `
-   callback()
+  utils.runCommand(`clang++ ${userArgs} ${fpcArgs}`, function (err, data) {
+      if (err) {
+          callback(err)
+      } else {
+          callback()
+      }
+  })
 }
 
  module.exports = {
