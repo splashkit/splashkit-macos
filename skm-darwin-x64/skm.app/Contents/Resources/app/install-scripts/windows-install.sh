@@ -14,16 +14,20 @@ else
     command -v unzip >/dev/null 2>&1 || { echo "unzip not found, Installing unzip." >&2; pacman -S unzip --noconfirm;}
 
     # Clone the repo.
-    git clone --depth 1 $GIT_WINDOWS_REPO "${INSTALL_PATH}"
+    git clone --depth 1 --branch master $GIT_WINDOWS_REPO "${INSTALL_PATH}"
 
-    #Export to path
+    #Export to path -- for current terminal
     export PATH="$HOME/.splashkit/lib:$PATH"
     export PATH="$HOME/.splashkit/lib/win32:$PATH"
     export PATH="$HOME/.splashkit/lib/win64:$PATH"
-
-    export PATH="$HOME/.splashkit/skm-win32-x64:$PATH"
     export PATH="$HOME/.splashkit/skm-win32-ia32:$PATH"
 
+    #Export path for new terminals
+    export ORIGINAL_PATH="$HOME/.splashkit/lib:$ORIGINAL_PATH"
+    export ORIGINAL_PATH="$HOME/.splashkit/lib/win32:$ORIGINAL_PATH"
+    export ORIGINAL_PATH="$HOME/.splashkit/lib/win64:$ORIGINAL_PATH"
+    export ORIGINAL_PATH="$HOME/.splashkit/skm-win32-ia32:$ORIGINAL_PATH"
+
     # Set path
-    setx PATH "$PATH"
+    setx PATH "$ORIGINAL_PATH"
 fi
