@@ -1,3 +1,6 @@
+compilers/fpc/splashkit.o
+compilers/fpc/splashkit.ppu
+
 ### OSX ###
 *.DS_Store
 .AppleDouble
