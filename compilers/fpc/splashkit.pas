@@ -1259,7 +1259,7 @@ function WindowY(const name: String): Integer;
 function WindowY(wnd: Window): Integer;
 
 implementation
-uses strings;
+uses strings, math;
 
 type __sklib_string = record
   str: PChar;
@@ -11904,4 +11904,6 @@ begin
   result := __skadapter__to_int(__skreturn);
 end;
 
+begin
+  SetExceptionMask([exInvalidOp, exDenormalized, exZeroDivide, exOverflow, exUnderflow, exPrecision]);
 end.
