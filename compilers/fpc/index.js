@@ -7,7 +7,7 @@ execute = function (argv, callback) {
   const skPasUnits = `${home}/.splashkit/compilers/fpc`
 
   const userArgs = utils.argsToString(argv['original_string'])
-  const fpcArgs = `-S2 -Fu${skPasUnits} -k"-llibSplashKit.dylib" -k"-L${sklibs}" -k"-rpath @loader_path -rpath ${sklibs} -rpath /usr/local/lib"`
+  const fpcArgs = `-S2 -Sh -k"-macosx_version_min 10.11" -Cg -Fu${skPasUnits} -k"-L${sklibs}" -k"-lSplashKit" -k"-rpath @loader_path -rpath ${sklibs} -rpath /usr/local/lib"`
 
   utils.runCommand(`ppcx64 ${userArgs} ${fpcArgs}`, function (err, data) {
       if (err) {
