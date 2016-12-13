@@ -11,6 +11,9 @@ execute = function (argv, callback) {
       if (err) {
           callback(err)
       } else {
+          // no message written out
+          // You can write a message here if you like, but make sure null is the first param ie:
+          // callback(null, 'message')
           callback()
       }
   })
