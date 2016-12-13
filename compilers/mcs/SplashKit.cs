@@ -12850,11 +12850,19 @@ internal static Window __skadapter__to_window(IntPtr v)
         protected internal abstract void DoFree();
 
         [System.Diagnostics.DebuggerNonUserCode(), System.Diagnostics.DebuggerStepThrough(), System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
-        internal PointerWrapper(IntPtr ptr)
+        internal PointerWrapper(IntPtr ptr, bool register)
         {
+            Pointer = ptr;
+
+            if ( not register ) return;
+
             if ( PointerWrapper._ptrRegister.ContainsKey(ptr) ) throw new InvalidOperationException("Error managing resources -- attempting to create/load object twice.");
             PointerWrapper._ptrRegister[ptr] = this;
-            Pointer = ptr;
+        }
+
+        protected PointerWrapper(PointerWrapper other)
+        {
+          Pointer = other.Pointer;
         }
 
         [System.Diagnostics.DebuggerNonUserCode(), System.Diagnostics.DebuggerStepThrough(),System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
@@ -12932,7 +12940,7 @@ internal static Window __skadapter__to_window(IntPtr v)
 
 public class Database : PointerWrapper
 {
-  internal Database(IntPtr ptr) : base(ptr) {}
+  internal Database(IntPtr ptr) : base(ptr, true) {}
 
   internal static Database FetchOrCreate(IntPtr ptr)
   {
@@ -12942,7 +12950,7 @@ public class Database : PointerWrapper
     return new Database(ptr);
   }
 
-    public Database(string name, string filename) : this ( SplashKit.OpenDatabase(name, filename) )
+    public Database(string name, string filename) : base ( SplashKit.OpenDatabase(name, filename), false )
     { }
     protected internal override void DoFree()
     {
@@ -12970,7 +12978,7 @@ public class Database : PointerWrapper
 }
 public class QueryResult : PointerWrapper
 {
-  internal QueryResult(IntPtr ptr) : base(ptr) {}
+  internal QueryResult(IntPtr ptr) : base(ptr, true) {}
 
   internal static QueryResult FetchOrCreate(IntPtr ptr)
   {
@@ -13037,7 +13045,7 @@ public class QueryResult : PointerWrapper
 }
 public class Json : PointerWrapper
 {
-  internal Json(IntPtr ptr) : base(ptr) {}
+  internal Json(IntPtr ptr) : base(ptr, true) {}
 
   internal static Json FetchOrCreate(IntPtr ptr)
   {
@@ -13047,10 +13055,10 @@ public class Json : PointerWrapper
     return new Json(ptr);
   }
 
-    public Json() : this ( SplashKit.CreateJson() )
+    public Json() : base ( SplashKit.CreateJson(), false )
     { }
 
-    public Json(string jsonString) : this ( SplashKit.CreateJson(jsonString) )
+    public Json(string jsonString) : base ( SplashKit.CreateJson(jsonString), false )
     { }
     protected internal override void DoFree()
     {
@@ -13222,7 +13230,7 @@ public class Json : PointerWrapper
 }
 public class Music : PointerWrapper
 {
-  internal Music(IntPtr ptr) : base(ptr) {}
+  internal Music(IntPtr ptr) : base(ptr, true) {}
 
   internal static Music FetchOrCreate(IntPtr ptr)
   {
@@ -13232,7 +13240,7 @@ public class Music : PointerWrapper
     return new Music(ptr);
   }
 
-    public Music(string name, string filename) : this ( SplashKit.LoadMusic(name, filename) )
+    public Music(string name, string filename) : base ( SplashKit.LoadMusic(name, filename), false )
     { }
     protected internal override void DoFree()
     {
@@ -13280,7 +13288,7 @@ public class Music : PointerWrapper
 }
 public class Connection : PointerWrapper
 {
-  internal Connection(IntPtr ptr) : base(ptr) {}
+  internal Connection(IntPtr ptr) : base(ptr, true) {}
 
   internal static Connection FetchOrCreate(IntPtr ptr)
   {
@@ -13290,10 +13298,10 @@ public class Connection : PointerWrapper
     return new Connection(ptr);
   }
 
-    public Connection(string name, string host, ushort port) : this ( SplashKit.OpenConnection(name, host, port) )
+    public Connection(string name, string host, ushort port) : base ( SplashKit.OpenConnection(name, host, port), false )
     { }
 
-    public Connection(string name, string host, ushort port, ConnectionType protocol) : this ( SplashKit.OpenConnection(name, host, port, protocol) )
+    public Connection(string name, string host, ushort port, ConnectionType protocol) : base ( SplashKit.OpenConnection(name, host, port, protocol), false )
     { }
     protected internal override void DoFree()
     {
@@ -13309,7 +13317,7 @@ public class Connection : PointerWrapper
 }
 public class Message : PointerWrapper
 {
-  internal Message(IntPtr ptr) : base(ptr) {}
+  internal Message(IntPtr ptr) : base(ptr, true) {}
 
   internal static Message FetchOrCreate(IntPtr ptr)
   {
@@ -13332,7 +13340,7 @@ public class Message : PointerWrapper
 }
 public class ServerSocket : PointerWrapper
 {
-  internal ServerSocket(IntPtr ptr) : base(ptr) {}
+  internal ServerSocket(IntPtr ptr) : base(ptr, true) {}
 
   internal static ServerSocket FetchOrCreate(IntPtr ptr)
   {
@@ -13342,10 +13350,10 @@ public class ServerSocket : PointerWrapper
     return new ServerSocket(ptr);
   }
 
-    public ServerSocket(string name, ushort port) : this ( SplashKit.CreateServer(name, port) )
+    public ServerSocket(string name, ushort port) : base ( SplashKit.CreateServer(name, port), false )
     { }
 
-    public ServerSocket(string name, ushort port, ConnectionType protocol) : this ( SplashKit.CreateServer(name, port, protocol) )
+    public ServerSocket(string name, ushort port, ConnectionType protocol) : base ( SplashKit.CreateServer(name, port, protocol), false )
     { }
     protected internal override void DoFree()
     {
@@ -13385,7 +13393,7 @@ public class ServerSocket : PointerWrapper
 }
 public class SoundEffect : PointerWrapper
 {
-  internal SoundEffect(IntPtr ptr) : base(ptr) {}
+  internal SoundEffect(IntPtr ptr) : base(ptr, true) {}
 
   internal static SoundEffect FetchOrCreate(IntPtr ptr)
   {
@@ -13395,7 +13403,7 @@ public class SoundEffect : PointerWrapper
     return new SoundEffect(ptr);
   }
 
-    public SoundEffect(string name, string filename) : this ( SplashKit.LoadSoundEffect(name, filename) )
+    public SoundEffect(string name, string filename) : base ( SplashKit.LoadSoundEffect(name, filename), false )
     { }
     protected internal override void DoFree()
     {
@@ -13449,7 +13457,7 @@ public class SoundEffect : PointerWrapper
 }
 public class Sprite : PointerWrapper
 {
-  internal Sprite(IntPtr ptr) : base(ptr) {}
+  internal Sprite(IntPtr ptr) : base(ptr, true) {}
 
   internal static Sprite FetchOrCreate(IntPtr ptr)
   {
@@ -13459,22 +13467,22 @@ public class Sprite : PointerWrapper
     return new Sprite(ptr);
   }
 
-    public Sprite(Bitmap layer) : this ( SplashKit.CreateSprite(layer) )
+    public Sprite(Bitmap layer) : base ( SplashKit.CreateSprite(layer), false )
     { }
 
-    public Sprite(Bitmap layer, AnimationScript ani) : this ( SplashKit.CreateSprite(layer, ani) )
+    public Sprite(Bitmap layer, AnimationScript ani) : base ( SplashKit.CreateSprite(layer, ani), false )
     { }
 
-    public Sprite(string bitmapName) : this ( SplashKit.CreateSprite(bitmapName) )
+    public Sprite(string bitmapName) : base ( SplashKit.CreateSprite(bitmapName), false )
     { }
 
-    public Sprite(string name, Bitmap layer) : this ( SplashKit.CreateSprite(name, layer) )
+    public Sprite(string name, Bitmap layer) : base ( SplashKit.CreateSprite(name, layer), false )
     { }
 
-    public Sprite(string name, Bitmap layer, AnimationScript ani) : this ( SplashKit.CreateSprite(name, layer, ani) )
+    public Sprite(string name, Bitmap layer, AnimationScript ani) : base ( SplashKit.CreateSprite(name, layer, ani), false )
     { }
 
-    public Sprite(string bitmapName, string animationName) : this ( SplashKit.CreateSprite(bitmapName, animationName) )
+    public Sprite(string bitmapName, string animationName) : base ( SplashKit.CreateSprite(bitmapName, animationName), false )
     { }
     protected internal override void DoFree()
     {
@@ -14031,7 +14039,7 @@ public class Sprite : PointerWrapper
 }
 public class Timer : PointerWrapper
 {
-  internal Timer(IntPtr ptr) : base(ptr) {}
+  internal Timer(IntPtr ptr) : base(ptr, true) {}
 
   internal static Timer FetchOrCreate(IntPtr ptr)
   {
@@ -14041,7 +14049,7 @@ public class Timer : PointerWrapper
     return new Timer(ptr);
   }
 
-    public Timer(string name) : this ( SplashKit.CreateTimer(name) )
+    public Timer(string name) : base ( SplashKit.CreateTimer(name), false )
     { }
     protected internal override void DoFree()
     {
@@ -14093,7 +14101,7 @@ public class Timer : PointerWrapper
 }
 public class Animation : PointerWrapper
 {
-  internal Animation(IntPtr ptr) : base(ptr) {}
+  internal Animation(IntPtr ptr) : base(ptr, true) {}
 
   internal static Animation FetchOrCreate(IntPtr ptr)
   {
@@ -14208,7 +14216,7 @@ public class Animation : PointerWrapper
 }
 public class AnimationScript : PointerWrapper
 {
-  internal AnimationScript(IntPtr ptr) : base(ptr) {}
+  internal AnimationScript(IntPtr ptr) : base(ptr, true) {}
 
   internal static AnimationScript FetchOrCreate(IntPtr ptr)
   {
@@ -14218,7 +14226,7 @@ public class AnimationScript : PointerWrapper
     return new AnimationScript(ptr);
   }
 
-    public AnimationScript(string name, string filename) : this ( SplashKit.LoadAnimationScript(name, filename) )
+    public AnimationScript(string name, string filename) : base ( SplashKit.LoadAnimationScript(name, filename), false )
     { }
     protected internal override void DoFree()
     {
@@ -14254,7 +14262,7 @@ public class AnimationScript : PointerWrapper
 }
 public class Bitmap : PointerWrapper
 {
-  internal Bitmap(IntPtr ptr) : base(ptr) {}
+  internal Bitmap(IntPtr ptr) : base(ptr, true) {}
 
   internal static Bitmap FetchOrCreate(IntPtr ptr)
   {
@@ -14289,7 +14297,7 @@ public class Bitmap : PointerWrapper
 }
 public class Display : PointerWrapper
 {
-  internal Display(IntPtr ptr) : base(ptr) {}
+  internal Display(IntPtr ptr) : base(ptr, true) {}
 
   internal static Display FetchOrCreate(IntPtr ptr)
   {
@@ -14303,7 +14311,7 @@ public class Display : PointerWrapper
     }
 public class Font : PointerWrapper
 {
-  internal Font(IntPtr ptr) : base(ptr) {}
+  internal Font(IntPtr ptr) : base(ptr, true) {}
 
   internal static Font FetchOrCreate(IntPtr ptr)
   {
@@ -14313,7 +14321,7 @@ public class Font : PointerWrapper
     return new Font(ptr);
   }
 
-    public Font(string name, string filename) : this ( SplashKit.LoadFont(name, filename) )
+    public Font(string name, string filename) : base ( SplashKit.LoadFont(name, filename), false )
     { }
     protected internal override void DoFree()
     {
@@ -14346,7 +14354,7 @@ public class Font : PointerWrapper
 }
 public class HttpResponse : PointerWrapper
 {
-  internal HttpResponse(IntPtr ptr) : base(ptr) {}
+  internal HttpResponse(IntPtr ptr) : base(ptr, true) {}
 
   internal static HttpResponse FetchOrCreate(IntPtr ptr)
   {
@@ -14369,7 +14377,7 @@ public class HttpResponse : PointerWrapper
 }
 public class HttpRequest : PointerWrapper
 {
-  internal HttpRequest(IntPtr ptr) : base(ptr) {}
+  internal HttpRequest(IntPtr ptr) : base(ptr, true) {}
 
   internal static HttpRequest FetchOrCreate(IntPtr ptr)
   {
@@ -14383,7 +14391,7 @@ public class HttpRequest : PointerWrapper
     }
 public class WebServer : PointerWrapper
 {
-  internal WebServer(IntPtr ptr) : base(ptr) {}
+  internal WebServer(IntPtr ptr) : base(ptr, true) {}
 
   internal static WebServer FetchOrCreate(IntPtr ptr)
   {
@@ -14393,10 +14401,10 @@ public class WebServer : PointerWrapper
     return new WebServer(ptr);
   }
 
-    public WebServer() : this ( SplashKit.StartWebServer() )
+    public WebServer() : base ( SplashKit.StartWebServer(), false )
     { }
 
-    public WebServer(ushort port) : this ( SplashKit.StartWebServer(port) )
+    public WebServer(ushort port) : base ( SplashKit.StartWebServer(port), false )
     { }
     protected internal override void DoFree()
     {
@@ -14412,7 +14420,7 @@ public class WebServer : PointerWrapper
 }
 public class Window : PointerWrapper
 {
-  internal Window(IntPtr ptr) : base(ptr) {}
+  internal Window(IntPtr ptr) : base(ptr, true) {}
 
   internal static Window FetchOrCreate(IntPtr ptr)
   {
@@ -14422,7 +14430,7 @@ public class Window : PointerWrapper
     return new Window(ptr);
   }
 
-    public Window(string caption, int width, int height) : this ( SplashKit.OpenWindow(caption, width, height) )
+    public Window(string caption, int width, int height) : base ( SplashKit.OpenWindow(caption, width, height), false )
     { }
     protected internal override void DoFree()
     {
@@ -14445,6 +14453,7 @@ public class Window : PointerWrapper
     }
 }
 public static class Audio{
+    private Audio(Audio other) : base (other) { }
 
     public static void FadeOut(int ms)
     {
@@ -14490,6 +14499,7 @@ public static class Audio{
     }
 }
 public static class Images{
+    private Images(Images other) : base (other) { }
 
     public static void DrawBitmap(string name, float x, float y)
     {
@@ -14504,6 +14514,7 @@ public static class Images{
 
 }
 public static class Text{
+    private Text(Text other) : base (other) { }
 
     public static void FreeAll()
     {
