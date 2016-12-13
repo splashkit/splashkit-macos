@@ -14453,7 +14453,6 @@ public class Window : PointerWrapper
     }
 }
 public static class Audio{
-    private Audio(Audio other) : base (other) { }
 
     public static void FadeOut(int ms)
     {
@@ -14499,7 +14498,6 @@ public static class Audio{
     }
 }
 public static class Images{
-    private Images(Images other) : base (other) { }
 
     public static void DrawBitmap(string name, float x, float y)
     {
@@ -14514,7 +14512,6 @@ public static class Images{
 
 }
 public static class Text{
-    private Text(Text other) : base (other) { }
 
     public static void FreeAll()
     {
