@@ -6,6 +6,8 @@
 #ifndef __splashkit_clib
 #define __splashkit_clib
 
+#include<stdint.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -13,12 +15,13 @@ extern "C" {
 typedef struct {
     char *string;
     unsigned int size;
+    void *ptr;
 } __sklib_string;
 void __sklib__free__sklib_string(__sklib_string s);
-typedef bool __sklib_bool;
+typedef int __sklib_bool;
 typedef int __sklib_int;
 typedef short __sklib_short;
-typedef long __sklib_long;
+typedef int64_t __sklib_int64_t;
 typedef float __sklib_float;
 typedef double __sklib_double;
 typedef char __sklib_char;
@@ -118,36 +121,42 @@ typedef struct {
     __sklib_line *data_from_lib;
     unsigned int size_from_lib;
 } __sklib_vector_line;
+void __sklib__free__sklib_vector_line(__sklib_vector_line v);
 typedef struct {
     __sklib_triangle *data_from_app;
     unsigned int size_from_app;
     __sklib_triangle *data_from_lib;
     unsigned int size_from_lib;
 } __sklib_vector_triangle;
+void __sklib__free__sklib_vector_triangle(__sklib_vector_triangle v);
 typedef struct {
     __sklib_string *data_from_app;
     unsigned int size_from_app;
     __sklib_string *data_from_lib;
     unsigned int size_from_lib;
 } __sklib_vector_string;
+void __sklib__free__sklib_vector_string(__sklib_vector_string v);
 typedef struct {
     double *data_from_app;
     unsigned int size_from_app;
     double *data_from_lib;
     unsigned int size_from_lib;
 } __sklib_vector_double;
+void __sklib__free__sklib_vector_double(__sklib_vector_double v);
 typedef struct {
     __sklib_json *data_from_app;
     unsigned int size_from_app;
     __sklib_json *data_from_lib;
     unsigned int size_from_lib;
 } __sklib_vector_json;
+void __sklib__free__sklib_vector_json(__sklib_vector_json v);
 typedef struct {
     int *data_from_app;
     unsigned int size_from_app;
     int *data_from_lib;
     unsigned int size_from_lib;
 } __sklib_vector_bool;
+void __sklib__free__sklib_vector_bool(__sklib_vector_bool v);
 int __sklib__animation_count__animation_script(__sklib_animation_script script);
 int __sklib__animation_current_cell__animation(__sklib_animation anim);
 __sklib_vector_2d __sklib__animation_current_vector__animation(__sklib_animation anim);
@@ -552,10 +561,10 @@ __sklib_json __sklib__json_from_color__color(__sklib_color clr);
 __sklib_json __sklib__json_from_file__string_ref(const __sklib_string filename);
 __sklib_json __sklib__json_from_string__string_ref(const __sklib_string j_string);
 int __sklib__json_has_key__json__string(__sklib_json j, __sklib_string key);
-void __sklib__json_read_array__json__string__vector_double_ref(__sklib_json j, __sklib_string key, __sklib_vector_double *out);
-void __sklib__json_read_array__json__string__vector_json_ref(__sklib_json j, __sklib_string key, __sklib_vector_json *out);
-void __sklib__json_read_array__json__string__vector_string_ref(__sklib_json j, __sklib_string key, __sklib_vector_string *out);
-void __sklib__json_read_array__json__string__vector_bool_ref(__sklib_json j, __sklib_string key, __sklib_vector_bool *out);
+void __sklib__json_read_array__json__string__vector_double_ref(__sklib_json j, __sklib_string key, __sklib_vector_double *out_result);
+void __sklib__json_read_array__json__string__vector_json_ref(__sklib_json j, __sklib_string key, __sklib_vector_json *out_result);
+void __sklib__json_read_array__json__string__vector_string_ref(__sklib_json j, __sklib_string key, __sklib_vector_string *out_result);
+void __sklib__json_read_array__json__string__vector_bool_ref(__sklib_json j, __sklib_string key, __sklib_vector_bool *out_result);
 int __sklib__json_read_bool__json__string(__sklib_json j, __sklib_string key);
 float __sklib__json_read_number__json__string(__sklib_json j, __sklib_string key);
 double __sklib__json_read_number_as_double__json__string(__sklib_json j, __sklib_string key);
@@ -621,9 +630,11 @@ __sklib_vector_2d __sklib__matrix_multiply__matrix_2d_ref__vector_2d_ref(const _
 __sklib_string __sklib__matrix_to_string__matrix_2d_ref(const __sklib_matrix_2d matrix);
 __sklib_matrix_2d __sklib__rotation_matrix__float(float deg);
 __sklib_matrix_2d __sklib__scale_matrix__point_2d_ref(const __sklib_point_2d scale);
+__sklib_matrix_2d __sklib__scale_matrix__vector_2d_ref(const __sklib_vector_2d scale);
 __sklib_matrix_2d __sklib__scale_matrix__float(float scale);
 __sklib_matrix_2d __sklib__scale_rotate_translate_matrix__point_2d_ref__float__point_2d_ref(const __sklib_point_2d scale, float deg, const __sklib_point_2d translate);
 __sklib_matrix_2d __sklib__translation_matrix__point_2d_ref(const __sklib_point_2d pt);
+__sklib_matrix_2d __sklib__translation_matrix__vector_2d_ref(const __sklib_vector_2d pt);
 __sklib_matrix_2d __sklib__translation_matrix__float__float(float dx, float dy);
 void __sklib__hide_mouse();
 int __sklib__mouse_clicked__mouse_button(int button);
@@ -663,13 +674,37 @@ void __sklib__play_music__music__int__float(__sklib_music data, int times, float
 void __sklib__resume_music();
 void __sklib__set_music_volume__float(float volume);
 void __sklib__stop_music();
+int __sklib__accept_all_new_connections();
+int __sklib__accept_new_connection__server_socket(__sklib_server_socket server);
+void __sklib__close_all_connections();
+void __sklib__close_all_servers();
+int __sklib__close_connection__connection(__sklib_connection a_connection);
+int __sklib__close_connection__string_ref(const __sklib_string name);
+void __sklib__close_message__message(__sklib_message msg);
+int __sklib__close_server__string_ref(const __sklib_string name);
+int __sklib__close_server__server_socket(__sklib_server_socket svr);
+unsigned int __sklib__connection_count__string_ref(const __sklib_string name);
+unsigned int __sklib__connection_count__server_socket(__sklib_server_socket server);
+__sklib_server_socket __sklib__create_server__string_ref__unsigned_short(const __sklib_string name, unsigned short port);
+__sklib_server_socket __sklib__create_server__string_ref__unsigned_short__connection_type(const __sklib_string name, unsigned short port, int protocol);
 __sklib_string __sklib__dec_to_hex__unsigned_int(unsigned int a_dec);
+int __sklib__has_new_connections();
+int __sklib__has_server__string_ref(const __sklib_string name);
 __sklib_string __sklib__hex_str_to_ipv4__string_ref(const __sklib_string a_hex);
 __sklib_string __sklib__hex_to_dec_string__string_ref(const __sklib_string a_hex);
 unsigned int __sklib__ipv4_to_dec__string_ref(const __sklib_string a_ip);
 __sklib_string __sklib__ipv4_to_hex__string_ref(const __sklib_string a_ip);
 __sklib_string __sklib__ipv4_to_str__unsigned_int(unsigned int ip);
+__sklib_connection __sklib__last_connection__string_ref(const __sklib_string name);
+__sklib_connection __sklib__last_connection__server_socket(__sklib_server_socket server);
 __sklib_string __sklib__my_ip();
+__sklib_connection __sklib__open_connection__string_ref__string_ref__unsigned_short(const __sklib_string name, const __sklib_string host, unsigned short port);
+__sklib_connection __sklib__open_connection__string_ref__string_ref__unsigned_short__connection_type(const __sklib_string name, const __sklib_string host, unsigned short port, int protocol);
+__sklib_connection __sklib__retrieve_connection__string_ref__int(const __sklib_string name, int idx);
+__sklib_connection __sklib__retrieve_connection__server_socket__int(__sklib_server_socket server, int idx);
+int __sklib__server_has_new_connection__string_ref(const __sklib_string name);
+int __sklib__server_has_new_connection__server_socket(__sklib_server_socket server);
+__sklib_server_socket __sklib__server_named__string_ref(const __sklib_string name);
 void __sklib__draw_pixel__color__point_2d_ref(__sklib_color clr, const __sklib_point_2d pt);
 void __sklib__draw_pixel__color__point_2d_ref__drawing_options(__sklib_color clr, const __sklib_point_2d pt, __sklib_drawing_options opts);
 void __sklib__draw_pixel__color__float__float(__sklib_color clr, float x, float y);
@@ -1026,6 +1061,7 @@ __sklib_music __sklib__download_music__string_ref__string_ref__unsigned_short(co
 __sklib_sound_effect __sklib__download_sound_effect__string_ref__string_ref__unsigned_short(const __sklib_string name, const __sklib_string url, unsigned short port);
 void __sklib__free_response__http_response(__sklib_http_response response);
 __sklib_http_response __sklib__http_get__string_ref__unsigned_short(const __sklib_string url, unsigned short port);
+__sklib_http_response __sklib__http_post__string_ref__unsigned_short__string_ref__vector_string_ref(const __sklib_string url, unsigned short port, const __sklib_string body, const __sklib_vector_string headers);
 __sklib_http_response __sklib__http_post__string_ref__unsigned_short__string(const __sklib_string url, unsigned short port, __sklib_string body);
 __sklib_string __sklib__http_response_to_string__http_response(__sklib_http_response response);
 void __sklib__save_response_to_file__http_response__string(__sklib_http_response response, __sklib_string path);
