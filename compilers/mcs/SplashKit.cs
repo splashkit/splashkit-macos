@@ -12854,7 +12854,7 @@ internal static Window __skadapter__to_window(IntPtr v)
         {
             Pointer = ptr;
 
-            if ( not register ) return;
+            if ( ! register ) return;
 
             if ( PointerWrapper._ptrRegister.ContainsKey(ptr) ) throw new InvalidOperationException("Error managing resources -- attempting to create/load object twice.");
             PointerWrapper._ptrRegister[ptr] = this;
