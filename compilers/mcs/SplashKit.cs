@@ -14443,6 +14443,10 @@ public class Window : PointerWrapper
         SplashKit.RefreshWindow(this);
     }
 
+    public bool CloseRequested
+    {
+        get { return SplashKit.WindowCloseRequested(this); }
+    }
     public int Height
     {
         get { return SplashKit.WindowHeight(this); }
