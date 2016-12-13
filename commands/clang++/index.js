@@ -2,9 +2,9 @@ const utils = require('../../utils')
 const home = process.env.HOME
 
 execute = function (argv, callback) {
-  const cppBuild = `${home}/.splashkit/compilers/clang++`
+  const cppBuild = `${home}/.splashkit/commands/clang++`
   const sklibs = {
-    static: `${home}/.splashkit/compilers/clang++/lib`,
+    static: `${home}/.splashkit/commands/clang++/lib`,
     dynamic: `${home}/.splashkit/lib`
   }
 
@@ -15,7 +15,7 @@ execute = function (argv, callback) {
       if (err) {
           callback(err)
       } else {
-          callback()
+          callback(null, '🎉  Successfully compiled with clang++ 🎉')
       }
   })
 }

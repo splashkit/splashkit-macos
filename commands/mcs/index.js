@@ -3,7 +3,7 @@ const home = process.env.HOME
 
 execute = function (argv, callback) {
   const sklibs = `${home}/.splashkit/lib`
-  const skCSharpCode = `${home}/.splashkit/compilers/mcs/SplashKit.cs`
+  const skCSharpCode = `${home}/.splashkit/commands/mcs/SplashKit.cs`
 
   const userArgs = utils.argsToString(argv['original_string'])
   const mcsArgs = `"${skCSharpCode}"`
@@ -12,7 +12,7 @@ execute = function (argv, callback) {
       if (err) {
           callback(err)
       } else {
-          callback()
+          callback(null, '🎉  Successfully compiled with mcs 🎉')
       }
   })
 }
