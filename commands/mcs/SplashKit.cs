@@ -12682,6 +12682,590 @@ internal static Window __skadapter__to_window(IntPtr v)
       public float g;
       public float b;
       public float a;
+
+    public static Color Random()
+    {
+        return SplashKit.RandomColor();
+    }
+
+
+    public static Color RandomRgb(int alpha)
+    {
+        return SplashKit.RandomRgbColor(alpha);
+    }
+
+    public static Color AliceBlue
+    {
+        get { return SplashKit.ColorAliceBlue(); }
+    }
+    public static Color AntiqueWhite
+    {
+        get { return SplashKit.ColorAntiqueWhite(); }
+    }
+    public static Color Aqua
+    {
+        get { return SplashKit.ColorAqua(); }
+    }
+    public static Color Aquamarine
+    {
+        get { return SplashKit.ColorAquamarine(); }
+    }
+    public static Color Azure
+    {
+        get { return SplashKit.ColorAzure(); }
+    }
+    public static Color Beige
+    {
+        get { return SplashKit.ColorBeige(); }
+    }
+    public static Color Bisque
+    {
+        get { return SplashKit.ColorBisque(); }
+    }
+    public static Color Black
+    {
+        get { return SplashKit.ColorBlack(); }
+    }
+    public static Color BlanchedAlmond
+    {
+        get { return SplashKit.ColorBlanchedAlmond(); }
+    }
+    public static Color Blue
+    {
+        get { return SplashKit.ColorBlue(); }
+    }
+    public static Color BlueViolet
+    {
+        get { return SplashKit.ColorBlueViolet(); }
+    }
+    public static Color BrightGreen
+    {
+        get { return SplashKit.ColorBrightGreen(); }
+    }
+    public static Color Brown
+    {
+        get { return SplashKit.ColorBrown(); }
+    }
+    public static Color BurlyWood
+    {
+        get { return SplashKit.ColorBurlyWood(); }
+    }
+    public static Color CadetBlue
+    {
+        get { return SplashKit.ColorCadetBlue(); }
+    }
+    public static Color Chartreuse
+    {
+        get { return SplashKit.ColorChartreuse(); }
+    }
+    public static Color Chocolate
+    {
+        get { return SplashKit.ColorChocolate(); }
+    }
+    public static Color Coral
+    {
+        get { return SplashKit.ColorCoral(); }
+    }
+    public static Color CornflowerBlue
+    {
+        get { return SplashKit.ColorCornflowerBlue(); }
+    }
+    public static Color Cornsilk
+    {
+        get { return SplashKit.ColorCornsilk(); }
+    }
+    public static Color Crimson
+    {
+        get { return SplashKit.ColorCrimson(); }
+    }
+    public static Color Cyan
+    {
+        get { return SplashKit.ColorCyan(); }
+    }
+    public static Color DarkBlue
+    {
+        get { return SplashKit.ColorDarkBlue(); }
+    }
+    public static Color DarkCyan
+    {
+        get { return SplashKit.ColorDarkCyan(); }
+    }
+    public static Color DarkGoldenrod
+    {
+        get { return SplashKit.ColorDarkGoldenrod(); }
+    }
+    public static Color DarkGray
+    {
+        get { return SplashKit.ColorDarkGray(); }
+    }
+    public static Color DarkGreen
+    {
+        get { return SplashKit.ColorDarkGreen(); }
+    }
+    public static Color DarkKhaki
+    {
+        get { return SplashKit.ColorDarkKhaki(); }
+    }
+    public static Color DarkMagenta
+    {
+        get { return SplashKit.ColorDarkMagenta(); }
+    }
+    public static Color DarkOliveGreen
+    {
+        get { return SplashKit.ColorDarkOliveGreen(); }
+    }
+    public static Color DarkOrange
+    {
+        get { return SplashKit.ColorDarkOrange(); }
+    }
+    public static Color DarkOrchid
+    {
+        get { return SplashKit.ColorDarkOrchid(); }
+    }
+    public static Color DarkRed
+    {
+        get { return SplashKit.ColorDarkRed(); }
+    }
+    public static Color DarkSalmon
+    {
+        get { return SplashKit.ColorDarkSalmon(); }
+    }
+    public static Color DarkSeaGreen
+    {
+        get { return SplashKit.ColorDarkSeaGreen(); }
+    }
+    public static Color DarkSlateBlue
+    {
+        get { return SplashKit.ColorDarkSlateBlue(); }
+    }
+    public static Color DarkSlateGray
+    {
+        get { return SplashKit.ColorDarkSlateGray(); }
+    }
+    public static Color DarkTurquoise
+    {
+        get { return SplashKit.ColorDarkTurquoise(); }
+    }
+    public static Color DarkViolet
+    {
+        get { return SplashKit.ColorDarkViolet(); }
+    }
+    public static Color DeepPink
+    {
+        get { return SplashKit.ColorDeepPink(); }
+    }
+    public static Color DeepSkyBlue
+    {
+        get { return SplashKit.ColorDeepSkyBlue(); }
+    }
+    public static Color DimGray
+    {
+        get { return SplashKit.ColorDimGray(); }
+    }
+    public static Color DodgerBlue
+    {
+        get { return SplashKit.ColorDodgerBlue(); }
+    }
+    public static Color Firebrick
+    {
+        get { return SplashKit.ColorFirebrick(); }
+    }
+    public static Color FloralWhite
+    {
+        get { return SplashKit.ColorFloralWhite(); }
+    }
+    public static Color ForestGreen
+    {
+        get { return SplashKit.ColorForestGreen(); }
+    }
+    public static Color Fuchsia
+    {
+        get { return SplashKit.ColorFuchsia(); }
+    }
+    public static Color Gainsboro
+    {
+        get { return SplashKit.ColorGainsboro(); }
+    }
+    public static Color GhostWhite
+    {
+        get { return SplashKit.ColorGhostWhite(); }
+    }
+    public static Color Gold
+    {
+        get { return SplashKit.ColorGold(); }
+    }
+    public static Color Goldenrod
+    {
+        get { return SplashKit.ColorGoldenrod(); }
+    }
+    public static Color Gray
+    {
+        get { return SplashKit.ColorGray(); }
+    }
+    public static Color Green
+    {
+        get { return SplashKit.ColorGreen(); }
+    }
+    public static Color GreenYellow
+    {
+        get { return SplashKit.ColorGreenYellow(); }
+    }
+    public static Color Honeydew
+    {
+        get { return SplashKit.ColorHoneydew(); }
+    }
+    public static Color HotPink
+    {
+        get { return SplashKit.ColorHotPink(); }
+    }
+    public static Color IndianRed
+    {
+        get { return SplashKit.ColorIndianRed(); }
+    }
+    public static Color Indigo
+    {
+        get { return SplashKit.ColorIndigo(); }
+    }
+    public static Color Ivory
+    {
+        get { return SplashKit.ColorIvory(); }
+    }
+    public static Color Khaki
+    {
+        get { return SplashKit.ColorKhaki(); }
+    }
+    public static Color Lavender
+    {
+        get { return SplashKit.ColorLavender(); }
+    }
+    public static Color LavenderBlush
+    {
+        get { return SplashKit.ColorLavenderBlush(); }
+    }
+    public static Color LawnGreen
+    {
+        get { return SplashKit.ColorLawnGreen(); }
+    }
+    public static Color LemonChiffon
+    {
+        get { return SplashKit.ColorLemonChiffon(); }
+    }
+    public static Color LightBlue
+    {
+        get { return SplashKit.ColorLightBlue(); }
+    }
+    public static Color LightCoral
+    {
+        get { return SplashKit.ColorLightCoral(); }
+    }
+    public static Color LightCyan
+    {
+        get { return SplashKit.ColorLightCyan(); }
+    }
+    public static Color LightGoldenrodYellow
+    {
+        get { return SplashKit.ColorLightGoldenrodYellow(); }
+    }
+    public static Color LightGray
+    {
+        get { return SplashKit.ColorLightGray(); }
+    }
+    public static Color LightGreen
+    {
+        get { return SplashKit.ColorLightGreen(); }
+    }
+    public static Color LightPink
+    {
+        get { return SplashKit.ColorLightPink(); }
+    }
+    public static Color LightSalmon
+    {
+        get { return SplashKit.ColorLightSalmon(); }
+    }
+    public static Color LightSeaGreen
+    {
+        get { return SplashKit.ColorLightSeaGreen(); }
+    }
+    public static Color LightSkyBlue
+    {
+        get { return SplashKit.ColorLightSkyBlue(); }
+    }
+    public static Color LightSlateGray
+    {
+        get { return SplashKit.ColorLightSlateGray(); }
+    }
+    public static Color LightSteelBlue
+    {
+        get { return SplashKit.ColorLightSteelBlue(); }
+    }
+    public static Color LightYellow
+    {
+        get { return SplashKit.ColorLightYellow(); }
+    }
+    public static Color Lime
+    {
+        get { return SplashKit.ColorLime(); }
+    }
+    public static Color LimeGreen
+    {
+        get { return SplashKit.ColorLimeGreen(); }
+    }
+    public static Color Linen
+    {
+        get { return SplashKit.ColorLinen(); }
+    }
+    public static Color Magenta
+    {
+        get { return SplashKit.ColorMagenta(); }
+    }
+    public static Color Maroon
+    {
+        get { return SplashKit.ColorMaroon(); }
+    }
+    public static Color MediumAquamarine
+    {
+        get { return SplashKit.ColorMediumAquamarine(); }
+    }
+    public static Color MediumBlue
+    {
+        get { return SplashKit.ColorMediumBlue(); }
+    }
+    public static Color MediumOrchid
+    {
+        get { return SplashKit.ColorMediumOrchid(); }
+    }
+    public static Color MediumPurple
+    {
+        get { return SplashKit.ColorMediumPurple(); }
+    }
+    public static Color MediumSeaGreen
+    {
+        get { return SplashKit.ColorMediumSeaGreen(); }
+    }
+    public static Color MediumSlateBlue
+    {
+        get { return SplashKit.ColorMediumSlateBlue(); }
+    }
+    public static Color MediumSpringGreen
+    {
+        get { return SplashKit.ColorMediumSpringGreen(); }
+    }
+    public static Color MediumTurquoise
+    {
+        get { return SplashKit.ColorMediumTurquoise(); }
+    }
+    public static Color MediumVioletRed
+    {
+        get { return SplashKit.ColorMediumVioletRed(); }
+    }
+    public static Color MidnightBlue
+    {
+        get { return SplashKit.ColorMidnightBlue(); }
+    }
+    public static Color MintCream
+    {
+        get { return SplashKit.ColorMintCream(); }
+    }
+    public static Color MistyRose
+    {
+        get { return SplashKit.ColorMistyRose(); }
+    }
+    public static Color Moccasin
+    {
+        get { return SplashKit.ColorMoccasin(); }
+    }
+    public static Color NavajoWhite
+    {
+        get { return SplashKit.ColorNavajoWhite(); }
+    }
+    public static Color Navy
+    {
+        get { return SplashKit.ColorNavy(); }
+    }
+    public static Color OldLace
+    {
+        get { return SplashKit.ColorOldLace(); }
+    }
+    public static Color Olive
+    {
+        get { return SplashKit.ColorOlive(); }
+    }
+    public static Color OliveDrab
+    {
+        get { return SplashKit.ColorOliveDrab(); }
+    }
+    public static Color Orange
+    {
+        get { return SplashKit.ColorOrange(); }
+    }
+    public static Color OrangeRed
+    {
+        get { return SplashKit.ColorOrangeRed(); }
+    }
+    public static Color Orchid
+    {
+        get { return SplashKit.ColorOrchid(); }
+    }
+    public static Color PaleGoldenrod
+    {
+        get { return SplashKit.ColorPaleGoldenrod(); }
+    }
+    public static Color PaleGreen
+    {
+        get { return SplashKit.ColorPaleGreen(); }
+    }
+    public static Color PaleTurquoise
+    {
+        get { return SplashKit.ColorPaleTurquoise(); }
+    }
+    public static Color PaleVioletRed
+    {
+        get { return SplashKit.ColorPaleVioletRed(); }
+    }
+    public static Color PapayaWhip
+    {
+        get { return SplashKit.ColorPapayaWhip(); }
+    }
+    public static Color PeachPuff
+    {
+        get { return SplashKit.ColorPeachPuff(); }
+    }
+    public static Color Peru
+    {
+        get { return SplashKit.ColorPeru(); }
+    }
+    public static Color Pink
+    {
+        get { return SplashKit.ColorPink(); }
+    }
+    public static Color Plum
+    {
+        get { return SplashKit.ColorPlum(); }
+    }
+    public static Color PowderBlue
+    {
+        get { return SplashKit.ColorPowderBlue(); }
+    }
+    public static Color Purple
+    {
+        get { return SplashKit.ColorPurple(); }
+    }
+    public static Color Red
+    {
+        get { return SplashKit.ColorRed(); }
+    }
+    public static Color RosyBrown
+    {
+        get { return SplashKit.ColorRosyBrown(); }
+    }
+    public static Color RoyalBlue
+    {
+        get { return SplashKit.ColorRoyalBlue(); }
+    }
+    public static Color SaddleBrown
+    {
+        get { return SplashKit.ColorSaddleBrown(); }
+    }
+    public static Color Salmon
+    {
+        get { return SplashKit.ColorSalmon(); }
+    }
+    public static Color SandyBrown
+    {
+        get { return SplashKit.ColorSandyBrown(); }
+    }
+    public static Color SeaGreen
+    {
+        get { return SplashKit.ColorSeaGreen(); }
+    }
+    public static Color SeaShell
+    {
+        get { return SplashKit.ColorSeaShell(); }
+    }
+    public static Color Sienna
+    {
+        get { return SplashKit.ColorSienna(); }
+    }
+    public static Color Silver
+    {
+        get { return SplashKit.ColorSilver(); }
+    }
+    public static Color SkyBlue
+    {
+        get { return SplashKit.ColorSkyBlue(); }
+    }
+    public static Color SlateBlue
+    {
+        get { return SplashKit.ColorSlateBlue(); }
+    }
+    public static Color SlateGray
+    {
+        get { return SplashKit.ColorSlateGray(); }
+    }
+    public static Color Snow
+    {
+        get { return SplashKit.ColorSnow(); }
+    }
+    public static Color SpringGreen
+    {
+        get { return SplashKit.ColorSpringGreen(); }
+    }
+    public static Color SteelBlue
+    {
+        get { return SplashKit.ColorSteelBlue(); }
+    }
+    public static Color SwinburneRed
+    {
+        get { return SplashKit.ColorSwinburneRed(); }
+    }
+    public static Color Tan
+    {
+        get { return SplashKit.ColorTan(); }
+    }
+    public static Color Teal
+    {
+        get { return SplashKit.ColorTeal(); }
+    }
+    public static Color Thistle
+    {
+        get { return SplashKit.ColorThistle(); }
+    }
+    public static Color Tomato
+    {
+        get { return SplashKit.ColorTomato(); }
+    }
+    public static Color Transparent
+    {
+        get { return SplashKit.ColorTransparent(); }
+    }
+    public static Color Turquoise
+    {
+        get { return SplashKit.ColorTurquoise(); }
+    }
+    public static Color Violet
+    {
+        get { return SplashKit.ColorViolet(); }
+    }
+    public static Color Wheat
+    {
+        get { return SplashKit.ColorWheat(); }
+    }
+    public static Color White
+    {
+        get { return SplashKit.ColorWhite(); }
+    }
+    public static Color WhiteSmoke
+    {
+        get { return SplashKit.ColorWhiteSmoke(); }
+    }
+    public static Color Yellow
+    {
+        get { return SplashKit.ColorYellow(); }
+    }
+    public static Color YellowGreen
+    {
+        get { return SplashKit.ColorYellowGreen(); }
+    }
   }
     [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
     internal struct __sklib_rectangle
@@ -12810,7 +13394,7 @@ internal static Window __skadapter__to_window(IntPtr v)
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         internal static void Remove(IntPtr ptr)
         {
-          System.Console.WriteLine("Delete {0}", ptr);
+            // System.Console.WriteLine("Delete {0}", ptr);
             if (_ptrRegister.ContainsKey(ptr))
             {
                 _ptrRegister.Remove(ptr);
