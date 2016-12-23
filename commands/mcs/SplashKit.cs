@@ -1313,6 +1313,12 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__vector_world_to_screen", CharSet=CharSet.Ansi)]
     private static extern __sklib_vector_2d __sklib__vector_world_to_screen();
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_draw_circle__bitmap__color__float__float__float", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__bitmap_draw_circle__bitmap__color__float__float__float(__sklib_ptr destination, __sklib_color clr, float x, float y, float radius);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_draw_circle__bitmap__color__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__bitmap_draw_circle__bitmap__color__float__float__float__drawing_options(__sklib_ptr destination, __sklib_color clr, float x, float y, float radius, __sklib_drawing_options opts);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle__color__circle_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_circle__color__circle_ref(__sklib_color clr, __sklib_circle c);
 
@@ -1336,6 +1342,12 @@ internal static Window __skadapter__to_window(IntPtr v)
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_circle__color__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_circle__color__float__float__float__drawing_options(__sklib_color clr, float x, float y, float radius, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_draw_circle__window__color__float__float__float", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__window_draw_circle__window__color__float__float__float(__sklib_ptr destination, __sklib_color clr, float x, float y, float radius);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_draw_circle__window__color__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__window_draw_circle__window__color__float__float__float__drawing_options(__sklib_ptr destination, __sklib_color clr, float x, float y, float radius, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__center_point__circle_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__center_point__circle_ref(__sklib_circle c);
@@ -4584,6 +4596,36 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__vector_world_to_screen();
       return __skadapter__to_vector_2d(__skreturn);
     }
+    public static void BitmapDrawCircle(Bitmap destination, Color clr, float x, float y, float radius)
+{
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      float __skparam__x;
+      float __skparam__y;
+      float __skparam__radius;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_float(x);
+      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__radius = __skadapter__to_sklib_float(radius);
+      __sklib__bitmap_draw_circle__bitmap__color__float__float__float(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
+    }
+    public static void BitmapDrawCircle(Bitmap destination, Color clr, float x, float y, float radius, DrawingOptions opts)
+{
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      float __skparam__x;
+      float __skparam__y;
+      float __skparam__radius;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_float(x);
+      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__radius = __skadapter__to_sklib_float(radius);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__bitmap_draw_circle__bitmap__color__float__float__float__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
+    }
     public static void DrawCircle(Color clr, Circle c)
 {
       __sklib_color __skparam__clr;
@@ -4671,6 +4713,36 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__radius = __skadapter__to_sklib_float(radius);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__fill_circle__color__float__float__float__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
+    }
+    public static void WindowDrawCircle(Window destination, Color clr, float x, float y, float radius)
+{
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      float __skparam__x;
+      float __skparam__y;
+      float __skparam__radius;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_float(x);
+      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__radius = __skadapter__to_sklib_float(radius);
+      __sklib__window_draw_circle__window__color__float__float__float(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
+    }
+    public static void WindowDrawCircle(Window destination, Color clr, float x, float y, float radius, DrawingOptions opts)
+{
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      float __skparam__x;
+      float __skparam__y;
+      float __skparam__radius;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_float(x);
+      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__radius = __skadapter__to_sklib_float(radius);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__window_draw_circle__window__color__float__float__float__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
     }
     public static Point2D CenterPoint(Circle c)
 {
@@ -12667,6 +12739,30 @@ internal static Window __skadapter__to_window(IntPtr v)
     public struct Circle    {
       public Point2D center;
       public float radius;
+
+    public void Draw(Color clr)
+    {
+        SplashKit.DrawCircle(clr, this);
+    }
+
+
+    public void Draw(Color clr, DrawingOptions opts)
+    {
+        SplashKit.DrawCircle(clr, this, opts);
+    }
+
+
+    public void Fill(Color clr)
+    {
+        SplashKit.FillCircle(clr, this);
+    }
+
+
+    public void Fill(Color clr, DrawingOptions opts)
+    {
+        SplashKit.FillCircle(clr, this, opts);
+    }
+
   }
     [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
     internal struct __sklib_color
@@ -14861,6 +14957,18 @@ public class Bitmap : PointerWrapper
         SplashKit.FreeBitmap(this);
     }
 
+    public void DrawCircle(Bitmap destination, Color clr, float x, float y, float radius)
+    {
+        SplashKit.BitmapDrawCircle(destination, clr, x, y, radius);
+    }
+
+
+    public void DrawCircle(Bitmap destination, Color clr, float x, float y, float radius, DrawingOptions opts)
+    {
+        SplashKit.BitmapDrawCircle(destination, clr, x, y, radius, opts);
+    }
+
+
     public void Draw(float x, float y)
     {
         SplashKit.DrawBitmap(this, x, y);
@@ -15021,6 +15129,18 @@ public class Window : PointerWrapper
         // System.Console.WriteLine("TODO: Free!");
         SplashKit.CloseWindow(this);
     }
+
+    public void DrawCircle(Window destination, Color clr, float x, float y, float radius)
+    {
+        SplashKit.WindowDrawCircle(destination, clr, x, y, radius);
+    }
+
+
+    public void DrawCircle(Window destination, Color clr, float x, float y, float radius, DrawingOptions opts)
+    {
+        SplashKit.WindowDrawCircle(destination, clr, x, y, radius, opts);
+    }
+
 
     public void Refresh()
     {
