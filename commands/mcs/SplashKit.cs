@@ -14957,15 +14957,15 @@ public class Bitmap : PointerWrapper
         SplashKit.FreeBitmap(this);
     }
 
-    public void DrawCircle(Bitmap destination, Color clr, float x, float y, float radius)
+    public void DrawCircle(Color clr, float x, float y, float radius)
     {
-        SplashKit.BitmapDrawCircle(destination, clr, x, y, radius);
+        SplashKit.BitmapDrawCircle(this, clr, x, y, radius);
     }
 
 
-    public void DrawCircle(Bitmap destination, Color clr, float x, float y, float radius, DrawingOptions opts)
+    public void DrawCircle(Color clr, float x, float y, float radius, DrawingOptions opts)
     {
-        SplashKit.BitmapDrawCircle(destination, clr, x, y, radius, opts);
+        SplashKit.BitmapDrawCircle(this, clr, x, y, radius, opts);
     }
 
 
@@ -15130,15 +15130,15 @@ public class Window : PointerWrapper
         SplashKit.CloseWindow(this);
     }
 
-    public void DrawCircle(Window destination, Color clr, float x, float y, float radius)
+    public void DrawCircle(Color clr, float x, float y, float radius)
     {
-        SplashKit.WindowDrawCircle(destination, clr, x, y, radius);
+        SplashKit.WindowDrawCircle(this, clr, x, y, radius);
     }
 
 
-    public void DrawCircle(Window destination, Color clr, float x, float y, float radius, DrawingOptions opts)
+    public void DrawCircle(Color clr, float x, float y, float radius, DrawingOptions opts)
     {
-        SplashKit.WindowDrawCircle(destination, clr, x, y, radius, opts);
+        SplashKit.WindowDrawCircle(this, clr, x, y, radius, opts);
     }
 
 
