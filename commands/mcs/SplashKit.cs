@@ -15332,9 +15332,21 @@ public static class Camera{
     }
 
 
+    public static Point2D ToWorld(Point2D pt)
+    {
+        return SplashKit.ToWorld(pt);
+    }
+
+
     public static float ToWorldX(float screenX)
     {
         return SplashKit.ToWorldX(screenX);
+    }
+
+
+    public static float ToWorldY(float screenY)
+    {
+        return SplashKit.ToWorldY(screenY);
     }
 
     public static Point2D Position
@@ -15358,14 +15370,6 @@ public static class Camera{
     public static Rectangle ScreenRectangle
     {
         get { return SplashKit.ScreenRectangle(); }
-    }
-    public static Point2D ToWorld
-    {
-        get { return SplashKit.ToWorld(); }
-    }
-    public static float ToWorldY
-    {
-        get { return SplashKit.ToWorldY(); }
     }
     public static Vector2D VectorWorldToScreen
     {
