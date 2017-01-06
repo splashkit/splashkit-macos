@@ -13694,7 +13694,7 @@ public class Database : PointerWrapper
 {
   private Database(IntPtr ptr) : base(ptr, true) {}
 
-  private static Database FetchOrCreate(IntPtr ptr)
+  internal static Database FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -13732,7 +13732,7 @@ public class QueryResult : PointerWrapper
 {
   private QueryResult(IntPtr ptr) : base(ptr, true) {}
 
-  private static QueryResult FetchOrCreate(IntPtr ptr)
+  internal static QueryResult FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -13799,7 +13799,7 @@ public class Json : PointerWrapper
 {
   private Json(IntPtr ptr) : base(ptr, true) {}
 
-  private static Json FetchOrCreate(IntPtr ptr)
+  internal static Json FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -13984,7 +13984,7 @@ public class Music : PointerWrapper
 {
   private Music(IntPtr ptr) : base(ptr, true) {}
 
-  private static Music FetchOrCreate(IntPtr ptr)
+  internal static Music FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -14042,7 +14042,7 @@ public class Connection : PointerWrapper
 {
   private Connection(IntPtr ptr) : base(ptr, true) {}
 
-  private static Connection FetchOrCreate(IntPtr ptr)
+  internal static Connection FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -14071,7 +14071,7 @@ public class Message : PointerWrapper
 {
   private Message(IntPtr ptr) : base(ptr, true) {}
 
-  private static Message FetchOrCreate(IntPtr ptr)
+  internal static Message FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -14094,7 +14094,7 @@ public class ServerSocket : PointerWrapper
 {
   private ServerSocket(IntPtr ptr) : base(ptr, true) {}
 
-  private static ServerSocket FetchOrCreate(IntPtr ptr)
+  internal static ServerSocket FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -14147,7 +14147,7 @@ public class SoundEffect : PointerWrapper
 {
   private SoundEffect(IntPtr ptr) : base(ptr, true) {}
 
-  private static SoundEffect FetchOrCreate(IntPtr ptr)
+  internal static SoundEffect FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -14211,7 +14211,7 @@ public class Sprite : PointerWrapper
 {
   private Sprite(IntPtr ptr) : base(ptr, true) {}
 
-  private static Sprite FetchOrCreate(IntPtr ptr)
+  internal static Sprite FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -14793,7 +14793,7 @@ public class Timer : PointerWrapper
 {
   private Timer(IntPtr ptr) : base(ptr, true) {}
 
-  private static Timer FetchOrCreate(IntPtr ptr)
+  internal static Timer FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -14855,7 +14855,7 @@ public class Animation : PointerWrapper
 {
   private Animation(IntPtr ptr) : base(ptr, true) {}
 
-  private static Animation FetchOrCreate(IntPtr ptr)
+  internal static Animation FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -14970,7 +14970,7 @@ public class AnimationScript : PointerWrapper
 {
   private AnimationScript(IntPtr ptr) : base(ptr, true) {}
 
-  private static AnimationScript FetchOrCreate(IntPtr ptr)
+  internal static AnimationScript FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -15016,7 +15016,7 @@ public class Bitmap : PointerWrapper
 {
   private Bitmap(IntPtr ptr) : base(ptr, true) {}
 
-  private static Bitmap FetchOrCreate(IntPtr ptr)
+  internal static Bitmap FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -15205,7 +15205,7 @@ public class Display : PointerWrapper
 {
   private Display(IntPtr ptr) : base(ptr, true) {}
 
-  private static Display FetchOrCreate(IntPtr ptr)
+  internal static Display FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -15239,7 +15239,7 @@ public class Font : PointerWrapper
 {
   private Font(IntPtr ptr) : base(ptr, true) {}
 
-  private static Font FetchOrCreate(IntPtr ptr)
+  internal static Font FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -15282,7 +15282,7 @@ public class HttpResponse : PointerWrapper
 {
   private HttpResponse(IntPtr ptr) : base(ptr, true) {}
 
-  private static HttpResponse FetchOrCreate(IntPtr ptr)
+  internal static HttpResponse FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -15305,7 +15305,7 @@ public class HttpRequest : PointerWrapper
 {
   private HttpRequest(IntPtr ptr) : base(ptr, true) {}
 
-  private static HttpRequest FetchOrCreate(IntPtr ptr)
+  internal static HttpRequest FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -15319,7 +15319,7 @@ public class WebServer : PointerWrapper
 {
   private WebServer(IntPtr ptr) : base(ptr, true) {}
 
-  private static WebServer FetchOrCreate(IntPtr ptr)
+  internal static WebServer FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
@@ -15348,7 +15348,7 @@ public class Window : PointerWrapper
 {
   private Window(IntPtr ptr) : base(ptr, true) {}
 
-  private static Window FetchOrCreate(IntPtr ptr)
+  internal static Window FetchOrCreate(IntPtr ptr)
   {
     if (ptr == IntPtr.Zero) return null;
 
