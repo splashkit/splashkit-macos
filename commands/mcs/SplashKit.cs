@@ -2204,6 +2204,15 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__take_screenshot__window__string_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__take_screenshot__window__string_ref(__sklib_ptr wind, __sklib_string basename);
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_bounding_circle__bitmap__point_2d_ref", CharSet=CharSet.Ansi)]
+    private static extern __sklib_circle __sklib__bitmap_bounding_circle__bitmap__point_2d_ref(__sklib_ptr bmp, __sklib_point_2d pt);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_bounding_rectangle__bitmap", CharSet=CharSet.Ansi)]
+    private static extern __sklib_rectangle __sklib__bitmap_bounding_rectangle__bitmap(__sklib_ptr bmp);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_bounding_rectangle__bitmap__float__float", CharSet=CharSet.Ansi)]
+    private static extern __sklib_rectangle __sklib__bitmap_bounding_rectangle__bitmap__float__float(__sklib_ptr bmp, float x, float y);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_cell_center__bitmap", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__bitmap_cell_center__bitmap(__sklib_ptr bmp);
 
@@ -2243,9 +2252,6 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_center__bitmap", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__bitmap_center__bitmap(__sklib_ptr bmp);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_circle__bitmap__point_2d_ref", CharSet=CharSet.Ansi)]
-    private static extern __sklib_circle __sklib__bitmap_circle__bitmap__point_2d_ref(__sklib_ptr bmp, __sklib_point_2d pt);
-
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_filename__bitmap", CharSet=CharSet.Ansi)]
     private static extern __sklib_string __sklib__bitmap_filename__bitmap(__sklib_ptr bmp);
 
@@ -2260,12 +2266,6 @@ internal static Window __skadapter__to_window(IntPtr v)
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_named__string", CharSet=CharSet.Ansi)]
     private static extern __sklib_ptr __sklib__bitmap_named__string(__sklib_string name);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_rectangle__bitmap", CharSet=CharSet.Ansi)]
-    private static extern __sklib_rectangle __sklib__bitmap_rectangle__bitmap(__sklib_ptr bmp);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_rectangle__bitmap__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_rectangle __sklib__bitmap_rectangle__bitmap__float__float(__sklib_ptr bmp, float x, float y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_rectangle_of_cell__bitmap__int", CharSet=CharSet.Ansi)]
     private static extern __sklib_rectangle __sklib__bitmap_rectangle_of_cell__bitmap__int(__sklib_ptr src, int cell);
@@ -6962,6 +6962,36 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__take_screenshot__window__string_ref(__skparam__wind, __skparam__basename);
     __skadapter__free__sklib_string(ref __skparam__basename);
     }
+    public static Circle BitmapBoundingCircle(Bitmap bmp, Point2D pt)
+{
+      __sklib_ptr __skparam__bmp;
+      __sklib_point_2d __skparam__pt;
+      __sklib_circle __skreturn;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__pt = __skadapter__to_sklib_point_2d(pt);
+      __skreturn = __sklib__bitmap_bounding_circle__bitmap__point_2d_ref(__skparam__bmp, __skparam__pt);
+      return __skadapter__to_circle(__skreturn);
+    }
+    public static Rectangle BitmapBoundingRectangle(Bitmap bmp)
+{
+      __sklib_ptr __skparam__bmp;
+      __sklib_rectangle __skreturn;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skreturn = __sklib__bitmap_bounding_rectangle__bitmap(__skparam__bmp);
+      return __skadapter__to_rectangle(__skreturn);
+    }
+    public static Rectangle BitmapBoundingRectangle(Bitmap bmp, float x, float y)
+{
+      __sklib_ptr __skparam__bmp;
+      float __skparam__x;
+      float __skparam__y;
+      __sklib_rectangle __skreturn;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__x = __skadapter__to_sklib_float(x);
+      __skparam__y = __skadapter__to_sklib_float(y);
+      __skreturn = __sklib__bitmap_bounding_rectangle__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
+      return __skadapter__to_rectangle(__skreturn);
+    }
     public static Point2D BitmapCellCenter(Bitmap bmp)
 {
       __sklib_ptr __skparam__bmp;
@@ -7080,16 +7110,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__bitmap_center__bitmap(__skparam__bmp);
       return __skadapter__to_point_2d(__skreturn);
     }
-    public static Circle BitmapCircle(Bitmap bmp, Point2D pt)
-{
-      __sklib_ptr __skparam__bmp;
-      __sklib_point_2d __skparam__pt;
-      __sklib_circle __skreturn;
-      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__pt = __skadapter__to_sklib_point_2d(pt);
-      __skreturn = __sklib__bitmap_circle__bitmap__point_2d_ref(__skparam__bmp, __skparam__pt);
-      return __skadapter__to_circle(__skreturn);
-    }
     public static string BitmapFilename(Bitmap bmp)
 {
       __sklib_ptr __skparam__bmp;
@@ -7131,26 +7151,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__bitmap_named__string(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
       return __skadapter__to_bitmap(__skreturn);
-    }
-    public static Rectangle BitmapRectangle(Bitmap bmp)
-{
-      __sklib_ptr __skparam__bmp;
-      __sklib_rectangle __skreturn;
-      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skreturn = __sklib__bitmap_rectangle__bitmap(__skparam__bmp);
-      return __skadapter__to_rectangle(__skreturn);
-    }
-    public static Rectangle BitmapRectangle(Bitmap bmp, float x, float y)
-{
-      __sklib_ptr __skparam__bmp;
-      float __skparam__x;
-      float __skparam__y;
-      __sklib_rectangle __skreturn;
-      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__bitmap_rectangle__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
-      return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle BitmapRectangleOfCell(Bitmap src, int cell)
 {
@@ -15035,6 +15035,24 @@ public class Bitmap : PointerWrapper
     }
 
 
+    public Circle BoundingCircle(Point2D pt)
+    {
+        return SplashKit.BitmapBoundingCircle(this, pt);
+    }
+
+
+    public Rectangle BoundingRectangle()
+    {
+        return SplashKit.BitmapBoundingRectangle(this);
+    }
+
+
+    public Rectangle BoundingRectangle(float x, float y)
+    {
+        return SplashKit.BitmapBoundingRectangle(this, x, y);
+    }
+
+
     public Circle CellCircle(float x, float y)
     {
         return SplashKit.BitmapCellCircle(this, x, y);
@@ -15059,21 +15077,15 @@ public class Bitmap : PointerWrapper
     }
 
 
+    public Rectangle CellRectangle()
+    {
+        return SplashKit.BitmapCellRectangle(this);
+    }
+
+
     public Rectangle CellRectangle(Point2D pt)
     {
         return SplashKit.BitmapCellRectangle(this, pt);
-    }
-
-
-    public Circle Circle(Point2D pt)
-    {
-        return SplashKit.BitmapCircle(this, pt);
-    }
-
-
-    public Rectangle Rectangle(float x, float y)
-    {
-        return SplashKit.BitmapRectangle(this, x, y);
     }
 
 
@@ -15152,10 +15164,6 @@ public class Bitmap : PointerWrapper
     {
         get { return SplashKit.BitmapCellHeight(this); }
     }
-    public Rectangle CellRectangle
-    {
-        get { return SplashKit.BitmapCellRectangle(this); }
-    }
     public int CellRows
     {
         get { return SplashKit.BitmapCellRows(this); }
@@ -15179,10 +15187,6 @@ public class Bitmap : PointerWrapper
     public string Name
     {
         get { return SplashKit.BitmapName(this); }
-    }
-    public Rectangle Rectangle
-    {
-        get { return SplashKit.BitmapRectangle(this); }
     }
 }
 public class Display : PointerWrapper

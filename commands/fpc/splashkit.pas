@@ -663,6 +663,9 @@ function ScreenHeight(): Integer;
 function ScreenWidth(): Integer;
 procedure TakeScreenshot(const basename: String);
 procedure TakeScreenshot(wind: Window; const basename: String);
+function BitmapBoundingCircle(bmp: Bitmap; const pt: Point2D): Circle;
+function BitmapBoundingRectangle(bmp: Bitmap): Rectangle;
+function BitmapBoundingRectangle(bmp: Bitmap; x: Single; y: Single): Rectangle;
 function BitmapCellCenter(bmp: Bitmap): Point2D;
 function BitmapCellCircle(bmp: Bitmap; x: Single; y: Single): Circle;
 function BitmapCellCircle(bmp: Bitmap; pt: Point2D): Circle;
@@ -676,14 +679,11 @@ function BitmapCellRectangle(src: Bitmap; const pt: Point2D): Rectangle;
 function BitmapCellRows(bmp: Bitmap): Integer;
 function BitmapCellWidth(bmp: Bitmap): Integer;
 function BitmapCenter(bmp: Bitmap): Point2D;
-function BitmapCircle(bmp: Bitmap; const pt: Point2D): Circle;
 function BitmapFilename(bmp: Bitmap): String;
 function BitmapHeight(bmp: Bitmap): Integer;
 function BitmapHeight(name: String): Integer;
 function BitmapName(bmp: Bitmap): String;
 function BitmapNamed(name: String): Bitmap;
-function BitmapRectangle(bmp: Bitmap): Rectangle;
-function BitmapRectangle(bmp: Bitmap; x: Single; y: Single): Rectangle;
 function BitmapRectangleOfCell(src: Bitmap; cell: Integer): Rectangle;
 procedure BitmapSetCellDetails(bmp: Bitmap; width: Integer; height: Integer; columns: Integer; rows: Integer; count: Integer);
 function BitmapWidth(bmp: Bitmap): Integer;
@@ -2516,6 +2516,9 @@ function __sklib__screen_height(): Integer; cdecl; external;
 function __sklib__screen_width(): Integer; cdecl; external;
 procedure __sklib__take_screenshot__string_ref(const basename: __sklib_string); cdecl; external;
 procedure __sklib__take_screenshot__window__string_ref(wind: __sklib_ptr; const basename: __sklib_string); cdecl; external;
+function __sklib__bitmap_bounding_circle__bitmap__point_2d_ref(bmp: __sklib_ptr; const pt: __sklib_point_2d): __sklib_circle; cdecl; external;
+function __sklib__bitmap_bounding_rectangle__bitmap(bmp: __sklib_ptr): __sklib_rectangle; cdecl; external;
+function __sklib__bitmap_bounding_rectangle__bitmap__float__float(bmp: __sklib_ptr; x: Single; y: Single): __sklib_rectangle; cdecl; external;
 function __sklib__bitmap_cell_center__bitmap(bmp: __sklib_ptr): __sklib_point_2d; cdecl; external;
 function __sklib__bitmap_cell_circle__bitmap__float__float(bmp: __sklib_ptr; x: Single; y: Single): __sklib_circle; cdecl; external;
 function __sklib__bitmap_cell_circle__bitmap__point_2d(bmp: __sklib_ptr; pt: __sklib_point_2d): __sklib_circle; cdecl; external;
@@ -2529,14 +2532,11 @@ function __sklib__bitmap_cell_rectangle__bitmap__point_2d_ref(src: __sklib_ptr; 
 function __sklib__bitmap_cell_rows__bitmap(bmp: __sklib_ptr): Integer; cdecl; external;
 function __sklib__bitmap_cell_width__bitmap(bmp: __sklib_ptr): Integer; cdecl; external;
 function __sklib__bitmap_center__bitmap(bmp: __sklib_ptr): __sklib_point_2d; cdecl; external;
-function __sklib__bitmap_circle__bitmap__point_2d_ref(bmp: __sklib_ptr; const pt: __sklib_point_2d): __sklib_circle; cdecl; external;
 function __sklib__bitmap_filename__bitmap(bmp: __sklib_ptr): __sklib_string; cdecl; external;
 function __sklib__bitmap_height__bitmap(bmp: __sklib_ptr): Integer; cdecl; external;
 function __sklib__bitmap_height__string(name: __sklib_string): Integer; cdecl; external;
 function __sklib__bitmap_name__bitmap(bmp: __sklib_ptr): __sklib_string; cdecl; external;
 function __sklib__bitmap_named__string(name: __sklib_string): __sklib_ptr; cdecl; external;
-function __sklib__bitmap_rectangle__bitmap(bmp: __sklib_ptr): __sklib_rectangle; cdecl; external;
-function __sklib__bitmap_rectangle__bitmap__float__float(bmp: __sklib_ptr; x: Single; y: Single): __sklib_rectangle; cdecl; external;
 function __sklib__bitmap_rectangle_of_cell__bitmap__int(src: __sklib_ptr; cell: Integer): __sklib_rectangle; cdecl; external;
 procedure __sklib__bitmap_set_cell_details__bitmap__int__int__int__int__int(bmp: __sklib_ptr; width: Integer; height: Integer; columns: Integer; rows: Integer; count: Integer); cdecl; external;
 function __sklib__bitmap_width__bitmap(bmp: __sklib_ptr): Integer; cdecl; external;
@@ -6329,6 +6329,39 @@ begin
   __skparam__basename := __skadapter__to_sklib_string(basename);
   __sklib__take_screenshot__window__string_ref(__skparam__wind, __skparam__basename);
 end;
+function BitmapBoundingCircle(bmp: Bitmap; const pt: Point2D): Circle;
+var
+  __skparam__bmp: __sklib_ptr;
+  __skparam__pt: __sklib_point_2d;
+  __skreturn: __sklib_circle;
+begin
+  __skparam__bmp := __skadapter__to_sklib_bitmap(bmp);
+  __skparam__pt := __skadapter__to_sklib_point_2d(pt);
+  __skreturn := __sklib__bitmap_bounding_circle__bitmap__point_2d_ref(__skparam__bmp, __skparam__pt);
+  result := __skadapter__to_circle(__skreturn);
+end;
+function BitmapBoundingRectangle(bmp: Bitmap): Rectangle;
+var
+  __skparam__bmp: __sklib_ptr;
+  __skreturn: __sklib_rectangle;
+begin
+  __skparam__bmp := __skadapter__to_sklib_bitmap(bmp);
+  __skreturn := __sklib__bitmap_bounding_rectangle__bitmap(__skparam__bmp);
+  result := __skadapter__to_rectangle(__skreturn);
+end;
+function BitmapBoundingRectangle(bmp: Bitmap; x: Single; y: Single): Rectangle;
+var
+  __skparam__bmp: __sklib_ptr;
+  __skparam__x: Single;
+  __skparam__y: Single;
+  __skreturn: __sklib_rectangle;
+begin
+  __skparam__bmp := __skadapter__to_sklib_bitmap(bmp);
+  __skparam__x := __skadapter__to_sklib_float(x);
+  __skparam__y := __skadapter__to_sklib_float(y);
+  __skreturn := __sklib__bitmap_bounding_rectangle__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
+  result := __skadapter__to_rectangle(__skreturn);
+end;
 function BitmapCellCenter(bmp: Bitmap): Point2D;
 var
   __skparam__bmp: __sklib_ptr;
@@ -6460,17 +6493,6 @@ begin
   __skreturn := __sklib__bitmap_center__bitmap(__skparam__bmp);
   result := __skadapter__to_point_2d(__skreturn);
 end;
-function BitmapCircle(bmp: Bitmap; const pt: Point2D): Circle;
-var
-  __skparam__bmp: __sklib_ptr;
-  __skparam__pt: __sklib_point_2d;
-  __skreturn: __sklib_circle;
-begin
-  __skparam__bmp := __skadapter__to_sklib_bitmap(bmp);
-  __skparam__pt := __skadapter__to_sklib_point_2d(pt);
-  __skreturn := __sklib__bitmap_circle__bitmap__point_2d_ref(__skparam__bmp, __skparam__pt);
-  result := __skadapter__to_circle(__skreturn);
-end;
 function BitmapFilename(bmp: Bitmap): String;
 var
   __skparam__bmp: __sklib_ptr;
@@ -6515,28 +6537,6 @@ begin
   __skparam__name := __skadapter__to_sklib_string(name);
   __skreturn := __sklib__bitmap_named__string(__skparam__name);
   result := __skadapter__to_bitmap(__skreturn);
-end;
-function BitmapRectangle(bmp: Bitmap): Rectangle;
-var
-  __skparam__bmp: __sklib_ptr;
-  __skreturn: __sklib_rectangle;
-begin
-  __skparam__bmp := __skadapter__to_sklib_bitmap(bmp);
-  __skreturn := __sklib__bitmap_rectangle__bitmap(__skparam__bmp);
-  result := __skadapter__to_rectangle(__skreturn);
-end;
-function BitmapRectangle(bmp: Bitmap; x: Single; y: Single): Rectangle;
-var
-  __skparam__bmp: __sklib_ptr;
-  __skparam__x: Single;
-  __skparam__y: Single;
-  __skreturn: __sklib_rectangle;
-begin
-  __skparam__bmp := __skadapter__to_sklib_bitmap(bmp);
-  __skparam__x := __skadapter__to_sklib_float(x);
-  __skparam__y := __skadapter__to_sklib_float(y);
-  __skreturn := __sklib__bitmap_rectangle__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
-  result := __skadapter__to_rectangle(__skreturn);
 end;
 function BitmapRectangleOfCell(src: Bitmap; cell: Integer): Rectangle;
 var
