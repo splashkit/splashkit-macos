@@ -1274,6 +1274,7 @@ function WindowCloseRequested(const name: String): Boolean;
 function WindowCloseRequested(wind: Window): Boolean;
 function WindowHasBorder(const name: String): Boolean;
 function WindowHasBorder(wnd: Window): Boolean;
+function WindowHasFocus(wind: Window): Boolean;
 function WindowHeight(const name: String): Integer;
 function WindowHeight(wind: Window): Integer;
 function WindowIsFullscreen(const name: String): Boolean;
@@ -3127,6 +3128,7 @@ function __sklib__window_close_requested__string_ref(const name: __sklib_string)
 function __sklib__window_close_requested__window(wind: __sklib_ptr): LongInt; cdecl; external;
 function __sklib__window_has_border__string_ref(const name: __sklib_string): LongInt; cdecl; external;
 function __sklib__window_has_border__window(wnd: __sklib_ptr): LongInt; cdecl; external;
+function __sklib__window_has_focus__window(wind: __sklib_ptr): LongInt; cdecl; external;
 function __sklib__window_height__string_ref(const name: __sklib_string): Integer; cdecl; external;
 function __sklib__window_height__window(wind: __sklib_ptr): Integer; cdecl; external;
 function __sklib__window_is_fullscreen__string_ref(const name: __sklib_string): LongInt; cdecl; external;
@@ -12172,6 +12174,15 @@ var
 begin
   __skparam__wnd := __skadapter__to_sklib_window(wnd);
   __skreturn := __sklib__window_has_border__window(__skparam__wnd);
+  result := __skadapter__to_bool(__skreturn);
+end;
+function WindowHasFocus(wind: Window): Boolean;
+var
+  __skparam__wind: __sklib_ptr;
+  __skreturn: LongInt;
+begin
+  __skparam__wind := __skadapter__to_sklib_window(wind);
+  __skreturn := __sklib__window_has_focus__window(__skparam__wind);
   result := __skadapter__to_bool(__skreturn);
 end;
 function WindowHeight(const name: String): Integer;

@@ -46,6 +46,7 @@ bool window_close_requested(const string &name);
 bool window_close_requested(window wind);
 bool window_has_border(const string &name);
 bool window_has_border(window wnd);
+bool window_has_focus(window wind);
 int window_height(const string &name);
 int window_height(window wind);
 bool window_is_fullscreen(const string &name);

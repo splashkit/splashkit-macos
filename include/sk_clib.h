@@ -1127,6 +1127,7 @@ int __sklib__window_close_requested__string_ref(const __sklib_string name);
 int __sklib__window_close_requested__window(__sklib_window wind);
 int __sklib__window_has_border__string_ref(const __sklib_string name);
 int __sklib__window_has_border__window(__sklib_window wnd);
+int __sklib__window_has_focus__window(__sklib_window wind);
 int __sklib__window_height__string_ref(const __sklib_string name);
 int __sklib__window_height__window(__sklib_window wind);
 int __sklib__window_is_fullscreen__string_ref(const __sklib_string name);
