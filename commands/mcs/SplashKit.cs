@@ -3950,11 +3950,11 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__close_all_windows", CharSet=CharSet.Ansi)]
     private static extern void __sklib__close_all_windows();
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__close_current_window", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__close_current_window();
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__close_window__string_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__close_window__string_ref(__sklib_string name);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__close_window", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__close_window();
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__close_window__window", CharSet=CharSet.Ansi)]
     private static extern void __sklib__close_window__window(__sklib_ptr wind);
@@ -3962,17 +3962,47 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window", CharSet=CharSet.Ansi)]
     private static extern __sklib_ptr __sklib__current_window();
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_has_border", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__current_window_has_border();
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_height", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__current_window_height();
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_is_fullscreen", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__current_window_is_fullscreen();
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_position", CharSet=CharSet.Ansi)]
+    private static extern __sklib_point_2d __sklib__current_window_position();
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_toggle_border", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__current_window_toggle_border();
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_toggle_fullscreen", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__current_window_toggle_fullscreen();
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_width", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__current_window_width();
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_x", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__current_window_x();
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__current_window_y", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__current_window_y();
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__has_window__string", CharSet=CharSet.Ansi)]
     private static extern int __sklib__has_window__string(__sklib_string caption);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_window__int__int", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__move_window__int__int(int x, int y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__is_current_window__window", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__is_current_window__window(__sklib_ptr wind);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_window__string_ref__int__int", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__move_window__string_ref__int__int(__sklib_string name, int x, int y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_current_window_to__int__int", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__move_current_window_to__int__int(int x, int y);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_window__window__int__int", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__move_window__window__int__int(__sklib_ptr wind, int x, int y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_window_to__string_ref__int__int", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__move_window_to__string_ref__int__int(__sklib_string name, int x, int y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_window_to__window__int__int", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__move_window_to__window__int__int(__sklib_ptr wind, int x, int y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__open_window__string__int__int", CharSet=CharSet.Ansi)]
     private static extern __sklib_ptr __sklib__open_window__string__int__int(__sklib_string caption, int width, int height);
@@ -3980,8 +4010,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__refresh_window__window", CharSet=CharSet.Ansi)]
     private static extern void __sklib__refresh_window__window(__sklib_ptr wind);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__resize_window__int__int", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__resize_window__int__int(int width, int height);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__resize_current_window__int__int", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__resize_current_window__int__int(int width, int height);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__resize_window__window__int__int", CharSet=CharSet.Ansi)]
     private static extern void __sklib__resize_window__window__int__int(__sklib_ptr wnd, int width, int height);
@@ -3992,14 +4022,14 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__set_current_window__window", CharSet=CharSet.Ansi)]
     private static extern void __sklib__set_current_window__window(__sklib_ptr wind);
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_caption__window", CharSet=CharSet.Ansi)]
+    private static extern __sklib_string __sklib__window_caption__window(__sklib_ptr wind);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_close_requested__string_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_close_requested__string_ref(__sklib_string name);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_close_requested__window", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_close_requested__window(__sklib_ptr wind);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_has_border", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__window_has_border();
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_has_border__string_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_has_border__string_ref(__sklib_string name);
@@ -4007,17 +4037,11 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_has_border__window", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_has_border__window(__sklib_ptr wnd);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_height", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__window_height();
-
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_height__string_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_height__string_ref(__sklib_string name);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_height__window", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_height__window(__sklib_ptr wind);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_is_fullscreen", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__window_is_fullscreen();
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_is_fullscreen__string_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_is_fullscreen__string_ref(__sklib_string name);
@@ -4028,9 +4052,6 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_named__string", CharSet=CharSet.Ansi)]
     private static extern __sklib_ptr __sklib__window_named__string(__sklib_string caption);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_position", CharSet=CharSet.Ansi)]
-    private static extern __sklib_point_2d __sklib__window_position();
-
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_position__string_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__window_position__string_ref(__sklib_string name);
 
@@ -4040,26 +4061,17 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_set_icon__window__bitmap", CharSet=CharSet.Ansi)]
     private static extern void __sklib__window_set_icon__window__bitmap(__sklib_ptr wind, __sklib_ptr bmp);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_toggle_border", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__window_toggle_border();
-
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_toggle_border__string_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__window_toggle_border__string_ref(__sklib_string name);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_toggle_border__window", CharSet=CharSet.Ansi)]
     private static extern void __sklib__window_toggle_border__window(__sklib_ptr wnd);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_toggle_fullscreen", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__window_toggle_fullscreen();
-
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_toggle_fullscreen__string_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__window_toggle_fullscreen__string_ref(__sklib_string name);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_toggle_fullscreen__window", CharSet=CharSet.Ansi)]
     private static extern void __sklib__window_toggle_fullscreen__window(__sklib_ptr wnd);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_width", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__window_width();
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_width__string_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_width__string_ref(__sklib_string name);
@@ -4070,17 +4082,11 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_with_focus", CharSet=CharSet.Ansi)]
     private static extern __sklib_ptr __sklib__window_with_focus();
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_x", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__window_x();
-
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_x__string_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_x__string_ref(__sklib_string name);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_x__window", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_x__window(__sklib_ptr wnd);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_y", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__window_y();
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_y__string_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__window_y__string_ref(__sklib_string name);
@@ -12196,16 +12202,16 @@ internal static Window __skadapter__to_window(IntPtr v)
 {
       __sklib__close_all_windows();
     }
+    public static void CloseCurrentWindow()
+{
+      __sklib__close_current_window();
+    }
     public static void CloseWindow(string name)
 {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__close_window__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
-    }
-    public static void CloseWindow()
-{
-      __sklib__close_window();
     }
     public static void CloseWindow(Window wind)
 {
@@ -12219,6 +12225,56 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__current_window();
       return __skadapter__to_window(__skreturn);
     }
+    public static bool CurrentWindowHasBorder()
+{
+      int __skreturn;
+      __skreturn = __sklib__current_window_has_border();
+      return __skadapter__to_bool(__skreturn);
+    }
+    public static int CurrentWindowHeight()
+{
+      int __skreturn;
+      __skreturn = __sklib__current_window_height();
+      return __skadapter__to_int(__skreturn);
+    }
+    public static bool CurrentWindowIsFullscreen()
+{
+      int __skreturn;
+      __skreturn = __sklib__current_window_is_fullscreen();
+      return __skadapter__to_bool(__skreturn);
+    }
+    public static Point2D CurrentWindowPosition()
+{
+      __sklib_point_2d __skreturn;
+      __skreturn = __sklib__current_window_position();
+      return __skadapter__to_point_2d(__skreturn);
+    }
+    public static void CurrentWindowToggleBorder()
+{
+      __sklib__current_window_toggle_border();
+    }
+    public static void CurrentWindowToggleFullscreen()
+{
+      __sklib__current_window_toggle_fullscreen();
+    }
+    public static int CurrentWindowWidth()
+{
+      int __skreturn;
+      __skreturn = __sklib__current_window_width();
+      return __skadapter__to_int(__skreturn);
+    }
+    public static int CurrentWindowX()
+{
+      int __skreturn;
+      __skreturn = __sklib__current_window_x();
+      return __skadapter__to_int(__skreturn);
+    }
+    public static int CurrentWindowY()
+{
+      int __skreturn;
+      __skreturn = __sklib__current_window_y();
+      return __skadapter__to_int(__skreturn);
+    }
     public static bool HasWindow(string caption)
 {
       __sklib_string __skparam__caption;
@@ -12228,15 +12284,23 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__caption);
       return __skadapter__to_bool(__skreturn);
     }
-    public static void MoveWindow(int x, int y)
+    public static bool IsCurrentWindow(Window wind)
+{
+      __sklib_ptr __skparam__wind;
+      int __skreturn;
+      __skparam__wind = __skadapter__to_sklib_window(wind);
+      __skreturn = __sklib__is_current_window__window(__skparam__wind);
+      return __skadapter__to_bool(__skreturn);
+    }
+    public static void MoveCurrentWindowTo(int x, int y)
 {
       int __skparam__x;
       int __skparam__y;
       __skparam__x = __skadapter__to_sklib_int(x);
       __skparam__y = __skadapter__to_sklib_int(y);
-      __sklib__move_window__int__int(__skparam__x, __skparam__y);
+      __sklib__move_current_window_to__int__int(__skparam__x, __skparam__y);
     }
-    public static void MoveWindow(string name, int x, int y)
+    public static void MoveWindowTo(string name, int x, int y)
 {
       __sklib_string __skparam__name;
       int __skparam__x;
@@ -12244,10 +12308,10 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__name = __skadapter__to_sklib_string(name);
       __skparam__x = __skadapter__to_sklib_int(x);
       __skparam__y = __skadapter__to_sklib_int(y);
-      __sklib__move_window__string_ref__int__int(__skparam__name, __skparam__x, __skparam__y);
+      __sklib__move_window_to__string_ref__int__int(__skparam__name, __skparam__x, __skparam__y);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
-    public static void MoveWindow(Window wind, int x, int y)
+    public static void MoveWindowTo(Window wind, int x, int y)
 {
       __sklib_ptr __skparam__wind;
       int __skparam__x;
@@ -12255,7 +12319,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __skparam__x = __skadapter__to_sklib_int(x);
       __skparam__y = __skadapter__to_sklib_int(y);
-      __sklib__move_window__window__int__int(__skparam__wind, __skparam__x, __skparam__y);
+      __sklib__move_window_to__window__int__int(__skparam__wind, __skparam__x, __skparam__y);
     }
     public static Window OpenWindow(string caption, int width, int height)
 {
@@ -12276,13 +12340,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __sklib__refresh_window__window(__skparam__wind);
     }
-    public static void ResizeWindow(int width, int height)
+    public static void ResizeCurrentWindow(int width, int height)
 {
       int __skparam__width;
       int __skparam__height;
       __skparam__width = __skadapter__to_sklib_int(width);
       __skparam__height = __skadapter__to_sklib_int(height);
-      __sklib__resize_window__int__int(__skparam__width, __skparam__height);
+      __sklib__resize_current_window__int__int(__skparam__width, __skparam__height);
     }
     public static void ResizeWindow(Window wnd, int width, int height)
 {
@@ -12307,6 +12371,14 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __sklib__set_current_window__window(__skparam__wind);
     }
+    public static string WindowCaption(Window wind)
+{
+      __sklib_ptr __skparam__wind;
+      __sklib_string __skreturn;
+      __skparam__wind = __skadapter__to_sklib_window(wind);
+      __skreturn = __sklib__window_caption__window(__skparam__wind);
+      return __skadapter__to_string(__skreturn);
+    }
     public static bool WindowCloseRequested(string name)
 {
       __sklib_string __skparam__name;
@@ -12322,12 +12394,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       int __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __skreturn = __sklib__window_close_requested__window(__skparam__wind);
-      return __skadapter__to_bool(__skreturn);
-    }
-    public static bool WindowHasBorder()
-{
-      int __skreturn;
-      __skreturn = __sklib__window_has_border();
       return __skadapter__to_bool(__skreturn);
     }
     public static bool WindowHasBorder(string name)
@@ -12347,12 +12413,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__window_has_border__window(__skparam__wnd);
       return __skadapter__to_bool(__skreturn);
     }
-    public static int WindowHeight()
-{
-      int __skreturn;
-      __skreturn = __sklib__window_height();
-      return __skadapter__to_int(__skreturn);
-    }
     public static int WindowHeight(string name)
 {
       __sklib_string __skparam__name;
@@ -12369,12 +12429,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __skreturn = __sklib__window_height__window(__skparam__wind);
       return __skadapter__to_int(__skreturn);
-    }
-    public static bool WindowIsFullscreen()
-{
-      int __skreturn;
-      __skreturn = __sklib__window_is_fullscreen();
-      return __skadapter__to_bool(__skreturn);
     }
     public static bool WindowIsFullscreen(string name)
 {
@@ -12402,12 +12456,6 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__caption);
       return __skadapter__to_window(__skreturn);
     }
-    public static Point2D WindowPosition()
-{
-      __sklib_point_2d __skreturn;
-      __skreturn = __sklib__window_position();
-      return __skadapter__to_point_2d(__skreturn);
-    }
     public static Point2D WindowPosition(string name)
 {
       __sklib_string __skparam__name;
@@ -12433,10 +12481,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __sklib__window_set_icon__window__bitmap(__skparam__wind, __skparam__bmp);
     }
-    public static void WindowToggleBorder()
-{
-      __sklib__window_toggle_border();
-    }
     public static void WindowToggleBorder(string name)
 {
       __sklib_string __skparam__name;
@@ -12450,10 +12494,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
       __sklib__window_toggle_border__window(__skparam__wnd);
     }
-    public static void WindowToggleFullscreen()
-{
-      __sklib__window_toggle_fullscreen();
-    }
     public static void WindowToggleFullscreen(string name)
 {
       __sklib_string __skparam__name;
@@ -12466,12 +12506,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib_ptr __skparam__wnd;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
       __sklib__window_toggle_fullscreen__window(__skparam__wnd);
-    }
-    public static int WindowWidth()
-{
-      int __skreturn;
-      __skreturn = __sklib__window_width();
-      return __skadapter__to_int(__skreturn);
     }
     public static int WindowWidth(string name)
 {
@@ -12496,12 +12530,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__window_with_focus();
       return __skadapter__to_window(__skreturn);
     }
-    public static int WindowX()
-{
-      int __skreturn;
-      __skreturn = __sklib__window_x();
-      return __skadapter__to_int(__skreturn);
-    }
     public static int WindowX(string name)
 {
       __sklib_string __skparam__name;
@@ -12517,12 +12545,6 @@ internal static Window __skadapter__to_window(IntPtr v)
       int __skreturn;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
       __skreturn = __sklib__window_x__window(__skparam__wnd);
-      return __skadapter__to_int(__skreturn);
-    }
-    public static int WindowY()
-{
-      int __skreturn;
-      __skreturn = __sklib__window_y();
       return __skadapter__to_int(__skreturn);
     }
     public static int WindowY(string name)
@@ -13596,7 +13618,8 @@ internal static Window __skadapter__to_window(IntPtr v)
         [System.Diagnostics.DebuggerNonUserCode(), System.Diagnostics.DebuggerStepThrough()]
         public void Dispose()
         {
-            DoFree();
+            if (PointerWrapper._ptrRegister.ContainsKey(this.Pointer))
+                DoFree();
         }
 
         #endregion
@@ -15037,7 +15060,27 @@ public class Display : PointerWrapper
   }
         protected internal override void DoFree()
         {}
+        public int Height
+    {
+        get { return SplashKit.DisplayHeight(this); }
     }
+    public string Name
+    {
+        get { return SplashKit.DisplayName(this); }
+    }
+    public int Width
+    {
+        get { return SplashKit.DisplayWidth(this); }
+    }
+    public int X
+    {
+        get { return SplashKit.DisplayX(this); }
+    }
+    public int Y
+    {
+        get { return SplashKit.DisplayY(this); }
+    }
+}
 public class Font : PointerWrapper
 {
   internal Font(IntPtr ptr) : base(ptr, true) {}
@@ -15179,26 +15222,100 @@ public class Window : PointerWrapper
     }
 
 
+    public void Clear(Color clr)
+    {
+        SplashKit.ClearWindow(this, clr);
+    }
+
+
+    public void Close()
+    {
+        SplashKit.CloseWindow(this);
+    }
+
+
+    public void MoveTo(int x, int y)
+    {
+        SplashKit.MoveWindowTo(this, x, y);
+    }
+
+
     public void Refresh()
     {
         SplashKit.RefreshWindow(this);
+    }
+
+
+    public void Resize(int width, int height)
+    {
+        SplashKit.ResizeWindow(this, width, height);
+    }
+
+
+    public void MakeCurrent()
+    {
+        SplashKit.SetCurrentWindow(this);
+    }
+
+
+    public void ToggleBorder()
+    {
+        SplashKit.WindowToggleBorder(this);
+    }
+
+
+    public void ToggleFullscreen()
+    {
+        SplashKit.WindowToggleFullscreen(this);
     }
 
     public Rectangle Area
     {
         get { return SplashKit.WindowArea(this); }
     }
+    public bool IsCurrentWindow
+    {
+        get { return SplashKit.IsCurrentWindow(this); }
+    }
+    public string Caption
+    {
+        get { return SplashKit.WindowCaption(this); }
+    }
     public bool CloseRequested
     {
         get { return SplashKit.WindowCloseRequested(this); }
+    }
+    public bool HasBorder
+    {
+        get { return SplashKit.WindowHasBorder(this); }
     }
     public int Height
     {
         get { return SplashKit.WindowHeight(this); }
     }
+    public bool IsFullscreen
+    {
+        get { return SplashKit.WindowIsFullscreen(this); }
+    }
+    public Point2D Position
+    {
+        get { return SplashKit.WindowPosition(this); }
+    }
+    public Bitmap Icon
+    {
+          set { SplashKit.WindowSetIcon(this, value); }
+    }
     public int Width
     {
         get { return SplashKit.WindowWidth(this); }
+    }
+    public int X
+    {
+        get { return SplashKit.WindowX(this); }
+    }
+    public int Y
+    {
+        get { return SplashKit.WindowY(this); }
     }
 }
 public static class Audio{

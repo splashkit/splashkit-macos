@@ -18,7 +18,7 @@ execute = function (argv, callback) {
                   if (err1) {
                       callback(null, "I couldn't add in the SplashKit library... 😟 -- ${err1}")
                   } else {
-                      callback(null, '🎉  dotnet command run successfully 🎉')
+                      callback(null, '🎉  dotnet command ran successfully 🎉')
                   }
               })
           }
