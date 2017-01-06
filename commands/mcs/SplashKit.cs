@@ -15011,6 +15011,12 @@ public class Bitmap : PointerWrapper
     if (_ptrRegister.ContainsKey(ptr)) return _ptrRegister[ptr] as Bitmap;
     return new Bitmap(ptr);
   }
+
+    public Bitmap(string name, int width, int height) : base ( SplashKit.CreateBitmap(name, width, height), false )
+    { }
+
+    public Bitmap(string name, string filename) : base ( SplashKit.LoadBitmap(name, filename), false )
+    { }
     protected internal override void DoFree()
     {
         // System.Console.WriteLine("TODO: Free!");
@@ -15026,6 +15032,66 @@ public class Bitmap : PointerWrapper
     public void DrawCircle(Color clr, float x, float y, float radius, DrawingOptions opts)
     {
         SplashKit.BitmapDrawCircle(this, clr, x, y, radius, opts);
+    }
+
+
+    public Circle CellCircle(float x, float y)
+    {
+        return SplashKit.BitmapCellCircle(this, x, y);
+    }
+
+
+    public Circle CellCircle(Point2D pt)
+    {
+        return SplashKit.BitmapCellCircle(this, pt);
+    }
+
+
+    public Circle CellCircle(Point2D pt, float scale)
+    {
+        return SplashKit.BitmapCellCircle(this, pt, scale);
+    }
+
+
+    public Vector2D CellOffset(int cell)
+    {
+        return SplashKit.BitmapCellOffset(this, cell);
+    }
+
+
+    public Rectangle CellRectangle(Point2D pt)
+    {
+        return SplashKit.BitmapCellRectangle(this, pt);
+    }
+
+
+    public Circle Circle(Point2D pt)
+    {
+        return SplashKit.BitmapCircle(this, pt);
+    }
+
+
+    public Rectangle Rectangle(float x, float y)
+    {
+        return SplashKit.BitmapRectangle(this, x, y);
+    }
+
+
+    public Rectangle RectangleOfCell(int cell)
+    {
+        return SplashKit.BitmapRectangleOfCell(this, cell);
+    }
+
+
+    public void SetCellDetails(int width, int height, int columns, int rows, int count)
+    {
+        SplashKit.BitmapSetCellDetails(this, width, height, columns, rows, count);
+    }
+
+
+    public void Clear(Color clr)
+    {
+        SplashKit.ClearBitmap(this, clr);
     }
 
 
@@ -15046,6 +15112,78 @@ public class Bitmap : PointerWrapper
         SplashKit.FreeBitmap(this);
     }
 
+
+    public bool PixelDrawnAtPoint(Point2D pt)
+    {
+        return SplashKit.PixelDrawnAtPoint(this, pt);
+    }
+
+
+    public bool PixelDrawnAtPoint(float x, float y)
+    {
+        return SplashKit.PixelDrawnAtPoint(this, x, y);
+    }
+
+
+    public bool PixelDrawnAtPointInCell(int cell, Point2D pt)
+    {
+        return SplashKit.PixelDrawnAtPoint(this, cell, pt);
+    }
+
+
+    public bool PixelDrawnAtPoint(int cell, float x, float y)
+    {
+        return SplashKit.PixelDrawnAtPoint(this, cell, x, y);
+    }
+
+    public Point2D CellCenter
+    {
+        get { return SplashKit.BitmapCellCenter(this); }
+    }
+    public int CellColumns
+    {
+        get { return SplashKit.BitmapCellColumns(this); }
+    }
+    public int CellCount
+    {
+        get { return SplashKit.BitmapCellCount(this); }
+    }
+    public int CellHeight
+    {
+        get { return SplashKit.BitmapCellHeight(this); }
+    }
+    public Rectangle CellRectangle
+    {
+        get { return SplashKit.BitmapCellRectangle(this); }
+    }
+    public int CellRows
+    {
+        get { return SplashKit.BitmapCellRows(this); }
+    }
+    public int Width
+    {
+        get { return SplashKit.BitmapWidth(this); }
+    }
+    public Point2D Center
+    {
+        get { return SplashKit.BitmapCenter(this); }
+    }
+    public string Filename
+    {
+        get { return SplashKit.BitmapFilename(this); }
+    }
+    public int Height
+    {
+        get { return SplashKit.BitmapHeight(this); }
+    }
+    public string Name
+    {
+        get { return SplashKit.BitmapName(this); }
+    }
+    public Rectangle Rectangle
+    {
+        get { return SplashKit.BitmapRectangle(this); }
+    }
 }
 public class Display : PointerWrapper
 {
@@ -15492,20 +15630,6 @@ public static class Camera{
     {
         get { return SplashKit.VectorWorldToScreen(); }
     }
-}
-public static class Images{
-
-    public static void DrawBitmap(string name, float x, float y)
-    {
-        SplashKit.DrawBitmap(name, x, y);
-    }
-
-
-    public static void DrawBitmap(string name, float x, float y, DrawingOptions opts)
-    {
-        SplashKit.DrawBitmap(name, x, y, opts);
-    }
-
 }
 public static class Text{
 
