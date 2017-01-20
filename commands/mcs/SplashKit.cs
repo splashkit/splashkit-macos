@@ -1,7 +1,7 @@
 using System;
-using System.Text;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using __sklib_ptr = System.IntPtr;
 
 namespace SplashKitSDK
@@ -9,1123 +9,920 @@ namespace SplashKitSDK
   public static class SplashKit
   {
     
-    internal static int __skadapter__to_sklib_bool(bool v)
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_bool(bool v) { return v ? -1 : 0; }
+    
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static bool __skadapter__to_bool(int v) { return v != 0; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_ptr(IntPtr v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_ptr(IntPtr v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_int(int v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_int(int v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static short __skadapter__to_sklib_short(short v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static short __skadapter__to_short(short v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static long __skadapter__to_sklib_int64_t(long v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static long __skadapter__to_int64_t(long v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static float __skadapter__to_sklib_float(float v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static float __skadapter__to_float(float v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static double __skadapter__to_sklib_double(double v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static double __skadapter__to_double(double v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static byte __skadapter__to_sklib_byte(byte v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static byte __skadapter__to_byte(byte v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static char __skadapter__to_sklib_char(char v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static char __skadapter__to_char(char v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static byte __skadapter__to_sklib_unsigned_char(byte v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static byte __skadapter__to_unsigned_char(byte v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static uint __skadapter__to_sklib_unsigned_int(uint v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static uint __skadapter__to_unsigned_int(uint v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static ushort __skadapter__to_sklib_unsigned_short(ushort v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static ushort __skadapter__to_unsigned_short(ushort v) { return v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_key_code(KeyCode v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static KeyCode __skadapter__to_key_code(int v) { return (KeyCode)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_mouse_button(MouseButton v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static MouseButton __skadapter__to_mouse_button(int v) { return (MouseButton)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_connection_type(ConnectionType v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static ConnectionType __skadapter__to_connection_type(int v) { return (ConnectionType)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_resource_kind(ResourceKind v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static ResourceKind __skadapter__to_resource_kind(int v) { return (ResourceKind)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_collision_test_kind(CollisionTestKind v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static CollisionTestKind __skadapter__to_collision_test_kind(int v) { return (CollisionTestKind)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_sprite_event_kind(SpriteEventKind v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static SpriteEventKind __skadapter__to_sprite_event_kind(int v) { return (SpriteEventKind)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_drawing_dest(DrawingDest v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static DrawingDest __skadapter__to_drawing_dest(int v) { return (DrawingDest)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_font_style(FontStyle v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static FontStyle __skadapter__to_font_style(int v) { return (FontStyle)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_http_status_code(HttpStatusCode v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static HttpStatusCode __skadapter__to_http_status_code(int v) { return (HttpStatusCode)v; }
+
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static int __skadapter__to_sklib_http_method(HttpMethod v) { return (int)v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static HttpMethod __skadapter__to_http_method(int v) { return (HttpMethod)v; }
+
+    [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
+    private struct __sklib_string
     {
-      if (v) return -1;
-      else return 0;
+      internal IntPtr str;
+      internal int    size;
+      internal IntPtr ptr;
     }
 
-    internal static bool __skadapter__to_bool(int v)
+    private static __sklib_string __skadapter__to_sklib_string(string s)
     {
-      return v != 0;
+      int totalLength = s.Length + 1;
+      __sklib_string result;
+      result.size = totalLength;
+
+      result.str = Marshal.AllocHGlobal(totalLength);
+
+      Marshal.Copy(System.Text.Encoding.ASCII.GetBytes(s), 0, result.str, s.Length);
+      Marshal.WriteByte(result.str, s.Length, 0);
+
+      result.ptr = IntPtr.Zero;
+      return result;
     }
 
-    internal static IntPtr __skadapter__to_sklib_ptr(IntPtr v) { return v; }
-    internal static IntPtr __skadapter__to_ptr(IntPtr v) { return v; }
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_string", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__free__sklib_string(__sklib_string s);
 
-    internal static int __skadapter__to_sklib_int(int v)
+    private static void __skadapter__free__sklib_string(ref __sklib_string s)
     {
-      return v;
+      Marshal.FreeHGlobal(s.str);
+      s.str = IntPtr.Zero;
     }
 
-    internal static int __skadapter__to_int(int v)
+    private static string __skadapter__to_string(__sklib_string s)
     {
-      return v;
-    }
+      byte[] bytes = new byte[s.size];
+      Marshal.Copy(s.str, bytes, 0, bytes.Length);
 
-    internal static short __skadapter__to_sklib_short(short v)
-    {
-      return v;
+      string result = System.Text.Encoding.ASCII.GetString (bytes);
+      __sklib__free__sklib_string(s);
+      return result;
     }
-
-    internal static short __skadapter__to_short(short v)
+    private static __sklib_matrix_2d __skadapter__to_sklib_matrix_2d(Matrix2D v)
     {
-      return v;
-    }
-
-    internal static long __skadapter__to_sklib_int64_t(long v)
-    {
-      return v;
-    }
-
-    internal static long __skadapter__to_int64_t(long v)
-    {
-      return v;
-    }
-
-    internal static float __skadapter__to_sklib_float(float v)
-    {
-      return v;
-    }
-
-    internal static float __skadapter__to_float(float v)
-    {
-      return v;
-    }
-
-    internal static double __skadapter__to_sklib_double(double v)
-    {
-      return v;
-    }
-
-    internal static double __skadapter__to_double(double v)
-    {
-      return v;
-    }
-
-    internal static byte __skadapter__to_sklib_byte(byte v)
-    {
-      return v;
-    }
-
-    internal static byte __skadapter__to_byte(byte v)
-    {
-      return v;
-    }
-
-    internal static char __skadapter__to_sklib_char(char v)
-    {
-      return v;
-    }
-
-    internal static char __skadapter__to_char(char v)
-    {
-      return v;
-    }
-
-    internal static byte __skadapter__to_sklib_unsigned_char(byte v)
-    {
-      return v;
-    }
-
-    internal static byte __skadapter__to_unsigned_char(byte v)
-    {
-      return v;
-    }
-
-    internal static uint __skadapter__to_sklib_unsigned_int(uint v)
-    {
-      return v;
-    }
-
-    internal static uint __skadapter__to_unsigned_int(uint v)
-    {
-      return v;
-    }
-
-    internal static ushort __skadapter__to_sklib_unsigned_short(ushort v)
-    {
-      return v;
-    }
-
-    internal static ushort __skadapter__to_unsigned_short(ushort v)
-    {
-      return v;
-    }
-
-    internal static int __skadapter__to_sklib_key_code(KeyCode v)
-    {
-        return (int)v;
-    }
-    internal static KeyCode __skadapter__to_key_code(int v)
-    {
-        return (KeyCode)v;
-    }
-
-    internal static int __skadapter__to_sklib_mouse_button(MouseButton v)
-    {
-        return (int)v;
-    }
-    internal static MouseButton __skadapter__to_mouse_button(int v)
-    {
-        return (MouseButton)v;
-    }
-
-    internal static int __skadapter__to_sklib_connection_type(ConnectionType v)
-    {
-        return (int)v;
-    }
-    internal static ConnectionType __skadapter__to_connection_type(int v)
-    {
-        return (ConnectionType)v;
-    }
-
-    internal static int __skadapter__to_sklib_resource_kind(ResourceKind v)
-    {
-        return (int)v;
-    }
-    internal static ResourceKind __skadapter__to_resource_kind(int v)
-    {
-        return (ResourceKind)v;
-    }
-
-    internal static int __skadapter__to_sklib_collision_test_kind(CollisionTestKind v)
-    {
-        return (int)v;
-    }
-    internal static CollisionTestKind __skadapter__to_collision_test_kind(int v)
-    {
-        return (CollisionTestKind)v;
-    }
-
-    internal static int __skadapter__to_sklib_sprite_event_kind(SpriteEventKind v)
-    {
-        return (int)v;
-    }
-    internal static SpriteEventKind __skadapter__to_sprite_event_kind(int v)
-    {
-        return (SpriteEventKind)v;
-    }
-
-    internal static int __skadapter__to_sklib_drawing_dest(DrawingDest v)
-    {
-        return (int)v;
-    }
-    internal static DrawingDest __skadapter__to_drawing_dest(int v)
-    {
-        return (DrawingDest)v;
-    }
-
-    internal static int __skadapter__to_sklib_font_style(FontStyle v)
-    {
-        return (int)v;
-    }
-    internal static FontStyle __skadapter__to_font_style(int v)
-    {
-        return (FontStyle)v;
-    }
-
-    internal static int __skadapter__to_sklib_http_status_code(HttpStatusCode v)
-    {
-        return (int)v;
-    }
-    internal static HttpStatusCode __skadapter__to_http_status_code(int v)
-    {
-        return (HttpStatusCode)v;
-    }
-
-    internal static int __skadapter__to_sklib_http_method(HttpMethod v)
-    {
-        return (int)v;
-    }
-    internal static HttpMethod __skadapter__to_http_method(int v)
-    {
-        return (HttpMethod)v;
-    }
-
-  [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
-  internal struct __sklib_string
-  {
-    internal IntPtr str;
-    internal int    size;
-    internal IntPtr ptr;
-  }
-
-  internal static __sklib_string __skadapter__to_sklib_string(string s)
-  {
-    int totalLength = s.Length + 1;
-    __sklib_string result;
-    result.size = totalLength;
-
-    result.str = Marshal.AllocHGlobal(totalLength);
-
-    Marshal.Copy(System.Text.Encoding.ASCII.GetBytes(s), 0, result.str, s.Length);
-    Marshal.WriteByte(result.str, s.Length, 0);
-
-    result.ptr = IntPtr.Zero;
-    return result;
-  }
-
-  [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_string", CharSet=CharSet.Ansi)]
-  internal static extern void __sklib__free__sklib_string(__sklib_string s);
-
-  internal static void __skadapter__free__sklib_string(ref __sklib_string s)
-  {
-    Marshal.FreeHGlobal(s.str);
-    s.str = IntPtr.Zero;
-  }
-
-  internal static string __skadapter__to_string(__sklib_string s)
-  {
-    byte[] bytes = new byte[s.size];
-    Marshal.Copy(s.str, bytes, 0, bytes.Length);
-
-    string result = System.Text.Encoding.ASCII.GetString (bytes);
-    __sklib__free__sklib_string(s);
-    return result;
-  }
-  internal static __sklib_matrix_2d __skadapter__to_sklib_matrix_2d(Matrix2D v)
-  {
-      __sklib_matrix_2d __skreturn;
-      __skreturn.elements = new double[9];
-      __skreturn.elements[0] = __skadapter__to_sklib_double(v.elements[0,0]);
-      __skreturn.elements[1] = __skadapter__to_sklib_double(v.elements[0,1]);
-      __skreturn.elements[2] = __skadapter__to_sklib_double(v.elements[0,2]);
-      __skreturn.elements[3] = __skadapter__to_sklib_double(v.elements[1,0]);
-      __skreturn.elements[4] = __skadapter__to_sklib_double(v.elements[1,1]);
-      __skreturn.elements[5] = __skadapter__to_sklib_double(v.elements[1,2]);
-      __skreturn.elements[6] = __skadapter__to_sklib_double(v.elements[2,0]);
-      __skreturn.elements[7] = __skadapter__to_sklib_double(v.elements[2,1]);
-      __skreturn.elements[8] = __skadapter__to_sklib_double(v.elements[2,2]);
-      return __skreturn;
-  }
-  internal static Matrix2D __skadapter__to_matrix_2d(__sklib_matrix_2d v)
-  {
-      Matrix2D __skreturn;
-      __skreturn.elements = new double[3,3];
-      __skreturn.elements[0,0] = __skadapter__to_double(v.elements[0]);
-      __skreturn.elements[0,1] = __skadapter__to_double(v.elements[1]);
-      __skreturn.elements[0,2] = __skadapter__to_double(v.elements[2]);
-      __skreturn.elements[1,0] = __skadapter__to_double(v.elements[3]);
-      __skreturn.elements[1,1] = __skadapter__to_double(v.elements[4]);
-      __skreturn.elements[1,2] = __skadapter__to_double(v.elements[5]);
-      __skreturn.elements[2,0] = __skadapter__to_double(v.elements[6]);
-      __skreturn.elements[2,1] = __skadapter__to_double(v.elements[7]);
-      __skreturn.elements[2,2] = __skadapter__to_double(v.elements[8]);
-      return __skreturn;
-  }
-
-  internal static __sklib_point_2d __skadapter__to_sklib_point_2d(Point2D v)
-  {
-      __sklib_point_2d __skreturn;
-      __skreturn.x = __skadapter__to_sklib_float(v.x);
-        __skreturn.y = __skadapter__to_sklib_float(v.y);
+        __sklib_matrix_2d __skreturn;
+        __skreturn.elements = new double[9];
+        __skreturn.elements[0] = __skadapter__to_sklib_double(v.elements[0,0]);
+        __skreturn.elements[1] = __skadapter__to_sklib_double(v.elements[0,1]);
+        __skreturn.elements[2] = __skadapter__to_sklib_double(v.elements[0,2]);
+        __skreturn.elements[3] = __skadapter__to_sklib_double(v.elements[1,0]);
+        __skreturn.elements[4] = __skadapter__to_sklib_double(v.elements[1,1]);
+        __skreturn.elements[5] = __skadapter__to_sklib_double(v.elements[1,2]);
+        __skreturn.elements[6] = __skadapter__to_sklib_double(v.elements[2,0]);
+        __skreturn.elements[7] = __skadapter__to_sklib_double(v.elements[2,1]);
+        __skreturn.elements[8] = __skadapter__to_sklib_double(v.elements[2,2]);
         return __skreturn;
-  }
-  internal static Point2D __skadapter__to_point_2d(__sklib_point_2d v)
-  {
-      Point2D __skreturn;
-      __skreturn.x = __skadapter__to_float(v.x);
-      __skreturn.y = __skadapter__to_float(v.y);
-      return __skreturn;
-  }
-
-  internal static __sklib_circle __skadapter__to_sklib_circle(Circle v)
-  {
-      __sklib_circle __skreturn;
-      __skreturn.center = __skadapter__to_sklib_point_2d(v.center);
-        __skreturn.radius = __skadapter__to_sklib_float(v.radius);
+    }
+    private static Matrix2D __skadapter__to_matrix_2d(__sklib_matrix_2d v)
+    {
+        Matrix2D __skreturn;
+        __skreturn.elements = new double[3,3];
+        __skreturn.elements[0,0] = __skadapter__to_double(v.elements[0]);
+        __skreturn.elements[0,1] = __skadapter__to_double(v.elements[1]);
+        __skreturn.elements[0,2] = __skadapter__to_double(v.elements[2]);
+        __skreturn.elements[1,0] = __skadapter__to_double(v.elements[3]);
+        __skreturn.elements[1,1] = __skadapter__to_double(v.elements[4]);
+        __skreturn.elements[1,2] = __skadapter__to_double(v.elements[5]);
+        __skreturn.elements[2,0] = __skadapter__to_double(v.elements[6]);
+        __skreturn.elements[2,1] = __skadapter__to_double(v.elements[7]);
+        __skreturn.elements[2,2] = __skadapter__to_double(v.elements[8]);
         return __skreturn;
-  }
-  internal static Circle __skadapter__to_circle(__sklib_circle v)
-  {
-      Circle __skreturn;
-      __skreturn.center = __skadapter__to_point_2d(v.center);
-      __skreturn.radius = __skadapter__to_float(v.radius);
-      return __skreturn;
-  }
+    }
 
-  internal static __sklib_color __skadapter__to_sklib_color(Color v)
-  {
-      __sklib_color __skreturn;
-      __skreturn.r = __skadapter__to_sklib_float(v.r);
-        __skreturn.g = __skadapter__to_sklib_float(v.g);
-        __skreturn.b = __skadapter__to_sklib_float(v.b);
-        __skreturn.a = __skadapter__to_sklib_float(v.a);
+    private static __sklib_point_2d __skadapter__to_sklib_point_2d(Point2D v)
+    {
+        __sklib_point_2d __skreturn;
+        __skreturn.x = __skadapter__to_sklib_double(v.x);
+          __skreturn.y = __skadapter__to_sklib_double(v.y);
+          return __skreturn;
+    }
+    private static Point2D __skadapter__to_point_2d(__sklib_point_2d v)
+    {
+        Point2D __skreturn;
+        __skreturn.x = __skadapter__to_double(v.x);
+        __skreturn.y = __skadapter__to_double(v.y);
         return __skreturn;
-  }
-  internal static Color __skadapter__to_color(__sklib_color v)
-  {
-      Color __skreturn;
-      __skreturn.r = __skadapter__to_float(v.r);
-      __skreturn.g = __skadapter__to_float(v.g);
-      __skreturn.b = __skadapter__to_float(v.b);
-      __skreturn.a = __skadapter__to_float(v.a);
-      return __skreturn;
-  }
+    }
 
-  internal static __sklib_rectangle __skadapter__to_sklib_rectangle(Rectangle v)
-  {
-      __sklib_rectangle __skreturn;
-      __skreturn.x = __skadapter__to_sklib_float(v.x);
-        __skreturn.y = __skadapter__to_sklib_float(v.y);
-        __skreturn.width = __skadapter__to_sklib_float(v.width);
-        __skreturn.height = __skadapter__to_sklib_float(v.height);
+    private static __sklib_circle __skadapter__to_sklib_circle(Circle v)
+    {
+        __sklib_circle __skreturn;
+        __skreturn.center = __skadapter__to_sklib_point_2d(v.center);
+          __skreturn.radius = __skadapter__to_sklib_double(v.radius);
+          return __skreturn;
+    }
+    private static Circle __skadapter__to_circle(__sklib_circle v)
+    {
+        Circle __skreturn;
+        __skreturn.center = __skadapter__to_point_2d(v.center);
+        __skreturn.radius = __skadapter__to_double(v.radius);
         return __skreturn;
-  }
-  internal static Rectangle __skadapter__to_rectangle(__sklib_rectangle v)
-  {
-      Rectangle __skreturn;
-      __skreturn.x = __skadapter__to_float(v.x);
-      __skreturn.y = __skadapter__to_float(v.y);
-      __skreturn.width = __skadapter__to_float(v.width);
-      __skreturn.height = __skadapter__to_float(v.height);
-      return __skreturn;
-  }
+    }
 
-  internal static __sklib_drawing_options __skadapter__to_sklib_drawing_options(DrawingOptions v)
-  {
-      __sklib_drawing_options __skreturn;
-      __skreturn.dest = __skadapter__to_sklib_ptr(v.dest);
-        __skreturn.scaleX = __skadapter__to_sklib_float(v.scaleX);
-        __skreturn.scaleY = __skadapter__to_sklib_float(v.scaleY);
-        __skreturn.angle = __skadapter__to_sklib_float(v.angle);
-        __skreturn.anchorOffsetX = __skadapter__to_sklib_float(v.anchorOffsetX);
-        __skreturn.anchorOffsetY = __skadapter__to_sklib_float(v.anchorOffsetY);
-        __skreturn.flipX = __skadapter__to_sklib_bool(v.flipX);
-        __skreturn.flipY = __skadapter__to_sklib_bool(v.flipY);
-        __skreturn.isPart = __skadapter__to_sklib_bool(v.isPart);
-        __skreturn.part = __skadapter__to_sklib_rectangle(v.part);
-        __skreturn.camera = __skadapter__to_sklib_drawing_dest(v.camera);
-        __skreturn.lineWidth = __skadapter__to_sklib_int(v.lineWidth);
-        __skreturn.anim = __skadapter__to_sklib_animation(v.anim);
+    private static __sklib_color __skadapter__to_sklib_color(Color v)
+    {
+        __sklib_color __skreturn;
+        __skreturn.r = __skadapter__to_sklib_float(v.r);
+          __skreturn.g = __skadapter__to_sklib_float(v.g);
+          __skreturn.b = __skadapter__to_sklib_float(v.b);
+          __skreturn.a = __skadapter__to_sklib_float(v.a);
+          return __skreturn;
+    }
+    private static Color __skadapter__to_color(__sklib_color v)
+    {
+        Color __skreturn;
+        __skreturn.r = __skadapter__to_float(v.r);
+        __skreturn.g = __skadapter__to_float(v.g);
+        __skreturn.b = __skadapter__to_float(v.b);
+        __skreturn.a = __skadapter__to_float(v.a);
         return __skreturn;
-  }
-  internal static DrawingOptions __skadapter__to_drawing_options(__sklib_drawing_options v)
-  {
-      DrawingOptions __skreturn;
-      __skreturn.dest = __skadapter__to_ptr(v.dest);
-      __skreturn.scaleX = __skadapter__to_float(v.scaleX);
-      __skreturn.scaleY = __skadapter__to_float(v.scaleY);
-      __skreturn.angle = __skadapter__to_float(v.angle);
-      __skreturn.anchorOffsetX = __skadapter__to_float(v.anchorOffsetX);
-      __skreturn.anchorOffsetY = __skadapter__to_float(v.anchorOffsetY);
-      __skreturn.flipX = __skadapter__to_bool(v.flipX);
-      __skreturn.flipY = __skadapter__to_bool(v.flipY);
-      __skreturn.isPart = __skadapter__to_bool(v.isPart);
-      __skreturn.part = __skadapter__to_rectangle(v.part);
-      __skreturn.camera = __skadapter__to_drawing_dest(v.camera);
-      __skreturn.lineWidth = __skadapter__to_int(v.lineWidth);
-      __skreturn.anim = __skadapter__to_animation(v.anim);
-      return __skreturn;
-  }
+    }
 
-  internal static __sklib_line __skadapter__to_sklib_line(Line v)
-  {
-      __sklib_line __skreturn;
-      __skreturn.startPoint = __skadapter__to_sklib_point_2d(v.startPoint);
-        __skreturn.endPoint = __skadapter__to_sklib_point_2d(v.endPoint);
+    private static __sklib_rectangle __skadapter__to_sklib_rectangle(Rectangle v)
+    {
+        __sklib_rectangle __skreturn;
+        __skreturn.x = __skadapter__to_sklib_double(v.x);
+          __skreturn.y = __skadapter__to_sklib_double(v.y);
+          __skreturn.width = __skadapter__to_sklib_double(v.width);
+          __skreturn.height = __skadapter__to_sklib_double(v.height);
+          return __skreturn;
+    }
+    private static Rectangle __skadapter__to_rectangle(__sklib_rectangle v)
+    {
+        Rectangle __skreturn;
+        __skreturn.x = __skadapter__to_double(v.x);
+        __skreturn.y = __skadapter__to_double(v.y);
+        __skreturn.width = __skadapter__to_double(v.width);
+        __skreturn.height = __skadapter__to_double(v.height);
         return __skreturn;
-  }
-  internal static Line __skadapter__to_line(__sklib_line v)
-  {
-      Line __skreturn;
-      __skreturn.startPoint = __skadapter__to_point_2d(v.startPoint);
-      __skreturn.endPoint = __skadapter__to_point_2d(v.endPoint);
-      return __skreturn;
-  }
+    }
 
-  internal static __sklib_quad __skadapter__to_sklib_quad(Quad v)
-  {
-      __sklib_quad __skreturn;
-      __skreturn.points = new __sklib_point_2d[4];
-      __skreturn.points[0] = __skadapter__to_sklib_point_2d(v.points[0]);
-      __skreturn.points[1] = __skadapter__to_sklib_point_2d(v.points[1]);
-      __skreturn.points[2] = __skadapter__to_sklib_point_2d(v.points[2]);
-      __skreturn.points[3] = __skadapter__to_sklib_point_2d(v.points[3]);
-      return __skreturn;
-  }
-  internal static Quad __skadapter__to_quad(__sklib_quad v)
-  {
-      Quad __skreturn;
-      __skreturn.points = new Point2D[4];
-      __skreturn.points[0] = __skadapter__to_point_2d(v.points[0]);
-      __skreturn.points[1] = __skadapter__to_point_2d(v.points[1]);
-      __skreturn.points[2] = __skadapter__to_point_2d(v.points[2]);
-      __skreturn.points[3] = __skadapter__to_point_2d(v.points[3]);
-      return __skreturn;
-  }
-
-  internal static __sklib_triangle __skadapter__to_sklib_triangle(Triangle v)
-  {
-      __sklib_triangle __skreturn;
-      __skreturn.points = new __sklib_point_2d[3];
-      __skreturn.points[0] = __skadapter__to_sklib_point_2d(v.points[0]);
-      __skreturn.points[1] = __skadapter__to_sklib_point_2d(v.points[1]);
-      __skreturn.points[2] = __skadapter__to_sklib_point_2d(v.points[2]);
-      return __skreturn;
-  }
-  internal static Triangle __skadapter__to_triangle(__sklib_triangle v)
-  {
-      Triangle __skreturn;
-      __skreturn.points = new Point2D[3];
-      __skreturn.points[0] = __skadapter__to_point_2d(v.points[0]);
-      __skreturn.points[1] = __skadapter__to_point_2d(v.points[1]);
-      __skreturn.points[2] = __skadapter__to_point_2d(v.points[2]);
-      return __skreturn;
-  }
-
-  internal static __sklib_vector_2d __skadapter__to_sklib_vector_2d(Vector2D v)
-  {
-      __sklib_vector_2d __skreturn;
-      __skreturn.x = __skadapter__to_sklib_double(v.x);
-        __skreturn.y = __skadapter__to_sklib_double(v.y);
+    private static __sklib_drawing_options __skadapter__to_sklib_drawing_options(DrawingOptions v)
+    {
+        __sklib_drawing_options __skreturn;
+        __skreturn.dest = __skadapter__to_sklib_ptr(v.dest);
+          __skreturn.scaleX = __skadapter__to_sklib_float(v.scaleX);
+          __skreturn.scaleY = __skadapter__to_sklib_float(v.scaleY);
+          __skreturn.angle = __skadapter__to_sklib_float(v.angle);
+          __skreturn.anchorOffsetX = __skadapter__to_sklib_float(v.anchorOffsetX);
+          __skreturn.anchorOffsetY = __skadapter__to_sklib_float(v.anchorOffsetY);
+          __skreturn.flipX = __skadapter__to_sklib_bool(v.flipX);
+          __skreturn.flipY = __skadapter__to_sklib_bool(v.flipY);
+          __skreturn.isPart = __skadapter__to_sklib_bool(v.isPart);
+          __skreturn.part = __skadapter__to_sklib_rectangle(v.part);
+          __skreturn.camera = __skadapter__to_sklib_drawing_dest(v.camera);
+          __skreturn.lineWidth = __skadapter__to_sklib_int(v.lineWidth);
+          __skreturn.anim = __skadapter__to_sklib_animation(v.anim);
+          return __skreturn;
+    }
+    private static DrawingOptions __skadapter__to_drawing_options(__sklib_drawing_options v)
+    {
+        DrawingOptions __skreturn;
+        __skreturn.dest = __skadapter__to_ptr(v.dest);
+        __skreturn.scaleX = __skadapter__to_float(v.scaleX);
+        __skreturn.scaleY = __skadapter__to_float(v.scaleY);
+        __skreturn.angle = __skadapter__to_float(v.angle);
+        __skreturn.anchorOffsetX = __skadapter__to_float(v.anchorOffsetX);
+        __skreturn.anchorOffsetY = __skadapter__to_float(v.anchorOffsetY);
+        __skreturn.flipX = __skadapter__to_bool(v.flipX);
+        __skreturn.flipY = __skadapter__to_bool(v.flipY);
+        __skreturn.isPart = __skadapter__to_bool(v.isPart);
+        __skreturn.part = __skadapter__to_rectangle(v.part);
+        __skreturn.camera = __skadapter__to_drawing_dest(v.camera);
+        __skreturn.lineWidth = __skadapter__to_int(v.lineWidth);
+        __skreturn.anim = __skadapter__to_animation(v.anim);
         return __skreturn;
-  }
-  internal static Vector2D __skadapter__to_vector_2d(__sklib_vector_2d v)
-  {
-      Vector2D __skreturn;
-      __skreturn.x = __skadapter__to_double(v.x);
-      __skreturn.y = __skadapter__to_double(v.y);
-      return __skreturn;
-  }
+    }
+
+    private static __sklib_line __skadapter__to_sklib_line(Line v)
+    {
+        __sklib_line __skreturn;
+        __skreturn.startPoint = __skadapter__to_sklib_point_2d(v.startPoint);
+          __skreturn.endPoint = __skadapter__to_sklib_point_2d(v.endPoint);
+          return __skreturn;
+    }
+    private static Line __skadapter__to_line(__sklib_line v)
+    {
+        Line __skreturn;
+        __skreturn.startPoint = __skadapter__to_point_2d(v.startPoint);
+        __skreturn.endPoint = __skadapter__to_point_2d(v.endPoint);
+        return __skreturn;
+    }
+
+    private static __sklib_quad __skadapter__to_sklib_quad(Quad v)
+    {
+        __sklib_quad __skreturn;
+        __skreturn.points = new __sklib_point_2d[4];
+        __skreturn.points[0] = __skadapter__to_sklib_point_2d(v.points[0]);
+        __skreturn.points[1] = __skadapter__to_sklib_point_2d(v.points[1]);
+        __skreturn.points[2] = __skadapter__to_sklib_point_2d(v.points[2]);
+        __skreturn.points[3] = __skadapter__to_sklib_point_2d(v.points[3]);
+        return __skreturn;
+    }
+    private static Quad __skadapter__to_quad(__sklib_quad v)
+    {
+        Quad __skreturn;
+        __skreturn.points = new Point2D[4];
+        __skreturn.points[0] = __skadapter__to_point_2d(v.points[0]);
+        __skreturn.points[1] = __skadapter__to_point_2d(v.points[1]);
+        __skreturn.points[2] = __skadapter__to_point_2d(v.points[2]);
+        __skreturn.points[3] = __skadapter__to_point_2d(v.points[3]);
+        return __skreturn;
+    }
+
+    private static __sklib_triangle __skadapter__to_sklib_triangle(Triangle v)
+    {
+        __sklib_triangle __skreturn;
+        __skreturn.points = new __sklib_point_2d[3];
+        __skreturn.points[0] = __skadapter__to_sklib_point_2d(v.points[0]);
+        __skreturn.points[1] = __skadapter__to_sklib_point_2d(v.points[1]);
+        __skreturn.points[2] = __skadapter__to_sklib_point_2d(v.points[2]);
+        return __skreturn;
+    }
+    private static Triangle __skadapter__to_triangle(__sklib_triangle v)
+    {
+        Triangle __skreturn;
+        __skreturn.points = new Point2D[3];
+        __skreturn.points[0] = __skadapter__to_point_2d(v.points[0]);
+        __skreturn.points[1] = __skadapter__to_point_2d(v.points[1]);
+        __skreturn.points[2] = __skadapter__to_point_2d(v.points[2]);
+        return __skreturn;
+    }
+
+    private static __sklib_vector_2d __skadapter__to_sklib_vector_2d(Vector2D v)
+    {
+        __sklib_vector_2d __skreturn;
+        __skreturn.x = __skadapter__to_sklib_double(v.x);
+          __skreturn.y = __skadapter__to_sklib_double(v.y);
+          return __skreturn;
+    }
+    private static Vector2D __skadapter__to_vector_2d(__sklib_vector_2d v)
+    {
+        Vector2D __skreturn;
+        __skreturn.x = __skadapter__to_double(v.x);
+        __skreturn.y = __skadapter__to_double(v.y);
+        return __skreturn;
+    }
 
 // Based on: https://social.msdn.microsoft.com/Forums/vstudio/en-US/0f5ba27d-92c2-4b41-b717-16e759b68087/how-to-marshal-an-array-of-struct-pointer?forum=csharpgeneral
-private static IntPtr ToIntPtr<T>(T[] items)
-{
-    IntPtr result, tmp = IntPtr.Zero;
-
-    int length = Marshal.SizeOf<T>();
-    int totalLength = length * items.Length;
-
-    result = Marshal.AllocHGlobal(totalLength);
-
-    int start = 0;
-    byte[] data = new byte[totalLength];   //prepare to get the whole items array to this bytes array
-    foreach (T item in items)
+    private static IntPtr ToIntPtr<T>(T[] items)
     {
-        tmp = Marshal.AllocHGlobal(length);
-        Marshal.StructureToPtr(item, tmp, false);
+        IntPtr result, tmp = IntPtr.Zero;
 
-        Marshal.Copy(tmp, data, start, length);
-        start += length;
+        int length = Marshal.SizeOf<T>();
+        int totalLength = length * items.Length;
+
+        result = Marshal.AllocHGlobal(totalLength);
+
+        int start = 0;
+        byte[] data = new byte[totalLength];   //prepare to get the whole items array to this bytes array
+        foreach (T item in items)
+        {
+            tmp = Marshal.AllocHGlobal(length);
+            Marshal.StructureToPtr(item, tmp, false);
+
+            Marshal.Copy(tmp, data, start, length);
+            start += length;
+            Marshal.FreeHGlobal(tmp);
+        }
+        Marshal.Copy(data, 0, result, totalLength);
+
+        return result;
+    }
+
+    private static T[] FromIntPtr<T>(IntPtr ptr, int count)
+    {
+        T[] result = new T[count];
+        IntPtr tmp;
+
+        int size = Marshal.SizeOf<T>();
+        int totalSize = size * count;
+        byte[] data = new byte[totalSize];
+
+        Marshal.Copy(ptr, data, 0, totalSize);
+
+        tmp = Marshal.AllocHGlobal(size);
+
+        for (int i = 0; i < count; i++)
+        {
+          Marshal.Copy(data, i * size, tmp, size);
+          result[i] = Marshal.PtrToStructure<T>(tmp);
+        }
+
         Marshal.FreeHGlobal(tmp);
+        return result;
     }
-    Marshal.Copy(data, 0, result, totalLength);
 
-    return result;
-}
 
-private static T[] FromIntPtr<T>(IntPtr ptr, int count)
-{
-    T[] result = new T[count];
-    IntPtr tmp;
+    [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
+    private struct __sklib_vector_line    {
+      internal IntPtr _data_from_app;
+      public __sklib_line[] data_from_app
+      {
+        set
+        {
+          _data_from_app = ToIntPtr(value);
+        }
+      }
+      public uint size_from_app;
+      private IntPtr _data_from_lib;
+      public __sklib_line[] data_from_lib
+      {
+        get
+        {
+          return FromIntPtr<__sklib_line>(_data_from_lib, (int)size_from_lib);
+        }
+      }
+      public uint size_from_lib;
+    }
 
-    int size = Marshal.SizeOf<T>();
-    int totalSize = size * count;
-    byte[] data = new byte[totalSize];
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_line", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__free__sklib_vector_line(__sklib_vector_line v);
 
-    Marshal.Copy(ptr, data, 0, totalSize);
-
-    tmp = Marshal.AllocHGlobal(size);
-
-    for (int i = 0; i < count; i++)
+    private static void __skadapter__free__sklib_vector_line(ref __sklib_vector_line v)
     {
-      Marshal.Copy(data, i * size, tmp, size);
-      result[i] = Marshal.PtrToStructure<T>(tmp);
+      System.Console.WriteLine("Freeing data");
+      Marshal.FreeHGlobal(v._data_from_app);
     }
-
-    Marshal.FreeHGlobal(tmp);
-    return result;
-}
-
-
-[ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
-internal struct __sklib_vector_line{
-  internal IntPtr _data_from_app;
-  public __sklib_line[] data_from_app
-  {
-    set
+    private static __sklib_vector_line __skadapter__to_sklib_vector_line(List<Line> v)
     {
-      _data_from_app = ToIntPtr(value);
+      int i = 0;
+      __sklib_vector_line result = new __sklib_vector_line();
+
+      result.size_from_lib = 0;
+      result.size_from_app = (uint)v.Count;
+      __sklib_line[] tmp = new __sklib_line[result.size_from_app];
+
+      foreach(Line d in v)
+      {
+        tmp[i] = __skadapter__to_sklib_line(v[i]);
+        i++;
+      }
+
+      result.data_from_app = tmp;
+      return result;
     }
-  }
-  public uint size_from_app;
-  private IntPtr _data_from_lib;
-  public __sklib_line[] data_from_lib
-  {
-    get
+    private static List<Line> __skadapter__to_vector_line(__sklib_vector_line v)
     {
-      return FromIntPtr<__sklib_line>(_data_from_lib, (int)size_from_lib);
+      List<Line> result = new List<Line>();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        result.Add(__skadapter__to_line(v.data_from_lib[i]));
+      }
+      __sklib__free__sklib_vector_line(v);
+      return result;
     }
-  }
-  public uint size_from_lib;
-}
-[DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_line", CharSet=CharSet.Ansi)]
-internal static extern void __sklib__free__sklib_vector_line(__sklib_vector_line v);
-
-internal static void __skadapter__free__sklib_vector_line(ref __sklib_vector_line v)
-{
-  System.Console.WriteLine("Freeing data");
-  Marshal.FreeHGlobal(v._data_from_app);
-}
-internal static __sklib_vector_line __skadapter__to_sklib_vector_line(List<Line> v)
-{
-  int i = 0;
-  __sklib_vector_line result = new __sklib_vector_line();
-
-  result.size_from_lib = 0;
-  result.size_from_app = (uint)v.Count;
-  __sklib_line[] tmp = new __sklib_line[result.size_from_app];
-
-  foreach(Line d in v)
-  {
-    tmp[i] = __skadapter__to_sklib_line(v[i]);
-    i++;
-  }
-
-  result.data_from_app = tmp;
-  return result;
-}
-internal static List<Line> __skadapter__to_vector_line(__sklib_vector_line v)
-{
-  List<Line> result = new List<Line>();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    result.Add(__skadapter__to_line(v.data_from_lib[i]));
-  }
-  __sklib__free__sklib_vector_line(v);
-  return result;
-}
-internal static void __skadapter__update_from_vector_line(ref __sklib_vector_line v, List<Line> __skreturn)
-{
-  __skreturn.Clear();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    __skreturn.Add(__skadapter__to_line(v.data_from_lib[i]));
-  }
-    __sklib__free__sklib_vector_line(v);
-}
-
-[ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
-internal struct __sklib_vector_triangle{
-  internal IntPtr _data_from_app;
-  public __sklib_triangle[] data_from_app
-  {
-    set
+    private static void __skadapter__update_from_vector_line(ref __sklib_vector_line v, List<Line> __skreturn)
     {
-      _data_from_app = ToIntPtr(value);
+      __skreturn.Clear();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        __skreturn.Add(__skadapter__to_line(v.data_from_lib[i]));
+      }
+            __sklib__free__sklib_vector_line(v);
     }
-  }
-  public uint size_from_app;
-  private IntPtr _data_from_lib;
-  public __sklib_triangle[] data_from_lib
-  {
-    get
+
+    [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
+    private struct __sklib_vector_triangle    {
+      internal IntPtr _data_from_app;
+      public __sklib_triangle[] data_from_app
+      {
+        set
+        {
+          _data_from_app = ToIntPtr(value);
+        }
+      }
+      public uint size_from_app;
+      private IntPtr _data_from_lib;
+      public __sklib_triangle[] data_from_lib
+      {
+        get
+        {
+          return FromIntPtr<__sklib_triangle>(_data_from_lib, (int)size_from_lib);
+        }
+      }
+      public uint size_from_lib;
+    }
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_triangle", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__free__sklib_vector_triangle(__sklib_vector_triangle v);
+
+    private static void __skadapter__free__sklib_vector_triangle(ref __sklib_vector_triangle v)
     {
-      return FromIntPtr<__sklib_triangle>(_data_from_lib, (int)size_from_lib);
+      System.Console.WriteLine("Freeing data");
+      Marshal.FreeHGlobal(v._data_from_app);
     }
-  }
-  public uint size_from_lib;
-}
-[DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_triangle", CharSet=CharSet.Ansi)]
-internal static extern void __sklib__free__sklib_vector_triangle(__sklib_vector_triangle v);
-
-internal static void __skadapter__free__sklib_vector_triangle(ref __sklib_vector_triangle v)
-{
-  System.Console.WriteLine("Freeing data");
-  Marshal.FreeHGlobal(v._data_from_app);
-}
-internal static __sklib_vector_triangle __skadapter__to_sklib_vector_triangle(List<Triangle> v)
-{
-  int i = 0;
-  __sklib_vector_triangle result = new __sklib_vector_triangle();
-
-  result.size_from_lib = 0;
-  result.size_from_app = (uint)v.Count;
-  __sklib_triangle[] tmp = new __sklib_triangle[result.size_from_app];
-
-  foreach(Triangle d in v)
-  {
-    tmp[i] = __skadapter__to_sklib_triangle(v[i]);
-    i++;
-  }
-
-  result.data_from_app = tmp;
-  return result;
-}
-internal static List<Triangle> __skadapter__to_vector_triangle(__sklib_vector_triangle v)
-{
-  List<Triangle> result = new List<Triangle>();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    result.Add(__skadapter__to_triangle(v.data_from_lib[i]));
-  }
-  __sklib__free__sklib_vector_triangle(v);
-  return result;
-}
-internal static void __skadapter__update_from_vector_triangle(ref __sklib_vector_triangle v, List<Triangle> __skreturn)
-{
-  __skreturn.Clear();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    __skreturn.Add(__skadapter__to_triangle(v.data_from_lib[i]));
-  }
-    __sklib__free__sklib_vector_triangle(v);
-}
-
-[ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
-internal struct __sklib_vector_string{
-  internal IntPtr _data_from_app;
-  public __sklib_string[] data_from_app
-  {
-    set
+    private static __sklib_vector_triangle __skadapter__to_sklib_vector_triangle(List<Triangle> v)
     {
-      _data_from_app = ToIntPtr(value);
+      int i = 0;
+      __sklib_vector_triangle result = new __sklib_vector_triangle();
+
+      result.size_from_lib = 0;
+      result.size_from_app = (uint)v.Count;
+      __sklib_triangle[] tmp = new __sklib_triangle[result.size_from_app];
+
+      foreach(Triangle d in v)
+      {
+        tmp[i] = __skadapter__to_sklib_triangle(v[i]);
+        i++;
+      }
+
+      result.data_from_app = tmp;
+      return result;
     }
-  }
-  public uint size_from_app;
-  private IntPtr _data_from_lib;
-  public __sklib_string[] data_from_lib
-  {
-    get
+    private static List<Triangle> __skadapter__to_vector_triangle(__sklib_vector_triangle v)
     {
-      return FromIntPtr<__sklib_string>(_data_from_lib, (int)size_from_lib);
+      List<Triangle> result = new List<Triangle>();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        result.Add(__skadapter__to_triangle(v.data_from_lib[i]));
+      }
+      __sklib__free__sklib_vector_triangle(v);
+      return result;
     }
-  }
-  public uint size_from_lib;
-}
-[DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_string", CharSet=CharSet.Ansi)]
-internal static extern void __sklib__free__sklib_vector_string(__sklib_vector_string v);
-
-internal static void __skadapter__free__sklib_vector_string(ref __sklib_vector_string v)
-{
-  System.Console.WriteLine("Freeing data");
-  Marshal.FreeHGlobal(v._data_from_app);
-}
-internal static __sklib_vector_string __skadapter__to_sklib_vector_string(List<string> v)
-{
-  int i = 0;
-  __sklib_vector_string result = new __sklib_vector_string();
-
-  result.size_from_lib = 0;
-  result.size_from_app = (uint)v.Count;
-  __sklib_string[] tmp = new __sklib_string[result.size_from_app];
-
-  foreach(string d in v)
-  {
-    tmp[i] = __skadapter__to_sklib_string(v[i]);
-    i++;
-  }
-
-  result.data_from_app = tmp;
-  return result;
-}
-internal static List<string> __skadapter__to_vector_string(__sklib_vector_string v)
-{
-  List<string> result = new List<string>();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    result.Add(__skadapter__to_string(v.data_from_lib[i]));
-  }
-  __sklib__free__sklib_vector_string(v);
-  return result;
-}
-internal static void __skadapter__update_from_vector_string(ref __sklib_vector_string v, List<string> __skreturn)
-{
-  __skreturn.Clear();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    __skreturn.Add(__skadapter__to_string(v.data_from_lib[i]));
-  }
-    __sklib__free__sklib_vector_string(v);
-}
-
-[ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
-internal struct __sklib_vector_double{
-  internal IntPtr _data_from_app;
-  public double[] data_from_app
-  {
-    set
+    private static void __skadapter__update_from_vector_triangle(ref __sklib_vector_triangle v, List<Triangle> __skreturn)
     {
-      _data_from_app = ToIntPtr(value);
+      __skreturn.Clear();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        __skreturn.Add(__skadapter__to_triangle(v.data_from_lib[i]));
+      }
+            __sklib__free__sklib_vector_triangle(v);
     }
-  }
-  public uint size_from_app;
-  private IntPtr _data_from_lib;
-  public double[] data_from_lib
-  {
-    get
+
+    [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
+    private struct __sklib_vector_string    {
+      internal IntPtr _data_from_app;
+      public __sklib_string[] data_from_app
+      {
+        set
+        {
+          _data_from_app = ToIntPtr(value);
+        }
+      }
+      public uint size_from_app;
+      private IntPtr _data_from_lib;
+      public __sklib_string[] data_from_lib
+      {
+        get
+        {
+          return FromIntPtr<__sklib_string>(_data_from_lib, (int)size_from_lib);
+        }
+      }
+      public uint size_from_lib;
+    }
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_string", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__free__sklib_vector_string(__sklib_vector_string v);
+
+    private static void __skadapter__free__sklib_vector_string(ref __sklib_vector_string v)
     {
-      return FromIntPtr<double>(_data_from_lib, (int)size_from_lib);
+      System.Console.WriteLine("Freeing data");
+      Marshal.FreeHGlobal(v._data_from_app);
     }
-  }
-  public uint size_from_lib;
-}
-[DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_double", CharSet=CharSet.Ansi)]
-internal static extern void __sklib__free__sklib_vector_double(__sklib_vector_double v);
-
-internal static void __skadapter__free__sklib_vector_double(ref __sklib_vector_double v)
-{
-  System.Console.WriteLine("Freeing data");
-  Marshal.FreeHGlobal(v._data_from_app);
-}
-internal static __sklib_vector_double __skadapter__to_sklib_vector_double(List<double> v)
-{
-  int i = 0;
-  __sklib_vector_double result = new __sklib_vector_double();
-
-  result.size_from_lib = 0;
-  result.size_from_app = (uint)v.Count;
-  double[] tmp = new double[result.size_from_app];
-
-  foreach(double d in v)
-  {
-    tmp[i] = __skadapter__to_sklib_double(v[i]);
-    i++;
-  }
-
-  result.data_from_app = tmp;
-  return result;
-}
-internal static List<double> __skadapter__to_vector_double(__sklib_vector_double v)
-{
-  List<double> result = new List<double>();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    result.Add(__skadapter__to_double(v.data_from_lib[i]));
-  }
-  __sklib__free__sklib_vector_double(v);
-  return result;
-}
-internal static void __skadapter__update_from_vector_double(ref __sklib_vector_double v, List<double> __skreturn)
-{
-  __skreturn.Clear();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    __skreturn.Add(__skadapter__to_double(v.data_from_lib[i]));
-  }
-    __sklib__free__sklib_vector_double(v);
-}
-
-[ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
-internal struct __sklib_vector_json{
-  internal IntPtr _data_from_app;
-  public __sklib_ptr[] data_from_app
-  {
-    set
+    private static __sklib_vector_string __skadapter__to_sklib_vector_string(List<string> v)
     {
-      _data_from_app = ToIntPtr(value);
+      int i = 0;
+      __sklib_vector_string result = new __sklib_vector_string();
+
+      result.size_from_lib = 0;
+      result.size_from_app = (uint)v.Count;
+      __sklib_string[] tmp = new __sklib_string[result.size_from_app];
+
+      foreach(string d in v)
+      {
+        tmp[i] = __skadapter__to_sklib_string(v[i]);
+        i++;
+      }
+
+      result.data_from_app = tmp;
+      return result;
     }
-  }
-  public uint size_from_app;
-  private IntPtr _data_from_lib;
-  public __sklib_ptr[] data_from_lib
-  {
-    get
+    private static List<string> __skadapter__to_vector_string(__sklib_vector_string v)
     {
-      return FromIntPtr<__sklib_ptr>(_data_from_lib, (int)size_from_lib);
+      List<string> result = new List<string>();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        result.Add(__skadapter__to_string(v.data_from_lib[i]));
+      }
+      __sklib__free__sklib_vector_string(v);
+      return result;
     }
-  }
-  public uint size_from_lib;
-}
-[DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_json", CharSet=CharSet.Ansi)]
-internal static extern void __sklib__free__sklib_vector_json(__sklib_vector_json v);
-
-internal static void __skadapter__free__sklib_vector_json(ref __sklib_vector_json v)
-{
-  System.Console.WriteLine("Freeing data");
-  Marshal.FreeHGlobal(v._data_from_app);
-}
-internal static __sklib_vector_json __skadapter__to_sklib_vector_json(List<Json> v)
-{
-  int i = 0;
-  __sklib_vector_json result = new __sklib_vector_json();
-
-  result.size_from_lib = 0;
-  result.size_from_app = (uint)v.Count;
-  __sklib_ptr[] tmp = new __sklib_ptr[result.size_from_app];
-
-  foreach(Json d in v)
-  {
-    tmp[i] = __skadapter__to_sklib_json(v[i]);
-    i++;
-  }
-
-  result.data_from_app = tmp;
-  return result;
-}
-internal static List<Json> __skadapter__to_vector_json(__sklib_vector_json v)
-{
-  List<Json> result = new List<Json>();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    result.Add(__skadapter__to_json(v.data_from_lib[i]));
-  }
-  __sklib__free__sklib_vector_json(v);
-  return result;
-}
-internal static void __skadapter__update_from_vector_json(ref __sklib_vector_json v, List<Json> __skreturn)
-{
-  __skreturn.Clear();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    __skreturn.Add(__skadapter__to_json(v.data_from_lib[i]));
-  }
-    __sklib__free__sklib_vector_json(v);
-}
-
-[ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
-internal struct __sklib_vector_bool{
-  internal IntPtr _data_from_app;
-  public int[] data_from_app
-  {
-    set
+    private static void __skadapter__update_from_vector_string(ref __sklib_vector_string v, List<string> __skreturn)
     {
-      _data_from_app = ToIntPtr(value);
+      __skreturn.Clear();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        __skreturn.Add(__skadapter__to_string(v.data_from_lib[i]));
+      }
+            __sklib__free__sklib_vector_string(v);
     }
-  }
-  public uint size_from_app;
-  private IntPtr _data_from_lib;
-  public int[] data_from_lib
-  {
-    get
+
+    [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
+    private struct __sklib_vector_double    {
+      internal IntPtr _data_from_app;
+      public double[] data_from_app
+      {
+        set
+        {
+          _data_from_app = ToIntPtr(value);
+        }
+      }
+      public uint size_from_app;
+      private IntPtr _data_from_lib;
+      public double[] data_from_lib
+      {
+        get
+        {
+          return FromIntPtr<double>(_data_from_lib, (int)size_from_lib);
+        }
+      }
+      public uint size_from_lib;
+    }
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__free__sklib_vector_double(__sklib_vector_double v);
+
+    private static void __skadapter__free__sklib_vector_double(ref __sklib_vector_double v)
     {
-      return FromIntPtr<int>(_data_from_lib, (int)size_from_lib);
+      System.Console.WriteLine("Freeing data");
+      Marshal.FreeHGlobal(v._data_from_app);
     }
-  }
-  public uint size_from_lib;
-}
-[DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_bool", CharSet=CharSet.Ansi)]
-internal static extern void __sklib__free__sklib_vector_bool(__sklib_vector_bool v);
-
-internal static void __skadapter__free__sklib_vector_bool(ref __sklib_vector_bool v)
-{
-  System.Console.WriteLine("Freeing data");
-  Marshal.FreeHGlobal(v._data_from_app);
-}
-internal static __sklib_vector_bool __skadapter__to_sklib_vector_bool(List<bool> v)
-{
-  int i = 0;
-  __sklib_vector_bool result = new __sklib_vector_bool();
-
-  result.size_from_lib = 0;
-  result.size_from_app = (uint)v.Count;
-  int[] tmp = new int[result.size_from_app];
-
-  foreach(bool d in v)
-  {
-    tmp[i] = __skadapter__to_sklib_bool(v[i]);
-    i++;
-  }
-
-  result.data_from_app = tmp;
-  return result;
-}
-internal static List<bool> __skadapter__to_vector_bool(__sklib_vector_bool v)
-{
-  List<bool> result = new List<bool>();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    result.Add(__skadapter__to_bool(v.data_from_lib[i]));
-  }
-  __sklib__free__sklib_vector_bool(v);
-  return result;
-}
-internal static void __skadapter__update_from_vector_bool(ref __sklib_vector_bool v, List<bool> __skreturn)
-{
-  __skreturn.Clear();
-  for (int i = 0; i < v.size_from_lib; i++)
-  {
-    __skreturn.Add(__skadapter__to_bool(v.data_from_lib[i]));
-  }
-    __sklib__free__sklib_vector_bool(v);
-}
-
-    internal static KeyCallback __skadapter__to_sklib_key_callback(KeyCallback v)
+    private static __sklib_vector_double __skadapter__to_sklib_vector_double(List<double> v)
     {
-      return v;
-    }
+      int i = 0;
+      __sklib_vector_double result = new __sklib_vector_double();
 
-    internal static FreeNotifier __skadapter__to_sklib_free_notifier(FreeNotifier v)
+      result.size_from_lib = 0;
+      result.size_from_app = (uint)v.Count;
+      double[] tmp = new double[result.size_from_app];
+
+      foreach(double d in v)
+      {
+        tmp[i] = __skadapter__to_sklib_double(v[i]);
+        i++;
+      }
+
+      result.data_from_app = tmp;
+      return result;
+    }
+    private static List<double> __skadapter__to_vector_double(__sklib_vector_double v)
     {
-      return v;
+      List<double> result = new List<double>();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        result.Add(__skadapter__to_double(v.data_from_lib[i]));
+      }
+      __sklib__free__sklib_vector_double(v);
+      return result;
     }
-
-    internal static SpriteEventHandler __skadapter__to_sklib_sprite_event_handler(SpriteEventHandler v)
+    private static void __skadapter__update_from_vector_double(ref __sklib_vector_double v, List<double> __skreturn)
     {
-      return v;
+      __skreturn.Clear();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        __skreturn.Add(__skadapter__to_double(v.data_from_lib[i]));
+      }
+            __sklib__free__sklib_vector_double(v);
     }
 
-    internal static SpriteFloatFunction __skadapter__to_sklib_sprite_float_function(SpriteFloatFunction v)
+    [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
+    private struct __sklib_vector_json    {
+      internal IntPtr _data_from_app;
+      public __sklib_ptr[] data_from_app
+      {
+        set
+        {
+          _data_from_app = ToIntPtr(value);
+        }
+      }
+      public uint size_from_app;
+      private IntPtr _data_from_lib;
+      public __sklib_ptr[] data_from_lib
+      {
+        get
+        {
+          return FromIntPtr<__sklib_ptr>(_data_from_lib, (int)size_from_lib);
+        }
+      }
+      public uint size_from_lib;
+    }
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_json", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__free__sklib_vector_json(__sklib_vector_json v);
+
+    private static void __skadapter__free__sklib_vector_json(ref __sklib_vector_json v)
     {
-      return v;
+      System.Console.WriteLine("Freeing data");
+      Marshal.FreeHGlobal(v._data_from_app);
     }
-
-    internal static SpriteFunction __skadapter__to_sklib_sprite_function(SpriteFunction v)
+    private static __sklib_vector_json __skadapter__to_sklib_vector_json(List<Json> v)
     {
-      return v;
+      int i = 0;
+      __sklib_vector_json result = new __sklib_vector_json();
+
+      result.size_from_lib = 0;
+      result.size_from_app = (uint)v.Count;
+      __sklib_ptr[] tmp = new __sklib_ptr[result.size_from_app];
+
+      foreach(Json d in v)
+      {
+        tmp[i] = __skadapter__to_sklib_json(v[i]);
+        i++;
+      }
+
+      result.data_from_app = tmp;
+      return result;
+    }
+    private static List<Json> __skadapter__to_vector_json(__sklib_vector_json v)
+    {
+      List<Json> result = new List<Json>();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        result.Add(__skadapter__to_json(v.data_from_lib[i]));
+      }
+      __sklib__free__sklib_vector_json(v);
+      return result;
+    }
+    private static void __skadapter__update_from_vector_json(ref __sklib_vector_json v, List<Json> __skreturn)
+    {
+      __skreturn.Clear();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        __skreturn.Add(__skadapter__to_json(v.data_from_lib[i]));
+      }
+            __sklib__free__sklib_vector_json(v);
     }
 
-internal static IntPtr __skadapter__to_sklib_database(Database v)
-{
-    return v;
-}
+    [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi )]
+    private struct __sklib_vector_bool    {
+      internal IntPtr _data_from_app;
+      public int[] data_from_app
+      {
+        set
+        {
+          _data_from_app = ToIntPtr(value);
+        }
+      }
+      public uint size_from_app;
+      private IntPtr _data_from_lib;
+      public int[] data_from_lib
+      {
+        get
+        {
+          return FromIntPtr<int>(_data_from_lib, (int)size_from_lib);
+        }
+      }
+      public uint size_from_lib;
+    }
 
-internal static Database __skadapter__to_database(IntPtr v)
-{
-    return Database.FetchOrCreate(v);
-}
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free__sklib_vector_bool", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__free__sklib_vector_bool(__sklib_vector_bool v);
 
-internal static IntPtr __skadapter__to_sklib_query_result(QueryResult v)
-{
-    return v;
-}
+    private static void __skadapter__free__sklib_vector_bool(ref __sklib_vector_bool v)
+    {
+      System.Console.WriteLine("Freeing data");
+      Marshal.FreeHGlobal(v._data_from_app);
+    }
+    private static __sklib_vector_bool __skadapter__to_sklib_vector_bool(List<bool> v)
+    {
+      int i = 0;
+      __sklib_vector_bool result = new __sklib_vector_bool();
 
-internal static QueryResult __skadapter__to_query_result(IntPtr v)
-{
-    return QueryResult.FetchOrCreate(v);
-}
+      result.size_from_lib = 0;
+      result.size_from_app = (uint)v.Count;
+      int[] tmp = new int[result.size_from_app];
 
-internal static IntPtr __skadapter__to_sklib_json(Json v)
-{
-    return v;
-}
+      foreach(bool d in v)
+      {
+        tmp[i] = __skadapter__to_sklib_bool(v[i]);
+        i++;
+      }
 
-internal static Json __skadapter__to_json(IntPtr v)
-{
-    return Json.FetchOrCreate(v);
-}
+      result.data_from_app = tmp;
+      return result;
+    }
+    private static List<bool> __skadapter__to_vector_bool(__sklib_vector_bool v)
+    {
+      List<bool> result = new List<bool>();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        result.Add(__skadapter__to_bool(v.data_from_lib[i]));
+      }
+      __sklib__free__sklib_vector_bool(v);
+      return result;
+    }
+    private static void __skadapter__update_from_vector_bool(ref __sklib_vector_bool v, List<bool> __skreturn)
+    {
+      __skreturn.Clear();
+      for (int i = 0; i < v.size_from_lib; i++)
+      {
+        __skreturn.Add(__skadapter__to_bool(v.data_from_lib[i]));
+      }
+            __sklib__free__sklib_vector_bool(v);
+    }
 
-internal static IntPtr __skadapter__to_sklib_music(Music v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static KeyCallback __skadapter__to_sklib_key_callback(KeyCallback v) { return v; }
 
-internal static Music __skadapter__to_music(IntPtr v)
-{
-    return Music.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static FreeNotifier __skadapter__to_sklib_free_notifier(FreeNotifier v) { return v; }
 
-internal static IntPtr __skadapter__to_sklib_connection(Connection v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static SpriteEventHandler __skadapter__to_sklib_sprite_event_handler(SpriteEventHandler v) { return v; }
 
-internal static Connection __skadapter__to_connection(IntPtr v)
-{
-    return Connection.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static SpriteFloatFunction __skadapter__to_sklib_sprite_float_function(SpriteFloatFunction v) { return v; }
 
-internal static IntPtr __skadapter__to_sklib_message(Message v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static SpriteFunction __skadapter__to_sklib_sprite_function(SpriteFunction v) { return v; }
 
-internal static Message __skadapter__to_message(IntPtr v)
-{
-    return Message.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_database(Database v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Database __skadapter__to_database(IntPtr v) { return Database.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_server_socket(ServerSocket v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_query_result(QueryResult v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static QueryResult __skadapter__to_query_result(IntPtr v) { return QueryResult.FetchOrCreate(v); }
 
-internal static ServerSocket __skadapter__to_server_socket(IntPtr v)
-{
-    return ServerSocket.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_json(Json v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Json __skadapter__to_json(IntPtr v) { return Json.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_sound_effect(SoundEffect v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_music(Music v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Music __skadapter__to_music(IntPtr v) { return Music.FetchOrCreate(v); }
 
-internal static SoundEffect __skadapter__to_sound_effect(IntPtr v)
-{
-    return SoundEffect.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_connection(Connection v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Connection __skadapter__to_connection(IntPtr v) { return Connection.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_sprite(Sprite v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_message(Message v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Message __skadapter__to_message(IntPtr v) { return Message.FetchOrCreate(v); }
 
-internal static Sprite __skadapter__to_sprite(IntPtr v)
-{
-    return Sprite.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_server_socket(ServerSocket v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static ServerSocket __skadapter__to_server_socket(IntPtr v) { return ServerSocket.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_timer(Timer v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_sound_effect(SoundEffect v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static SoundEffect __skadapter__to_sound_effect(IntPtr v) { return SoundEffect.FetchOrCreate(v); }
 
-internal static Timer __skadapter__to_timer(IntPtr v)
-{
-    return Timer.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_sprite(Sprite v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Sprite __skadapter__to_sprite(IntPtr v) { return Sprite.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_animation(Animation v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_timer(Timer v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Timer __skadapter__to_timer(IntPtr v) { return Timer.FetchOrCreate(v); }
 
-internal static Animation __skadapter__to_animation(IntPtr v)
-{
-    return Animation.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_animation(Animation v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Animation __skadapter__to_animation(IntPtr v) { return Animation.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_animation_script(AnimationScript v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_animation_script(AnimationScript v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static AnimationScript __skadapter__to_animation_script(IntPtr v) { return AnimationScript.FetchOrCreate(v); }
 
-internal static AnimationScript __skadapter__to_animation_script(IntPtr v)
-{
-    return AnimationScript.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_bitmap(Bitmap v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Bitmap __skadapter__to_bitmap(IntPtr v) { return Bitmap.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_bitmap(Bitmap v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_display(Display v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Display __skadapter__to_display(IntPtr v) { return Display.FetchOrCreate(v); }
 
-internal static Bitmap __skadapter__to_bitmap(IntPtr v)
-{
-    return Bitmap.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_font(Font v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Font __skadapter__to_font(IntPtr v) { return Font.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_display(Display v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_http_response(HttpResponse v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static HttpResponse __skadapter__to_http_response(IntPtr v) { return HttpResponse.FetchOrCreate(v); }
 
-internal static Display __skadapter__to_display(IntPtr v)
-{
-    return Display.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_http_request(HttpRequest v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static HttpRequest __skadapter__to_http_request(IntPtr v) { return HttpRequest.FetchOrCreate(v); }
 
-internal static IntPtr __skadapter__to_sklib_font(Font v)
-{
-    return v;
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_web_server(WebServer v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static WebServer __skadapter__to_web_server(IntPtr v) { return WebServer.FetchOrCreate(v); }
 
-internal static Font __skadapter__to_font(IntPtr v)
-{
-    return Font.FetchOrCreate(v);
-}
-
-internal static IntPtr __skadapter__to_sklib_http_response(HttpResponse v)
-{
-    return v;
-}
-
-internal static HttpResponse __skadapter__to_http_response(IntPtr v)
-{
-    return HttpResponse.FetchOrCreate(v);
-}
-
-internal static IntPtr __skadapter__to_sklib_http_request(HttpRequest v)
-{
-    return v;
-}
-
-internal static HttpRequest __skadapter__to_http_request(IntPtr v)
-{
-    return HttpRequest.FetchOrCreate(v);
-}
-
-internal static IntPtr __skadapter__to_sklib_web_server(WebServer v)
-{
-    return v;
-}
-
-internal static WebServer __skadapter__to_web_server(IntPtr v)
-{
-    return WebServer.FetchOrCreate(v);
-}
-
-internal static IntPtr __skadapter__to_sklib_window(Window v)
-{
-    return v;
-}
-
-internal static Window __skadapter__to_window(IntPtr v)
-{
-    return Window.FetchOrCreate(v);
-}
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static IntPtr __skadapter__to_sklib_window(Window v) { return v; }
+    [MethodImpl(MethodImplOptions.AggressiveInlining)]
+    private static Window __skadapter__to_window(IntPtr v) { return Window.FetchOrCreate(v); }
     
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__animation_count__animation_script", CharSet=CharSet.Ansi)]
     private static extern int __sklib__animation_count__animation_script(__sklib_ptr script);
@@ -1268,8 +1065,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_camera_to__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__move_camera_to__point_2d_ref(__sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_camera_to__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__move_camera_to__float__float(float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_camera_to__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__move_camera_to__double__double(double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__point_in_window__window__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__point_in_window__window__point_2d_ref(__sklib_ptr wind, __sklib_point_2d pt);
@@ -1292,8 +1089,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__set_camera_position__point_2d", CharSet=CharSet.Ansi)]
     private static extern void __sklib__set_camera_position__point_2d(__sklib_point_2d pos);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__set_camera_y__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__set_camera_y__float(float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__set_camera_y__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__set_camera_y__double(double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__to_screen__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__to_screen__point_2d_ref(__sklib_point_2d pt);
@@ -1322,23 +1119,29 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_area__window", CharSet=CharSet.Ansi)]
     private static extern __sklib_rectangle __sklib__window_area__window(__sklib_ptr wind);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_draw_circle__bitmap__color__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__bitmap_draw_circle__bitmap__color__float__float__float(__sklib_ptr destination, __sklib_color clr, float x, float y, float radius);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_draw_circle__bitmap__color__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__bitmap_draw_circle__bitmap__color__float__float__float__drawing_options(__sklib_ptr destination, __sklib_color clr, float x, float y, float radius, __sklib_drawing_options opts);
-
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle__color__circle_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_circle__color__circle_ref(__sklib_color clr, __sklib_circle c);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle__color__circle_ref__drawing_options", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_circle__color__circle_ref__drawing_options(__sklib_color clr, __sklib_circle c, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle__color__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_circle__color__float__float__float(__sklib_color clr, float x, float y, float radius);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle__color__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_circle__color__double__double__double(__sklib_color clr, double x, double y, double radius);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle__color__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_circle__color__float__float__float__drawing_options(__sklib_color clr, float x, float y, float radius, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle__color__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_circle__color__double__double__double__drawing_options(__sklib_color clr, double x, double y, double radius, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle_on_bitmap__bitmap__color__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_circle_on_bitmap__bitmap__color__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double radius);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle_on_bitmap__bitmap__color__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_circle_on_bitmap__bitmap__color__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, double radius, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle_on_window__window__color__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_circle_on_window__window__color__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double radius);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_circle_on_window__window__color__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_circle_on_window__window__color__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, double radius, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_circle__color__circle_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_circle__color__circle_ref(__sklib_color clr, __sklib_circle c);
@@ -1346,26 +1149,20 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_circle__color__circle_ref__drawing_options", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_circle__color__circle_ref__drawing_options(__sklib_color clr, __sklib_circle c, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_circle__color__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__fill_circle__color__float__float__float(__sklib_color clr, float x, float y, float radius);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_circle__color__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_circle__color__double__double__double(__sklib_color clr, double x, double y, double radius);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_circle__color__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__fill_circle__color__float__float__float__drawing_options(__sklib_color clr, float x, float y, float radius, __sklib_drawing_options opts);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_draw_circle__window__color__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__window_draw_circle__window__color__float__float__float(__sklib_ptr destination, __sklib_color clr, float x, float y, float radius);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__window_draw_circle__window__color__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__window_draw_circle__window__color__float__float__float__drawing_options(__sklib_ptr destination, __sklib_color clr, float x, float y, float radius, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_circle__color__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_circle__color__double__double__double__drawing_options(__sklib_color clr, double x, double y, double radius, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__center_point__circle_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__center_point__circle_ref(__sklib_circle c);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__circle_at__point_2d_ref__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_circle __sklib__circle_at__point_2d_ref__float(__sklib_point_2d pt, float radius);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__circle_at__point_2d_ref__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_circle __sklib__circle_at__point_2d_ref__double(__sklib_point_2d pt, double radius);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__circle_at__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_circle __sklib__circle_at__float__float__float(float x, float y, float radius);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__circle_at__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_circle __sklib__circle_at__double__double__double(double x, double y, double radius);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__circle_radius__circle", CharSet=CharSet.Ansi)]
     private static extern float __sklib__circle_radius__circle(__sklib_circle c);
@@ -1448,8 +1245,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__set_clip__window__rectangle_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__set_clip__window__rectangle_ref(__sklib_ptr wnd, __sklib_rectangle r);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_collision__bitmap__float__float__bitmap__float__float", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__bitmap_collision__bitmap__float__float__bitmap__float__float(__sklib_ptr bmp1, float x1, float y1, __sklib_ptr bmp2, float x2, float y2);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_collision__bitmap__double__double__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__bitmap_collision__bitmap__double__double__bitmap__double__double(__sklib_ptr bmp1, double x1, double y1, __sklib_ptr bmp2, double x2, double y2);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_collision__bitmap__point_2d_ref__bitmap__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__bitmap_collision__bitmap__point_2d_ref__bitmap__point_2d_ref(__sklib_ptr bmp1, __sklib_point_2d pt1, __sklib_ptr bmp2, __sklib_point_2d pt2);
@@ -1460,8 +1257,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_collision__bitmap__int__point_2d_ref__bitmap__int__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__bitmap_collision__bitmap__int__point_2d_ref__bitmap__int__point_2d_ref(__sklib_ptr bmp1, int cell1, __sklib_point_2d pt1, __sklib_ptr bmp2, int cell2, __sklib_point_2d pt2);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_collision__bitmap__int__float__float__bitmap__int__float__float", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__bitmap_collision__bitmap__int__float__float__bitmap__int__float__float(__sklib_ptr bmp1, int cell1, float x1, float y1, __sklib_ptr bmp2, int cell2, float x2, float y2);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_collision__bitmap__int__double__double__bitmap__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__bitmap_collision__bitmap__int__double__double__bitmap__int__double__double(__sklib_ptr bmp1, int cell1, double x1, double y1, __sklib_ptr bmp2, int cell2, double x2, double y2);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_point_collision__bitmap__matrix_2d_ref__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__bitmap_point_collision__bitmap__matrix_2d_ref__point_2d_ref(__sklib_ptr bmp, __sklib_matrix_2d translation, __sklib_point_2d pt);
@@ -1469,8 +1266,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_point_collision__bitmap__point_2d_ref__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__bitmap_point_collision__bitmap__point_2d_ref__point_2d_ref(__sklib_ptr bmp, __sklib_point_2d pt, __sklib_point_2d bmpPt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_point_collision__bitmap__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__bitmap_point_collision__bitmap__float__float__float__float(__sklib_ptr bmp, float bmpX, float bmpY, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_point_collision__bitmap__float__float__double__double", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__bitmap_point_collision__bitmap__float__float__double__double(__sklib_ptr bmp, float bmpX, float bmpY, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_point_collision__bitmap__int__matrix_2d_ref__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__bitmap_point_collision__bitmap__int__matrix_2d_ref__point_2d_ref(__sklib_ptr bmp, int cell, __sklib_matrix_2d translation, __sklib_point_2d pt);
@@ -1481,14 +1278,14 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_rectangle_collision__bitmap__int__point_2d_ref__rectangle_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__bitmap_rectangle_collision__bitmap__int__point_2d_ref__rectangle_ref(__sklib_ptr bmp, int cell, __sklib_point_2d pt, __sklib_rectangle rect);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_bitmap_collision__sprite__bitmap__float__float", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__sprite_bitmap_collision__sprite__bitmap__float__float(__sklib_ptr s, __sklib_ptr bmp, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_bitmap_collision__sprite__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__sprite_bitmap_collision__sprite__bitmap__double__double(__sklib_ptr s, __sklib_ptr bmp, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_bitmap_collision__sprite__bitmap__int__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__sprite_bitmap_collision__sprite__bitmap__int__point_2d_ref(__sklib_ptr s, __sklib_ptr bmp, int cell, __sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_bitmap_collision__sprite__bitmap__int__float__float", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__sprite_bitmap_collision__sprite__bitmap__int__float__float(__sklib_ptr s, __sklib_ptr bmp, int cell, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_bitmap_collision__sprite__bitmap__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__sprite_bitmap_collision__sprite__bitmap__int__double__double(__sklib_ptr s, __sklib_ptr bmp, int cell, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_collision__sprite__sprite", CharSet=CharSet.Ansi)]
     private static extern int __sklib__sprite_collision__sprite__sprite(__sklib_ptr s1, __sklib_ptr s2);
@@ -2075,11 +1872,11 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__option_line_width__int__drawing_options", CharSet=CharSet.Ansi)]
     private static extern __sklib_drawing_options __sklib__option_line_width__int__drawing_options(int width, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__option_part_bmp__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_drawing_options __sklib__option_part_bmp__float__float__float__float(float x, float y, float w, float h);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__option_part_bmp__double__double__float__float", CharSet=CharSet.Ansi)]
+    private static extern __sklib_drawing_options __sklib__option_part_bmp__double__double__float__float(double x, double y, float w, float h);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__option_part_bmp__float__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern __sklib_drawing_options __sklib__option_part_bmp__float__float__float__float__drawing_options(float x, float y, float w, float h, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__option_part_bmp__double__double__float__float__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern __sklib_drawing_options __sklib__option_part_bmp__double__double__float__float__drawing_options(double x, double y, float w, float h, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__option_part_bmp__rectangle", CharSet=CharSet.Ansi)]
     private static extern __sklib_drawing_options __sklib__option_part_bmp__rectangle(__sklib_rectangle part);
@@ -2129,11 +1926,35 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse__color__rectangle__drawing_options", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_ellipse__color__rectangle__drawing_options(__sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse__color__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_ellipse__color__float__float__float__float(__sklib_color clr, float x, float y, float width, float height);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse__color__double__double__double__double(__sklib_color clr, double x, double y, double width, double height);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse__color__float__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_ellipse__color__float__float__float__float__drawing_options(__sklib_color clr, float x, float y, float width, float height, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse__color__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse__color__double__double__double__double__drawing_options(__sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse_on_bitmap__bitmap__color__rectangle", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse_on_bitmap__bitmap__color__rectangle(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse_on_bitmap__bitmap__color__rectangle__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse_on_bitmap__bitmap__color__rectangle__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse_on_bitmap__bitmap__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse_on_bitmap__bitmap__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse_on_bitmap__bitmap__color__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse_on_bitmap__bitmap__color__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse_on_window__window__color__rectangle", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse_on_window__window__color__rectangle(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse_on_window__window__color__rectangle__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse_on_window__window__color__rectangle__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse_on_window__window__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse_on_window__window__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_ellipse_on_window__window__color__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_ellipse_on_window__window__color__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse__color__rectangle", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_ellipse__color__rectangle(__sklib_color clr, __sklib_rectangle rect);
@@ -2141,11 +1962,35 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse__color__rectangle__drawing_options", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_ellipse__color__rectangle__drawing_options(__sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse__color__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__fill_ellipse__color__float__float__float__float(__sklib_color clr, float x, float y, float width, float height);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse__color__double__double__double__double(__sklib_color clr, double x, double y, double width, double height);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse__color__float__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__fill_ellipse__color__float__float__float__float__drawing_options(__sklib_color clr, float x, float y, float width, float height, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse__color__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse__color__double__double__double__double__drawing_options(__sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse_on_bitmap__bitmap__color__rectangle", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse_on_bitmap__bitmap__color__rectangle(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse_on_bitmap__bitmap__color__rectangle__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse_on_bitmap__bitmap__color__rectangle__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse_on_bitmap__bitmap__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse_on_bitmap__bitmap__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse_on_bitmap__bitmap__color__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse_on_bitmap__bitmap__color__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse_on_window__window__color__rectangle", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse_on_window__window__color__rectangle(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse_on_window__window__color__rectangle__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse_on_window__window__color__rectangle__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse_on_window__window__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse_on_window__window__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_ellipse_on_window__window__color__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_ellipse_on_window__window__color__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__cosine__float", CharSet=CharSet.Ansi)]
     private static extern float __sklib__cosine__float(float degrees);
@@ -2210,20 +2055,20 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_bounding_rectangle__bitmap", CharSet=CharSet.Ansi)]
     private static extern __sklib_rectangle __sklib__bitmap_bounding_rectangle__bitmap(__sklib_ptr bmp);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_bounding_rectangle__bitmap__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_rectangle __sklib__bitmap_bounding_rectangle__bitmap__float__float(__sklib_ptr bmp, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_bounding_rectangle__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_rectangle __sklib__bitmap_bounding_rectangle__bitmap__double__double(__sklib_ptr bmp, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_cell_center__bitmap", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__bitmap_cell_center__bitmap(__sklib_ptr bmp);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_cell_circle__bitmap__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_circle __sklib__bitmap_cell_circle__bitmap__float__float(__sklib_ptr bmp, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_cell_circle__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_circle __sklib__bitmap_cell_circle__bitmap__double__double(__sklib_ptr bmp, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_cell_circle__bitmap__point_2d", CharSet=CharSet.Ansi)]
     private static extern __sklib_circle __sklib__bitmap_cell_circle__bitmap__point_2d(__sklib_ptr bmp, __sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_cell_circle__bitmap__point_2d__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_circle __sklib__bitmap_cell_circle__bitmap__point_2d__float(__sklib_ptr bmp, __sklib_point_2d pt, float scale);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_cell_circle__bitmap__point_2d__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_circle __sklib__bitmap_cell_circle__bitmap__point_2d__double(__sklib_ptr bmp, __sklib_point_2d pt, double scale);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__bitmap_cell_columns__bitmap", CharSet=CharSet.Ansi)]
     private static extern int __sklib__bitmap_cell_columns__bitmap(__sklib_ptr bmp);
@@ -2288,17 +2133,29 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__create_bitmap__string__int__int", CharSet=CharSet.Ansi)]
     private static extern __sklib_ptr __sklib__create_bitmap__string__int__int(__sklib_string name, int width, int height);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap__bitmap__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_bitmap__bitmap__float__float(__sklib_ptr bmp, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_bitmap__bitmap__double__double(__sklib_ptr bmp, double x, double y);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap__bitmap__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_bitmap__bitmap__float__float__drawing_options(__sklib_ptr bmp, float x, float y, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap__bitmap__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_bitmap__bitmap__double__double__drawing_options(__sklib_ptr bmp, double x, double y, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap__string__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_bitmap__string__float__float(__sklib_string name, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap__string__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_bitmap__string__double__double(__sklib_string name, double x, double y);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap__string__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_bitmap__string__float__float__drawing_options(__sklib_string name, float x, float y, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap__string__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_bitmap__string__double__double__drawing_options(__sklib_string name, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap_on_bitmap__bitmap__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_bitmap_on_bitmap__bitmap__bitmap__double__double(__sklib_ptr destination, __sklib_ptr bmp, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap_on_bitmap__bitmap__bitmap__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_bitmap_on_bitmap__bitmap__bitmap__double__double__drawing_options(__sklib_ptr destination, __sklib_ptr bmp, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap_on_window__window__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_bitmap_on_window__window__bitmap__double__double(__sklib_ptr destination, __sklib_ptr bmp, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_bitmap_on_window__window__bitmap__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_bitmap_on_window__window__bitmap__double__double__drawing_options(__sklib_ptr destination, __sklib_ptr bmp, double x, double y, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free_all_bitmaps", CharSet=CharSet.Ansi)]
     private static extern void __sklib__free_all_bitmaps();
@@ -2315,14 +2172,14 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__pixel_drawn_at_point__bitmap__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__pixel_drawn_at_point__bitmap__point_2d_ref(__sklib_ptr bmp, __sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__pixel_drawn_at_point__bitmap__float__float", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__pixel_drawn_at_point__bitmap__float__float(__sklib_ptr bmp, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__pixel_drawn_at_point__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__pixel_drawn_at_point__bitmap__double__double(__sklib_ptr bmp, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__pixel_drawn_at_point__bitmap__int__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__pixel_drawn_at_point__bitmap__int__point_2d_ref(__sklib_ptr bmp, int cell, __sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__pixel_drawn_at_point__bitmap__int__float__float", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__pixel_drawn_at_point__bitmap__int__float__float(__sklib_ptr bmp, int cell, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__pixel_drawn_at_point__bitmap__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__pixel_drawn_at_point__bitmap__int__double__double(__sklib_ptr bmp, int cell, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__process_events", CharSet=CharSet.Ansi)]
     private static extern void __sklib__process_events();
@@ -2477,11 +2334,47 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line__color__point_2d_ref__point_2d_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_line__color__point_2d_ref__point_2d_ref__drawing_options_ref(__sklib_color clr, __sklib_point_2d fromPt, __sklib_point_2d toPt, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line__color__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_line__color__float__float__float__float(__sklib_color clr, float x1, float y1, float x2, float y2);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line__color__double__double__double__double(__sklib_color clr, double x1, double y1, double x2, double y2);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line__color__float__float__float__float__drawing_options_ref", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_line__color__float__float__float__float__drawing_options_ref(__sklib_color clr, float x1, float y1, float x2, float y2, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line__color__double__double__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line__color__double__double__double__double__drawing_options_ref(__sklib_color clr, double x1, double y1, double x2, double y2, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_bitmap__bitmap__color__line_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_bitmap__bitmap__color__line_ref(__sklib_ptr destination, __sklib_color clr, __sklib_line l);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_bitmap__bitmap__color__line_ref__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_bitmap__bitmap__color__line_ref__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_line l, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_bitmap__bitmap__color__point_2d_ref__point_2d_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_bitmap__bitmap__color__point_2d_ref__point_2d_ref(__sklib_ptr destination, __sklib_color clr, __sklib_point_2d fromPt, __sklib_point_2d toPt);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_bitmap__bitmap__color__point_2d_ref__point_2d_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_bitmap__bitmap__color__point_2d_ref__point_2d_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_point_2d fromPt, __sklib_point_2d toPt, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_bitmap__bitmap__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_bitmap__bitmap__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_bitmap__bitmap__color__double__double__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_bitmap__bitmap__color__double__double__double__double__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_window__window__color__line_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_window__window__color__line_ref(__sklib_ptr destination, __sklib_color clr, __sklib_line l);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_window__window__color__line_ref__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_window__window__color__line_ref__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_line l, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_window__window__color__point_2d_ref__point_2d_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_window__window__color__point_2d_ref__point_2d_ref(__sklib_ptr destination, __sklib_color clr, __sklib_point_2d fromPt, __sklib_point_2d toPt);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_window__window__color__point_2d_ref__point_2d_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_window__window__color__point_2d_ref__point_2d_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_point_2d fromPt, __sklib_point_2d toPt, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_window__window__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_window__window__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_line_on_window__window__color__double__double__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_line_on_window__window__color__double__double__double__double__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__closest_point_on_line__point_2d__line_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__closest_point_on_line__point_2d__line_ref(__sklib_point_2d fromPt, __sklib_line l);
@@ -2498,8 +2391,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__line_from__vector_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_line __sklib__line_from__vector_2d_ref(__sklib_vector_2d v);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__line_from__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_line __sklib__line_from__float__float__float__float(float x1, float y1, float x2, float y2);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__line_from__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_line __sklib__line_from__double__double__double__double(double x1, double y1, double x2, double y2);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__line_intersection_point__line_ref__line_ref__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__line_intersection_point__line_ref__line_ref__point_2d_ref(__sklib_line line1, __sklib_line line2, ref __sklib_point_2d pt);
@@ -2618,8 +2511,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__mouse_y", CharSet=CharSet.Ansi)]
     private static extern float __sklib__mouse_y();
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_mouse__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__move_mouse__float__float(float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_mouse__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__move_mouse__double__double(double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_mouse__point_2d", CharSet=CharSet.Ansi)]
     private static extern void __sklib__move_mouse__point_2d(__sklib_point_2d point);
@@ -2798,32 +2691,62 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel__color__point_2d_ref__drawing_options", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_pixel__color__point_2d_ref__drawing_options(__sklib_color clr, __sklib_point_2d pt, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel__color__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_pixel__color__float__float(__sklib_color clr, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel__color__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel__color__double__double(__sklib_color clr, double x, double y);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel__color__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_pixel__color__float__float__drawing_options(__sklib_color clr, float x, float y, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel__color__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel__color__double__double__drawing_options(__sklib_color clr, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel_on_bitmap__bitmap__color__point_2d_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel_on_bitmap__bitmap__color__point_2d_ref(__sklib_ptr destination, __sklib_color clr, __sklib_point_2d pt);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel_on_bitmap__bitmap__color__point_2d_ref__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel_on_bitmap__bitmap__color__point_2d_ref__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_point_2d pt, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel_on_bitmap__bitmap__color__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel_on_bitmap__bitmap__color__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel_on_bitmap__bitmap__color__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel_on_bitmap__bitmap__color__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel_on_window__window__color__point_2d_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel_on_window__window__color__point_2d_ref(__sklib_ptr destination, __sklib_color clr, __sklib_point_2d pt);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel_on_window__window__color__point_2d_ref__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel_on_window__window__color__point_2d_ref__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_point_2d pt, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel_on_window__window__color__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel_on_window__window__color__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_pixel_on_window__window__color__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_pixel_on_window__window__color__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__bitmap__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_color __sklib__get_pixel__bitmap__point_2d_ref(__sklib_ptr bmp, __sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__bitmap__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_color __sklib__get_pixel__bitmap__float__float(__sklib_ptr bmp, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__bitmap__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_color __sklib__get_pixel__bitmap__double__double(__sklib_ptr bmp, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_color __sklib__get_pixel__point_2d_ref(__sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_color __sklib__get_pixel__float__float(float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_color __sklib__get_pixel__double__double(double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__window__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_color __sklib__get_pixel__window__point_2d_ref(__sklib_ptr wnd, __sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__window__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_color __sklib__get_pixel__window__float__float(__sklib_ptr wnd, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel__window__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_color __sklib__get_pixel__window__double__double(__sklib_ptr wnd, double x, double y);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__point_at__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_point_2d __sklib__point_at__float__float(float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel_from_window__window__point_2d_ref", CharSet=CharSet.Ansi)]
+    private static extern __sklib_color __sklib__get_pixel_from_window__window__point_2d_ref(__sklib_ptr destination, __sklib_point_2d pt);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__get_pixel_from_window__window__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_color __sklib__get_pixel_from_window__window__double__double(__sklib_ptr destination, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__point_at__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_point_2d __sklib__point_at__double__double(double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__point_at_origin", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__point_at_origin();
@@ -2885,8 +2808,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__quad_from__rectangle_ref__matrix_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_quad __sklib__quad_from__rectangle_ref__matrix_2d_ref(__sklib_rectangle rect, __sklib_matrix_2d transform);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__quad_from__float__float__float__float__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_quad __sklib__quad_from__float__float__float__float__float__float__float__float(float xTopLeft, float yTopLeft, float xTopRight, float yTopRight, float xBottomLeft, float yBottomLeft, float xBottomRight, float yBottomRight);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__quad_from__double__double__double__double__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_quad __sklib__quad_from__double__double__double__double__double__double__double__double(double xTopLeft, double yTopLeft, double xTopRight, double yTopRight, double xBottomLeft, double yBottomLeft, double xBottomRight, double yBottomRight);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__quads_intersect__quad_ref__quad_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__quads_intersect__quad_ref__quad_ref(__sklib_quad q1, __sklib_quad q2);
@@ -2909,17 +2832,53 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_quad__color__quad_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_quad__color__quad_ref__drawing_options_ref(__sklib_color clr, __sklib_quad q, __sklib_drawing_options opts);
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_quad_on_bitmap__bitmap__color__quad_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_quad_on_bitmap__bitmap__color__quad_ref(__sklib_ptr destination, __sklib_color clr, __sklib_quad q);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_quad_on_bitmap__bitmap__color__quad_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_quad_on_bitmap__bitmap__color__quad_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_quad q, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_quad_on_window__window__color__quad_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_quad_on_window__window__color__quad_ref(__sklib_ptr destination, __sklib_color clr, __sklib_quad q);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_quad_on_window__window__color__quad_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_quad_on_window__window__color__quad_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_quad q, __sklib_drawing_options opts);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle__color__rectangle_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_rectangle__color__rectangle_ref(__sklib_color clr, __sklib_rectangle rect);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle__color__rectangle_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_rectangle__color__rectangle_ref__drawing_options_ref(__sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle__color__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_rectangle__color__float__float__float__float(__sklib_color clr, float x, float y, float width, float height);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle__color__double__double__double__double(__sklib_color clr, double x, double y, double width, double height);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle__color__float__float__float__float__drawing_options_ref", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_rectangle__color__float__float__float__float__drawing_options_ref(__sklib_color clr, float x, float y, float width, float height, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle__color__double__double__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle__color__double__double__double__double__drawing_options_ref(__sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle_on_bitmap__bitmap__color__rectangle_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle_on_bitmap__bitmap__color__rectangle_ref(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle_on_bitmap__bitmap__color__rectangle_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle_on_bitmap__bitmap__color__rectangle_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle_on_bitmap__bitmap__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle_on_bitmap__bitmap__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle_on_bitmap__bitmap__color__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle_on_bitmap__bitmap__color__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle_on_window__window__color__rectangle_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle_on_window__window__color__rectangle_ref(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle_on_window__window__color__rectangle_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle_on_window__window__color__rectangle_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle_on_window__window__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle_on_window__window__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_rectangle_on_window__window__color__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_rectangle_on_window__window__color__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_quad__color__quad_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_quad__color__quad_ref(__sklib_color clr, __sklib_quad q);
@@ -2927,17 +2886,53 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_quad__color__quad_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_quad__color__quad_ref__drawing_options_ref(__sklib_color clr, __sklib_quad q, __sklib_drawing_options opts);
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_quad_on_bitmap__bitmap__color__quad_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_quad_on_bitmap__bitmap__color__quad_ref(__sklib_ptr destination, __sklib_color clr, __sklib_quad q);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_quad_on_bitmap__bitmap__color__quad_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_quad_on_bitmap__bitmap__color__quad_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_quad q, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_quad_on_window__window__color__quad_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_quad_on_window__window__color__quad_ref(__sklib_ptr destination, __sklib_color clr, __sklib_quad q);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_quad_on_window__window__color__quad_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_quad_on_window__window__color__quad_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_quad q, __sklib_drawing_options opts);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle__color__rectangle_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_rectangle__color__rectangle_ref(__sklib_color clr, __sklib_rectangle rect);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle__color__rectangle_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_rectangle__color__rectangle_ref__drawing_options_ref(__sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle__color__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__fill_rectangle__color__float__float__float__float(__sklib_color clr, float x, float y, float width, float height);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle__color__double__double__double__double(__sklib_color clr, double x, double y, double width, double height);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle__color__float__float__float__float__drawing_options_ref", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__fill_rectangle__color__float__float__float__float__drawing_options_ref(__sklib_color clr, float x, float y, float width, float height, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle__color__double__double__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle__color__double__double__double__double__drawing_options_ref(__sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle_on_bitmap__bitmap__color__rectangle_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle_on_bitmap__bitmap__color__rectangle_ref(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle_on_bitmap__bitmap__color__rectangle_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle_on_bitmap__bitmap__color__rectangle_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle_on_bitmap__bitmap__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle_on_bitmap__bitmap__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle_on_bitmap__bitmap__color__double__double__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle_on_bitmap__bitmap__color__double__double__double__double__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle_on_window__window__color__rectangle_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle_on_window__window__color__rectangle_ref(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle_on_window__window__color__rectangle_ref__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle_on_window__window__color__rectangle_ref__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, __sklib_rectangle rect, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle_on_window__window__color__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle_on_window__window__color__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_rectangle_on_window__window__color__double__double__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_rectangle_on_window__window__color__double__double__double__double__drawing_options_ref(__sklib_ptr destination, __sklib_color clr, double x, double y, double width, double height, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__inset_rectangle__rectangle_ref__float", CharSet=CharSet.Ansi)]
     private static extern __sklib_rectangle __sklib__inset_rectangle__rectangle_ref__float(__sklib_rectangle rect, float insetAmount);
@@ -2960,14 +2955,14 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__rectangle_center__rectangle_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__rectangle_center__rectangle_ref(__sklib_rectangle rect);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__rectangle_from__point_2d__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_rectangle __sklib__rectangle_from__point_2d__float__float(__sklib_point_2d pt, float width, float height);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__rectangle_from__point_2d__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_rectangle __sklib__rectangle_from__point_2d__double__double(__sklib_point_2d pt, double width, double height);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__rectangle_from__point_2d__point_2d", CharSet=CharSet.Ansi)]
     private static extern __sklib_rectangle __sklib__rectangle_from__point_2d__point_2d(__sklib_point_2d pt1, __sklib_point_2d pt2);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__rectangle_from__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_rectangle __sklib__rectangle_from__float__float__float__float(float x, float y, float width, float height);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__rectangle_from__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_rectangle __sklib__rectangle_from__double__double__double__double(double x, double y, double width, double height);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__rectangle_left__rectangle_ref", CharSet=CharSet.Ansi)]
     private static extern float __sklib__rectangle_left__rectangle_ref(__sklib_rectangle rect);
@@ -3113,8 +3108,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_sprite__sprite", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_sprite__sprite(__sklib_ptr s);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_sprite__sprite__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_sprite__sprite__float__float(__sklib_ptr s, float xOffset, float yOffset);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_sprite__sprite__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_sprite__sprite__double__double(__sklib_ptr s, double xOffset, double yOffset);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__free_all_sprites", CharSet=CharSet.Ansi)]
     private static extern void __sklib__free_all_sprites();
@@ -3143,8 +3138,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_sprite__sprite__float", CharSet=CharSet.Ansi)]
     private static extern void __sklib__move_sprite__sprite__float(__sklib_ptr s, float pct);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_sprite_to__sprite__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__move_sprite_to__sprite__float__float(__sklib_ptr s, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__move_sprite_to__sprite__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__move_sprite_to__sprite__double__double(__sklib_ptr s, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__select_sprite_pack__string_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__select_sprite_pack__string_ref(__sklib_string name);
@@ -3296,8 +3291,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_on_screen_at__sprite__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__sprite_on_screen_at__sprite__point_2d_ref(__sklib_ptr s, __sklib_point_2d pt);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_on_screen_at__sprite__float__float", CharSet=CharSet.Ansi)]
-    private static extern int __sklib__sprite_on_screen_at__sprite__float__float(__sklib_ptr s, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_on_screen_at__sprite__double__double", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__sprite_on_screen_at__sprite__double__double(__sklib_ptr s, double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__sprite_position__sprite", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__sprite_position__sprite(__sklib_ptr s);
@@ -3530,23 +3525,59 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__write_line__string", CharSet=CharSet.Ansi)]
     private static extern void __sklib__write_line__string(__sklib_string line);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__string_ref__int__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_text__string_ref__color_ref__string_ref__int__float__float(__sklib_string text, __sklib_color clr, __sklib_string fnt, int fontSize, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__string_ref__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text__string_ref__color_ref__string_ref__int__double__double(__sklib_string text, __sklib_color clr, __sklib_string fnt, int fontSize, double x, double y);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__string_ref__int__float__float__drawing_options_ref", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_text__string_ref__color_ref__string_ref__int__float__float__drawing_options_ref(__sklib_string text, __sklib_color clr, __sklib_string fnt, int fontSize, float x, float y, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref(__sklib_string text, __sklib_color clr, __sklib_string fnt, int fontSize, double x, double y, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_text__string_ref__color_ref__float__float(__sklib_string text, __sklib_color clr, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text__string_ref__color_ref__double__double(__sklib_string text, __sklib_color clr, double x, double y);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__float__float__drawing_options_ref", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_text__string_ref__color_ref__float__float__drawing_options_ref(__sklib_string text, __sklib_color clr, float x, float y, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text__string_ref__color_ref__double__double__drawing_options_ref(__sklib_string text, __sklib_color clr, double x, double y, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__font__int__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_text__string_ref__color_ref__font__int__float__float(__sklib_string text, __sklib_color clr, __sklib_ptr fnt, int fontSize, float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__font__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text__string_ref__color_ref__font__int__double__double(__sklib_string text, __sklib_color clr, __sklib_ptr fnt, int fontSize, double x, double y);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__font__int__float__float__drawing_options_ref", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_text__string_ref__color_ref__font__int__float__float__drawing_options_ref(__sklib_string text, __sklib_color clr, __sklib_ptr fnt, int fontSize, float x, float y, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text__string_ref__color_ref__font__int__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text__string_ref__color_ref__font__int__double__double__drawing_options_ref(__sklib_string text, __sklib_color clr, __sklib_ptr fnt, int fontSize, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__string_ref__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__string_ref__int__double__double(__sklib_ptr bmp, __sklib_string text, __sklib_color clr, __sklib_string fnt, int fontSize, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref(__sklib_ptr bmp, __sklib_string text, __sklib_color clr, __sklib_string fnt, int fontSize, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__double__double(__sklib_ptr bmp, __sklib_string text, __sklib_color clr, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__double__double__drawing_options_ref(__sklib_ptr bmp, __sklib_string text, __sklib_color clr, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__font__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__font__int__double__double(__sklib_ptr bmp, __sklib_string text, __sklib_color clr, __sklib_ptr fnt, int fontSize, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__font__int__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__font__int__double__double__drawing_options_ref(__sklib_ptr bmp, __sklib_string text, __sklib_color clr, __sklib_ptr fnt, int fontSize, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_window__window__string_ref__color_ref__string_ref__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_window__window__string_ref__color_ref__string_ref__int__double__double(__sklib_ptr wnd, __sklib_string text, __sklib_color clr, __sklib_string fnt, int fontSize, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_window__window__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_window__window__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref(__sklib_ptr wnd, __sklib_string text, __sklib_color clr, __sklib_string fnt, int fontSize, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_window__window__string_ref__color_ref__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_window__window__string_ref__color_ref__double__double(__sklib_ptr wnd, __sklib_string text, __sklib_color clr, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_window__window__string_ref__color_ref__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_window__window__string_ref__color_ref__double__double__drawing_options_ref(__sklib_ptr wnd, __sklib_string text, __sklib_color clr, double x, double y, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_window__window__string_ref__color_ref__font__int__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_window__window__string_ref__color_ref__font__int__double__double(__sklib_ptr wnd, __sklib_string text, __sklib_color clr, __sklib_ptr fnt, int fontSize, double x, double y);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_text_on_window__window__string_ref__color_ref__font__int__double__double__drawing_options_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_text_on_window__window__string_ref__color_ref__font__int__double__double__drawing_options_ref(__sklib_ptr wnd, __sklib_string text, __sklib_color clr, __sklib_ptr fnt, int fontSize, double x, double y, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__font_has_size__string_ref__int", CharSet=CharSet.Ansi)]
     private static extern int __sklib__font_has_size__string_ref__int(__sklib_string name, int fontSize);
@@ -3710,11 +3741,35 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle__color__triangle_ref__drawing_options", CharSet=CharSet.Ansi)]
     private static extern void __sklib__draw_triangle__color__triangle_ref__drawing_options(__sklib_color clr, __sklib_triangle tri, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle__color__float__float__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_triangle__color__float__float__float__float__float__float(__sklib_color clr, float x1, float y1, float x2, float y2, float x3, float y3);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle__color__double__double__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle__color__double__double__double__double__double__double(__sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle__color__float__float__float__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__draw_triangle__color__float__float__float__float__float__float__drawing_options(__sklib_color clr, float x1, float y1, float x2, float y2, float x3, float y3, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle__color__double__double__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle__color__double__double__double__double__double__double__drawing_options(__sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle_on_bitmap__bitmap__color__triangle_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle_on_bitmap__bitmap__color__triangle_ref(__sklib_ptr destination, __sklib_color clr, __sklib_triangle tri);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle_on_bitmap__bitmap__color__triangle_ref__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle_on_bitmap__bitmap__color__triangle_ref__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_triangle tri, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle_on_window__window__color__triangle_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle_on_window__window__color__triangle_ref(__sklib_ptr destination, __sklib_color clr, __sklib_triangle tri);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle_on_window__window__color__triangle_ref__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle_on_window__window__color__triangle_ref__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_triangle tri, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle_on_window__window__color__double__double__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle_on_window__window__color__double__double__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__draw_triangle_on_window__window__color__double__double__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__draw_triangle_on_window__window__color__double__double__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle__color__triangle_ref", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_triangle__color__triangle_ref(__sklib_color clr, __sklib_triangle tri);
@@ -3722,11 +3777,35 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle__color__triangle_ref__drawing_options", CharSet=CharSet.Ansi)]
     private static extern void __sklib__fill_triangle__color__triangle_ref__drawing_options(__sklib_color clr, __sklib_triangle tri, __sklib_drawing_options opts);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle__color__float__float__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__fill_triangle__color__float__float__float__float__float__float(__sklib_color clr, float x1, float y1, float x2, float y2, float x3, float y3);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle__color__double__double__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle__color__double__double__double__double__double__double(__sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle__color__float__float__float__float__float__float__drawing_options", CharSet=CharSet.Ansi)]
-    private static extern void __sklib__fill_triangle__color__float__float__float__float__float__float__drawing_options(__sklib_color clr, float x1, float y1, float x2, float y2, float x3, float y3, __sklib_drawing_options opts);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle__color__double__double__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle__color__double__double__double__double__double__double__drawing_options(__sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle_on_bitmap__bitmap__color__triangle_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle_on_bitmap__bitmap__color__triangle_ref(__sklib_ptr destination, __sklib_color clr, __sklib_triangle tri);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle_on_bitmap__bitmap__color__triangle_ref__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle_on_bitmap__bitmap__color__triangle_ref__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_triangle tri, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle_on_window__window__color__triangle_ref", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle_on_window__window__color__triangle_ref(__sklib_ptr destination, __sklib_color clr, __sklib_triangle tri);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle_on_window__window__color__triangle_ref__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle_on_window__window__color__triangle_ref__drawing_options(__sklib_ptr destination, __sklib_color clr, __sklib_triangle tri, __sklib_drawing_options opts);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle_on_window__window__color__double__double__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle_on_window__window__color__double__double__double__double__double__double(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__fill_triangle_on_window__window__color__double__double__double__double__double__double__drawing_options", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__fill_triangle_on_window__window__color__double__double__double__double__double__double__drawing_options(__sklib_ptr destination, __sklib_color clr, double x1, double y1, double x2, double y2, double x3, double y3, __sklib_drawing_options opts);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__triangle_barycenter__triangle_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_point_2d __sklib__triangle_barycenter__triangle_ref(__sklib_triangle tri);
@@ -3734,8 +3813,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__triangle_from__point_2d_ref__point_2d_ref__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_triangle __sklib__triangle_from__point_2d_ref__point_2d_ref__point_2d_ref(__sklib_point_2d p1, __sklib_point_2d p2, __sklib_point_2d p3);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__triangle_from__float__float__float__float__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_triangle __sklib__triangle_from__float__float__float__float__float__float(float x1, float y1, float x2, float y2, float x3, float y3);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__triangle_from__double__double__double__double__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_triangle __sklib__triangle_from__double__double__double__double__double__double(double x1, double y1, double x2, double y2, double x3, double y3);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__triangle_rectangle_intersect__triangle_ref__rectangle_ref", CharSet=CharSet.Ansi)]
     private static extern int __sklib__triangle_rectangle_intersect__triangle_ref__rectangle_ref(__sklib_triangle tri, __sklib_rectangle rect);
@@ -3751,6 +3830,9 @@ internal static Window __skadapter__to_window(IntPtr v)
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__delay__unsigned_int", CharSet=CharSet.Ansi)]
     private static extern void __sklib__delay__unsigned_int(uint milliseconds);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__display_dialog__string_ref__string_ref__font__int", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__display_dialog__string_ref__string_ref__font__int(__sklib_string title, __sklib_string msg, __sklib_ptr outputFont, int fontSize);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__file_as_string__string__resource_kind", CharSet=CharSet.Ansi)]
     private static extern __sklib_string __sklib__file_as_string__string__resource_kind(__sklib_string filename, int kind);
@@ -3830,8 +3912,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__vector_to__point_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_vector_2d __sklib__vector_to__point_2d_ref(__sklib_point_2d p1);
 
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__vector_to__float__float", CharSet=CharSet.Ansi)]
-    private static extern __sklib_vector_2d __sklib__vector_to__float__float(float x, float y);
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__vector_to__double__double", CharSet=CharSet.Ansi)]
+    private static extern __sklib_vector_2d __sklib__vector_to__double__double(double x, double y);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__vector_to_string__vector_2d_ref", CharSet=CharSet.Ansi)]
     private static extern __sklib_string __sklib__vector_to_string__vector_2d_ref(__sklib_vector_2d v);
@@ -4010,6 +4092,9 @@ internal static Window __skadapter__to_window(IntPtr v)
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__refresh_window__window", CharSet=CharSet.Ansi)]
     private static extern void __sklib__refresh_window__window(__sklib_ptr wind);
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__refresh_window__window__unsigned_int", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__refresh_window__window__unsigned_int(__sklib_ptr wind, uint targetFps);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__resize_current_window__int__int", CharSet=CharSet.Ansi)]
     private static extern void __sklib__resize_current_window__int__int(int width, int height);
 
@@ -4098,7 +4183,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     private static extern int __sklib__window_y__window(__sklib_ptr wnd);
 
     public static int AnimationCount(AnimationScript script)
-{
+    {
       __sklib_ptr __skparam__script;
       int __skreturn;
       __skparam__script = __skadapter__to_sklib_animation_script(script);
@@ -4106,7 +4191,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int AnimationCurrentCell(Animation anim)
-{
+    {
       __sklib_ptr __skparam__anim;
       int __skreturn;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
@@ -4114,7 +4199,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Vector2D AnimationCurrentVector(Animation anim)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_vector_2d __skreturn;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
@@ -4122,7 +4207,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static bool AnimationEnded(Animation anim)
-{
+    {
       __sklib_ptr __skparam__anim;
       int __skreturn;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
@@ -4130,7 +4215,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool AnimationEnteredFrame(Animation anim)
-{
+    {
       __sklib_ptr __skparam__anim;
       int __skreturn;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
@@ -4138,7 +4223,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static float AnimationFrameTime(Animation anim)
-{
+    {
       __sklib_ptr __skparam__anim;
       float __skreturn;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
@@ -4146,7 +4231,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static int AnimationIndex(AnimationScript script, string name)
-{
+    {
       __sklib_ptr __skparam__script;
       __sklib_string __skparam__name;
       int __skreturn;
@@ -4157,7 +4242,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static string AnimationName(Animation temp)
-{
+    {
       __sklib_ptr __skparam__temp;
       __sklib_string __skreturn;
       __skparam__temp = __skadapter__to_sklib_animation(temp);
@@ -4165,7 +4250,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static string AnimationScriptName(AnimationScript script)
-{
+    {
       __sklib_ptr __skparam__script;
       __sklib_string __skreturn;
       __skparam__script = __skadapter__to_sklib_animation_script(script);
@@ -4173,7 +4258,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static AnimationScript AnimationScriptNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -4182,7 +4267,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_animation_script(__skreturn);
     }
     public static void AssignAnimation(Animation anim, AnimationScript script, string name)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_ptr __skparam__script;
       __sklib_string __skparam__name;
@@ -4193,7 +4278,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void AssignAnimation(Animation anim, AnimationScript script, string name, bool withSound)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_ptr __skparam__script;
       __sklib_string __skparam__name;
@@ -4206,7 +4291,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void AssignAnimation(Animation anim, AnimationScript script, int idx)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_ptr __skparam__script;
       int __skparam__idx;
@@ -4216,7 +4301,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__assign_animation__animation__animation_script__int(__skparam__anim, __skparam__script, __skparam__idx);
     }
     public static void AssignAnimation(Animation anim, AnimationScript script, int idx, bool withSound)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_ptr __skparam__script;
       int __skparam__idx;
@@ -4228,7 +4313,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__assign_animation__animation__animation_script__int__bool(__skparam__anim, __skparam__script, __skparam__idx, __skparam__with_sound);
     }
     public static void AssignAnimation(Animation anim, string scriptName, string name)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_string __skparam__script_name;
       __sklib_string __skparam__name;
@@ -4240,7 +4325,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void AssignAnimation(Animation anim, string scriptName, string name, bool withSound)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_string __skparam__script_name;
       __sklib_string __skparam__name;
@@ -4254,7 +4339,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static Animation CreateAnimation(AnimationScript script, int idx, bool withSound)
-{
+    {
       __sklib_ptr __skparam__script;
       int __skparam__idx;
       int __skparam__with_sound;
@@ -4266,7 +4351,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_animation(__skreturn);
     }
     public static Animation CreateAnimation(AnimationScript script, string name)
-{
+    {
       __sklib_ptr __skparam__script;
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
@@ -4277,7 +4362,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_animation(__skreturn);
     }
     public static Animation CreateAnimation(AnimationScript script, string name, bool withSound)
-{
+    {
       __sklib_ptr __skparam__script;
       __sklib_string __skparam__name;
       int __skparam__with_sound;
@@ -4290,7 +4375,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_animation(__skreturn);
     }
     public static Animation CreateAnimation(string scriptName, string name)
-{
+    {
       __sklib_string __skparam__script_name;
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
@@ -4302,7 +4387,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_animation(__skreturn);
     }
     public static Animation CreateAnimation(string scriptName, string name, bool withSound)
-{
+    {
       __sklib_string __skparam__script_name;
       __sklib_string __skparam__name;
       int __skparam__with_sound;
@@ -4316,30 +4401,30 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_animation(__skreturn);
     }
     public static void FreeAllAnimationScripts()
-{
+    {
       __sklib__free_all_animation_scripts();
     }
     public static void FreeAnimation(Animation ani)
-{
+    {
       __sklib_ptr __skparam__ani;
       __skparam__ani = __skadapter__to_sklib_animation(ani);
       __sklib__free_animation__animation(__skparam__ani);
     }
     public static void FreeAnimationScript(AnimationScript scriptToFree)
-{
+    {
       __sklib_ptr __skparam__script_to_free;
       __skparam__script_to_free = __skadapter__to_sklib_animation_script(scriptToFree);
       __sklib__free_animation_script__animation_script(__skparam__script_to_free);
     }
     public static void FreeAnimationScript(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__free_animation_script__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static bool HasAnimationNamed(AnimationScript script, string name)
-{
+    {
       __sklib_ptr __skparam__script;
       __sklib_string __skparam__name;
       int __skreturn;
@@ -4350,7 +4435,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool HasAnimationScript(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -4359,7 +4444,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static AnimationScript LoadAnimationScript(string name, string filename)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__filename;
       __sklib_ptr __skreturn;
@@ -4371,13 +4456,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_animation_script(__skreturn);
     }
     public static void RestartAnimation(Animation anim)
-{
+    {
       __sklib_ptr __skparam__anim;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
       __sklib__restart_animation__animation(__skparam__anim);
     }
     public static void RestartAnimation(Animation anim, bool withSound)
-{
+    {
       __sklib_ptr __skparam__anim;
       int __skparam__with_sound;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
@@ -4385,7 +4470,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__restart_animation__animation__bool(__skparam__anim, __skparam__with_sound);
     }
     public static void UpdateAnimation(Animation anim, float pct, bool withSound)
-{
+    {
       __sklib_ptr __skparam__anim;
       float __skparam__pct;
       int __skparam__with_sound;
@@ -4395,13 +4480,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__update_animation__animation__float__bool(__skparam__anim, __skparam__pct, __skparam__with_sound);
     }
     public static void UpdateAnimation(Animation anim)
-{
+    {
       __sklib_ptr __skparam__anim;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
       __sklib__update_animation__animation(__skparam__anim);
     }
     public static void UpdateAnimation(Animation anim, float pct)
-{
+    {
       __sklib_ptr __skparam__anim;
       float __skparam__pct;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
@@ -4409,28 +4494,28 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__update_animation__animation__float(__skparam__anim, __skparam__pct);
     }
     public static bool AudioReady()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__audio_ready();
       return __skadapter__to_bool(__skreturn);
     }
     public static void CloseAudio()
-{
+    {
       __sklib__close_audio();
     }
     public static void OpenAudio()
-{
+    {
       __sklib__open_audio();
     }
     public static void FreeResourceBundle(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__free_resource_bundle__string(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static bool HasResourceBundle(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -4439,7 +4524,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void LoadResourceBundle(string name, string filename)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__filename;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -4449,25 +4534,25 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__filename);
     }
     public static Point2D CameraPosition()
-{
+    {
       __sklib_point_2d __skreturn;
       __skreturn = __sklib__camera_position();
       return __skadapter__to_point_2d(__skreturn);
     }
     public static float CameraX()
-{
+    {
       float __skreturn;
       __skreturn = __sklib__camera_x();
       return __skadapter__to_float(__skreturn);
     }
     public static float CameraY()
-{
+    {
       float __skreturn;
       __skreturn = __sklib__camera_y();
       return __skadapter__to_float(__skreturn);
     }
     public static void CenterCameraOn(Sprite s, Vector2D offset)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_vector_2d __skparam__offset;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -4475,7 +4560,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__center_camera_on__sprite__vector_2d_ref(__skparam__s, __skparam__offset);
     }
     public static void CenterCameraOn(Sprite s, float offsetX, float offsetY)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__offset_x;
       float __skparam__offset_y;
@@ -4485,13 +4570,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__center_camera_on__sprite__float__float(__skparam__s, __skparam__offset_x, __skparam__offset_y);
     }
     public static void MoveCameraBy(Vector2D offset)
-{
+    {
       __sklib_vector_2d __skparam__offset;
       __skparam__offset = __skadapter__to_sklib_vector_2d(offset);
       __sklib__move_camera_by__vector_2d_ref(__skparam__offset);
     }
     public static void MoveCameraBy(float dx, float dy)
-{
+    {
       float __skparam__dx;
       float __skparam__dy;
       __skparam__dx = __skadapter__to_sklib_float(dx);
@@ -4499,21 +4584,21 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__move_camera_by__float__float(__skparam__dx, __skparam__dy);
     }
     public static void MoveCameraTo(Point2D pt)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
       __sklib__move_camera_to__point_2d_ref(__skparam__pt);
     }
-    public static void MoveCameraTo(float x, float y)
-{
-      float __skparam__x;
-      float __skparam__y;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__move_camera_to__float__float(__skparam__x, __skparam__y);
+    public static void MoveCameraTo(double x, double y)
+    {
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__move_camera_to__double__double(__skparam__x, __skparam__y);
     }
     public static bool PointInWindow(Window wind, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_point_2d __skparam__pt;
       int __skreturn;
@@ -4523,7 +4608,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool PointOnScreen(Point2D pt)
-{
+    {
       __sklib_point_2d __skparam__pt;
       int __skreturn;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
@@ -4531,7 +4616,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool RectInWindow(Window wind, Rectangle rect)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_rectangle __skparam__rect;
       int __skreturn;
@@ -4541,7 +4626,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool RectOnScreen(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       int __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -4549,31 +4634,31 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Point2D ScreenCenter()
-{
+    {
       __sklib_point_2d __skreturn;
       __skreturn = __sklib__screen_center();
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Rectangle ScreenRectangle()
-{
+    {
       __sklib_rectangle __skreturn;
       __skreturn = __sklib__screen_rectangle();
       return __skadapter__to_rectangle(__skreturn);
     }
     public static void SetCameraPosition(Point2D pos)
-{
+    {
       __sklib_point_2d __skparam__pos;
       __skparam__pos = __skadapter__to_sklib_point_2d(pos);
       __sklib__set_camera_position__point_2d(__skparam__pos);
     }
-    public static void SetCameraY(float y)
-{
-      float __skparam__y;
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__set_camera_y__float(__skparam__y);
+    public static void SetCameraY(double y)
+    {
+      double __skparam__y;
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__set_camera_y__double(__skparam__y);
     }
     public static Point2D ToScreen(Point2D pt)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_point_2d __skreturn;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
@@ -4581,7 +4666,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Rectangle ToScreen(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __sklib_rectangle __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -4589,7 +4674,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static float ToScreenX(float worldX)
-{
+    {
       float __skparam__world_x;
       float __skreturn;
       __skparam__world_x = __skadapter__to_sklib_float(worldX);
@@ -4597,7 +4682,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float ToScreenY(float worldY)
-{
+    {
       float __skparam__world_y;
       float __skreturn;
       __skparam__world_y = __skadapter__to_sklib_float(worldY);
@@ -4605,7 +4690,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Point2D ToWorld(Point2D pt)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_point_2d __skreturn;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
@@ -4613,7 +4698,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static float ToWorldX(float screenX)
-{
+    {
       float __skparam__screen_x;
       float __skreturn;
       __skparam__screen_x = __skadapter__to_sklib_float(screenX);
@@ -4621,7 +4706,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float ToWorldY(float screenY)
-{
+    {
       float __skparam__screen_y;
       float __skreturn;
       __skparam__screen_y = __skadapter__to_sklib_float(screenY);
@@ -4629,51 +4714,21 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Vector2D VectorWorldToScreen()
-{
+    {
       __sklib_vector_2d __skreturn;
       __skreturn = __sklib__vector_world_to_screen();
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Rectangle WindowArea(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_rectangle __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __skreturn = __sklib__window_area__window(__skparam__wind);
       return __skadapter__to_rectangle(__skreturn);
     }
-    public static void BitmapDrawCircle(Bitmap destination, Color clr, float x, float y, float radius)
-{
-      __sklib_ptr __skparam__destination;
-      __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
-      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
-      __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
-      __sklib__bitmap_draw_circle__bitmap__color__float__float__float(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
-    }
-    public static void BitmapDrawCircle(Bitmap destination, Color clr, float x, float y, float radius, DrawingOptions opts)
-{
-      __sklib_ptr __skparam__destination;
-      __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
-      __sklib_drawing_options __skparam__opts;
-      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
-      __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
-      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__bitmap_draw_circle__bitmap__color__float__float__float__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
-    }
     public static void DrawCircle(Color clr, Circle c)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_circle __skparam__c;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -4681,7 +4736,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_circle__color__circle_ref(__skparam__clr, __skparam__c);
     }
     public static void DrawCircle(Color clr, Circle c, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_circle __skparam__c;
       __sklib_drawing_options __skparam__opts;
@@ -4690,34 +4745,94 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__draw_circle__color__circle_ref__drawing_options(__skparam__clr, __skparam__c, __skparam__opts);
     }
-    public static void DrawCircle(Color clr, float x, float y, float radius)
-{
+    public static void DrawCircle(Color clr, double x, double y, double radius)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
-      __sklib__draw_circle__color__float__float__float(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
+      __sklib__draw_circle__color__double__double__double(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
     }
-    public static void DrawCircle(Color clr, float x, float y, float radius, DrawingOptions opts)
-{
+    public static void DrawCircle(Color clr, double x, double y, double radius, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_circle__color__float__float__float__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
+      __sklib__draw_circle__color__double__double__double__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
+    }
+    public static void DrawCircleOnBitmap(Bitmap destination, Color clr, double x, double y, double radius)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
+      __sklib__draw_circle_on_bitmap__bitmap__color__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
+    }
+    public static void DrawCircleOnBitmap(Bitmap destination, Color clr, double x, double y, double radius, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_circle_on_bitmap__bitmap__color__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
+    }
+    public static void DrawCircleOnWindow(Window destination, Color clr, double x, double y, double radius)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
+      __sklib__draw_circle_on_window__window__color__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
+    }
+    public static void DrawCircleOnWindow(Window destination, Color clr, double x, double y, double radius, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_circle_on_window__window__color__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
     }
     public static void FillCircle(Color clr, Circle c)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_circle __skparam__c;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -4725,7 +4840,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__fill_circle__color__circle_ref(__skparam__clr, __skparam__c);
     }
     public static void FillCircle(Color clr, Circle c, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_circle __skparam__c;
       __sklib_drawing_options __skparam__opts;
@@ -4734,94 +4849,64 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__fill_circle__color__circle_ref__drawing_options(__skparam__clr, __skparam__c, __skparam__opts);
     }
-    public static void FillCircle(Color clr, float x, float y, float radius)
-{
+    public static void FillCircle(Color clr, double x, double y, double radius)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
-      __sklib__fill_circle__color__float__float__float(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
+      __sklib__fill_circle__color__double__double__double(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
     }
-    public static void FillCircle(Color clr, float x, float y, float radius, DrawingOptions opts)
-{
+    public static void FillCircle(Color clr, double x, double y, double radius, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__fill_circle__color__float__float__float__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
-    }
-    public static void WindowDrawCircle(Window destination, Color clr, float x, float y, float radius)
-{
-      __sklib_ptr __skparam__destination;
-      __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
-      __skparam__destination = __skadapter__to_sklib_window(destination);
-      __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
-      __sklib__window_draw_circle__window__color__float__float__float(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius);
-    }
-    public static void WindowDrawCircle(Window destination, Color clr, float x, float y, float radius, DrawingOptions opts)
-{
-      __sklib_ptr __skparam__destination;
-      __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
-      __sklib_drawing_options __skparam__opts;
-      __skparam__destination = __skadapter__to_sklib_window(destination);
-      __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
-      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__window_draw_circle__window__color__float__float__float__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
+      __sklib__fill_circle__color__double__double__double__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__radius, __skparam__opts);
     }
     public static Point2D CenterPoint(Circle c)
-{
+    {
       __sklib_circle __skparam__c;
       __sklib_point_2d __skreturn;
       __skparam__c = __skadapter__to_sklib_circle(c);
       __skreturn = __sklib__center_point__circle_ref(__skparam__c);
       return __skadapter__to_point_2d(__skreturn);
     }
-    public static Circle CircleAt(Point2D pt, float radius)
-{
+    public static Circle CircleAt(Point2D pt, double radius)
+    {
       __sklib_point_2d __skparam__pt;
-      float __skparam__radius;
+      double __skparam__radius;
       __sklib_circle __skreturn;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
-      __skreturn = __sklib__circle_at__point_2d_ref__float(__skparam__pt, __skparam__radius);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
+      __skreturn = __sklib__circle_at__point_2d_ref__double(__skparam__pt, __skparam__radius);
       return __skadapter__to_circle(__skreturn);
     }
-    public static Circle CircleAt(float x, float y, float radius)
-{
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__radius;
+    public static Circle CircleAt(double x, double y, double radius)
+    {
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__radius;
       __sklib_circle __skreturn;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__radius = __skadapter__to_sklib_float(radius);
-      __skreturn = __sklib__circle_at__float__float__float(__skparam__x, __skparam__y, __skparam__radius);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__radius = __skadapter__to_sklib_double(radius);
+      __skreturn = __sklib__circle_at__double__double__double(__skparam__x, __skparam__y, __skparam__radius);
       return __skadapter__to_circle(__skreturn);
     }
     public static float CircleRadius(Circle c)
-{
+    {
       __sklib_circle __skparam__c;
       float __skreturn;
       __skparam__c = __skadapter__to_sklib_circle(c);
@@ -4829,7 +4914,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float CircleX(Circle c)
-{
+    {
       __sklib_circle __skparam__c;
       float __skreturn;
       __skparam__c = __skadapter__to_sklib_circle(c);
@@ -4837,7 +4922,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float CircleY(Circle c)
-{
+    {
       __sklib_circle __skparam__c;
       float __skreturn;
       __skparam__c = __skadapter__to_sklib_circle(c);
@@ -4845,7 +4930,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static bool CirclesIntersect(Circle c1, Circle c2)
-{
+    {
       __sklib_circle __skparam__c1;
       __sklib_circle __skparam__c2;
       int __skreturn;
@@ -4855,7 +4940,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Point2D ClosestPointOnCircle(Point2D fromPt, Circle c)
-{
+    {
       __sklib_point_2d __skparam__from_pt;
       __sklib_circle __skparam__c;
       __sklib_point_2d __skreturn;
@@ -4865,7 +4950,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D ClosestPointOnLineFromCircle(Circle c, Line l)
-{
+    {
       __sklib_circle __skparam__c;
       __sklib_line __skparam__l;
       __sklib_point_2d __skreturn;
@@ -4875,7 +4960,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D ClosestPointOnRectFromCircle(Circle c, Rectangle rect)
-{
+    {
       __sklib_circle __skparam__c;
       __sklib_rectangle __skparam__rect;
       __sklib_point_2d __skreturn;
@@ -4885,7 +4970,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D DistantPointOnCircle(Point2D pt, Circle c)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_circle __skparam__c;
       __sklib_point_2d __skreturn;
@@ -4895,7 +4980,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static bool DistantPointOnCircleHeading(Point2D pt, Circle c, Vector2D heading, ref Point2D oppositePt)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_circle __skparam__c;
       __sklib_vector_2d __skparam__heading;
@@ -4910,7 +4995,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static float RayCircleIntersectDistance(Point2D rayOrigin, Vector2D rayHeading, Circle c)
-{
+    {
       __sklib_point_2d __skparam__ray_origin;
       __sklib_vector_2d __skparam__ray_heading;
       __sklib_circle __skparam__c;
@@ -4922,7 +5007,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static bool TangentPoints(Point2D fromPt, Circle c, ref Point2D p1, ref Point2D p2)
-{
+    {
       __sklib_point_2d __skparam__from_pt;
       __sklib_circle __skparam__c;
       __sklib_point_2d __skparam__p1;
@@ -4938,7 +5023,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void WidestPoints(Circle c, Vector2D along, ref Point2D pt1, ref Point2D pt2)
-{
+    {
       __sklib_circle __skparam__c;
       __sklib_vector_2d __skparam__along;
       __sklib_point_2d __skparam__pt1;
@@ -4952,13 +5037,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       pt2 = __skadapter__to_point_2d(__skparam__pt2);
     }
     public static Rectangle CurrentClip()
-{
+    {
       __sklib_rectangle __skreturn;
       __skreturn = __sklib__current_clip();
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle CurrentClip(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_rectangle __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -4966,7 +5051,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle CurrentClip(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __sklib_rectangle __skreturn;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
@@ -4974,23 +5059,23 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static void PopClip(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
       __sklib__pop_clip__window(__skparam__wnd);
     }
     public static void PopClip()
-{
+    {
       __sklib__pop_clip();
     }
     public static void PopClip(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __sklib__pop_clip__bitmap(__skparam__bmp);
     }
     public static void PushClip(Window wnd, Rectangle r)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __sklib_rectangle __skparam__r;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
@@ -4998,7 +5083,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__push_clip__window__rectangle_ref(__skparam__wnd, __skparam__r);
     }
     public static void PushClip(Bitmap bmp, Rectangle r)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_rectangle __skparam__r;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -5006,35 +5091,35 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__push_clip__bitmap__rectangle_ref(__skparam__bmp, __skparam__r);
     }
     public static void PushClip(Rectangle r)
-{
+    {
       __sklib_rectangle __skparam__r;
       __skparam__r = __skadapter__to_sklib_rectangle(r);
       __sklib__push_clip__rectangle_ref(__skparam__r);
     }
     public static void ResetClip(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __sklib__reset_clip__bitmap(__skparam__bmp);
     }
     public static void ResetClip()
-{
+    {
       __sklib__reset_clip();
     }
     public static void ResetClip(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
       __sklib__reset_clip__window(__skparam__wnd);
     }
     public static void SetClip(Rectangle r)
-{
+    {
       __sklib_rectangle __skparam__r;
       __skparam__r = __skadapter__to_sklib_rectangle(r);
       __sklib__set_clip__rectangle_ref(__skparam__r);
     }
     public static void SetClip(Bitmap bmp, Rectangle r)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_rectangle __skparam__r;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -5042,33 +5127,33 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__set_clip__bitmap__rectangle_ref(__skparam__bmp, __skparam__r);
     }
     public static void SetClip(Window wnd, Rectangle r)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __sklib_rectangle __skparam__r;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
       __skparam__r = __skadapter__to_sklib_rectangle(r);
       __sklib__set_clip__window__rectangle_ref(__skparam__wnd, __skparam__r);
     }
-    public static bool BitmapCollision(Bitmap bmp1, float x1, float y1, Bitmap bmp2, float x2, float y2)
-{
+    public static bool BitmapCollision(Bitmap bmp1, double x1, double y1, Bitmap bmp2, double x2, double y2)
+    {
       __sklib_ptr __skparam__bmp1;
-      float __skparam__x1;
-      float __skparam__y1;
+      double __skparam__x1;
+      double __skparam__y1;
       __sklib_ptr __skparam__bmp2;
-      float __skparam__x2;
-      float __skparam__y2;
+      double __skparam__x2;
+      double __skparam__y2;
       int __skreturn;
       __skparam__bmp1 = __skadapter__to_sklib_bitmap(bmp1);
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
       __skparam__bmp2 = __skadapter__to_sklib_bitmap(bmp2);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __skreturn = __sklib__bitmap_collision__bitmap__float__float__bitmap__float__float(__skparam__bmp1, __skparam__x1, __skparam__y1, __skparam__bmp2, __skparam__x2, __skparam__y2);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skreturn = __sklib__bitmap_collision__bitmap__double__double__bitmap__double__double(__skparam__bmp1, __skparam__x1, __skparam__y1, __skparam__bmp2, __skparam__x2, __skparam__y2);
       return __skadapter__to_bool(__skreturn);
     }
     public static bool BitmapCollision(Bitmap bmp1, Point2D pt1, Bitmap bmp2, Point2D pt2)
-{
+    {
       __sklib_ptr __skparam__bmp1;
       __sklib_point_2d __skparam__pt1;
       __sklib_ptr __skparam__bmp2;
@@ -5082,7 +5167,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool BitmapCollision(Bitmap bmp1, int cell1, Matrix2D matrix1, Bitmap bmp2, int cell2, Matrix2D matrix2)
-{
+    {
       __sklib_ptr __skparam__bmp1;
       int __skparam__cell1;
       __sklib_matrix_2d __skparam__matrix1;
@@ -5100,7 +5185,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool BitmapCollision(Bitmap bmp1, int cell1, Point2D pt1, Bitmap bmp2, int cell2, Point2D pt2)
-{
+    {
       __sklib_ptr __skparam__bmp1;
       int __skparam__cell1;
       __sklib_point_2d __skparam__pt1;
@@ -5117,30 +5202,30 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__bitmap_collision__bitmap__int__point_2d_ref__bitmap__int__point_2d_ref(__skparam__bmp1, __skparam__cell1, __skparam__pt1, __skparam__bmp2, __skparam__cell2, __skparam__pt2);
       return __skadapter__to_bool(__skreturn);
     }
-    public static bool BitmapCollision(Bitmap bmp1, int cell1, float x1, float y1, Bitmap bmp2, int cell2, float x2, float y2)
-{
+    public static bool BitmapCollision(Bitmap bmp1, int cell1, double x1, double y1, Bitmap bmp2, int cell2, double x2, double y2)
+    {
       __sklib_ptr __skparam__bmp1;
       int __skparam__cell1;
-      float __skparam__x1;
-      float __skparam__y1;
+      double __skparam__x1;
+      double __skparam__y1;
       __sklib_ptr __skparam__bmp2;
       int __skparam__cell2;
-      float __skparam__x2;
-      float __skparam__y2;
+      double __skparam__x2;
+      double __skparam__y2;
       int __skreturn;
       __skparam__bmp1 = __skadapter__to_sklib_bitmap(bmp1);
       __skparam__cell1 = __skadapter__to_sklib_int(cell1);
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
       __skparam__bmp2 = __skadapter__to_sklib_bitmap(bmp2);
       __skparam__cell2 = __skadapter__to_sklib_int(cell2);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __skreturn = __sklib__bitmap_collision__bitmap__int__float__float__bitmap__int__float__float(__skparam__bmp1, __skparam__cell1, __skparam__x1, __skparam__y1, __skparam__bmp2, __skparam__cell2, __skparam__x2, __skparam__y2);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skreturn = __sklib__bitmap_collision__bitmap__int__double__double__bitmap__int__double__double(__skparam__bmp1, __skparam__cell1, __skparam__x1, __skparam__y1, __skparam__bmp2, __skparam__cell2, __skparam__x2, __skparam__y2);
       return __skadapter__to_bool(__skreturn);
     }
     public static bool BitmapPointCollision(Bitmap bmp, Matrix2D translation, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_matrix_2d __skparam__translation;
       __sklib_point_2d __skparam__pt;
@@ -5152,7 +5237,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool BitmapPointCollision(Bitmap bmp, Point2D pt, Point2D bmpPt)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skparam__pt;
       __sklib_point_2d __skparam__bmp_pt;
@@ -5163,24 +5248,24 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__bitmap_point_collision__bitmap__point_2d_ref__point_2d_ref(__skparam__bmp, __skparam__pt, __skparam__bmp_pt);
       return __skadapter__to_bool(__skreturn);
     }
-    public static bool BitmapPointCollision(Bitmap bmp, float bmpX, float bmpY, float x, float y)
-{
+    public static bool BitmapPointCollision(Bitmap bmp, float bmpX, float bmpY, double x, double y)
+    {
       __sklib_ptr __skparam__bmp;
       float __skparam__bmp_x;
       float __skparam__bmp_y;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __skparam__bmp_x = __skadapter__to_sklib_float(bmpX);
       __skparam__bmp_y = __skadapter__to_sklib_float(bmpY);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__bitmap_point_collision__bitmap__float__float__float__float(__skparam__bmp, __skparam__bmp_x, __skparam__bmp_y, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__bitmap_point_collision__bitmap__float__float__double__double(__skparam__bmp, __skparam__bmp_x, __skparam__bmp_y, __skparam__x, __skparam__y);
       return __skadapter__to_bool(__skreturn);
     }
     public static bool BitmapPointCollision(Bitmap bmp, int cell, Matrix2D translation, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skparam__cell;
       __sklib_matrix_2d __skparam__translation;
@@ -5194,7 +5279,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool BitmapRectangleCollision(Bitmap bmp, int cell, Matrix2D translation, Rectangle rect)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skparam__cell;
       __sklib_matrix_2d __skparam__translation;
@@ -5208,7 +5293,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool BitmapRectangleCollision(Bitmap bmp, int cell, Point2D pt, Rectangle rect)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skparam__cell;
       __sklib_point_2d __skparam__pt;
@@ -5221,22 +5306,22 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__bitmap_rectangle_collision__bitmap__int__point_2d_ref__rectangle_ref(__skparam__bmp, __skparam__cell, __skparam__pt, __skparam__rect);
       return __skadapter__to_bool(__skreturn);
     }
-    public static bool SpriteBitmapCollision(Sprite s, Bitmap bmp, float x, float y)
-{
+    public static bool SpriteBitmapCollision(Sprite s, Bitmap bmp, double x, double y)
+    {
       __sklib_ptr __skparam__s;
       __sklib_ptr __skparam__bmp;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__sprite_bitmap_collision__sprite__bitmap__float__float(__skparam__s, __skparam__bmp, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__sprite_bitmap_collision__sprite__bitmap__double__double(__skparam__s, __skparam__bmp, __skparam__x, __skparam__y);
       return __skadapter__to_bool(__skreturn);
     }
     public static bool SpriteBitmapCollision(Sprite s, Bitmap bmp, int cell, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_ptr __skparam__bmp;
       int __skparam__cell;
@@ -5249,24 +5334,24 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__sprite_bitmap_collision__sprite__bitmap__int__point_2d_ref(__skparam__s, __skparam__bmp, __skparam__cell, __skparam__pt);
       return __skadapter__to_bool(__skreturn);
     }
-    public static bool SpriteBitmapCollision(Sprite s, Bitmap bmp, int cell, float x, float y)
-{
+    public static bool SpriteBitmapCollision(Sprite s, Bitmap bmp, int cell, double x, double y)
+    {
       __sklib_ptr __skparam__s;
       __sklib_ptr __skparam__bmp;
       int __skparam__cell;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __skparam__cell = __skadapter__to_sklib_int(cell);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__sprite_bitmap_collision__sprite__bitmap__int__float__float(__skparam__s, __skparam__bmp, __skparam__cell, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__sprite_bitmap_collision__sprite__bitmap__int__double__double(__skparam__s, __skparam__bmp, __skparam__cell, __skparam__x, __skparam__y);
       return __skadapter__to_bool(__skreturn);
     }
     public static bool SpriteCollision(Sprite s1, Sprite s2)
-{
+    {
       __sklib_ptr __skparam__s1;
       __sklib_ptr __skparam__s2;
       int __skreturn;
@@ -5276,7 +5361,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool SpritePointCollision(Sprite s, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skparam__pt;
       int __skreturn;
@@ -5286,7 +5371,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool SpriteRectangleCollision(Sprite s, Rectangle rect)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_rectangle __skparam__rect;
       int __skreturn;
@@ -5296,7 +5381,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static int AlphaOf(Color c)
-{
+    {
       __sklib_color __skparam__c;
       int __skreturn;
       __skparam__c = __skadapter__to_sklib_color(c);
@@ -5304,7 +5389,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int BlueOf(Color c)
-{
+    {
       __sklib_color __skparam__c;
       int __skreturn;
       __skparam__c = __skadapter__to_sklib_color(c);
@@ -5312,7 +5397,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static float BrightnessOf(Color c)
-{
+    {
       __sklib_color __skparam__c;
       float __skreturn;
       __skparam__c = __skadapter__to_sklib_color(c);
@@ -5320,811 +5405,811 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Color ColorAliceBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_alice_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorAntiqueWhite()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_antique_white();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorAqua()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_aqua();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorAquamarine()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_aquamarine();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorAzure()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_azure();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBeige()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_beige();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBisque()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_bisque();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBlack()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_black();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBlanchedAlmond()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_blanched_almond();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBlueViolet()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_blue_violet();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBrightGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_bright_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBrown()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_brown();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorBurlyWood()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_burly_wood();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorCadetBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_cadet_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorChartreuse()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_chartreuse();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorChocolate()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_chocolate();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorCoral()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_coral();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorCornflowerBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_cornflower_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorCornsilk()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_cornsilk();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorCrimson()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_crimson();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorCyan()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_cyan();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkCyan()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_cyan();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkGoldenrod()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_goldenrod();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkGray()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_gray();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkKhaki()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_khaki();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkMagenta()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_magenta();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkOliveGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_olive_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkOrange()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_orange();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkOrchid()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_orchid();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkRed()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_red();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkSalmon()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_salmon();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkSeaGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_sea_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkSlateBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_slate_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkSlateGray()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_slate_gray();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkTurquoise()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_turquoise();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDarkViolet()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dark_violet();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDeepPink()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_deep_pink();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDeepSkyBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_deep_sky_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDimGray()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dim_gray();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorDodgerBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_dodger_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorFirebrick()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_firebrick();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorFloralWhite()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_floral_white();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorForestGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_forest_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorFuchsia()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_fuchsia();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorGainsboro()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_gainsboro();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorGhostWhite()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_ghost_white();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorGold()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_gold();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorGoldenrod()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_goldenrod();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorGray()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_gray();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorGreenYellow()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_green_yellow();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorHoneydew()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_honeydew();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorHotPink()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_hot_pink();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorIndianRed()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_indian_red();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorIndigo()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_indigo();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorIvory()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_ivory();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorKhaki()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_khaki();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLavender()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_lavender();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLavenderBlush()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_lavender_blush();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLawnGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_lawn_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLemonChiffon()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_lemon_chiffon();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightCoral()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_coral();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightCyan()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_cyan();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightGoldenrodYellow()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_goldenrod_yellow();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightGray()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_gray();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightPink()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_pink();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightSalmon()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_salmon();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightSeaGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_sea_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightSkyBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_sky_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightSlateGray()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_slate_gray();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightSteelBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_steel_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLightYellow()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_light_yellow();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLime()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_lime();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLimeGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_lime_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorLinen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_linen();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMagenta()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_magenta();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMaroon()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_maroon();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumAquamarine()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_aquamarine();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumOrchid()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_orchid();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumPurple()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_purple();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumSeaGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_sea_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumSlateBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_slate_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumSpringGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_spring_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumTurquoise()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_turquoise();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMediumVioletRed()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_medium_violet_red();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMidnightBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_midnight_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMintCream()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_mint_cream();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMistyRose()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_misty_rose();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorMoccasin()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_moccasin();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorNavajoWhite()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_navajo_white();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorNavy()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_navy();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorOldLace()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_old_lace();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorOlive()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_olive();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorOliveDrab()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_olive_drab();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorOrange()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_orange();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorOrangeRed()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_orange_red();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorOrchid()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_orchid();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPaleGoldenrod()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_pale_goldenrod();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPaleGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_pale_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPaleTurquoise()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_pale_turquoise();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPaleVioletRed()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_pale_violet_red();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPapayaWhip()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_papaya_whip();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPeachPuff()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_peach_puff();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPeru()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_peru();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPink()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_pink();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPlum()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_plum();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPowderBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_powder_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorPurple()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_purple();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorRed()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_red();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorRosyBrown()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_rosy_brown();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorRoyalBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_royal_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSaddleBrown()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_saddle_brown();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSalmon()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_salmon();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSandyBrown()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_sandy_brown();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSeaGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_sea_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSeaShell()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_sea_shell();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSienna()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_sienna();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSilver()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_silver();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSkyBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_sky_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSlateBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_slate_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSlateGray()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_slate_gray();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSnow()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_snow();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSpringGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_spring_green();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSteelBlue()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_steel_blue();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorSwinburneRed()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_swinburne_red();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorTan()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_tan();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorTeal()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_teal();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorThistle()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_thistle();
       return __skadapter__to_color(__skreturn);
     }
     public static string ColorToString(Color c)
-{
+    {
       __sklib_color __skparam__c;
       __sklib_string __skreturn;
       __skparam__c = __skadapter__to_sklib_color(c);
@@ -6132,61 +6217,61 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Color ColorTomato()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_tomato();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorTransparent()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_transparent();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorTurquoise()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_turquoise();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorViolet()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_violet();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorWheat()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_wheat();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorWhite()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_white();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorWhiteSmoke()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_white_smoke();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorYellow()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_yellow();
       return __skadapter__to_color(__skreturn);
     }
     public static Color ColorYellowGreen()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__color_yellow_green();
       return __skadapter__to_color(__skreturn);
     }
     public static int GreenOf(Color c)
-{
+    {
       __sklib_color __skparam__c;
       int __skreturn;
       __skparam__c = __skadapter__to_sklib_color(c);
@@ -6194,7 +6279,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Color HsbColor(float hue, float saturation, float brightness)
-{
+    {
       float __skparam__hue;
       float __skparam__saturation;
       float __skparam__brightness;
@@ -6206,7 +6291,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_color(__skreturn);
     }
     public static float HueOf(Color c)
-{
+    {
       __sklib_color __skparam__c;
       float __skreturn;
       __skparam__c = __skadapter__to_sklib_color(c);
@@ -6214,13 +6299,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Color RandomColor()
-{
+    {
       __sklib_color __skreturn;
       __skreturn = __sklib__random_color();
       return __skadapter__to_color(__skreturn);
     }
     public static Color RandomRgbColor(int alpha)
-{
+    {
       int __skparam__alpha;
       __sklib_color __skreturn;
       __skparam__alpha = __skadapter__to_sklib_int(alpha);
@@ -6228,7 +6313,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_color(__skreturn);
     }
     public static int RedOf(Color c)
-{
+    {
       __sklib_color __skparam__c;
       int __skreturn;
       __skparam__c = __skadapter__to_sklib_color(c);
@@ -6236,7 +6321,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Color RgbColor(float red, float green, float blue)
-{
+    {
       float __skparam__red;
       float __skparam__green;
       float __skparam__blue;
@@ -6248,7 +6333,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_color(__skreturn);
     }
     public static Color RgbColor(int red, int green, int blue)
-{
+    {
       int __skparam__red;
       int __skparam__green;
       int __skparam__blue;
@@ -6260,7 +6345,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_color(__skreturn);
     }
     public static Color RgbaColor(float red, float green, float blue, float alpha)
-{
+    {
       float __skparam__red;
       float __skparam__green;
       float __skparam__blue;
@@ -6274,7 +6359,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_color(__skreturn);
     }
     public static Color RgbaColor(int red, int green, int blue, int alpha)
-{
+    {
       int __skparam__red;
       int __skparam__green;
       int __skparam__blue;
@@ -6288,7 +6373,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_color(__skreturn);
     }
     public static float SaturationOf(Color c)
-{
+    {
       __sklib_color __skparam__c;
       float __skreturn;
       __skparam__c = __skadapter__to_sklib_color(c);
@@ -6296,7 +6381,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Color StringToColor(string str)
-{
+    {
       __sklib_string __skparam__str;
       __sklib_color __skreturn;
       __skparam__str = __skadapter__to_sklib_string(str);
@@ -6305,7 +6390,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_color(__skreturn);
     }
     public static Database DatabaseNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -6314,34 +6399,34 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_database(__skreturn);
     }
     public static void FreeAllDatabases()
-{
+    {
       __sklib__free_all_databases();
     }
     public static void FreeAllQueryResults()
-{
+    {
       __sklib__free_all_query_results();
     }
     public static void FreeDatabase(Database dbToClose)
-{
+    {
       __sklib_ptr __skparam__db_to_close;
       __skparam__db_to_close = __skadapter__to_sklib_database(dbToClose);
       __sklib__free_database__database(__skparam__db_to_close);
     }
     public static void FreeDatabase(string nameOfDbToClose)
-{
+    {
       __sklib_string __skparam__name_of_db_to_close;
       __skparam__name_of_db_to_close = __skadapter__to_sklib_string(nameOfDbToClose);
       __sklib__free_database__string(__skparam__name_of_db_to_close);
     __skadapter__free__sklib_string(ref __skparam__name_of_db_to_close);
     }
     public static void FreeQueryResult(QueryResult query)
-{
+    {
       __sklib_ptr __skparam__query;
       __skparam__query = __skadapter__to_sklib_query_result(query);
       __sklib__free_query_result__query_result(__skparam__query);
     }
     public static bool GetNextRow(QueryResult dbResult)
-{
+    {
       __sklib_ptr __skparam__db_result;
       int __skreturn;
       __skparam__db_result = __skadapter__to_sklib_query_result(dbResult);
@@ -6349,7 +6434,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool HasDatabase(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -6358,7 +6443,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool HasRow(QueryResult dbResult)
-{
+    {
       __sklib_ptr __skparam__db_result;
       int __skreturn;
       __skparam__db_result = __skadapter__to_sklib_query_result(dbResult);
@@ -6366,7 +6451,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Database OpenDatabase(string name, string filename)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__filename;
       __sklib_ptr __skreturn;
@@ -6378,7 +6463,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_database(__skreturn);
     }
     public static bool QueryColumnForBool(QueryResult dbResult, int col)
-{
+    {
       __sklib_ptr __skparam__db_result;
       int __skparam__col;
       int __skreturn;
@@ -6388,7 +6473,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static double QueryColumnForDouble(QueryResult dbResult, int col)
-{
+    {
       __sklib_ptr __skparam__db_result;
       int __skparam__col;
       double __skreturn;
@@ -6398,7 +6483,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_double(__skreturn);
     }
     public static int QueryColumnForInt(QueryResult dbResult, int col)
-{
+    {
       __sklib_ptr __skparam__db_result;
       int __skparam__col;
       int __skreturn;
@@ -6408,7 +6493,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static string QueryColumnForString(QueryResult dbResult, int col)
-{
+    {
       __sklib_ptr __skparam__db_result;
       int __skparam__col;
       __sklib_string __skreturn;
@@ -6418,7 +6503,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static bool QuerySuccess(QueryResult dbResult)
-{
+    {
       __sklib_ptr __skparam__db_result;
       int __skreturn;
       __skparam__db_result = __skadapter__to_sklib_query_result(dbResult);
@@ -6426,7 +6511,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static string QueryTypeOfCol(QueryResult dbResult, int col)
-{
+    {
       __sklib_ptr __skparam__db_result;
       int __skparam__col;
       __sklib_string __skreturn;
@@ -6436,13 +6521,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static void ResetQueryResult(QueryResult dbResult)
-{
+    {
       __sklib_ptr __skparam__db_result;
       __skparam__db_result = __skadapter__to_sklib_query_result(dbResult);
       __sklib__reset_query_result__query_result(__skparam__db_result);
     }
     public static int RowsChanged(Database db)
-{
+    {
       __sklib_ptr __skparam__db;
       int __skreturn;
       __skparam__db = __skadapter__to_sklib_database(db);
@@ -6450,7 +6535,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static QueryResult RunSql(Database db, string sql)
-{
+    {
       __sklib_ptr __skparam__db;
       __sklib_string __skparam__sql;
       __sklib_ptr __skreturn;
@@ -6461,7 +6546,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_query_result(__skreturn);
     }
     public static QueryResult RunSql(string databaseName, string sql)
-{
+    {
       __sklib_string __skparam__database_name;
       __sklib_string __skparam__sql;
       __sklib_ptr __skreturn;
@@ -6473,13 +6558,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_query_result(__skreturn);
     }
     public static DrawingOptions OptionDefaults()
-{
+    {
       __sklib_drawing_options __skreturn;
       __skreturn = __sklib__option_defaults();
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionDrawTo(Bitmap dest)
-{
+    {
       __sklib_ptr __skparam__dest;
       __sklib_drawing_options __skreturn;
       __skparam__dest = __skadapter__to_sklib_bitmap(dest);
@@ -6487,7 +6572,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionDrawTo(Bitmap dest, DrawingOptions opts)
-{
+    {
       __sklib_ptr __skparam__dest;
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
@@ -6497,7 +6582,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionDrawTo(Window dest)
-{
+    {
       __sklib_ptr __skparam__dest;
       __sklib_drawing_options __skreturn;
       __skparam__dest = __skadapter__to_sklib_window(dest);
@@ -6505,7 +6590,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionDrawTo(Window dest, DrawingOptions opts)
-{
+    {
       __sklib_ptr __skparam__dest;
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
@@ -6515,13 +6600,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionFlipX()
-{
+    {
       __sklib_drawing_options __skreturn;
       __skreturn = __sklib__option_flip_x();
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionFlipX(DrawingOptions opts)
-{
+    {
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
@@ -6529,13 +6614,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionFlipXy()
-{
+    {
       __sklib_drawing_options __skreturn;
       __skreturn = __sklib__option_flip_xy();
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionFlipXy(DrawingOptions opts)
-{
+    {
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
@@ -6543,13 +6628,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionFlipY()
-{
+    {
       __sklib_drawing_options __skreturn;
       __skreturn = __sklib__option_flip_y();
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionFlipY(DrawingOptions opts)
-{
+    {
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
@@ -6557,7 +6642,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionLineWidth(int width)
-{
+    {
       int __skparam__width;
       __sklib_drawing_options __skreturn;
       __skparam__width = __skadapter__to_sklib_int(width);
@@ -6565,7 +6650,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionLineWidth(int width, DrawingOptions opts)
-{
+    {
       int __skparam__width;
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
@@ -6574,38 +6659,38 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__option_line_width__int__drawing_options(__skparam__width, __skparam__opts);
       return __skadapter__to_drawing_options(__skreturn);
     }
-    public static DrawingOptions OptionPartBmp(float x, float y, float w, float h)
-{
-      float __skparam__x;
-      float __skparam__y;
+    public static DrawingOptions OptionPartBmp(double x, double y, float w, float h)
+    {
+      double __skparam__x;
+      double __skparam__y;
       float __skparam__w;
       float __skparam__h;
       __sklib_drawing_options __skreturn;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
       __skparam__w = __skadapter__to_sklib_float(w);
       __skparam__h = __skadapter__to_sklib_float(h);
-      __skreturn = __sklib__option_part_bmp__float__float__float__float(__skparam__x, __skparam__y, __skparam__w, __skparam__h);
+      __skreturn = __sklib__option_part_bmp__double__double__float__float(__skparam__x, __skparam__y, __skparam__w, __skparam__h);
       return __skadapter__to_drawing_options(__skreturn);
     }
-    public static DrawingOptions OptionPartBmp(float x, float y, float w, float h, DrawingOptions opts)
-{
-      float __skparam__x;
-      float __skparam__y;
+    public static DrawingOptions OptionPartBmp(double x, double y, float w, float h, DrawingOptions opts)
+    {
+      double __skparam__x;
+      double __skparam__y;
       float __skparam__w;
       float __skparam__h;
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
       __skparam__w = __skadapter__to_sklib_float(w);
       __skparam__h = __skadapter__to_sklib_float(h);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __skreturn = __sklib__option_part_bmp__float__float__float__float__drawing_options(__skparam__x, __skparam__y, __skparam__w, __skparam__h, __skparam__opts);
+      __skreturn = __sklib__option_part_bmp__double__double__float__float__drawing_options(__skparam__x, __skparam__y, __skparam__w, __skparam__h, __skparam__opts);
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionPartBmp(Rectangle part)
-{
+    {
       __sklib_rectangle __skparam__part;
       __sklib_drawing_options __skreturn;
       __skparam__part = __skadapter__to_sklib_rectangle(part);
@@ -6613,7 +6698,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionPartBmp(Rectangle part, DrawingOptions opts)
-{
+    {
       __sklib_rectangle __skparam__part;
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
@@ -6623,7 +6708,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionRotateBmp(float angle)
-{
+    {
       float __skparam__angle;
       __sklib_drawing_options __skreturn;
       __skparam__angle = __skadapter__to_sklib_float(angle);
@@ -6631,7 +6716,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionRotateBmp(float angle, DrawingOptions opts)
-{
+    {
       float __skparam__angle;
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
@@ -6641,7 +6726,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionRotateBmp(float angle, float anchorX, float anchorY)
-{
+    {
       float __skparam__angle;
       float __skparam__anchor_x;
       float __skparam__anchor_y;
@@ -6653,7 +6738,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionRotateBmp(float angle, float anchorX, float anchorY, DrawingOptions opts)
-{
+    {
       float __skparam__angle;
       float __skparam__anchor_x;
       float __skparam__anchor_y;
@@ -6667,7 +6752,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionScaleBmp(float scaleX, float scaleY)
-{
+    {
       float __skparam__scale_x;
       float __skparam__scale_y;
       __sklib_drawing_options __skreturn;
@@ -6677,7 +6762,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionScaleBmp(float scaleX, float scaleY, DrawingOptions opts)
-{
+    {
       float __skparam__scale_x;
       float __skparam__scale_y;
       __sklib_drawing_options __skparam__opts;
@@ -6689,13 +6774,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionToScreen()
-{
+    {
       __sklib_drawing_options __skreturn;
       __skreturn = __sklib__option_to_screen();
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionToScreen(DrawingOptions opts)
-{
+    {
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
@@ -6703,13 +6788,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionToWorld()
-{
+    {
       __sklib_drawing_options __skreturn;
       __skreturn = __sklib__option_to_world();
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionToWorld(DrawingOptions opts)
-{
+    {
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
@@ -6717,7 +6802,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionWithAnimation(Animation anim)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_drawing_options __skreturn;
       __skparam__anim = __skadapter__to_sklib_animation(anim);
@@ -6725,7 +6810,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static DrawingOptions OptionWithAnimation(Animation anim, DrawingOptions opts)
-{
+    {
       __sklib_ptr __skparam__anim;
       __sklib_drawing_options __skparam__opts;
       __sklib_drawing_options __skreturn;
@@ -6735,7 +6820,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_drawing_options(__skreturn);
     }
     public static void DrawEllipse(Color clr, Rectangle rect)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_rectangle __skparam__rect;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -6743,7 +6828,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_ellipse__color__rectangle(__skparam__clr, __skparam__rect);
     }
     public static void DrawEllipse(Color clr, Rectangle rect, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_rectangle __skparam__rect;
       __sklib_drawing_options __skparam__opts;
@@ -6752,38 +6837,150 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__draw_ellipse__color__rectangle__drawing_options(__skparam__clr, __skparam__rect, __skparam__opts);
     }
-    public static void DrawEllipse(Color clr, float x, float y, float width, float height)
-{
+    public static void DrawEllipse(Color clr, double x, double y, double width, double height)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
-      __sklib__draw_ellipse__color__float__float__float__float(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__draw_ellipse__color__double__double__double__double(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
     }
-    public static void DrawEllipse(Color clr, float x, float y, float width, float height, DrawingOptions opts)
-{
+    public static void DrawEllipse(Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_ellipse__color__float__float__float__float__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+      __sklib__draw_ellipse__color__double__double__double__double__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+    }
+    public static void DrawEllipseOnBitmap(Bitmap destination, Color clr, Rectangle rect)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __sklib__draw_ellipse_on_bitmap__bitmap__color__rectangle(__skparam__destination, __skparam__clr, __skparam__rect);
+    }
+    public static void DrawEllipseOnBitmap(Bitmap destination, Color clr, Rectangle rect, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_ellipse_on_bitmap__bitmap__color__rectangle__drawing_options(__skparam__destination, __skparam__clr, __skparam__rect, __skparam__opts);
+    }
+    public static void DrawEllipseOnBitmap(Bitmap destination, Color clr, double x, double y, double width, double height)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__draw_ellipse_on_bitmap__bitmap__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+    }
+    public static void DrawEllipseOnBitmap(Bitmap destination, Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_ellipse_on_bitmap__bitmap__color__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+    }
+    public static void DrawEllipseOnWindow(Window destination, Color clr, Rectangle rect)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __sklib__draw_ellipse_on_window__window__color__rectangle(__skparam__destination, __skparam__clr, __skparam__rect);
+    }
+    public static void DrawEllipseOnWindow(Window destination, Color clr, Rectangle rect, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_ellipse_on_window__window__color__rectangle__drawing_options(__skparam__destination, __skparam__clr, __skparam__rect, __skparam__opts);
+    }
+    public static void DrawEllipseOnWindow(Window destination, Color clr, double x, double y, double width, double height)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__draw_ellipse_on_window__window__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+    }
+    public static void DrawEllipseOnWindow(Window destination, Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_ellipse_on_window__window__color__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
     }
     public static void FillEllipse(Color clr, Rectangle rect)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_rectangle __skparam__rect;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -6791,7 +6988,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__fill_ellipse__color__rectangle(__skparam__clr, __skparam__rect);
     }
     public static void FillEllipse(Color clr, Rectangle rect, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_rectangle __skparam__rect;
       __sklib_drawing_options __skparam__opts;
@@ -6800,38 +6997,150 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__fill_ellipse__color__rectangle__drawing_options(__skparam__clr, __skparam__rect, __skparam__opts);
     }
-    public static void FillEllipse(Color clr, float x, float y, float width, float height)
-{
+    public static void FillEllipse(Color clr, double x, double y, double width, double height)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
-      __sklib__fill_ellipse__color__float__float__float__float(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__fill_ellipse__color__double__double__double__double(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
     }
-    public static void FillEllipse(Color clr, float x, float y, float width, float height, DrawingOptions opts)
-{
+    public static void FillEllipse(Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__fill_ellipse__color__float__float__float__float__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+      __sklib__fill_ellipse__color__double__double__double__double__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+    }
+    public static void FillEllipseOnBitmap(Bitmap destination, Color clr, Rectangle rect)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __sklib__fill_ellipse_on_bitmap__bitmap__color__rectangle(__skparam__destination, __skparam__clr, __skparam__rect);
+    }
+    public static void FillEllipseOnBitmap(Bitmap destination, Color clr, Rectangle rect, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_ellipse_on_bitmap__bitmap__color__rectangle__drawing_options(__skparam__destination, __skparam__clr, __skparam__rect, __skparam__opts);
+    }
+    public static void FillEllipseOnBitmap(Bitmap destination, Color clr, double x, double y, double width, double height)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__fill_ellipse_on_bitmap__bitmap__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+    }
+    public static void FillEllipseOnBitmap(Bitmap destination, Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_ellipse_on_bitmap__bitmap__color__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+    }
+    public static void FillEllipseOnWindow(Window destination, Color clr, Rectangle rect)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __sklib__fill_ellipse_on_window__window__color__rectangle(__skparam__destination, __skparam__clr, __skparam__rect);
+    }
+    public static void FillEllipseOnWindow(Window destination, Color clr, Rectangle rect, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_ellipse_on_window__window__color__rectangle__drawing_options(__skparam__destination, __skparam__clr, __skparam__rect, __skparam__opts);
+    }
+    public static void FillEllipseOnWindow(Window destination, Color clr, double x, double y, double width, double height)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__fill_ellipse_on_window__window__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+    }
+    public static void FillEllipseOnWindow(Window destination, Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_ellipse_on_window__window__color__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
     }
     public static float Cosine(float degrees)
-{
+    {
       float __skparam__degrees;
       float __skreturn;
       __skparam__degrees = __skadapter__to_sklib_float(degrees);
@@ -6839,7 +7148,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float Sine(float degrees)
-{
+    {
       float __skparam__degrees;
       float __skreturn;
       __skparam__degrees = __skadapter__to_sklib_float(degrees);
@@ -6847,7 +7156,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float Tangent(float degrees)
-{
+    {
       float __skparam__degrees;
       float __skreturn;
       __skparam__degrees = __skadapter__to_sklib_float(degrees);
@@ -6855,17 +7164,17 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static void ClearScreen()
-{
+    {
       __sklib__clear_screen();
     }
     public static void ClearScreen(Color clr)
-{
+    {
       __sklib_color __skparam__clr;
       __skparam__clr = __skadapter__to_sklib_color(clr);
       __sklib__clear_screen__color(__skparam__clr);
     }
     public static Display DisplayDetails(uint index)
-{
+    {
       uint __skparam__index;
       __sklib_ptr __skreturn;
       __skparam__index = __skadapter__to_sklib_unsigned_int(index);
@@ -6873,7 +7182,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_display(__skreturn);
     }
     public static int DisplayHeight(Display disp)
-{
+    {
       __sklib_ptr __skparam__disp;
       int __skreturn;
       __skparam__disp = __skadapter__to_sklib_display(disp);
@@ -6881,7 +7190,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static string DisplayName(Display disp)
-{
+    {
       __sklib_ptr __skparam__disp;
       __sklib_string __skreturn;
       __skparam__disp = __skadapter__to_sklib_display(disp);
@@ -6889,7 +7198,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static int DisplayWidth(Display disp)
-{
+    {
       __sklib_ptr __skparam__disp;
       int __skreturn;
       __skparam__disp = __skadapter__to_sklib_display(disp);
@@ -6897,7 +7206,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int DisplayX(Display disp)
-{
+    {
       __sklib_ptr __skparam__disp;
       int __skreturn;
       __skparam__disp = __skadapter__to_sklib_display(disp);
@@ -6905,7 +7214,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int DisplayY(Display disp)
-{
+    {
       __sklib_ptr __skparam__disp;
       int __skreturn;
       __skparam__disp = __skadapter__to_sklib_display(disp);
@@ -6913,23 +7222,23 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int NumberOfDisplays()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__number_of_displays();
       return __skadapter__to_int(__skreturn);
     }
     public static void RefreshScreen()
-{
+    {
       __sklib__refresh_screen();
     }
     public static void RefreshScreen(uint targetFps)
-{
+    {
       uint __skparam__target_fps;
       __skparam__target_fps = __skadapter__to_sklib_unsigned_int(targetFps);
       __sklib__refresh_screen__unsigned_int(__skparam__target_fps);
     }
     public static void SaveBitmap(Bitmap bmp, string basename)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_string __skparam__basename;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -6938,26 +7247,26 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__basename);
     }
     public static int ScreenHeight()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__screen_height();
       return __skadapter__to_int(__skreturn);
     }
     public static int ScreenWidth()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__screen_width();
       return __skadapter__to_int(__skreturn);
     }
     public static void TakeScreenshot(string basename)
-{
+    {
       __sklib_string __skparam__basename;
       __skparam__basename = __skadapter__to_sklib_string(basename);
       __sklib__take_screenshot__string_ref(__skparam__basename);
     __skadapter__free__sklib_string(ref __skparam__basename);
     }
     public static void TakeScreenshot(Window wind, string basename)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_string __skparam__basename;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -6966,7 +7275,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__basename);
     }
     public static Circle BitmapBoundingCircle(Bitmap bmp, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skparam__pt;
       __sklib_circle __skreturn;
@@ -6976,47 +7285,47 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_circle(__skreturn);
     }
     public static Rectangle BitmapBoundingRectangle(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_rectangle __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __skreturn = __sklib__bitmap_bounding_rectangle__bitmap(__skparam__bmp);
       return __skadapter__to_rectangle(__skreturn);
     }
-    public static Rectangle BitmapBoundingRectangle(Bitmap bmp, float x, float y)
-{
+    public static Rectangle BitmapBoundingRectangle(Bitmap bmp, double x, double y)
+    {
       __sklib_ptr __skparam__bmp;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_rectangle __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__bitmap_bounding_rectangle__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__bitmap_bounding_rectangle__bitmap__double__double(__skparam__bmp, __skparam__x, __skparam__y);
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Point2D BitmapCellCenter(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __skreturn = __sklib__bitmap_cell_center__bitmap(__skparam__bmp);
       return __skadapter__to_point_2d(__skreturn);
     }
-    public static Circle BitmapCellCircle(Bitmap bmp, float x, float y)
-{
+    public static Circle BitmapCellCircle(Bitmap bmp, double x, double y)
+    {
       __sklib_ptr __skparam__bmp;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_circle __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__bitmap_cell_circle__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__bitmap_cell_circle__bitmap__double__double(__skparam__bmp, __skparam__x, __skparam__y);
       return __skadapter__to_circle(__skreturn);
     }
     public static Circle BitmapCellCircle(Bitmap bmp, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skparam__pt;
       __sklib_circle __skreturn;
@@ -7025,20 +7334,20 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__bitmap_cell_circle__bitmap__point_2d(__skparam__bmp, __skparam__pt);
       return __skadapter__to_circle(__skreturn);
     }
-    public static Circle BitmapCellCircle(Bitmap bmp, Point2D pt, float scale)
-{
+    public static Circle BitmapCellCircle(Bitmap bmp, Point2D pt, double scale)
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skparam__pt;
-      float __skparam__scale;
+      double __skparam__scale;
       __sklib_circle __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
-      __skparam__scale = __skadapter__to_sklib_float(scale);
-      __skreturn = __sklib__bitmap_cell_circle__bitmap__point_2d__float(__skparam__bmp, __skparam__pt, __skparam__scale);
+      __skparam__scale = __skadapter__to_sklib_double(scale);
+      __skreturn = __sklib__bitmap_cell_circle__bitmap__point_2d__double(__skparam__bmp, __skparam__pt, __skparam__scale);
       return __skadapter__to_circle(__skreturn);
     }
     public static int BitmapCellColumns(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7046,7 +7355,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int BitmapCellCount(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7054,7 +7363,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int BitmapCellHeight(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7062,7 +7371,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Vector2D BitmapCellOffset(Bitmap src, int cell)
-{
+    {
       __sklib_ptr __skparam__src;
       int __skparam__cell;
       __sklib_vector_2d __skreturn;
@@ -7072,7 +7381,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Rectangle BitmapCellRectangle(Bitmap src)
-{
+    {
       __sklib_ptr __skparam__src;
       __sklib_rectangle __skreturn;
       __skparam__src = __skadapter__to_sklib_bitmap(src);
@@ -7080,7 +7389,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle BitmapCellRectangle(Bitmap src, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__src;
       __sklib_point_2d __skparam__pt;
       __sklib_rectangle __skreturn;
@@ -7090,7 +7399,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static int BitmapCellRows(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7098,7 +7407,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int BitmapCellWidth(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7106,7 +7415,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Point2D BitmapCenter(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7114,7 +7423,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static string BitmapFilename(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_string __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7122,7 +7431,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static int BitmapHeight(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7130,7 +7439,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int BitmapHeight(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -7139,7 +7448,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static string BitmapName(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_string __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7147,7 +7456,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Bitmap BitmapNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -7156,7 +7465,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bitmap(__skreturn);
     }
     public static Rectangle BitmapRectangleOfCell(Bitmap src, int cell)
-{
+    {
       __sklib_ptr __skparam__src;
       int __skparam__cell;
       __sklib_rectangle __skreturn;
@@ -7166,7 +7475,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static void BitmapSetCellDetails(Bitmap bmp, int width, int height, int columns, int rows, int count)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skparam__width;
       int __skparam__height;
@@ -7182,7 +7491,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__bitmap_set_cell_details__bitmap__int__int__int__int__int(__skparam__bmp, __skparam__width, __skparam__height, __skparam__columns, __skparam__rows, __skparam__count);
     }
     public static int BitmapWidth(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7190,7 +7499,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int BitmapWidth(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -7199,7 +7508,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static void ClearBitmap(Bitmap bmp, Color clr)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_color __skparam__clr;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -7207,7 +7516,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__clear_bitmap__bitmap__color(__skparam__bmp, __skparam__clr);
     }
     public static void ClearBitmap(string name, Color clr)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_color __skparam__clr;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -7216,7 +7525,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static Bitmap CreateBitmap(string name, int width, int height)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__width;
       int __skparam__height;
@@ -7228,64 +7537,116 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
       return __skadapter__to_bitmap(__skreturn);
     }
-    public static void DrawBitmap(Bitmap bmp, float x, float y)
-{
+    public static void DrawBitmap(Bitmap bmp, double x, double y)
+    {
       __sklib_ptr __skparam__bmp;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__draw_bitmap__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_bitmap__bitmap__double__double(__skparam__bmp, __skparam__x, __skparam__y);
     }
-    public static void DrawBitmap(Bitmap bmp, float x, float y, DrawingOptions opts)
-{
+    public static void DrawBitmap(Bitmap bmp, double x, double y, DrawingOptions opts)
+    {
       __sklib_ptr __skparam__bmp;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_drawing_options __skparam__opts;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_bitmap__bitmap__float__float__drawing_options(__skparam__bmp, __skparam__x, __skparam__y, __skparam__opts);
+      __sklib__draw_bitmap__bitmap__double__double__drawing_options(__skparam__bmp, __skparam__x, __skparam__y, __skparam__opts);
     }
-    public static void DrawBitmap(string name, float x, float y)
-{
+    public static void DrawBitmap(string name, double x, double y)
+    {
       __sklib_string __skparam__name;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __skparam__name = __skadapter__to_sklib_string(name);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__draw_bitmap__string__float__float(__skparam__name, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_bitmap__string__double__double(__skparam__name, __skparam__x, __skparam__y);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
-    public static void DrawBitmap(string name, float x, float y, DrawingOptions opts)
-{
+    public static void DrawBitmap(string name, double x, double y, DrawingOptions opts)
+    {
       __sklib_string __skparam__name;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_drawing_options __skparam__opts;
       __skparam__name = __skadapter__to_sklib_string(name);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_bitmap__string__float__float__drawing_options(__skparam__name, __skparam__x, __skparam__y, __skparam__opts);
+      __sklib__draw_bitmap__string__double__double__drawing_options(__skparam__name, __skparam__x, __skparam__y, __skparam__opts);
     __skadapter__free__sklib_string(ref __skparam__name);
+    }
+    public static void DrawBitmapOnBitmap(Bitmap destination, Bitmap bmp, double x, double y)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_ptr __skparam__bmp;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_bitmap_on_bitmap__bitmap__bitmap__double__double(__skparam__destination, __skparam__bmp, __skparam__x, __skparam__y);
+    }
+    public static void DrawBitmapOnBitmap(Bitmap destination, Bitmap bmp, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_ptr __skparam__bmp;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_bitmap_on_bitmap__bitmap__bitmap__double__double__drawing_options(__skparam__destination, __skparam__bmp, __skparam__x, __skparam__y, __skparam__opts);
+    }
+    public static void DrawBitmapOnWindow(Window destination, Bitmap bmp, double x, double y)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_ptr __skparam__bmp;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_bitmap_on_window__window__bitmap__double__double(__skparam__destination, __skparam__bmp, __skparam__x, __skparam__y);
+    }
+    public static void DrawBitmapOnWindow(Window destination, Bitmap bmp, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_ptr __skparam__bmp;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_bitmap_on_window__window__bitmap__double__double__drawing_options(__skparam__destination, __skparam__bmp, __skparam__x, __skparam__y, __skparam__opts);
     }
     public static void FreeAllBitmaps()
-{
+    {
       __sklib__free_all_bitmaps();
     }
     public static void FreeBitmap(Bitmap toDelete)
-{
+    {
       __sklib_ptr __skparam__to_delete;
       __skparam__to_delete = __skadapter__to_sklib_bitmap(toDelete);
       __sklib__free_bitmap__bitmap(__skparam__to_delete);
     }
     public static bool HasBitmap(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -7294,7 +7655,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Bitmap LoadBitmap(string name, string filename)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__filename;
       __sklib_ptr __skreturn;
@@ -7306,7 +7667,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bitmap(__skreturn);
     }
     public static bool PixelDrawnAtPoint(Bitmap bmp, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skparam__pt;
       int __skreturn;
@@ -7315,20 +7676,20 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__pixel_drawn_at_point__bitmap__point_2d_ref(__skparam__bmp, __skparam__pt);
       return __skadapter__to_bool(__skreturn);
     }
-    public static bool PixelDrawnAtPoint(Bitmap bmp, float x, float y)
-{
+    public static bool PixelDrawnAtPoint(Bitmap bmp, double x, double y)
+    {
       __sklib_ptr __skparam__bmp;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__pixel_drawn_at_point__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__pixel_drawn_at_point__bitmap__double__double(__skparam__bmp, __skparam__x, __skparam__y);
       return __skadapter__to_bool(__skreturn);
     }
     public static bool PixelDrawnAtPoint(Bitmap bmp, int cell, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__bmp;
       int __skparam__cell;
       __sklib_point_2d __skparam__pt;
@@ -7339,42 +7700,42 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__pixel_drawn_at_point__bitmap__int__point_2d_ref(__skparam__bmp, __skparam__cell, __skparam__pt);
       return __skadapter__to_bool(__skreturn);
     }
-    public static bool PixelDrawnAtPoint(Bitmap bmp, int cell, float x, float y)
-{
+    public static bool PixelDrawnAtPoint(Bitmap bmp, int cell, double x, double y)
+    {
       __sklib_ptr __skparam__bmp;
       int __skparam__cell;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       int __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
       __skparam__cell = __skadapter__to_sklib_int(cell);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__pixel_drawn_at_point__bitmap__int__float__float(__skparam__bmp, __skparam__cell, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__pixel_drawn_at_point__bitmap__int__double__double(__skparam__bmp, __skparam__cell, __skparam__x, __skparam__y);
       return __skadapter__to_bool(__skreturn);
     }
     public static void ProcessEvents()
-{
+    {
       __sklib__process_events();
     }
     public static bool QuitRequested()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__quit_requested();
       return __skadapter__to_bool(__skreturn);
     }
     public static void ResetQuit()
-{
+    {
       __sklib__reset_quit();
     }
     public static Json CreateJson()
-{
+    {
       __sklib_ptr __skreturn;
       __skreturn = __sklib__create_json();
       return __skadapter__to_json(__skreturn);
     }
     public static Json CreateJson(string jsonString)
-{
+    {
       __sklib_string __skparam__json_string;
       __sklib_ptr __skreturn;
       __skparam__json_string = __skadapter__to_sklib_string(jsonString);
@@ -7383,17 +7744,17 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_json(__skreturn);
     }
     public static void FreeAllJson()
-{
+    {
       __sklib__free_all_json();
     }
     public static void FreeJson(Json j)
-{
+    {
       __sklib_ptr __skparam__j;
       __skparam__j = __skadapter__to_sklib_json(j);
       __sklib__free_json__json(__skparam__j);
     }
     public static int JsonCountKeys(Json j)
-{
+    {
       __sklib_ptr __skparam__j;
       int __skreturn;
       __skparam__j = __skadapter__to_sklib_json(j);
@@ -7401,7 +7762,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Json JsonFromColor(Color clr)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_ptr __skreturn;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -7409,7 +7770,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_json(__skreturn);
     }
     public static Json JsonFromFile(string filename)
-{
+    {
       __sklib_string __skparam__filename;
       __sklib_ptr __skreturn;
       __skparam__filename = __skadapter__to_sklib_string(filename);
@@ -7418,7 +7779,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_json(__skreturn);
     }
     public static Json JsonFromString(string jString)
-{
+    {
       __sklib_string __skparam__j_string;
       __sklib_ptr __skreturn;
       __skparam__j_string = __skadapter__to_sklib_string(jString);
@@ -7427,7 +7788,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_json(__skreturn);
     }
     public static bool JsonHasKey(Json j, string key)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       int __skreturn;
@@ -7438,7 +7799,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void JsonReadArray(Json j, string key, ref List<double> outResult)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_vector_double __skparam__out_result;
@@ -7451,7 +7812,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_vector_double(ref __skparam__out_result);
     }
     public static void JsonReadArray(Json j, string key, ref List<Json> outResult)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_vector_json __skparam__out_result;
@@ -7464,7 +7825,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_vector_json(ref __skparam__out_result);
     }
     public static void JsonReadArray(Json j, string key, ref List<string> outResult)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_vector_string __skparam__out_result;
@@ -7477,7 +7838,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_vector_string(ref __skparam__out_result);
     }
     public static void JsonReadArray(Json j, string key, ref List<bool> outResult)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_vector_bool __skparam__out_result;
@@ -7490,7 +7851,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_vector_bool(ref __skparam__out_result);
     }
     public static bool JsonReadBool(Json j, string key)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       int __skreturn;
@@ -7501,7 +7862,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static float JsonReadNumber(Json j, string key)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       float __skreturn;
@@ -7512,7 +7873,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static double JsonReadNumberAsDouble(Json j, string key)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       double __skreturn;
@@ -7523,7 +7884,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_double(__skreturn);
     }
     public static int JsonReadNumberAsInt(Json j, string key)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       int __skreturn;
@@ -7534,7 +7895,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Json JsonReadObject(Json j, string key)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_ptr __skreturn;
@@ -7545,7 +7906,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_json(__skreturn);
     }
     public static string JsonReadString(Json j, string key)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_string __skreturn;
@@ -7556,7 +7917,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static void JsonSetArray(Json j, string key, List<string> value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_vector_string __skparam__value;
@@ -7568,7 +7929,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_vector_string(ref __skparam__value);
     }
     public static void JsonSetArray(Json j, string key, List<double> value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_vector_double __skparam__value;
@@ -7580,7 +7941,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_vector_double(ref __skparam__value);
     }
     public static void JsonSetArray(Json j, string key, List<bool> value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_vector_bool __skparam__value;
@@ -7592,7 +7953,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_vector_bool(ref __skparam__value);
     }
     public static void JsonSetArray(Json j, string key, List<Json> value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_vector_json __skparam__value;
@@ -7604,7 +7965,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_vector_json(ref __skparam__value);
     }
     public static void JsonSetBool(Json j, string key, bool value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       int __skparam__value;
@@ -7615,7 +7976,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__key);
     }
     public static void JsonSetNumber(Json j, string key, int value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       int __skparam__value;
@@ -7626,7 +7987,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__key);
     }
     public static void JsonSetNumber(Json j, string key, double value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       double __skparam__value;
@@ -7637,7 +7998,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__key);
     }
     public static void JsonSetNumber(Json j, string key, float value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       float __skparam__value;
@@ -7648,7 +8009,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__key);
     }
     public static void JsonSetObject(Json j, string key, Json obj)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_ptr __skparam__obj;
@@ -7659,7 +8020,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__key);
     }
     public static void JsonSetString(Json j, string key, string value)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__key;
       __sklib_string __skparam__value;
@@ -7671,7 +8032,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__value);
     }
     public static Color JsonToColor(Json j)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_color __skreturn;
       __skparam__j = __skadapter__to_sklib_json(j);
@@ -7679,7 +8040,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_color(__skreturn);
     }
     public static void JsonToFile(Json j, string filename)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skparam__filename;
       __skparam__j = __skadapter__to_sklib_json(j);
@@ -7688,7 +8049,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__filename);
     }
     public static string JsonToString(Json j)
-{
+    {
       __sklib_ptr __skparam__j;
       __sklib_string __skreturn;
       __skparam__j = __skadapter__to_sklib_json(j);
@@ -7696,31 +8057,31 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static bool AnyKeyPressed()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__any_key_pressed();
       return __skadapter__to_bool(__skreturn);
     }
     public static void DeregisterCallbackOnKeyDown(KeyCallback callback)
-{
+    {
       KeyCallback __skparam__callback;
       __skparam__callback = __skadapter__to_sklib_key_callback(callback);
       __sklib__deregister_callback_on_key_down__key_callback_ptr(__skparam__callback);
     }
     public static void DeregisterCallbackOnKeyTyped(KeyCallback callback)
-{
+    {
       KeyCallback __skparam__callback;
       __skparam__callback = __skadapter__to_sklib_key_callback(callback);
       __sklib__deregister_callback_on_key_typed__key_callback_ptr(__skparam__callback);
     }
     public static void DeregisterCallbackOnKeyUp(KeyCallback callback)
-{
+    {
       KeyCallback __skparam__callback;
       __skparam__callback = __skadapter__to_sklib_key_callback(callback);
       __sklib__deregister_callback_on_key_up__key_callback_ptr(__skparam__callback);
     }
     public static bool KeyDown(KeyCode key)
-{
+    {
       int __skparam__key;
       int __skreturn;
       __skparam__key = __skadapter__to_sklib_key_code(key);
@@ -7728,7 +8089,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static string KeyName(KeyCode key)
-{
+    {
       int __skparam__key;
       __sklib_string __skreturn;
       __skparam__key = __skadapter__to_sklib_key_code(key);
@@ -7736,7 +8097,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static bool KeyReleased(KeyCode key)
-{
+    {
       int __skparam__key;
       int __skreturn;
       __skparam__key = __skadapter__to_sklib_key_code(key);
@@ -7744,7 +8105,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool KeyTyped(KeyCode key)
-{
+    {
       int __skparam__key;
       int __skreturn;
       __skparam__key = __skadapter__to_sklib_key_code(key);
@@ -7752,7 +8113,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool KeyUp(KeyCode key)
-{
+    {
       int __skparam__key;
       int __skreturn;
       __skparam__key = __skadapter__to_sklib_key_code(key);
@@ -7760,25 +8121,25 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void RegisterCallbackOnKeyDown(KeyCallback callback)
-{
+    {
       KeyCallback __skparam__callback;
       __skparam__callback = __skadapter__to_sklib_key_callback(callback);
       __sklib__register_callback_on_key_down__key_callback_ptr(__skparam__callback);
     }
     public static void RegisterCallbackOnKeyTyped(KeyCallback callback)
-{
+    {
       KeyCallback __skparam__callback;
       __skparam__callback = __skadapter__to_sklib_key_callback(callback);
       __sklib__register_callback_on_key_typed__key_callback_ptr(__skparam__callback);
     }
     public static void RegisterCallbackOnKeyUp(KeyCallback callback)
-{
+    {
       KeyCallback __skparam__callback;
       __skparam__callback = __skadapter__to_sklib_key_callback(callback);
       __sklib__register_callback_on_key_up__key_callback_ptr(__skparam__callback);
     }
     public static void DrawLine(Color clr, Line l)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_line __skparam__l;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -7786,7 +8147,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_line__color__line_ref(__skparam__clr, __skparam__l);
     }
     public static void DrawLine(Color clr, Line l, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_line __skparam__l;
       __sklib_drawing_options __skparam__opts;
@@ -7796,7 +8157,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_line__color__line_ref__drawing_options(__skparam__clr, __skparam__l, __skparam__opts);
     }
     public static void DrawLine(Color clr, Point2D fromPt, Point2D toPt)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_point_2d __skparam__from_pt;
       __sklib_point_2d __skparam__to_pt;
@@ -7806,7 +8167,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_line__color__point_2d_ref__point_2d_ref(__skparam__clr, __skparam__from_pt, __skparam__to_pt);
     }
     public static void DrawLine(Color clr, Point2D fromPt, Point2D toPt, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_point_2d __skparam__from_pt;
       __sklib_point_2d __skparam__to_pt;
@@ -7817,38 +8178,202 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__draw_line__color__point_2d_ref__point_2d_ref__drawing_options_ref(__skparam__clr, __skparam__from_pt, __skparam__to_pt, __skparam__opts);
     }
-    public static void DrawLine(Color clr, float x1, float y1, float x2, float y2)
-{
+    public static void DrawLine(Color clr, double x1, double y1, double x2, double y2)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x1;
-      float __skparam__y1;
-      float __skparam__x2;
-      float __skparam__y2;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __sklib__draw_line__color__float__float__float__float(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __sklib__draw_line__color__double__double__double__double(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2);
     }
-    public static void DrawLine(Color clr, float x1, float y1, float x2, float y2, DrawingOptions opts)
-{
+    public static void DrawLine(Color clr, double x1, double y1, double x2, double y2, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x1;
-      float __skparam__y1;
-      float __skparam__x2;
-      float __skparam__y2;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_line__color__float__float__float__float__drawing_options_ref(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__opts);
+      __sklib__draw_line__color__double__double__double__double__drawing_options_ref(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__opts);
+    }
+    public static void DrawLineOnBitmap(Bitmap destination, Color clr, Line l)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_line __skparam__l;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__l = __skadapter__to_sklib_line(l);
+      __sklib__draw_line_on_bitmap__bitmap__color__line_ref(__skparam__destination, __skparam__clr, __skparam__l);
+    }
+    public static void DrawLineOnBitmap(Bitmap destination, Color clr, Line l, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_line __skparam__l;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__l = __skadapter__to_sklib_line(l);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_line_on_bitmap__bitmap__color__line_ref__drawing_options(__skparam__destination, __skparam__clr, __skparam__l, __skparam__opts);
+    }
+    public static void DrawLineOnBitmap(Bitmap destination, Color clr, Point2D fromPt, Point2D toPt)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_point_2d __skparam__from_pt;
+      __sklib_point_2d __skparam__to_pt;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__from_pt = __skadapter__to_sklib_point_2d(fromPt);
+      __skparam__to_pt = __skadapter__to_sklib_point_2d(toPt);
+      __sklib__draw_line_on_bitmap__bitmap__color__point_2d_ref__point_2d_ref(__skparam__destination, __skparam__clr, __skparam__from_pt, __skparam__to_pt);
+    }
+    public static void DrawLineOnBitmap(Bitmap destination, Color clr, Point2D fromPt, Point2D toPt, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_point_2d __skparam__from_pt;
+      __sklib_point_2d __skparam__to_pt;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__from_pt = __skadapter__to_sklib_point_2d(fromPt);
+      __skparam__to_pt = __skadapter__to_sklib_point_2d(toPt);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_line_on_bitmap__bitmap__color__point_2d_ref__point_2d_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__from_pt, __skparam__to_pt, __skparam__opts);
+    }
+    public static void DrawLineOnBitmap(Bitmap destination, Color clr, double x1, double y1, double x2, double y2)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __sklib__draw_line_on_bitmap__bitmap__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2);
+    }
+    public static void DrawLineOnBitmap(Bitmap destination, Color clr, double x1, double y1, double x2, double y2, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_line_on_bitmap__bitmap__color__double__double__double__double__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__opts);
+    }
+    public static void DrawLineOnWindow(Window destination, Color clr, Line l)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_line __skparam__l;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__l = __skadapter__to_sklib_line(l);
+      __sklib__draw_line_on_window__window__color__line_ref(__skparam__destination, __skparam__clr, __skparam__l);
+    }
+    public static void DrawLineOnWindow(Window destination, Color clr, Line l, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_line __skparam__l;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__l = __skadapter__to_sklib_line(l);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_line_on_window__window__color__line_ref__drawing_options(__skparam__destination, __skparam__clr, __skparam__l, __skparam__opts);
+    }
+    public static void DrawLineOnWindow(Window destination, Color clr, Point2D fromPt, Point2D toPt)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_point_2d __skparam__from_pt;
+      __sklib_point_2d __skparam__to_pt;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__from_pt = __skadapter__to_sklib_point_2d(fromPt);
+      __skparam__to_pt = __skadapter__to_sklib_point_2d(toPt);
+      __sklib__draw_line_on_window__window__color__point_2d_ref__point_2d_ref(__skparam__destination, __skparam__clr, __skparam__from_pt, __skparam__to_pt);
+    }
+    public static void DrawLineOnWindow(Window destination, Color clr, Point2D fromPt, Point2D toPt, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_point_2d __skparam__from_pt;
+      __sklib_point_2d __skparam__to_pt;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__from_pt = __skadapter__to_sklib_point_2d(fromPt);
+      __skparam__to_pt = __skadapter__to_sklib_point_2d(toPt);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_line_on_window__window__color__point_2d_ref__point_2d_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__from_pt, __skparam__to_pt, __skparam__opts);
+    }
+    public static void DrawLineOnWindow(Window destination, Color clr, double x1, double y1, double x2, double y2)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __sklib__draw_line_on_window__window__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2);
+    }
+    public static void DrawLineOnWindow(Window destination, Color clr, double x1, double y1, double x2, double y2, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_line_on_window__window__color__double__double__double__double__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__opts);
     }
     public static Point2D ClosestPointOnLine(Point2D fromPt, Line l)
-{
+    {
       __sklib_point_2d __skparam__from_pt;
       __sklib_line __skparam__l;
       __sklib_point_2d __skreturn;
@@ -7858,7 +8383,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D ClosestPointOnLines(Point2D fromPt, List<Line> lines, ref int lineIdx)
-{
+    {
       __sklib_point_2d __skparam__from_pt;
       __sklib_vector_line __skparam__lines;
       int __skparam__line_idx;
@@ -7872,7 +8397,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Line LineFrom(Point2D start, Point2D endPt)
-{
+    {
       __sklib_point_2d __skparam__start;
       __sklib_point_2d __skparam__end_pt;
       __sklib_line __skreturn;
@@ -7882,7 +8407,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_line(__skreturn);
     }
     public static Line LineFrom(Point2D start, Vector2D offset)
-{
+    {
       __sklib_point_2d __skparam__start;
       __sklib_vector_2d __skparam__offset;
       __sklib_line __skreturn;
@@ -7892,29 +8417,29 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_line(__skreturn);
     }
     public static Line LineFrom(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       __sklib_line __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
       __skreturn = __sklib__line_from__vector_2d_ref(__skparam__v);
       return __skadapter__to_line(__skreturn);
     }
-    public static Line LineFrom(float x1, float y1, float x2, float y2)
-{
-      float __skparam__x1;
-      float __skparam__y1;
-      float __skparam__x2;
-      float __skparam__y2;
+    public static Line LineFrom(double x1, double y1, double x2, double y2)
+    {
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
       __sklib_line __skreturn;
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __skreturn = __sklib__line_from__float__float__float__float(__skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skreturn = __sklib__line_from__double__double__double__double(__skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2);
       return __skadapter__to_line(__skreturn);
     }
     public static bool LineIntersectionPoint(Line line1, Line line2, ref Point2D pt)
-{
+    {
       __sklib_line __skparam__line1;
       __sklib_line __skparam__line2;
       __sklib_point_2d __skparam__pt;
@@ -7927,7 +8452,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool LineIntersectsCircle(Line l, Circle c)
-{
+    {
       __sklib_line __skparam__l;
       __sklib_circle __skparam__c;
       int __skreturn;
@@ -7937,7 +8462,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool LineIntersectsLines(Line l, List<Line> lines)
-{
+    {
       __sklib_line __skparam__l;
       __sklib_vector_line __skparam__lines;
       int __skreturn;
@@ -7948,7 +8473,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool LineIntersectsRect(Line l, Rectangle rect)
-{
+    {
       __sklib_line __skparam__l;
       __sklib_rectangle __skparam__rect;
       int __skreturn;
@@ -7958,7 +8483,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static float LineLength(Line l)
-{
+    {
       __sklib_line __skparam__l;
       float __skreturn;
       __skparam__l = __skadapter__to_sklib_line(l);
@@ -7966,7 +8491,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float LineLengthSquared(Line l)
-{
+    {
       __sklib_line __skparam__l;
       float __skreturn;
       __skparam__l = __skadapter__to_sklib_line(l);
@@ -7974,7 +8499,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Point2D LineMidPoint(Line l)
-{
+    {
       __sklib_line __skparam__l;
       __sklib_point_2d __skreturn;
       __skparam__l = __skadapter__to_sklib_line(l);
@@ -7982,7 +8507,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Vector2D LineNormal(Line l)
-{
+    {
       __sklib_line __skparam__l;
       __sklib_vector_2d __skreturn;
       __skparam__l = __skadapter__to_sklib_line(l);
@@ -7990,7 +8515,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static string LineToString(Line ln)
-{
+    {
       __sklib_line __skparam__ln;
       __sklib_string __skreturn;
       __skparam__ln = __skadapter__to_sklib_line(ln);
@@ -7998,7 +8523,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static List<Line> LinesFrom(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __sklib_vector_line __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -8006,7 +8531,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_line(__skreturn);
     }
     public static List<Line> LinesFrom(Triangle t)
-{
+    {
       __sklib_triangle __skparam__t;
       __sklib_vector_line __skreturn;
       __skparam__t = __skadapter__to_sklib_triangle(t);
@@ -8014,7 +8539,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_line(__skreturn);
     }
     public static bool LinesIntersect(Line l1, Line l2)
-{
+    {
       __sklib_line __skparam__l1;
       __sklib_line __skparam__l2;
       int __skreturn;
@@ -8024,7 +8549,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void ApplyMatrix(Matrix2D matrix, ref Quad q)
-{
+    {
       __sklib_matrix_2d __skparam__matrix;
       __sklib_quad __skparam__q;
       __skparam__matrix = __skadapter__to_sklib_matrix_2d(matrix);
@@ -8033,7 +8558,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       q = __skadapter__to_quad(__skparam__q);
     }
     public static void ApplyMatrix(Matrix2D m, ref Triangle tri)
-{
+    {
       __sklib_matrix_2d __skparam__m;
       __sklib_triangle __skparam__tri;
       __skparam__m = __skadapter__to_sklib_matrix_2d(m);
@@ -8042,13 +8567,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       tri = __skadapter__to_triangle(__skparam__tri);
     }
     public static Matrix2D IdentityMatrix()
-{
+    {
       __sklib_matrix_2d __skreturn;
       __skreturn = __sklib__identity_matrix();
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Matrix2D MatrixInverse(Matrix2D m)
-{
+    {
       __sklib_matrix_2d __skparam__m;
       __sklib_matrix_2d __skreturn;
       __skparam__m = __skadapter__to_sklib_matrix_2d(m);
@@ -8056,7 +8581,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Point2D MatrixMultiply(Matrix2D m, Point2D pt)
-{
+    {
       __sklib_matrix_2d __skparam__m;
       __sklib_point_2d __skparam__pt;
       __sklib_point_2d __skreturn;
@@ -8066,7 +8591,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Matrix2D MatrixMultiply(Matrix2D m1, Matrix2D m2)
-{
+    {
       __sklib_matrix_2d __skparam__m1;
       __sklib_matrix_2d __skparam__m2;
       __sklib_matrix_2d __skreturn;
@@ -8076,7 +8601,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Vector2D MatrixMultiply(Matrix2D m, Vector2D v)
-{
+    {
       __sklib_matrix_2d __skparam__m;
       __sklib_vector_2d __skparam__v;
       __sklib_vector_2d __skreturn;
@@ -8086,7 +8611,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static string MatrixToString(Matrix2D matrix)
-{
+    {
       __sklib_matrix_2d __skparam__matrix;
       __sklib_string __skreturn;
       __skparam__matrix = __skadapter__to_sklib_matrix_2d(matrix);
@@ -8094,7 +8619,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Matrix2D RotationMatrix(float deg)
-{
+    {
       float __skparam__deg;
       __sklib_matrix_2d __skreturn;
       __skparam__deg = __skadapter__to_sklib_float(deg);
@@ -8102,7 +8627,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Matrix2D ScaleMatrix(Point2D scale)
-{
+    {
       __sklib_point_2d __skparam__scale;
       __sklib_matrix_2d __skreturn;
       __skparam__scale = __skadapter__to_sklib_point_2d(scale);
@@ -8110,7 +8635,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Matrix2D ScaleMatrix(Vector2D scale)
-{
+    {
       __sklib_vector_2d __skparam__scale;
       __sklib_matrix_2d __skreturn;
       __skparam__scale = __skadapter__to_sklib_vector_2d(scale);
@@ -8118,7 +8643,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Matrix2D ScaleMatrix(float scale)
-{
+    {
       float __skparam__scale;
       __sklib_matrix_2d __skreturn;
       __skparam__scale = __skadapter__to_sklib_float(scale);
@@ -8126,7 +8651,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Matrix2D ScaleRotateTranslateMatrix(Point2D scale, float deg, Point2D translate)
-{
+    {
       __sklib_point_2d __skparam__scale;
       float __skparam__deg;
       __sklib_point_2d __skparam__translate;
@@ -8138,7 +8663,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Matrix2D TranslationMatrix(Point2D pt)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_matrix_2d __skreturn;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
@@ -8146,7 +8671,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Matrix2D TranslationMatrix(Vector2D pt)
-{
+    {
       __sklib_vector_2d __skparam__pt;
       __sklib_matrix_2d __skreturn;
       __skparam__pt = __skadapter__to_sklib_vector_2d(pt);
@@ -8154,7 +8679,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static Matrix2D TranslationMatrix(float dx, float dy)
-{
+    {
       float __skparam__dx;
       float __skparam__dy;
       __sklib_matrix_2d __skreturn;
@@ -8164,11 +8689,11 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static void HideMouse()
-{
+    {
       __sklib__hide_mouse();
     }
     public static bool MouseClicked(MouseButton button)
-{
+    {
       int __skparam__button;
       int __skreturn;
       __skparam__button = __skadapter__to_sklib_mouse_button(button);
@@ -8176,7 +8701,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool MouseDown(MouseButton button)
-{
+    {
       int __skparam__button;
       int __skreturn;
       __skparam__button = __skadapter__to_sklib_mouse_button(button);
@@ -8184,31 +8709,31 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Vector2D MouseMovement()
-{
+    {
       __sklib_vector_2d __skreturn;
       __skreturn = __sklib__mouse_movement();
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Point2D MousePosition()
-{
+    {
       __sklib_point_2d __skreturn;
       __skreturn = __sklib__mouse_position();
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Vector2D MousePositionVector()
-{
+    {
       __sklib_vector_2d __skreturn;
       __skreturn = __sklib__mouse_position_vector();
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static bool MouseShown()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__mouse_shown();
       return __skadapter__to_bool(__skreturn);
     }
     public static bool MouseUp(MouseButton button)
-{
+    {
       int __skparam__button;
       int __skreturn;
       __skparam__button = __skadapter__to_sklib_mouse_button(button);
@@ -8216,49 +8741,49 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Vector2D MouseWheelScroll()
-{
+    {
       __sklib_vector_2d __skreturn;
       __skreturn = __sklib__mouse_wheel_scroll();
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static float MouseX()
-{
+    {
       float __skreturn;
       __skreturn = __sklib__mouse_x();
       return __skadapter__to_float(__skreturn);
     }
     public static float MouseY()
-{
+    {
       float __skreturn;
       __skreturn = __sklib__mouse_y();
       return __skadapter__to_float(__skreturn);
     }
-    public static void MoveMouse(float x, float y)
-{
-      float __skparam__x;
-      float __skparam__y;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__move_mouse__float__float(__skparam__x, __skparam__y);
+    public static void MoveMouse(double x, double y)
+    {
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__move_mouse__double__double(__skparam__x, __skparam__y);
     }
     public static void MoveMouse(Point2D point)
-{
+    {
       __sklib_point_2d __skparam__point;
       __skparam__point = __skadapter__to_sklib_point_2d(point);
       __sklib__move_mouse__point_2d(__skparam__point);
     }
     public static void ShowMouse()
-{
+    {
       __sklib__show_mouse();
     }
     public static void ShowMouse(bool show)
-{
+    {
       int __skparam__show;
       __skparam__show = __skadapter__to_sklib_bool(show);
       __sklib__show_mouse__bool(__skparam__show);
     }
     public static void FadeMusicIn(string name, int ms)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__ms;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8267,7 +8792,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void FadeMusicIn(string name, int times, int ms)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__times;
       int __skparam__ms;
@@ -8278,7 +8803,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void FadeMusicIn(Music data, int ms)
-{
+    {
       __sklib_ptr __skparam__data;
       int __skparam__ms;
       __skparam__data = __skadapter__to_sklib_music(data);
@@ -8286,7 +8811,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__fade_music_in__music__int(__skparam__data, __skparam__ms);
     }
     public static void FadeMusicIn(Music data, int times, int ms)
-{
+    {
       __sklib_ptr __skparam__data;
       int __skparam__times;
       int __skparam__ms;
@@ -8296,23 +8821,23 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__fade_music_in__music__int__int(__skparam__data, __skparam__times, __skparam__ms);
     }
     public static void FadeMusicOut(int ms)
-{
+    {
       int __skparam__ms;
       __skparam__ms = __skadapter__to_sklib_int(ms);
       __sklib__fade_music_out__int(__skparam__ms);
     }
     public static void FreeAllMusic()
-{
+    {
       __sklib__free_all_music();
     }
     public static void FreeMusic(Music effect)
-{
+    {
       __sklib_ptr __skparam__effect;
       __skparam__effect = __skadapter__to_sklib_music(effect);
       __sklib__free_music__music(__skparam__effect);
     }
     public static bool HasMusic(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8321,7 +8846,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Music LoadMusic(string name, string filename)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__filename;
       __sklib_ptr __skreturn;
@@ -8333,7 +8858,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_music(__skreturn);
     }
     public static string MusicFilename(Music data)
-{
+    {
       __sklib_ptr __skparam__data;
       __sklib_string __skreturn;
       __skparam__data = __skadapter__to_sklib_music(data);
@@ -8341,7 +8866,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static string MusicName(Music data)
-{
+    {
       __sklib_ptr __skparam__data;
       __sklib_string __skreturn;
       __skparam__data = __skadapter__to_sklib_music(data);
@@ -8349,7 +8874,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Music MusicNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8358,30 +8883,30 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_music(__skreturn);
     }
     public static bool MusicPlaying()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__music_playing();
       return __skadapter__to_bool(__skreturn);
     }
     public static float MusicVolume()
-{
+    {
       float __skreturn;
       __skreturn = __sklib__music_volume();
       return __skadapter__to_float(__skreturn);
     }
     public static void PauseMusic()
-{
+    {
       __sklib__pause_music();
     }
     public static void PlayMusic(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__play_music__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void PlayMusic(string name, int times)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__times;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8390,13 +8915,13 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void PlayMusic(Music data)
-{
+    {
       __sklib_ptr __skparam__data;
       __skparam__data = __skadapter__to_sklib_music(data);
       __sklib__play_music__music(__skparam__data);
     }
     public static void PlayMusic(Music data, int times)
-{
+    {
       __sklib_ptr __skparam__data;
       int __skparam__times;
       __skparam__data = __skadapter__to_sklib_music(data);
@@ -8404,7 +8929,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__play_music__music__int(__skparam__data, __skparam__times);
     }
     public static void PlayMusic(Music data, int times, float volume)
-{
+    {
       __sklib_ptr __skparam__data;
       int __skparam__times;
       float __skparam__volume;
@@ -8414,27 +8939,27 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__play_music__music__int__float(__skparam__data, __skparam__times, __skparam__volume);
     }
     public static void ResumeMusic()
-{
+    {
       __sklib__resume_music();
     }
     public static void SetMusicVolume(float volume)
-{
+    {
       float __skparam__volume;
       __skparam__volume = __skadapter__to_sklib_float(volume);
       __sklib__set_music_volume__float(__skparam__volume);
     }
     public static void StopMusic()
-{
+    {
       __sklib__stop_music();
     }
     public static bool AcceptAllNewConnections()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__accept_all_new_connections();
       return __skadapter__to_bool(__skreturn);
     }
     public static bool AcceptNewConnection(ServerSocket server)
-{
+    {
       __sklib_ptr __skparam__server;
       int __skreturn;
       __skparam__server = __skadapter__to_sklib_server_socket(server);
@@ -8442,15 +8967,15 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void CloseAllConnections()
-{
+    {
       __sklib__close_all_connections();
     }
     public static void CloseAllServers()
-{
+    {
       __sklib__close_all_servers();
     }
     public static bool CloseConnection(Connection aConnection)
-{
+    {
       __sklib_ptr __skparam__a_connection;
       int __skreturn;
       __skparam__a_connection = __skadapter__to_sklib_connection(aConnection);
@@ -8458,7 +8983,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool CloseConnection(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8467,13 +8992,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void CloseMessage(Message msg)
-{
+    {
       __sklib_ptr __skparam__msg;
       __skparam__msg = __skadapter__to_sklib_message(msg);
       __sklib__close_message__message(__skparam__msg);
     }
     public static bool CloseServer(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8482,7 +9007,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool CloseServer(ServerSocket svr)
-{
+    {
       __sklib_ptr __skparam__svr;
       int __skreturn;
       __skparam__svr = __skadapter__to_sklib_server_socket(svr);
@@ -8490,7 +9015,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static uint ConnectionCount(string name)
-{
+    {
       __sklib_string __skparam__name;
       uint __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8499,7 +9024,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_unsigned_int(__skreturn);
     }
     public static uint ConnectionCount(ServerSocket server)
-{
+    {
       __sklib_ptr __skparam__server;
       uint __skreturn;
       __skparam__server = __skadapter__to_sklib_server_socket(server);
@@ -8507,7 +9032,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_unsigned_int(__skreturn);
     }
     public static ServerSocket CreateServer(string name, ushort port)
-{
+    {
       __sklib_string __skparam__name;
       ushort __skparam__port;
       __sklib_ptr __skreturn;
@@ -8518,7 +9043,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_server_socket(__skreturn);
     }
     public static ServerSocket CreateServer(string name, ushort port, ConnectionType protocol)
-{
+    {
       __sklib_string __skparam__name;
       ushort __skparam__port;
       int __skparam__protocol;
@@ -8531,7 +9056,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_server_socket(__skreturn);
     }
     public static string DecToHex(uint aDec)
-{
+    {
       uint __skparam__a_dec;
       __sklib_string __skreturn;
       __skparam__a_dec = __skadapter__to_sklib_unsigned_int(aDec);
@@ -8539,13 +9064,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static bool HasNewConnections()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__has_new_connections();
       return __skadapter__to_bool(__skreturn);
     }
     public static bool HasServer(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8554,7 +9079,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static string HexStrToIpv4(string aHex)
-{
+    {
       __sklib_string __skparam__a_hex;
       __sklib_string __skreturn;
       __skparam__a_hex = __skadapter__to_sklib_string(aHex);
@@ -8563,7 +9088,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static string HexToDecString(string aHex)
-{
+    {
       __sklib_string __skparam__a_hex;
       __sklib_string __skreturn;
       __skparam__a_hex = __skadapter__to_sklib_string(aHex);
@@ -8572,7 +9097,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static uint Ipv4ToDec(string aIp)
-{
+    {
       __sklib_string __skparam__a_ip;
       uint __skreturn;
       __skparam__a_ip = __skadapter__to_sklib_string(aIp);
@@ -8581,7 +9106,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_unsigned_int(__skreturn);
     }
     public static string Ipv4ToHex(string aIp)
-{
+    {
       __sklib_string __skparam__a_ip;
       __sklib_string __skreturn;
       __skparam__a_ip = __skadapter__to_sklib_string(aIp);
@@ -8590,7 +9115,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static string Ipv4ToStr(uint ip)
-{
+    {
       uint __skparam__ip;
       __sklib_string __skreturn;
       __skparam__ip = __skadapter__to_sklib_unsigned_int(ip);
@@ -8598,7 +9123,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Connection LastConnection(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8607,7 +9132,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_connection(__skreturn);
     }
     public static Connection LastConnection(ServerSocket server)
-{
+    {
       __sklib_ptr __skparam__server;
       __sklib_ptr __skreturn;
       __skparam__server = __skadapter__to_sklib_server_socket(server);
@@ -8615,13 +9140,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_connection(__skreturn);
     }
     public static string MyIp()
-{
+    {
       __sklib_string __skreturn;
       __skreturn = __sklib__my_ip();
       return __skadapter__to_string(__skreturn);
     }
     public static Connection OpenConnection(string name, string host, ushort port)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__host;
       ushort __skparam__port;
@@ -8635,7 +9160,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_connection(__skreturn);
     }
     public static Connection OpenConnection(string name, string host, ushort port, ConnectionType protocol)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__host;
       ushort __skparam__port;
@@ -8651,7 +9176,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_connection(__skreturn);
     }
     public static Connection RetrieveConnection(string name, int idx)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__idx;
       __sklib_ptr __skreturn;
@@ -8662,7 +9187,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_connection(__skreturn);
     }
     public static Connection RetrieveConnection(ServerSocket server, int idx)
-{
+    {
       __sklib_ptr __skparam__server;
       int __skparam__idx;
       __sklib_ptr __skreturn;
@@ -8672,7 +9197,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_connection(__skreturn);
     }
     public static bool ServerHasNewConnection(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8681,7 +9206,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool ServerHasNewConnection(ServerSocket server)
-{
+    {
       __sklib_ptr __skparam__server;
       int __skreturn;
       __skparam__server = __skadapter__to_sklib_server_socket(server);
@@ -8689,7 +9214,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static ServerSocket ServerNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -8698,7 +9223,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_server_socket(__skreturn);
     }
     public static void DrawPixel(Color clr, Point2D pt)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_point_2d __skparam__pt;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -8706,7 +9231,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_pixel__color__point_2d_ref(__skparam__clr, __skparam__pt);
     }
     public static void DrawPixel(Color clr, Point2D pt, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_point_2d __skparam__pt;
       __sklib_drawing_options __skparam__opts;
@@ -8715,30 +9240,126 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__draw_pixel__color__point_2d_ref__drawing_options(__skparam__clr, __skparam__pt, __skparam__opts);
     }
-    public static void DrawPixel(Color clr, float x, float y)
-{
+    public static void DrawPixel(Color clr, double x, double y)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__draw_pixel__color__float__float(__skparam__clr, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_pixel__color__double__double(__skparam__clr, __skparam__x, __skparam__y);
     }
-    public static void DrawPixel(Color clr, float x, float y, DrawingOptions opts)
-{
+    public static void DrawPixel(Color clr, double x, double y, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_pixel__color__float__float__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__opts);
+      __sklib__draw_pixel__color__double__double__drawing_options(__skparam__clr, __skparam__x, __skparam__y, __skparam__opts);
+    }
+    public static void DrawPixelOnBitmap(Bitmap destination, Color clr, Point2D pt)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_point_2d __skparam__pt;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__pt = __skadapter__to_sklib_point_2d(pt);
+      __sklib__draw_pixel_on_bitmap__bitmap__color__point_2d_ref(__skparam__destination, __skparam__clr, __skparam__pt);
+    }
+    public static void DrawPixelOnBitmap(Bitmap destination, Color clr, Point2D pt, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_point_2d __skparam__pt;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__pt = __skadapter__to_sklib_point_2d(pt);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_pixel_on_bitmap__bitmap__color__point_2d_ref__drawing_options(__skparam__destination, __skparam__clr, __skparam__pt, __skparam__opts);
+    }
+    public static void DrawPixelOnBitmap(Bitmap destination, Color clr, double x, double y)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_pixel_on_bitmap__bitmap__color__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y);
+    }
+    public static void DrawPixelOnBitmap(Bitmap destination, Color clr, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_pixel_on_bitmap__bitmap__color__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__opts);
+    }
+    public static void DrawPixelOnWindow(Window destination, Color clr, Point2D pt)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_point_2d __skparam__pt;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__pt = __skadapter__to_sklib_point_2d(pt);
+      __sklib__draw_pixel_on_window__window__color__point_2d_ref(__skparam__destination, __skparam__clr, __skparam__pt);
+    }
+    public static void DrawPixelOnWindow(Window destination, Color clr, Point2D pt, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_point_2d __skparam__pt;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__pt = __skadapter__to_sklib_point_2d(pt);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_pixel_on_window__window__color__point_2d_ref__drawing_options(__skparam__destination, __skparam__clr, __skparam__pt, __skparam__opts);
+    }
+    public static void DrawPixelOnWindow(Window destination, Color clr, double x, double y)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_pixel_on_window__window__color__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y);
+    }
+    public static void DrawPixelOnWindow(Window destination, Color clr, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_pixel_on_window__window__color__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__opts);
     }
     public static Color GetPixel(Bitmap bmp, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skparam__pt;
       __sklib_color __skreturn;
@@ -8747,38 +9368,38 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__get_pixel__bitmap__point_2d_ref(__skparam__bmp, __skparam__pt);
       return __skadapter__to_color(__skreturn);
     }
-    public static Color GetPixel(Bitmap bmp, float x, float y)
-{
+    public static Color GetPixel(Bitmap bmp, double x, double y)
+    {
       __sklib_ptr __skparam__bmp;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_color __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__get_pixel__bitmap__float__float(__skparam__bmp, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__get_pixel__bitmap__double__double(__skparam__bmp, __skparam__x, __skparam__y);
       return __skadapter__to_color(__skreturn);
     }
     public static Color GetPixel(Point2D pt)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_color __skreturn;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
       __skreturn = __sklib__get_pixel__point_2d_ref(__skparam__pt);
       return __skadapter__to_color(__skreturn);
     }
-    public static Color GetPixel(float x, float y)
-{
-      float __skparam__x;
-      float __skparam__y;
+    public static Color GetPixel(double x, double y)
+    {
+      double __skparam__x;
+      double __skparam__y;
       __sklib_color __skreturn;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__get_pixel__float__float(__skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__get_pixel__double__double(__skparam__x, __skparam__y);
       return __skadapter__to_color(__skreturn);
     }
     public static Color GetPixel(Window wnd, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __sklib_point_2d __skparam__pt;
       __sklib_color __skreturn;
@@ -8787,36 +9408,58 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__get_pixel__window__point_2d_ref(__skparam__wnd, __skparam__pt);
       return __skadapter__to_color(__skreturn);
     }
-    public static Color GetPixel(Window wnd, float x, float y)
-{
+    public static Color GetPixel(Window wnd, double x, double y)
+    {
       __sklib_ptr __skparam__wnd;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_color __skreturn;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__get_pixel__window__float__float(__skparam__wnd, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__get_pixel__window__double__double(__skparam__wnd, __skparam__x, __skparam__y);
       return __skadapter__to_color(__skreturn);
     }
-    public static Point2D PointAt(float x, float y)
-{
-      float __skparam__x;
-      float __skparam__y;
+    public static Color GetPixelFromWindow(Window destination, Point2D pt)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_point_2d __skparam__pt;
+      __sklib_color __skreturn;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__pt = __skadapter__to_sklib_point_2d(pt);
+      __skreturn = __sklib__get_pixel_from_window__window__point_2d_ref(__skparam__destination, __skparam__pt);
+      return __skadapter__to_color(__skreturn);
+    }
+    public static Color GetPixelFromWindow(Window destination, double x, double y)
+    {
+      __sklib_ptr __skparam__destination;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_color __skreturn;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__get_pixel_from_window__window__double__double(__skparam__destination, __skparam__x, __skparam__y);
+      return __skadapter__to_color(__skreturn);
+    }
+    public static Point2D PointAt(double x, double y)
+    {
+      double __skparam__x;
+      double __skparam__y;
       __sklib_point_2d __skreturn;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__point_at__float__float(__skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__point_at__double__double(__skparam__x, __skparam__y);
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D PointAtOrigin()
-{
+    {
       __sklib_point_2d __skreturn;
       __skreturn = __sklib__point_at_origin();
       return __skadapter__to_point_2d(__skreturn);
     }
     public static bool PointInCircle(Point2D pt, Circle c)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_circle __skparam__c;
       int __skreturn;
@@ -8826,7 +9469,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool PointInQuad(Point2D pt, Quad q)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_quad __skparam__q;
       int __skreturn;
@@ -8836,7 +9479,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool PointInRectangle(Point2D pt, Rectangle rect)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_rectangle __skparam__rect;
       int __skreturn;
@@ -8846,7 +9489,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool PointInTriangle(Point2D pt, Triangle tri)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_triangle __skparam__tri;
       int __skreturn;
@@ -8856,7 +9499,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static float PointLineDistance(Point2D pt, Line l)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_line __skparam__l;
       float __skreturn;
@@ -8866,7 +9509,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Point2D PointOffsetBy(Point2D startPoint, Vector2D offset)
-{
+    {
       __sklib_point_2d __skparam__start_point;
       __sklib_vector_2d __skparam__offset;
       __sklib_point_2d __skreturn;
@@ -8876,7 +9519,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D PointOffsetFromOrigin(Vector2D offset)
-{
+    {
       __sklib_vector_2d __skparam__offset;
       __sklib_point_2d __skreturn;
       __skparam__offset = __skadapter__to_sklib_vector_2d(offset);
@@ -8884,7 +9527,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static bool PointOnLine(Point2D pt, Line l)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_line __skparam__l;
       int __skreturn;
@@ -8894,7 +9537,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool PointOnLine(Point2D pt, Line l, float proximity)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_line __skparam__l;
       float __skparam__proximity;
@@ -8906,7 +9549,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static float PointPointAngle(Point2D pt1, Point2D pt2)
-{
+    {
       __sklib_point_2d __skparam__pt1;
       __sklib_point_2d __skparam__pt2;
       float __skreturn;
@@ -8916,7 +9559,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float PointPointDistance(Point2D pt1, Point2D pt2)
-{
+    {
       __sklib_point_2d __skparam__pt1;
       __sklib_point_2d __skparam__pt2;
       float __skreturn;
@@ -8926,7 +9569,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static string PointToString(Point2D pt)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_string __skreturn;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
@@ -8934,7 +9577,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Point2D RandomBitmapPoint(Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__bmp;
       __sklib_point_2d __skreturn;
       __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
@@ -8942,13 +9585,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D RandomScreenPoint()
-{
+    {
       __sklib_point_2d __skreturn;
       __skreturn = __sklib__random_screen_point();
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D RandomWindowPoint(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_point_2d __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -8956,7 +9599,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static bool SamePoint(Point2D pt1, Point2D pt2)
-{
+    {
       __sklib_point_2d __skparam__pt1;
       __sklib_point_2d __skparam__pt2;
       int __skreturn;
@@ -8966,7 +9609,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Quad QuadFrom(Point2D p1, Point2D p2, Point2D p3, Point2D p4)
-{
+    {
       __sklib_point_2d __skparam__p1;
       __sklib_point_2d __skparam__p2;
       __sklib_point_2d __skparam__p3;
@@ -8980,7 +9623,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_quad(__skreturn);
     }
     public static Quad QuadFrom(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __sklib_quad __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -8988,7 +9631,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_quad(__skreturn);
     }
     public static Quad QuadFrom(Rectangle rect, Matrix2D transform)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __sklib_matrix_2d __skparam__transform;
       __sklib_quad __skreturn;
@@ -8997,30 +9640,30 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__quad_from__rectangle_ref__matrix_2d_ref(__skparam__rect, __skparam__transform);
       return __skadapter__to_quad(__skreturn);
     }
-    public static Quad QuadFrom(float xTopLeft, float yTopLeft, float xTopRight, float yTopRight, float xBottomLeft, float yBottomLeft, float xBottomRight, float yBottomRight)
-{
-      float __skparam__x_top_left;
-      float __skparam__y_top_left;
-      float __skparam__x_top_right;
-      float __skparam__y_top_right;
-      float __skparam__x_bottom_left;
-      float __skparam__y_bottom_left;
-      float __skparam__x_bottom_right;
-      float __skparam__y_bottom_right;
+    public static Quad QuadFrom(double xTopLeft, double yTopLeft, double xTopRight, double yTopRight, double xBottomLeft, double yBottomLeft, double xBottomRight, double yBottomRight)
+    {
+      double __skparam__x_top_left;
+      double __skparam__y_top_left;
+      double __skparam__x_top_right;
+      double __skparam__y_top_right;
+      double __skparam__x_bottom_left;
+      double __skparam__y_bottom_left;
+      double __skparam__x_bottom_right;
+      double __skparam__y_bottom_right;
       __sklib_quad __skreturn;
-      __skparam__x_top_left = __skadapter__to_sklib_float(xTopLeft);
-      __skparam__y_top_left = __skadapter__to_sklib_float(yTopLeft);
-      __skparam__x_top_right = __skadapter__to_sklib_float(xTopRight);
-      __skparam__y_top_right = __skadapter__to_sklib_float(yTopRight);
-      __skparam__x_bottom_left = __skadapter__to_sklib_float(xBottomLeft);
-      __skparam__y_bottom_left = __skadapter__to_sklib_float(yBottomLeft);
-      __skparam__x_bottom_right = __skadapter__to_sklib_float(xBottomRight);
-      __skparam__y_bottom_right = __skadapter__to_sklib_float(yBottomRight);
-      __skreturn = __sklib__quad_from__float__float__float__float__float__float__float__float(__skparam__x_top_left, __skparam__y_top_left, __skparam__x_top_right, __skparam__y_top_right, __skparam__x_bottom_left, __skparam__y_bottom_left, __skparam__x_bottom_right, __skparam__y_bottom_right);
+      __skparam__x_top_left = __skadapter__to_sklib_double(xTopLeft);
+      __skparam__y_top_left = __skadapter__to_sklib_double(yTopLeft);
+      __skparam__x_top_right = __skadapter__to_sklib_double(xTopRight);
+      __skparam__y_top_right = __skadapter__to_sklib_double(yTopRight);
+      __skparam__x_bottom_left = __skadapter__to_sklib_double(xBottomLeft);
+      __skparam__y_bottom_left = __skadapter__to_sklib_double(yBottomLeft);
+      __skparam__x_bottom_right = __skadapter__to_sklib_double(xBottomRight);
+      __skparam__y_bottom_right = __skadapter__to_sklib_double(yBottomRight);
+      __skreturn = __sklib__quad_from__double__double__double__double__double__double__double__double(__skparam__x_top_left, __skparam__y_top_left, __skparam__x_top_right, __skparam__y_top_right, __skparam__x_bottom_left, __skparam__y_bottom_left, __skparam__x_bottom_right, __skparam__y_bottom_right);
       return __skadapter__to_quad(__skreturn);
     }
     public static bool QuadsIntersect(Quad q1, Quad q2)
-{
+    {
       __sklib_quad __skparam__q1;
       __sklib_quad __skparam__q2;
       int __skreturn;
@@ -9030,7 +9673,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void SetQuadPoint(ref Quad q, int idx, Point2D value)
-{
+    {
       __sklib_quad __skparam__q;
       int __skparam__idx;
       __sklib_point_2d __skparam__value;
@@ -9041,7 +9684,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       q = __skadapter__to_quad(__skparam__q);
     }
     public static List<Triangle> TrianglesFrom(Quad q)
-{
+    {
       __sklib_quad __skparam__q;
       __sklib_vector_triangle __skreturn;
       __skparam__q = __skadapter__to_sklib_quad(q);
@@ -9049,13 +9692,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_triangle(__skreturn);
     }
     public static float Rnd()
-{
+    {
       float __skreturn;
       __skreturn = __sklib__rnd();
       return __skadapter__to_float(__skreturn);
     }
     public static int Rnd(int ubound)
-{
+    {
       int __skparam__ubound;
       int __skreturn;
       __skparam__ubound = __skadapter__to_sklib_int(ubound);
@@ -9063,7 +9706,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static void DrawQuad(Color clr, Quad q)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_quad __skparam__q;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -9071,7 +9714,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_quad__color__quad_ref(__skparam__clr, __skparam__q);
     }
     public static void DrawQuad(Color clr, Quad q, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_quad __skparam__q;
       __sklib_drawing_options __skparam__opts;
@@ -9080,8 +9723,52 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__draw_quad__color__quad_ref__drawing_options_ref(__skparam__clr, __skparam__q, __skparam__opts);
     }
+    public static void DrawQuadOnBitmap(Bitmap destination, Color clr, Quad q)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_quad __skparam__q;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__q = __skadapter__to_sklib_quad(q);
+      __sklib__draw_quad_on_bitmap__bitmap__color__quad_ref(__skparam__destination, __skparam__clr, __skparam__q);
+    }
+    public static void DrawQuadOnBitmap(Bitmap destination, Color clr, Quad q, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_quad __skparam__q;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__q = __skadapter__to_sklib_quad(q);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_quad_on_bitmap__bitmap__color__quad_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__q, __skparam__opts);
+    }
+    public static void DrawQuadOnWindow(Window destination, Color clr, Quad q)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_quad __skparam__q;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__q = __skadapter__to_sklib_quad(q);
+      __sklib__draw_quad_on_window__window__color__quad_ref(__skparam__destination, __skparam__clr, __skparam__q);
+    }
+    public static void DrawQuadOnWindow(Window destination, Color clr, Quad q, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_quad __skparam__q;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__q = __skadapter__to_sklib_quad(q);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_quad_on_window__window__color__quad_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__q, __skparam__opts);
+    }
     public static void DrawRectangle(Color clr, Rectangle rect)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_rectangle __skparam__rect;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -9089,7 +9776,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_rectangle__color__rectangle_ref(__skparam__clr, __skparam__rect);
     }
     public static void DrawRectangle(Color clr, Rectangle rect, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_rectangle __skparam__rect;
       __sklib_drawing_options __skparam__opts;
@@ -9098,38 +9785,150 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__draw_rectangle__color__rectangle_ref__drawing_options_ref(__skparam__clr, __skparam__rect, __skparam__opts);
     }
-    public static void DrawRectangle(Color clr, float x, float y, float width, float height)
-{
+    public static void DrawRectangle(Color clr, double x, double y, double width, double height)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
-      __sklib__draw_rectangle__color__float__float__float__float(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__draw_rectangle__color__double__double__double__double(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
     }
-    public static void DrawRectangle(Color clr, float x, float y, float width, float height, DrawingOptions opts)
-{
+    public static void DrawRectangle(Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_rectangle__color__float__float__float__float__drawing_options_ref(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+      __sklib__draw_rectangle__color__double__double__double__double__drawing_options_ref(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+    }
+    public static void DrawRectangleOnBitmap(Bitmap destination, Color clr, Rectangle rect)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __sklib__draw_rectangle_on_bitmap__bitmap__color__rectangle_ref(__skparam__destination, __skparam__clr, __skparam__rect);
+    }
+    public static void DrawRectangleOnBitmap(Bitmap destination, Color clr, Rectangle rect, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_rectangle_on_bitmap__bitmap__color__rectangle_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__rect, __skparam__opts);
+    }
+    public static void DrawRectangleOnBitmap(Bitmap destination, Color clr, double x, double y, double width, double height)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__draw_rectangle_on_bitmap__bitmap__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+    }
+    public static void DrawRectangleOnBitmap(Bitmap destination, Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_rectangle_on_bitmap__bitmap__color__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+    }
+    public static void DrawRectangleOnWindow(Window destination, Color clr, Rectangle rect)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __sklib__draw_rectangle_on_window__window__color__rectangle_ref(__skparam__destination, __skparam__clr, __skparam__rect);
+    }
+    public static void DrawRectangleOnWindow(Window destination, Color clr, Rectangle rect, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_rectangle_on_window__window__color__rectangle_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__rect, __skparam__opts);
+    }
+    public static void DrawRectangleOnWindow(Window destination, Color clr, double x, double y, double width, double height)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__draw_rectangle_on_window__window__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+    }
+    public static void DrawRectangleOnWindow(Window destination, Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_rectangle_on_window__window__color__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
     }
     public static void FillQuad(Color clr, Quad q)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_quad __skparam__q;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -9137,7 +9936,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__fill_quad__color__quad_ref(__skparam__clr, __skparam__q);
     }
     public static void FillQuad(Color clr, Quad q, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_quad __skparam__q;
       __sklib_drawing_options __skparam__opts;
@@ -9146,8 +9945,52 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__fill_quad__color__quad_ref__drawing_options_ref(__skparam__clr, __skparam__q, __skparam__opts);
     }
+    public static void FillQuadOnBitmap(Bitmap destination, Color clr, Quad q)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_quad __skparam__q;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__q = __skadapter__to_sklib_quad(q);
+      __sklib__fill_quad_on_bitmap__bitmap__color__quad_ref(__skparam__destination, __skparam__clr, __skparam__q);
+    }
+    public static void FillQuadOnBitmap(Bitmap destination, Color clr, Quad q, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_quad __skparam__q;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__q = __skadapter__to_sklib_quad(q);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_quad_on_bitmap__bitmap__color__quad_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__q, __skparam__opts);
+    }
+    public static void FillQuadOnWindow(Window destination, Color clr, Quad q)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_quad __skparam__q;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__q = __skadapter__to_sklib_quad(q);
+      __sklib__fill_quad_on_window__window__color__quad_ref(__skparam__destination, __skparam__clr, __skparam__q);
+    }
+    public static void FillQuadOnWindow(Window destination, Color clr, Quad q, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_quad __skparam__q;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__q = __skadapter__to_sklib_quad(q);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_quad_on_window__window__color__quad_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__q, __skparam__opts);
+    }
     public static void FillRectangle(Color clr, Rectangle rect)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_rectangle __skparam__rect;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -9155,7 +9998,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__fill_rectangle__color__rectangle_ref(__skparam__clr, __skparam__rect);
     }
     public static void FillRectangle(Color clr, Rectangle rect, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_rectangle __skparam__rect;
       __sklib_drawing_options __skparam__opts;
@@ -9164,38 +10007,150 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__fill_rectangle__color__rectangle_ref__drawing_options_ref(__skparam__clr, __skparam__rect, __skparam__opts);
     }
-    public static void FillRectangle(Color clr, float x, float y, float width, float height)
-{
+    public static void FillRectangle(Color clr, double x, double y, double width, double height)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
-      __sklib__fill_rectangle__color__float__float__float__float(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__fill_rectangle__color__double__double__double__double(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
     }
-    public static void FillRectangle(Color clr, float x, float y, float width, float height, DrawingOptions opts)
-{
+    public static void FillRectangle(Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__fill_rectangle__color__float__float__float__float__drawing_options_ref(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+      __sklib__fill_rectangle__color__double__double__double__double__drawing_options_ref(__skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+    }
+    public static void FillRectangleOnBitmap(Bitmap destination, Color clr, Rectangle rect)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __sklib__fill_rectangle_on_bitmap__bitmap__color__rectangle_ref(__skparam__destination, __skparam__clr, __skparam__rect);
+    }
+    public static void FillRectangleOnBitmap(Bitmap destination, Color clr, Rectangle rect, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_rectangle_on_bitmap__bitmap__color__rectangle_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__rect, __skparam__opts);
+    }
+    public static void FillRectangleOnBitmap(Bitmap destination, Color clr, double x, double y, double width, double height)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__fill_rectangle_on_bitmap__bitmap__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+    }
+    public static void FillRectangleOnBitmap(Bitmap destination, Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_rectangle_on_bitmap__bitmap__color__double__double__double__double__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
+    }
+    public static void FillRectangleOnWindow(Window destination, Color clr, Rectangle rect)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __sklib__fill_rectangle_on_window__window__color__rectangle_ref(__skparam__destination, __skparam__clr, __skparam__rect);
+    }
+    public static void FillRectangleOnWindow(Window destination, Color clr, Rectangle rect, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_rectangle __skparam__rect;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__rect = __skadapter__to_sklib_rectangle(rect);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_rectangle_on_window__window__color__rectangle_ref__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__rect, __skparam__opts);
+    }
+    public static void FillRectangleOnWindow(Window destination, Color clr, double x, double y, double width, double height)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __sklib__fill_rectangle_on_window__window__color__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height);
+    }
+    public static void FillRectangleOnWindow(Window destination, Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_rectangle_on_window__window__color__double__double__double__double__drawing_options_ref(__skparam__destination, __skparam__clr, __skparam__x, __skparam__y, __skparam__width, __skparam__height, __skparam__opts);
     }
     public static Rectangle InsetRectangle(Rectangle rect, float insetAmount)
-{
+    {
       __sklib_rectangle __skparam__rect;
       float __skparam__inset_amount;
       __sklib_rectangle __skreturn;
@@ -9205,7 +10160,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle Intersection(Rectangle rect1, Rectangle rect2)
-{
+    {
       __sklib_rectangle __skparam__rect1;
       __sklib_rectangle __skparam__rect2;
       __sklib_rectangle __skreturn;
@@ -9215,7 +10170,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle RectangleAround(Triangle t)
-{
+    {
       __sklib_triangle __skparam__t;
       __sklib_rectangle __skreturn;
       __skparam__t = __skadapter__to_sklib_triangle(t);
@@ -9223,7 +10178,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle RectangleAround(Circle c)
-{
+    {
       __sklib_circle __skparam__c;
       __sklib_rectangle __skreturn;
       __skparam__c = __skadapter__to_sklib_circle(c);
@@ -9231,7 +10186,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle RectangleAround(Line l)
-{
+    {
       __sklib_line __skparam__l;
       __sklib_rectangle __skreturn;
       __skparam__l = __skadapter__to_sklib_line(l);
@@ -9239,7 +10194,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static float RectangleBottom(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       float __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -9247,27 +10202,27 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Point2D RectangleCenter(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __sklib_point_2d __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
       __skreturn = __sklib__rectangle_center__rectangle_ref(__skparam__rect);
       return __skadapter__to_point_2d(__skreturn);
     }
-    public static Rectangle RectangleFrom(Point2D pt, float width, float height)
-{
+    public static Rectangle RectangleFrom(Point2D pt, double width, double height)
+    {
       __sklib_point_2d __skparam__pt;
-      float __skparam__width;
-      float __skparam__height;
+      double __skparam__width;
+      double __skparam__height;
       __sklib_rectangle __skreturn;
       __skparam__pt = __skadapter__to_sklib_point_2d(pt);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
-      __skreturn = __sklib__rectangle_from__point_2d__float__float(__skparam__pt, __skparam__width, __skparam__height);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skreturn = __sklib__rectangle_from__point_2d__double__double(__skparam__pt, __skparam__width, __skparam__height);
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle RectangleFrom(Point2D pt1, Point2D pt2)
-{
+    {
       __sklib_point_2d __skparam__pt1;
       __sklib_point_2d __skparam__pt2;
       __sklib_rectangle __skreturn;
@@ -9276,22 +10231,22 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__rectangle_from__point_2d__point_2d(__skparam__pt1, __skparam__pt2);
       return __skadapter__to_rectangle(__skreturn);
     }
-    public static Rectangle RectangleFrom(float x, float y, float width, float height)
-{
-      float __skparam__x;
-      float __skparam__y;
-      float __skparam__width;
-      float __skparam__height;
+    public static Rectangle RectangleFrom(double x, double y, double width, double height)
+    {
+      double __skparam__x;
+      double __skparam__y;
+      double __skparam__width;
+      double __skparam__height;
       __sklib_rectangle __skreturn;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skparam__width = __skadapter__to_sklib_float(width);
-      __skparam__height = __skadapter__to_sklib_float(height);
-      __skreturn = __sklib__rectangle_from__float__float__float__float(__skparam__x, __skparam__y, __skparam__width, __skparam__height);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__width = __skadapter__to_sklib_double(width);
+      __skparam__height = __skadapter__to_sklib_double(height);
+      __skreturn = __sklib__rectangle_from__double__double__double__double(__skparam__x, __skparam__y, __skparam__width, __skparam__height);
       return __skadapter__to_rectangle(__skreturn);
     }
     public static float RectangleLeft(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       float __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -9299,7 +10254,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Rectangle RectangleOffsetBy(Rectangle rect, Vector2D offset)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __sklib_vector_2d __skparam__offset;
       __sklib_rectangle __skreturn;
@@ -9309,7 +10264,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static float RectangleRight(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       float __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -9317,7 +10272,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static string RectangleToString(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __sklib_string __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -9325,7 +10280,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static float RectangleTop(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       float __skreturn;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -9333,7 +10288,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static bool RectanglesIntersect(Rectangle rect1, Rectangle rect2)
-{
+    {
       __sklib_rectangle __skparam__rect1;
       __sklib_rectangle __skparam__rect2;
       int __skreturn;
@@ -9343,13 +10298,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void DeregisterFreeNotifier(FreeNotifier handler)
-{
+    {
       FreeNotifier __skparam__handler;
       __skparam__handler = __skadapter__to_sklib_free_notifier(handler);
       __sklib__deregister_free_notifier__free_notifier_ptr(__skparam__handler);
     }
     public static string PathToResource(string filename, ResourceKind kind)
-{
+    {
       __sklib_string __skparam__filename;
       int __skparam__kind;
       __sklib_string __skreturn;
@@ -9360,13 +10315,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static string PathToResources()
-{
+    {
       __sklib_string __skreturn;
       __skreturn = __sklib__path_to_resources();
       return __skadapter__to_string(__skreturn);
     }
     public static string PathToResources(ResourceKind kind)
-{
+    {
       int __skparam__kind;
       __sklib_string __skreturn;
       __skparam__kind = __skadapter__to_sklib_resource_kind(kind);
@@ -9374,26 +10329,26 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static void RegisterFreeNotifier(FreeNotifier fn)
-{
+    {
       FreeNotifier __skparam__fn;
       __skparam__fn = __skadapter__to_sklib_free_notifier(fn);
       __sklib__register_free_notifier__free_notifier_ptr(__skparam__fn);
     }
     public static void SetResourcesPath(string path)
-{
+    {
       __sklib_string __skparam__path;
       __skparam__path = __skadapter__to_sklib_string(path);
       __sklib__set_resources_path__string_ref(__skparam__path);
     __skadapter__free__sklib_string(ref __skparam__path);
     }
     public static void FadeAllSoundEffectsOut(int ms)
-{
+    {
       int __skparam__ms;
       __skparam__ms = __skadapter__to_sklib_int(ms);
       __sklib__fade_all_sound_effects_out__int(__skparam__ms);
     }
     public static void FadeSoundEffectOut(SoundEffect effect, int ms)
-{
+    {
       __sklib_ptr __skparam__effect;
       int __skparam__ms;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
@@ -9401,17 +10356,17 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__fade_sound_effect_out__sound_effect__int(__skparam__effect, __skparam__ms);
     }
     public static void FreeAllSoundEffects()
-{
+    {
       __sklib__free_all_sound_effects();
     }
     public static void FreeSoundEffect(SoundEffect effect)
-{
+    {
       __sklib_ptr __skparam__effect;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
       __sklib__free_sound_effect__sound_effect(__skparam__effect);
     }
     public static bool HasSoundEffect(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -9420,7 +10375,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static SoundEffect LoadSoundEffect(string name, string filename)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__filename;
       __sklib_ptr __skreturn;
@@ -9432,14 +10387,14 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sound_effect(__skreturn);
     }
     public static void PlaySoundEffect(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__play_sound_effect__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void PlaySoundEffect(string name, float volume)
-{
+    {
       __sklib_string __skparam__name;
       float __skparam__volume;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -9448,7 +10403,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void PlaySoundEffect(string name, int times)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__times;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -9457,7 +10412,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void PlaySoundEffect(string name, int times, float volume)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__times;
       float __skparam__volume;
@@ -9468,13 +10423,13 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void PlaySoundEffect(SoundEffect effect)
-{
+    {
       __sklib_ptr __skparam__effect;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
       __sklib__play_sound_effect__sound_effect(__skparam__effect);
     }
     public static void PlaySoundEffect(SoundEffect effect, float volume)
-{
+    {
       __sklib_ptr __skparam__effect;
       float __skparam__volume;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
@@ -9482,7 +10437,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__play_sound_effect__sound_effect__float(__skparam__effect, __skparam__volume);
     }
     public static void PlaySoundEffect(SoundEffect effect, int times)
-{
+    {
       __sklib_ptr __skparam__effect;
       int __skparam__times;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
@@ -9490,7 +10445,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__play_sound_effect__sound_effect__int(__skparam__effect, __skparam__times);
     }
     public static void PlaySoundEffect(SoundEffect effect, int times, float volume)
-{
+    {
       __sklib_ptr __skparam__effect;
       int __skparam__times;
       float __skparam__volume;
@@ -9500,7 +10455,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__play_sound_effect__sound_effect__int__float(__skparam__effect, __skparam__times, __skparam__volume);
     }
     public static string SoundEffectFilename(SoundEffect effect)
-{
+    {
       __sklib_ptr __skparam__effect;
       __sklib_string __skreturn;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
@@ -9508,7 +10463,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static string SoundEffectName(SoundEffect effect)
-{
+    {
       __sklib_ptr __skparam__effect;
       __sklib_string __skreturn;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
@@ -9516,7 +10471,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static SoundEffect SoundEffectNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -9525,7 +10480,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sound_effect(__skreturn);
     }
     public static bool SoundEffectPlaying(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -9534,7 +10489,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool SoundEffectPlaying(SoundEffect effect)
-{
+    {
       __sklib_ptr __skparam__effect;
       int __skreturn;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
@@ -9542,20 +10497,20 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void StopSoundEffect(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__stop_sound_effect__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void StopSoundEffect(SoundEffect effect)
-{
+    {
       __sklib_ptr __skparam__effect;
       __skparam__effect = __skadapter__to_sklib_sound_effect(effect);
       __sklib__stop_sound_effect__sound_effect(__skparam__effect);
     }
     public static void CallForAllSprites(SpriteFloatFunction fn, float val)
-{
+    {
       SpriteFloatFunction __skparam__fn;
       float __skparam__val;
       __skparam__fn = __skadapter__to_sklib_sprite_float_function(fn);
@@ -9563,19 +10518,19 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__call_for_all_sprites__sprite_float_function_ptr__float(__skparam__fn, __skparam__val);
     }
     public static void CallForAllSprites(SpriteFunction fn)
-{
+    {
       SpriteFunction __skparam__fn;
       __skparam__fn = __skadapter__to_sklib_sprite_function(fn);
       __sklib__call_for_all_sprites__sprite_function_ptr(__skparam__fn);
     }
     public static void CallOnSpriteEvent(SpriteEventHandler handler)
-{
+    {
       SpriteEventHandler __skparam__handler;
       __skparam__handler = __skadapter__to_sklib_sprite_event_handler(handler);
       __sklib__call_on_sprite_event__sprite_event_handler_ptr(__skparam__handler);
     }
     public static Point2D CenterPoint(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9583,7 +10538,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Sprite CreateSprite(Bitmap layer)
-{
+    {
       __sklib_ptr __skparam__layer;
       __sklib_ptr __skreturn;
       __skparam__layer = __skadapter__to_sklib_bitmap(layer);
@@ -9591,7 +10546,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sprite(__skreturn);
     }
     public static Sprite CreateSprite(Bitmap layer, AnimationScript ani)
-{
+    {
       __sklib_ptr __skparam__layer;
       __sklib_ptr __skparam__ani;
       __sklib_ptr __skreturn;
@@ -9601,7 +10556,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sprite(__skreturn);
     }
     public static Sprite CreateSprite(string bitmapName)
-{
+    {
       __sklib_string __skparam__bitmap_name;
       __sklib_ptr __skreturn;
       __skparam__bitmap_name = __skadapter__to_sklib_string(bitmapName);
@@ -9610,7 +10565,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sprite(__skreturn);
     }
     public static Sprite CreateSprite(string name, Bitmap layer)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skparam__layer;
       __sklib_ptr __skreturn;
@@ -9621,7 +10576,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sprite(__skreturn);
     }
     public static Sprite CreateSprite(string name, Bitmap layer, AnimationScript ani)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skparam__layer;
       __sklib_ptr __skparam__ani;
@@ -9634,7 +10589,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sprite(__skreturn);
     }
     public static Sprite CreateSprite(string bitmapName, string animationName)
-{
+    {
       __sklib_string __skparam__bitmap_name;
       __sklib_string __skparam__animation_name;
       __sklib_ptr __skreturn;
@@ -9646,24 +10601,24 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sprite(__skreturn);
     }
     public static void CreateSpritePack(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__create_sprite_pack__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static string CurrentSpritePack()
-{
+    {
       __sklib_string __skreturn;
       __skreturn = __sklib__current_sprite_pack();
       return __skadapter__to_string(__skreturn);
     }
     public static void DrawAllSprites()
-{
+    {
       __sklib__draw_all_sprites();
     }
     public static void DrawSprite(Sprite s, Vector2D offset)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_vector_2d __skparam__offset;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9671,40 +10626,40 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_sprite__sprite__vector_2d_ref(__skparam__s, __skparam__offset);
     }
     public static void DrawSprite(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __sklib__draw_sprite__sprite(__skparam__s);
     }
-    public static void DrawSprite(Sprite s, float xOffset, float yOffset)
-{
+    public static void DrawSprite(Sprite s, double xOffset, double yOffset)
+    {
       __sklib_ptr __skparam__s;
-      float __skparam__x_offset;
-      float __skparam__y_offset;
+      double __skparam__x_offset;
+      double __skparam__y_offset;
       __skparam__s = __skadapter__to_sklib_sprite(s);
-      __skparam__x_offset = __skadapter__to_sklib_float(xOffset);
-      __skparam__y_offset = __skadapter__to_sklib_float(yOffset);
-      __sklib__draw_sprite__sprite__float__float(__skparam__s, __skparam__x_offset, __skparam__y_offset);
+      __skparam__x_offset = __skadapter__to_sklib_double(xOffset);
+      __skparam__y_offset = __skadapter__to_sklib_double(yOffset);
+      __sklib__draw_sprite__sprite__double__double(__skparam__s, __skparam__x_offset, __skparam__y_offset);
     }
     public static void FreeAllSprites()
-{
+    {
       __sklib__free_all_sprites();
     }
     public static void FreeSprite(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __sklib__free_sprite__sprite(__skparam__s);
     }
     public static void FreeSpritePack(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__free_sprite_pack__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static bool HasSprite(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -9713,7 +10668,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool HasSpritePack(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -9722,13 +10677,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void MoveSprite(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __sklib__move_sprite__sprite(__skparam__s);
     }
     public static void MoveSprite(Sprite s, Vector2D distance)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_vector_2d __skparam__distance;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9736,7 +10691,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__move_sprite__sprite__vector_2d_ref(__skparam__s, __skparam__distance);
     }
     public static void MoveSprite(Sprite s, Vector2D distance, float pct)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_vector_2d __skparam__distance;
       float __skparam__pct;
@@ -9746,32 +10701,32 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__move_sprite__sprite__vector_2d_ref__float(__skparam__s, __skparam__distance, __skparam__pct);
     }
     public static void MoveSprite(Sprite s, float pct)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__pct;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __skparam__pct = __skadapter__to_sklib_float(pct);
       __sklib__move_sprite__sprite__float(__skparam__s, __skparam__pct);
     }
-    public static void MoveSpriteTo(Sprite s, float x, float y)
-{
+    public static void MoveSpriteTo(Sprite s, double x, double y)
+    {
       __sklib_ptr __skparam__s;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __skparam__s = __skadapter__to_sklib_sprite(s);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__move_sprite_to__sprite__float__float(__skparam__s, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__move_sprite_to__sprite__double__double(__skparam__s, __skparam__x, __skparam__y);
     }
     public static void SelectSpritePack(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__select_sprite_pack__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static int SpriteAddLayer(Sprite s, Bitmap newLayer, string layerName)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_ptr __skparam__new_layer;
       __sklib_string __skparam__layer_name;
@@ -9784,7 +10739,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static void SpriteAddToVelocity(Sprite s, Vector2D value)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_vector_2d __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9792,7 +10747,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_add_to_velocity__sprite__vector_2d_ref(__skparam__s, __skparam__value);
     }
     public static void SpriteAddValue(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9801,7 +10756,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void SpriteAddValue(Sprite s, string name, float initVal)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       float __skparam__init_val;
@@ -9812,7 +10767,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static Point2D SpriteAnchorPoint(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9820,7 +10775,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D SpriteAnchorPosition(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9828,7 +10783,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static bool SpriteAnimationHasEnded(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9836,7 +10791,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static string SpriteAnimationName(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9844,7 +10799,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static bool SpriteAt(Sprite s, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skparam__pt;
       int __skreturn;
@@ -9854,7 +10809,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void SpriteBringLayerForward(Sprite s, int visibleLayer)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__visible_layer;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9862,7 +10817,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_bring_layer_forward__sprite__int(__skparam__s, __skparam__visible_layer);
     }
     public static void SpriteBringLayerToFront(Sprite s, int visibleLayer)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__visible_layer;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9870,7 +10825,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_bring_layer_to_front__sprite__int(__skparam__s, __skparam__visible_layer);
     }
     public static void SpriteCallOnEvent(Sprite s, SpriteEventHandler handler)
-{
+    {
       __sklib_ptr __skparam__s;
       SpriteEventHandler __skparam__handler;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9878,7 +10833,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_call_on_event__sprite__sprite_event_handler_ptr(__skparam__s, __skparam__handler);
     }
     public static Circle SpriteCircle(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_circle __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9886,7 +10841,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_circle(__skreturn);
     }
     public static Bitmap SpriteCollisionBitmap(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_ptr __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9894,7 +10849,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bitmap(__skreturn);
     }
     public static Circle SpriteCollisionCircle(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_circle __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9902,7 +10857,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_circle(__skreturn);
     }
     public static CollisionTestKind SpriteCollisionKind(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9910,7 +10865,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_collision_test_kind(__skreturn);
     }
     public static Rectangle SpriteCollisionRectangle(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_rectangle __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9918,7 +10873,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static int SpriteCurrentCell(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9926,7 +10881,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Rectangle SpriteCurrentCellRectangle(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_rectangle __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9934,7 +10889,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static float SpriteDx(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9942,7 +10897,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float SpriteDy(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9950,7 +10905,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static bool SpriteHasValue(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       int __skreturn;
@@ -9961,7 +10916,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static float SpriteHeading(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9969,7 +10924,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static int SpriteHeight(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9977,7 +10932,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static void SpriteHideLayer(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9986,7 +10941,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void SpriteHideLayer(Sprite s, int id)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__id;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -9994,7 +10949,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_hide_layer__sprite__int(__skparam__s, __skparam__id);
     }
     public static Bitmap SpriteLayer(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
@@ -10005,7 +10960,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bitmap(__skreturn);
     }
     public static Bitmap SpriteLayer(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       __sklib_ptr __skreturn;
@@ -10015,7 +10970,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bitmap(__skreturn);
     }
     public static Circle SpriteLayerCircle(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       __sklib_circle __skreturn;
@@ -10026,7 +10981,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_circle(__skreturn);
     }
     public static Circle SpriteLayerCircle(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       __sklib_circle __skreturn;
@@ -10036,7 +10991,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_circle(__skreturn);
     }
     public static int SpriteLayerCount(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10044,7 +10999,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteLayerHeight(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       int __skreturn;
@@ -10055,7 +11010,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteLayerHeight(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       int __skreturn;
@@ -10065,7 +11020,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteLayerIndex(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       int __skreturn;
@@ -10076,7 +11031,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static string SpriteLayerName(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       __sklib_string __skreturn;
@@ -10086,7 +11041,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Vector2D SpriteLayerOffset(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       __sklib_vector_2d __skreturn;
@@ -10097,7 +11052,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D SpriteLayerOffset(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       __sklib_vector_2d __skreturn;
@@ -10107,7 +11062,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Rectangle SpriteLayerRectangle(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       __sklib_rectangle __skreturn;
@@ -10118,7 +11073,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static Rectangle SpriteLayerRectangle(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       __sklib_rectangle __skreturn;
@@ -10128,7 +11083,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static int SpriteLayerWidth(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       int __skreturn;
@@ -10139,7 +11094,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteLayerWidth(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       int __skreturn;
@@ -10149,7 +11104,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Matrix2D SpriteLocationMatrix(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_matrix_2d __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10157,7 +11112,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_matrix_2d(__skreturn);
     }
     public static float SpriteMass(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10165,7 +11120,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static bool SpriteMoveFromAnchorPoint(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10173,7 +11128,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void SpriteMoveTo(Sprite s, Point2D pt, float takingSeconds)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skparam__pt;
       float __skparam__taking_seconds;
@@ -10183,7 +11138,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_move_to__sprite__point_2d_ref__float(__skparam__s, __skparam__pt, __skparam__taking_seconds);
     }
     public static string SpriteName(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10191,7 +11146,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Sprite SpriteNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -10200,7 +11155,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sprite(__skreturn);
     }
     public static bool SpriteOffscreen(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10208,7 +11163,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool SpriteOnScreenAt(Sprite s, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skparam__pt;
       int __skreturn;
@@ -10217,20 +11172,20 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__sprite_on_screen_at__sprite__point_2d_ref(__skparam__s, __skparam__pt);
       return __skadapter__to_bool(__skreturn);
     }
-    public static bool SpriteOnScreenAt(Sprite s, float x, float y)
-{
+    public static bool SpriteOnScreenAt(Sprite s, double x, double y)
+    {
       __sklib_ptr __skparam__s;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__sprite_on_screen_at__sprite__float__float(__skparam__s, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__sprite_on_screen_at__sprite__double__double(__skparam__s, __skparam__x, __skparam__y);
       return __skadapter__to_bool(__skreturn);
     }
     public static Point2D SpritePosition(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10238,13 +11193,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static void SpriteReplayAnimation(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __sklib__sprite_replay_animation__sprite(__skparam__s);
     }
     public static void SpriteReplayAnimation(Sprite s, bool withSound)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__with_sound;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10252,7 +11207,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_replay_animation__sprite__bool(__skparam__s, __skparam__with_sound);
     }
     public static float SpriteRotation(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10260,7 +11215,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float SpriteScale(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10268,7 +11223,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Rectangle SpriteScreenRectangle(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_rectangle __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10276,7 +11231,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_rectangle(__skreturn);
     }
     public static void SpriteSendLayerBackward(Sprite s, int visibleLayer)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__visible_layer;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10284,7 +11239,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_send_layer_backward__sprite__int(__skparam__s, __skparam__visible_layer);
     }
     public static void SpriteSendLayerToBack(Sprite s, int visibleLayer)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__visible_layer;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10292,7 +11247,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_send_layer_to_back__sprite__int(__skparam__s, __skparam__visible_layer);
     }
     public static void SpriteSetAnchorPoint(Sprite s, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skparam__pt;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10300,7 +11255,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_anchor_point__sprite__point_2d_ref(__skparam__s, __skparam__pt);
     }
     public static void SpriteSetCollisionBitmap(Sprite s, Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_ptr __skparam__bmp;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10308,7 +11263,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_collision_bitmap__sprite__bitmap(__skparam__s, __skparam__bmp);
     }
     public static void SpriteSetCollisionKind(Sprite s, CollisionTestKind value)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10316,7 +11271,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_collision_kind__sprite__collision_test_kind(__skparam__s, __skparam__value);
     }
     public static void SpriteSetDx(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10324,7 +11279,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_dx__sprite__float(__skparam__s, __skparam__value);
     }
     public static void SpriteSetDy(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10332,7 +11287,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_dy__sprite__float(__skparam__s, __skparam__value);
     }
     public static void SpriteSetHeading(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10340,7 +11295,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_heading__sprite__float(__skparam__s, __skparam__value);
     }
     public static void SpriteSetLayerOffset(Sprite s, string name, Vector2D value)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       __sklib_vector_2d __skparam__value;
@@ -10351,7 +11306,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void SpriteSetLayerOffset(Sprite s, int idx, Vector2D value)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       __sklib_vector_2d __skparam__value;
@@ -10361,7 +11316,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_layer_offset__sprite__int__vector_2d_ref(__skparam__s, __skparam__idx, __skparam__value);
     }
     public static void SpriteSetMass(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10369,7 +11324,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_mass__sprite__float(__skparam__s, __skparam__value);
     }
     public static void SpriteSetMoveFromAnchorPoint(Sprite s, bool value)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10377,7 +11332,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_move_from_anchor_point__sprite__bool(__skparam__s, __skparam__value);
     }
     public static void SpriteSetPosition(Sprite s, Point2D value)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10385,7 +11340,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_position__sprite__point_2d_ref(__skparam__s, __skparam__value);
     }
     public static void SpriteSetRotation(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10393,7 +11348,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_rotation__sprite__float(__skparam__s, __skparam__value);
     }
     public static void SpriteSetScale(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10401,7 +11356,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_scale__sprite__float(__skparam__s, __skparam__value);
     }
     public static void SpriteSetSpeed(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10409,7 +11364,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_speed__sprite__float(__skparam__s, __skparam__value);
     }
     public static void SpriteSetValue(Sprite s, string name, float val)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       float __skparam__val;
@@ -10420,7 +11375,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void SpriteSetVelocity(Sprite s, Vector2D value)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_vector_2d __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10428,7 +11383,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_velocity__sprite__vector_2d_ref(__skparam__s, __skparam__value);
     }
     public static void SpriteSetX(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10436,7 +11391,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_x__sprite__float(__skparam__s, __skparam__value);
     }
     public static void SpriteSetY(Sprite s, float value)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__value;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10444,7 +11399,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_set_y__sprite__float(__skparam__s, __skparam__value);
     }
     public static int SpriteShowLayer(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       int __skreturn;
@@ -10455,7 +11410,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteShowLayer(Sprite s, int id)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__id;
       int __skreturn;
@@ -10465,7 +11420,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static float SpriteSpeed(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10473,7 +11428,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static void SpriteStartAnimation(Sprite s, string named)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__named;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10482,7 +11437,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__named);
     }
     public static void SpriteStartAnimation(Sprite s, string named, bool withSound)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__named;
       int __skparam__with_sound;
@@ -10493,7 +11448,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__named);
     }
     public static void SpriteStartAnimation(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10501,7 +11456,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_start_animation__sprite__int(__skparam__s, __skparam__idx);
     }
     public static void SpriteStartAnimation(Sprite s, int idx, bool withSound)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       int __skparam__with_sound;
@@ -10511,7 +11466,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_start_animation__sprite__int__bool(__skparam__s, __skparam__idx, __skparam__with_sound);
     }
     public static void SpriteStopCallingOnEvent(Sprite s, SpriteEventHandler handler)
-{
+    {
       __sklib_ptr __skparam__s;
       SpriteEventHandler __skparam__handler;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10519,7 +11474,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_stop_calling_on_event__sprite__sprite_event_handler_ptr(__skparam__s, __skparam__handler);
     }
     public static void SpriteToggleLayerVisible(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10528,7 +11483,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void SpriteToggleLayerVisible(Sprite s, int id)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__id;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10536,7 +11491,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__sprite_toggle_layer_visible__sprite__int(__skparam__s, __skparam__id);
     }
     public static float SpriteValue(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       float __skreturn;
@@ -10547,7 +11502,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static int SpriteValueCount(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10555,7 +11510,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Vector2D SpriteVelocity(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_vector_2d __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10563,7 +11518,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static int SpriteVisibleIndexOfLayer(Sprite s, string name)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_string __skparam__name;
       int __skreturn;
@@ -10574,7 +11529,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteVisibleIndexOfLayer(Sprite s, int id)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__id;
       int __skreturn;
@@ -10584,7 +11539,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteVisibleLayer(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       int __skreturn;
@@ -10594,7 +11549,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteVisibleLayerCount(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10602,7 +11557,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteVisibleLayerId(Sprite s, int idx)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__idx;
       int __skreturn;
@@ -10612,7 +11567,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int SpriteWidth(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10620,7 +11575,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static float SpriteX(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10628,7 +11583,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float SpriteY(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skreturn;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10636,29 +11591,29 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static void StopCallingOnSpriteEvent(SpriteEventHandler handler)
-{
+    {
       SpriteEventHandler __skparam__handler;
       __skparam__handler = __skadapter__to_sklib_sprite_event_handler(handler);
       __sklib__stop_calling_on_sprite_event__sprite_event_handler_ptr(__skparam__handler);
     }
     public static void UpdateAllSprites()
-{
+    {
       __sklib__update_all_sprites();
     }
     public static void UpdateAllSprites(float pct)
-{
+    {
       float __skparam__pct;
       __skparam__pct = __skadapter__to_sklib_float(pct);
       __sklib__update_all_sprites__float(__skparam__pct);
     }
     public static void UpdateSprite(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __sklib__update_sprite__sprite(__skparam__s);
     }
     public static void UpdateSprite(Sprite s, bool withSound)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__with_sound;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10666,7 +11621,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__update_sprite__sprite__bool(__skparam__s, __skparam__with_sound);
     }
     public static void UpdateSprite(Sprite s, float pct)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__pct;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10674,7 +11629,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__update_sprite__sprite__float(__skparam__s, __skparam__pct);
     }
     public static void UpdateSprite(Sprite s, float pct, bool withSound)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__pct;
       int __skparam__with_sound;
@@ -10684,13 +11639,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__update_sprite__sprite__float__bool(__skparam__s, __skparam__pct, __skparam__with_sound);
     }
     public static void UpdateSpriteAnimation(Sprite s)
-{
+    {
       __sklib_ptr __skparam__s;
       __skparam__s = __skadapter__to_sklib_sprite(s);
       __sklib__update_sprite_animation__sprite(__skparam__s);
     }
     public static void UpdateSpriteAnimation(Sprite s, bool withSound)
-{
+    {
       __sklib_ptr __skparam__s;
       int __skparam__with_sound;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10698,7 +11653,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__update_sprite_animation__sprite__bool(__skparam__s, __skparam__with_sound);
     }
     public static void UpdateSpriteAnimation(Sprite s, float pct)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__pct;
       __skparam__s = __skadapter__to_sklib_sprite(s);
@@ -10706,7 +11661,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__update_sprite_animation__sprite__float(__skparam__s, __skparam__pct);
     }
     public static void UpdateSpriteAnimation(Sprite s, float pct, bool withSound)
-{
+    {
       __sklib_ptr __skparam__s;
       float __skparam__pct;
       int __skparam__with_sound;
@@ -10716,7 +11671,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__update_sprite_animation__sprite__float__bool(__skparam__s, __skparam__pct, __skparam__with_sound);
     }
     public static Vector2D VectorFromCenterSpriteToPoint(Sprite s, Point2D pt)
-{
+    {
       __sklib_ptr __skparam__s;
       __sklib_point_2d __skparam__pt;
       __sklib_vector_2d __skreturn;
@@ -10726,7 +11681,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorFromTo(Sprite s1, Sprite s2)
-{
+    {
       __sklib_ptr __skparam__s1;
       __sklib_ptr __skparam__s2;
       __sklib_vector_2d __skreturn;
@@ -10736,25 +11691,25 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static void ActivateAdvancedTerminal()
-{
+    {
       __sklib__activate_advanced_terminal();
     }
     public static bool AdvancedTerminalActive()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__advanced_terminal_active();
       return __skadapter__to_bool(__skreturn);
     }
     public static void ClearTerminal()
-{
+    {
       __sklib__clear_terminal();
     }
     public static void EndAdvancedTerminal()
-{
+    {
       __sklib__end_advanced_terminal();
     }
     public static void MoveCursorTo(int x, int y)
-{
+    {
       int __skparam__x;
       int __skparam__y;
       __skparam__x = __skadapter__to_sklib_int(x);
@@ -10762,29 +11717,29 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__move_cursor_to__int__int(__skparam__x, __skparam__y);
     }
     public static char ReadChar()
-{
+    {
       char __skreturn;
       __skreturn = __sklib__read_char();
       return __skadapter__to_char(__skreturn);
     }
     public static string ReadLine()
-{
+    {
       __sklib_string __skreturn;
       __skreturn = __sklib__read_line();
       return __skadapter__to_string(__skreturn);
     }
     public static void RefreshTerminal()
-{
+    {
       __sklib__refresh_terminal();
     }
     public static void SetTerminalBold(bool value)
-{
+    {
       int __skparam__value;
       __skparam__value = __skadapter__to_sklib_bool(value);
       __sklib__set_terminal_bold__bool(__skparam__value);
     }
     public static void SetTerminalColors(Color foreground, Color background)
-{
+    {
       __sklib_color __skparam__foreground;
       __sklib_color __skparam__background;
       __skparam__foreground = __skadapter__to_sklib_color(foreground);
@@ -10792,32 +11747,32 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__set_terminal_colors__color__color(__skparam__foreground, __skparam__background);
     }
     public static void SetTerminalEchoInput(bool value)
-{
+    {
       int __skparam__value;
       __skparam__value = __skadapter__to_sklib_bool(value);
       __sklib__set_terminal_echo_input__bool(__skparam__value);
     }
     public static int TerminalHeight()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__terminal_height();
       return __skadapter__to_int(__skreturn);
     }
     public static int TerminalWidth()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__terminal_width();
       return __skadapter__to_int(__skreturn);
     }
     public static void Write(string text)
-{
+    {
       __sklib_string __skparam__text;
       __skparam__text = __skadapter__to_sklib_string(text);
       __sklib__write__string(__skparam__text);
     __skadapter__free__sklib_string(ref __skparam__text);
     }
     public static void WriteAt(string text, int x, int y)
-{
+    {
       __sklib_string __skparam__text;
       int __skparam__x;
       int __skparam__y;
@@ -10828,120 +11783,348 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__text);
     }
     public static void WriteLine()
-{
+    {
       __sklib__write_line();
     }
     public static void WriteLine(string line)
-{
+    {
       __sklib_string __skparam__line;
       __skparam__line = __skadapter__to_sklib_string(line);
       __sklib__write_line__string(__skparam__line);
     __skadapter__free__sklib_string(ref __skparam__line);
     }
-    public static void DrawText(string text, Color clr, string fnt, int fontSize, float x, float y)
-{
+    public static void DrawText(string text, Color clr, string fnt, int fontSize, double x, double y)
+    {
       __sklib_string __skparam__text;
       __sklib_color __skparam__clr;
       __sklib_string __skparam__fnt;
       int __skparam__font_size;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __skparam__text = __skadapter__to_sklib_string(text);
       __skparam__clr = __skadapter__to_sklib_color(clr);
       __skparam__fnt = __skadapter__to_sklib_string(fnt);
       __skparam__font_size = __skadapter__to_sklib_int(fontSize);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__draw_text__string_ref__color_ref__string_ref__int__float__float(__skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text__string_ref__color_ref__string_ref__int__double__double(__skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y);
     __skadapter__free__sklib_string(ref __skparam__text);
     __skadapter__free__sklib_string(ref __skparam__fnt);
     }
-    public static void DrawText(string text, Color clr, string fnt, int fontSize, float x, float y, DrawingOptions opts)
-{
+    public static void DrawText(string text, Color clr, string fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
       __sklib_string __skparam__text;
       __sklib_color __skparam__clr;
       __sklib_string __skparam__fnt;
       int __skparam__font_size;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_drawing_options __skparam__opts;
       __skparam__text = __skadapter__to_sklib_string(text);
       __skparam__clr = __skadapter__to_sklib_color(clr);
       __skparam__fnt = __skadapter__to_sklib_string(fnt);
       __skparam__font_size = __skadapter__to_sklib_int(fontSize);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_text__string_ref__color_ref__string_ref__int__float__float__drawing_options_ref(__skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y, __skparam__opts);
+      __sklib__draw_text__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref(__skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y, __skparam__opts);
     __skadapter__free__sklib_string(ref __skparam__text);
     __skadapter__free__sklib_string(ref __skparam__fnt);
     }
-    public static void DrawText(string text, Color clr, float x, float y)
-{
+    public static void DrawText(string text, Color clr, double x, double y)
+    {
       __sklib_string __skparam__text;
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __skparam__text = __skadapter__to_sklib_string(text);
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__draw_text__string_ref__color_ref__float__float(__skparam__text, __skparam__clr, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text__string_ref__color_ref__double__double(__skparam__text, __skparam__clr, __skparam__x, __skparam__y);
     __skadapter__free__sklib_string(ref __skparam__text);
     }
-    public static void DrawText(string text, Color clr, float x, float y, DrawingOptions opts)
-{
+    public static void DrawText(string text, Color clr, double x, double y, DrawingOptions opts)
+    {
       __sklib_string __skparam__text;
       __sklib_color __skparam__clr;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_drawing_options __skparam__opts;
       __skparam__text = __skadapter__to_sklib_string(text);
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_text__string_ref__color_ref__float__float__drawing_options_ref(__skparam__text, __skparam__clr, __skparam__x, __skparam__y, __skparam__opts);
+      __sklib__draw_text__string_ref__color_ref__double__double__drawing_options_ref(__skparam__text, __skparam__clr, __skparam__x, __skparam__y, __skparam__opts);
     __skadapter__free__sklib_string(ref __skparam__text);
     }
-    public static void DrawText(string text, Color clr, Font fnt, int fontSize, float x, float y)
-{
+    public static void DrawText(string text, Color clr, Font fnt, int fontSize, double x, double y)
+    {
       __sklib_string __skparam__text;
       __sklib_color __skparam__clr;
       __sklib_ptr __skparam__fnt;
       int __skparam__font_size;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __skparam__text = __skadapter__to_sklib_string(text);
       __skparam__clr = __skadapter__to_sklib_color(clr);
       __skparam__fnt = __skadapter__to_sklib_font(fnt);
       __skparam__font_size = __skadapter__to_sklib_int(fontSize);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __sklib__draw_text__string_ref__color_ref__font__int__float__float(__skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text__string_ref__color_ref__font__int__double__double(__skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y);
     __skadapter__free__sklib_string(ref __skparam__text);
     }
-    public static void DrawText(string text, Color clr, Font fnt, int fontSize, float x, float y, DrawingOptions opts)
-{
+    public static void DrawText(string text, Color clr, Font fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
       __sklib_string __skparam__text;
       __sklib_color __skparam__clr;
       __sklib_ptr __skparam__fnt;
       int __skparam__font_size;
-      float __skparam__x;
-      float __skparam__y;
+      double __skparam__x;
+      double __skparam__y;
       __sklib_drawing_options __skparam__opts;
       __skparam__text = __skadapter__to_sklib_string(text);
       __skparam__clr = __skadapter__to_sklib_color(clr);
       __skparam__fnt = __skadapter__to_sklib_font(fnt);
       __skparam__font_size = __skadapter__to_sklib_int(fontSize);
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_text__string_ref__color_ref__font__int__float__float__drawing_options_ref(__skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y, __skparam__opts);
+      __sklib__draw_text__string_ref__color_ref__font__int__double__double__drawing_options_ref(__skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y, __skparam__opts);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    }
+    public static void DrawTextOnBitmap(Bitmap bmp, string text, Color clr, string fnt, int fontSize, double x, double y)
+    {
+      __sklib_ptr __skparam__bmp;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      __sklib_string __skparam__fnt;
+      int __skparam__font_size;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__fnt = __skadapter__to_sklib_string(fnt);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__string_ref__int__double__double(__skparam__bmp, __skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    __skadapter__free__sklib_string(ref __skparam__fnt);
+    }
+    public static void DrawTextOnBitmap(Bitmap bmp, string text, Color clr, string fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__bmp;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      __sklib_string __skparam__fnt;
+      int __skparam__font_size;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__fnt = __skadapter__to_sklib_string(fnt);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref(__skparam__bmp, __skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y, __skparam__opts);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    __skadapter__free__sklib_string(ref __skparam__fnt);
+    }
+    public static void DrawTextOnBitmap(Bitmap bmp, string text, Color clr, double x, double y)
+    {
+      __sklib_ptr __skparam__bmp;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__double__double(__skparam__bmp, __skparam__text, __skparam__clr, __skparam__x, __skparam__y);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    }
+    public static void DrawTextOnBitmap(Bitmap bmp, string text, Color clr, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__bmp;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__double__double__drawing_options_ref(__skparam__bmp, __skparam__text, __skparam__clr, __skparam__x, __skparam__y, __skparam__opts);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    }
+    public static void DrawTextOnBitmap(Bitmap bmp, string text, Color clr, Font fnt, int fontSize, double x, double y)
+    {
+      __sklib_ptr __skparam__bmp;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      __sklib_ptr __skparam__fnt;
+      int __skparam__font_size;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__fnt = __skadapter__to_sklib_font(fnt);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__font__int__double__double(__skparam__bmp, __skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    }
+    public static void DrawTextOnBitmap(Bitmap bmp, string text, Color clr, Font fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__bmp;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      __sklib_ptr __skparam__fnt;
+      int __skparam__font_size;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__fnt = __skadapter__to_sklib_font(fnt);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_text_on_bitmap__bitmap__string_ref__color_ref__font__int__double__double__drawing_options_ref(__skparam__bmp, __skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y, __skparam__opts);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    }
+    public static void DrawTextOnWindow(Window wnd, string text, Color clr, string fnt, int fontSize, double x, double y)
+    {
+      __sklib_ptr __skparam__wnd;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      __sklib_string __skparam__fnt;
+      int __skparam__font_size;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__wnd = __skadapter__to_sklib_window(wnd);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__fnt = __skadapter__to_sklib_string(fnt);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text_on_window__window__string_ref__color_ref__string_ref__int__double__double(__skparam__wnd, __skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    __skadapter__free__sklib_string(ref __skparam__fnt);
+    }
+    public static void DrawTextOnWindow(Window wnd, string text, Color clr, string fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__wnd;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      __sklib_string __skparam__fnt;
+      int __skparam__font_size;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__wnd = __skadapter__to_sklib_window(wnd);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__fnt = __skadapter__to_sklib_string(fnt);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_text_on_window__window__string_ref__color_ref__string_ref__int__double__double__drawing_options_ref(__skparam__wnd, __skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y, __skparam__opts);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    __skadapter__free__sklib_string(ref __skparam__fnt);
+    }
+    public static void DrawTextOnWindow(Window wnd, string text, Color clr, double x, double y)
+    {
+      __sklib_ptr __skparam__wnd;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__wnd = __skadapter__to_sklib_window(wnd);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text_on_window__window__string_ref__color_ref__double__double(__skparam__wnd, __skparam__text, __skparam__clr, __skparam__x, __skparam__y);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    }
+    public static void DrawTextOnWindow(Window wnd, string text, Color clr, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__wnd;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__wnd = __skadapter__to_sklib_window(wnd);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_text_on_window__window__string_ref__color_ref__double__double__drawing_options_ref(__skparam__wnd, __skparam__text, __skparam__clr, __skparam__x, __skparam__y, __skparam__opts);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    }
+    public static void DrawTextOnWindow(Window wnd, string text, Color clr, Font fnt, int fontSize, double x, double y)
+    {
+      __sklib_ptr __skparam__wnd;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      __sklib_ptr __skparam__fnt;
+      int __skparam__font_size;
+      double __skparam__x;
+      double __skparam__y;
+      __skparam__wnd = __skadapter__to_sklib_window(wnd);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__fnt = __skadapter__to_sklib_font(fnt);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __sklib__draw_text_on_window__window__string_ref__color_ref__font__int__double__double(__skparam__wnd, __skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y);
+    __skadapter__free__sklib_string(ref __skparam__text);
+    }
+    public static void DrawTextOnWindow(Window wnd, string text, Color clr, Font fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__wnd;
+      __sklib_string __skparam__text;
+      __sklib_color __skparam__clr;
+      __sklib_ptr __skparam__fnt;
+      int __skparam__font_size;
+      double __skparam__x;
+      double __skparam__y;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__wnd = __skadapter__to_sklib_window(wnd);
+      __skparam__text = __skadapter__to_sklib_string(text);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__fnt = __skadapter__to_sklib_font(fnt);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_text_on_window__window__string_ref__color_ref__font__int__double__double__drawing_options_ref(__skparam__wnd, __skparam__text, __skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__x, __skparam__y, __skparam__opts);
     __skadapter__free__sklib_string(ref __skparam__text);
     }
     public static bool FontHasSize(string name, int fontSize)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__font_size;
       int __skreturn;
@@ -10952,7 +12135,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool FontHasSize(Font fnt, int fontSize)
-{
+    {
       __sklib_ptr __skparam__fnt;
       int __skparam__font_size;
       int __skreturn;
@@ -10962,7 +12145,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void FontLoadSize(string name, int fontSize)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__font_size;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -10971,7 +12154,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void FontLoadSize(Font fnt, int fontSize)
-{
+    {
       __sklib_ptr __skparam__fnt;
       int __skparam__font_size;
       __skparam__fnt = __skadapter__to_sklib_font(fnt);
@@ -10979,7 +12162,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__font_load_size__font__int(__skparam__fnt, __skparam__font_size);
     }
     public static Font FontNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -10988,17 +12171,17 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_font(__skreturn);
     }
     public static void FreeAllFonts()
-{
+    {
       __sklib__free_all_fonts();
     }
     public static void FreeFont(Font fnt)
-{
+    {
       __sklib_ptr __skparam__fnt;
       __skparam__fnt = __skadapter__to_sklib_font(fnt);
       __sklib__free_font__font(__skparam__fnt);
     }
     public static FontStyle GetFontStyle(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11007,7 +12190,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_font_style(__skreturn);
     }
     public static FontStyle GetFontStyle(Font fnt)
-{
+    {
       __sklib_ptr __skparam__fnt;
       int __skreturn;
       __skparam__fnt = __skadapter__to_sklib_font(fnt);
@@ -11015,7 +12198,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_font_style(__skreturn);
     }
     public static bool HasFont(Font fnt)
-{
+    {
       __sklib_ptr __skparam__fnt;
       int __skreturn;
       __skparam__fnt = __skadapter__to_sklib_font(fnt);
@@ -11023,7 +12206,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool HasFont(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11032,7 +12215,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Font LoadFont(string name, string filename)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__filename;
       __sklib_ptr __skreturn;
@@ -11044,7 +12227,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_font(__skreturn);
     }
     public static void SetFontStyle(string name, FontStyle style)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__style;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11053,7 +12236,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void SetFontStyle(Font fnt, FontStyle style)
-{
+    {
       __sklib_ptr __skparam__fnt;
       int __skparam__style;
       __skparam__fnt = __skadapter__to_sklib_font(fnt);
@@ -11061,7 +12244,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__set_font_style__font__font_style(__skparam__fnt, __skparam__style);
     }
     public static int TextHeight(string text, string fnt, int fontSize)
-{
+    {
       __sklib_string __skparam__text;
       __sklib_string __skparam__fnt;
       int __skparam__font_size;
@@ -11075,7 +12258,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int TextHeight(string text, Font fnt, int fontSize)
-{
+    {
       __sklib_string __skparam__text;
       __sklib_ptr __skparam__fnt;
       int __skparam__font_size;
@@ -11088,7 +12271,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int TextWidth(string text, string fnt, int fontSize)
-{
+    {
       __sklib_string __skparam__text;
       __sklib_string __skparam__fnt;
       int __skparam__font_size;
@@ -11102,7 +12285,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int TextWidth(string text, Font fnt, int fontSize)
-{
+    {
       __sklib_string __skparam__text;
       __sklib_ptr __skparam__fnt;
       int __skparam__font_size;
@@ -11115,7 +12298,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static void DrawCollectedText(Color clr, Font fnt, int fontSize, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_ptr __skparam__fnt;
       int __skparam__font_size;
@@ -11127,23 +12310,23 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_collected_text__color__font__int__drawing_options_ref(__skparam__clr, __skparam__fnt, __skparam__font_size, __skparam__opts);
     }
     public static void EndReadingText()
-{
+    {
       __sklib__end_reading_text();
     }
     public static void EndReadingText(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __sklib__end_reading_text__window(__skparam__wind);
     }
     public static bool ReadingText()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__reading_text();
       return __skadapter__to_bool(__skreturn);
     }
     public static bool ReadingText(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       int __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -11151,13 +12334,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void StartReadingText(Rectangle rect)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
       __sklib__start_reading_text__rectangle(__skparam__rect);
     }
     public static void StartReadingText(Rectangle rect, string initialText)
-{
+    {
       __sklib_rectangle __skparam__rect;
       __sklib_string __skparam__initial_text;
       __skparam__rect = __skadapter__to_sklib_rectangle(rect);
@@ -11166,7 +12349,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__initial_text);
     }
     public static void StartReadingText(Window wind, Rectangle rect)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_rectangle __skparam__rect;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -11174,7 +12357,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__start_reading_text__window__rectangle(__skparam__wind, __skparam__rect);
     }
     public static void StartReadingText(Window wind, Rectangle rect, string initialText)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_rectangle __skparam__rect;
       __sklib_string __skparam__initial_text;
@@ -11185,13 +12368,13 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__initial_text);
     }
     public static bool TextEntryCancelled()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__text_entry_cancelled();
       return __skadapter__to_bool(__skreturn);
     }
     public static bool TextEntryCancelled(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       int __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -11199,13 +12382,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static string TextInput()
-{
+    {
       __sklib_string __skreturn;
       __skreturn = __sklib__text_input();
       return __skadapter__to_string(__skreturn);
     }
     public static string TextInput(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_string __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -11213,7 +12396,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static Timer CreateTimer(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11222,17 +12405,17 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_timer(__skreturn);
     }
     public static void FreeAllTimers()
-{
+    {
       __sklib__free_all_timers();
     }
     public static void FreeTimer(Timer toFree)
-{
+    {
       __sklib_ptr __skparam__to_free;
       __skparam__to_free = __skadapter__to_sklib_timer(toFree);
       __sklib__free_timer__timer(__skparam__to_free);
     }
     public static bool HasTimer(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11241,72 +12424,72 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void PauseTimer(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__pause_timer__string(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void PauseTimer(Timer toPause)
-{
+    {
       __sklib_ptr __skparam__to_pause;
       __skparam__to_pause = __skadapter__to_sklib_timer(toPause);
       __sklib__pause_timer__timer(__skparam__to_pause);
     }
     public static void ResetTimer(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__reset_timer__string(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void ResetTimer(Timer tmr)
-{
+    {
       __sklib_ptr __skparam__tmr;
       __skparam__tmr = __skadapter__to_sklib_timer(tmr);
       __sklib__reset_timer__timer(__skparam__tmr);
     }
     public static void ResumeTimer(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__resume_timer__string(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void ResumeTimer(Timer toResume)
-{
+    {
       __sklib_ptr __skparam__to_resume;
       __skparam__to_resume = __skadapter__to_sklib_timer(toResume);
       __sklib__resume_timer__timer(__skparam__to_resume);
     }
     public static void StartTimer(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__start_timer__string(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void StartTimer(Timer toStart)
-{
+    {
       __sklib_ptr __skparam__to_start;
       __skparam__to_start = __skadapter__to_sklib_timer(toStart);
       __sklib__start_timer__timer(__skparam__to_start);
     }
     public static void StopTimer(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__stop_timer__string(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void StopTimer(Timer toStop)
-{
+    {
       __sklib_ptr __skparam__to_stop;
       __skparam__to_stop = __skadapter__to_sklib_timer(toStop);
       __sklib__stop_timer__timer(__skparam__to_stop);
     }
     public static Timer TimerNamed(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_ptr __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11315,7 +12498,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_timer(__skreturn);
     }
     public static bool TimerPaused(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11324,7 +12507,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool TimerPaused(Timer toGet)
-{
+    {
       __sklib_ptr __skparam__to_get;
       int __skreturn;
       __skparam__to_get = __skadapter__to_sklib_timer(toGet);
@@ -11332,7 +12515,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool TimerStarted(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11341,7 +12524,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool TimerStarted(Timer toGet)
-{
+    {
       __sklib_ptr __skparam__to_get;
       int __skreturn;
       __skparam__to_get = __skadapter__to_sklib_timer(toGet);
@@ -11349,7 +12532,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static uint TimerTicks(string name)
-{
+    {
       __sklib_string __skparam__name;
       uint __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -11358,7 +12541,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_unsigned_int(__skreturn);
     }
     public static uint TimerTicks(Timer toGet)
-{
+    {
       __sklib_ptr __skparam__to_get;
       uint __skreturn;
       __skparam__to_get = __skadapter__to_sklib_timer(toGet);
@@ -11366,7 +12549,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_unsigned_int(__skreturn);
     }
     public static void DrawTriangle(Color clr, Triangle tri)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_triangle __skparam__tri;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -11374,7 +12557,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__draw_triangle__color__triangle_ref(__skparam__clr, __skparam__tri);
     }
     public static void DrawTriangle(Color clr, Triangle tri, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_triangle __skparam__tri;
       __sklib_drawing_options __skparam__opts;
@@ -11383,46 +12566,174 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__draw_triangle__color__triangle_ref__drawing_options(__skparam__clr, __skparam__tri, __skparam__opts);
     }
-    public static void DrawTriangle(Color clr, float x1, float y1, float x2, float y2, float x3, float y3)
-{
+    public static void DrawTriangle(Color clr, double x1, double y1, double x2, double y2, double x3, double y3)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x1;
-      float __skparam__y1;
-      float __skparam__x2;
-      float __skparam__y2;
-      float __skparam__x3;
-      float __skparam__y3;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __skparam__x3 = __skadapter__to_sklib_float(x3);
-      __skparam__y3 = __skadapter__to_sklib_float(y3);
-      __sklib__draw_triangle__color__float__float__float__float__float__float(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __sklib__draw_triangle__color__double__double__double__double__double__double(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
     }
-    public static void DrawTriangle(Color clr, float x1, float y1, float x2, float y2, float x3, float y3, DrawingOptions opts)
-{
+    public static void DrawTriangle(Color clr, double x1, double y1, double x2, double y2, double x3, double y3, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x1;
-      float __skparam__y1;
-      float __skparam__x2;
-      float __skparam__y2;
-      float __skparam__x3;
-      float __skparam__y3;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __skparam__x3 = __skadapter__to_sklib_float(x3);
-      __skparam__y3 = __skadapter__to_sklib_float(y3);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__draw_triangle__color__float__float__float__float__float__float__drawing_options(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3, __skparam__opts);
+      __sklib__draw_triangle__color__double__double__double__double__double__double__drawing_options(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3, __skparam__opts);
+    }
+    public static void DrawTriangleOnBitmap(Bitmap destination, Color clr, Triangle tri)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_triangle __skparam__tri;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__tri = __skadapter__to_sklib_triangle(tri);
+      __sklib__draw_triangle_on_bitmap__bitmap__color__triangle_ref(__skparam__destination, __skparam__clr, __skparam__tri);
+    }
+    public static void DrawTriangleOnBitmap(Bitmap destination, Color clr, Triangle tri, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_triangle __skparam__tri;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__tri = __skadapter__to_sklib_triangle(tri);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_triangle_on_bitmap__bitmap__color__triangle_ref__drawing_options(__skparam__destination, __skparam__clr, __skparam__tri, __skparam__opts);
+    }
+    public static void DrawTriangleOnBitmap(Bitmap destination, Color clr, double x1, double y1, double x2, double y2, double x3, double y3)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __sklib__draw_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
+    }
+    public static void DrawTriangleOnBitmap(Bitmap destination, Color clr, double x1, double y1, double x2, double y2, double x3, double y3, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3, __skparam__opts);
+    }
+    public static void DrawTriangleOnWindow(Window destination, Color clr, Triangle tri)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_triangle __skparam__tri;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__tri = __skadapter__to_sklib_triangle(tri);
+      __sklib__draw_triangle_on_window__window__color__triangle_ref(__skparam__destination, __skparam__clr, __skparam__tri);
+    }
+    public static void DrawTriangleOnWindow(Window destination, Color clr, Triangle tri, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_triangle __skparam__tri;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__tri = __skadapter__to_sklib_triangle(tri);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_triangle_on_window__window__color__triangle_ref__drawing_options(__skparam__destination, __skparam__clr, __skparam__tri, __skparam__opts);
+    }
+    public static void DrawTriangleOnWindow(Window destination, Color clr, double x1, double y1, double x2, double y2, double x3, double y3)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __sklib__draw_triangle_on_window__window__color__double__double__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
+    }
+    public static void DrawTriangleOnWindow(Window destination, Color clr, double x1, double y1, double x2, double y2, double x3, double y3, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__draw_triangle_on_window__window__color__double__double__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3, __skparam__opts);
     }
     public static void FillTriangle(Color clr, Triangle tri)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_triangle __skparam__tri;
       __skparam__clr = __skadapter__to_sklib_color(clr);
@@ -11430,7 +12741,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__fill_triangle__color__triangle_ref(__skparam__clr, __skparam__tri);
     }
     public static void FillTriangle(Color clr, Triangle tri, DrawingOptions opts)
-{
+    {
       __sklib_color __skparam__clr;
       __sklib_triangle __skparam__tri;
       __sklib_drawing_options __skparam__opts;
@@ -11439,46 +12750,174 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
       __sklib__fill_triangle__color__triangle_ref__drawing_options(__skparam__clr, __skparam__tri, __skparam__opts);
     }
-    public static void FillTriangle(Color clr, float x1, float y1, float x2, float y2, float x3, float y3)
-{
+    public static void FillTriangle(Color clr, double x1, double y1, double x2, double y2, double x3, double y3)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x1;
-      float __skparam__y1;
-      float __skparam__x2;
-      float __skparam__y2;
-      float __skparam__x3;
-      float __skparam__y3;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __skparam__x3 = __skadapter__to_sklib_float(x3);
-      __skparam__y3 = __skadapter__to_sklib_float(y3);
-      __sklib__fill_triangle__color__float__float__float__float__float__float(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __sklib__fill_triangle__color__double__double__double__double__double__double(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
     }
-    public static void FillTriangle(Color clr, float x1, float y1, float x2, float y2, float x3, float y3, DrawingOptions opts)
-{
+    public static void FillTriangle(Color clr, double x1, double y1, double x2, double y2, double x3, double y3, DrawingOptions opts)
+    {
       __sklib_color __skparam__clr;
-      float __skparam__x1;
-      float __skparam__y1;
-      float __skparam__x2;
-      float __skparam__y2;
-      float __skparam__x3;
-      float __skparam__y3;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
       __sklib_drawing_options __skparam__opts;
       __skparam__clr = __skadapter__to_sklib_color(clr);
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __skparam__x3 = __skadapter__to_sklib_float(x3);
-      __skparam__y3 = __skadapter__to_sklib_float(y3);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
       __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
-      __sklib__fill_triangle__color__float__float__float__float__float__float__drawing_options(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3, __skparam__opts);
+      __sklib__fill_triangle__color__double__double__double__double__double__double__drawing_options(__skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3, __skparam__opts);
+    }
+    public static void FillTriangleOnBitmap(Bitmap destination, Color clr, Triangle tri)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_triangle __skparam__tri;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__tri = __skadapter__to_sklib_triangle(tri);
+      __sklib__fill_triangle_on_bitmap__bitmap__color__triangle_ref(__skparam__destination, __skparam__clr, __skparam__tri);
+    }
+    public static void FillTriangleOnBitmap(Bitmap destination, Color clr, Triangle tri, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_triangle __skparam__tri;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__tri = __skadapter__to_sklib_triangle(tri);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_triangle_on_bitmap__bitmap__color__triangle_ref__drawing_options(__skparam__destination, __skparam__clr, __skparam__tri, __skparam__opts);
+    }
+    public static void FillTriangleOnBitmap(Bitmap destination, Color clr, double x1, double y1, double x2, double y2, double x3, double y3)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __sklib__fill_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
+    }
+    public static void FillTriangleOnBitmap(Bitmap destination, Color clr, double x1, double y1, double x2, double y2, double x3, double y3, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_bitmap(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_triangle_on_bitmap__bitmap__color__double__double__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3, __skparam__opts);
+    }
+    public static void FillTriangleOnWindow(Window destination, Color clr, Triangle tri)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_triangle __skparam__tri;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__tri = __skadapter__to_sklib_triangle(tri);
+      __sklib__fill_triangle_on_window__window__color__triangle_ref(__skparam__destination, __skparam__clr, __skparam__tri);
+    }
+    public static void FillTriangleOnWindow(Window destination, Color clr, Triangle tri, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      __sklib_triangle __skparam__tri;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__tri = __skadapter__to_sklib_triangle(tri);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_triangle_on_window__window__color__triangle_ref__drawing_options(__skparam__destination, __skparam__clr, __skparam__tri, __skparam__opts);
+    }
+    public static void FillTriangleOnWindow(Window destination, Color clr, double x1, double y1, double x2, double y2, double x3, double y3)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __sklib__fill_triangle_on_window__window__color__double__double__double__double__double__double(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
+    }
+    public static void FillTriangleOnWindow(Window destination, Color clr, double x1, double y1, double x2, double y2, double x3, double y3, DrawingOptions opts)
+    {
+      __sklib_ptr __skparam__destination;
+      __sklib_color __skparam__clr;
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
+      __sklib_drawing_options __skparam__opts;
+      __skparam__destination = __skadapter__to_sklib_window(destination);
+      __skparam__clr = __skadapter__to_sklib_color(clr);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __skparam__opts = __skadapter__to_sklib_drawing_options(opts);
+      __sklib__fill_triangle_on_window__window__color__double__double__double__double__double__double__drawing_options(__skparam__destination, __skparam__clr, __skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3, __skparam__opts);
     }
     public static Point2D TriangleBarycenter(Triangle tri)
-{
+    {
       __sklib_triangle __skparam__tri;
       __sklib_point_2d __skreturn;
       __skparam__tri = __skadapter__to_sklib_triangle(tri);
@@ -11486,7 +12925,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Triangle TriangleFrom(Point2D p1, Point2D p2, Point2D p3)
-{
+    {
       __sklib_point_2d __skparam__p1;
       __sklib_point_2d __skparam__p2;
       __sklib_point_2d __skparam__p3;
@@ -11497,26 +12936,26 @@ internal static Window __skadapter__to_window(IntPtr v)
       __skreturn = __sklib__triangle_from__point_2d_ref__point_2d_ref__point_2d_ref(__skparam__p1, __skparam__p2, __skparam__p3);
       return __skadapter__to_triangle(__skreturn);
     }
-    public static Triangle TriangleFrom(float x1, float y1, float x2, float y2, float x3, float y3)
-{
-      float __skparam__x1;
-      float __skparam__y1;
-      float __skparam__x2;
-      float __skparam__y2;
-      float __skparam__x3;
-      float __skparam__y3;
+    public static Triangle TriangleFrom(double x1, double y1, double x2, double y2, double x3, double y3)
+    {
+      double __skparam__x1;
+      double __skparam__y1;
+      double __skparam__x2;
+      double __skparam__y2;
+      double __skparam__x3;
+      double __skparam__y3;
       __sklib_triangle __skreturn;
-      __skparam__x1 = __skadapter__to_sklib_float(x1);
-      __skparam__y1 = __skadapter__to_sklib_float(y1);
-      __skparam__x2 = __skadapter__to_sklib_float(x2);
-      __skparam__y2 = __skadapter__to_sklib_float(y2);
-      __skparam__x3 = __skadapter__to_sklib_float(x3);
-      __skparam__y3 = __skadapter__to_sklib_float(y3);
-      __skreturn = __sklib__triangle_from__float__float__float__float__float__float(__skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
+      __skparam__x1 = __skadapter__to_sklib_double(x1);
+      __skparam__y1 = __skadapter__to_sklib_double(y1);
+      __skparam__x2 = __skadapter__to_sklib_double(x2);
+      __skparam__y2 = __skadapter__to_sklib_double(y2);
+      __skparam__x3 = __skadapter__to_sklib_double(x3);
+      __skparam__y3 = __skadapter__to_sklib_double(y3);
+      __skreturn = __sklib__triangle_from__double__double__double__double__double__double(__skparam__x1, __skparam__y1, __skparam__x2, __skparam__y2, __skparam__x3, __skparam__y3);
       return __skadapter__to_triangle(__skreturn);
     }
     public static bool TriangleRectangleIntersect(Triangle tri, Rectangle rect)
-{
+    {
       __sklib_triangle __skparam__tri;
       __sklib_rectangle __skparam__rect;
       int __skreturn;
@@ -11526,7 +12965,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static string TriangleToString(Triangle tri)
-{
+    {
       __sklib_triangle __skparam__tri;
       __sklib_string __skreturn;
       __skparam__tri = __skadapter__to_sklib_triangle(tri);
@@ -11534,7 +12973,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static bool TrianglesIntersect(Triangle t1, Triangle t2)
-{
+    {
       __sklib_triangle __skparam__t1;
       __sklib_triangle __skparam__t2;
       int __skreturn;
@@ -11544,19 +12983,33 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static uint CurrentTicks()
-{
+    {
       uint __skreturn;
       __skreturn = __sklib__current_ticks();
       return __skadapter__to_unsigned_int(__skreturn);
     }
     public static void Delay(uint milliseconds)
-{
+    {
       uint __skparam__milliseconds;
       __skparam__milliseconds = __skadapter__to_sklib_unsigned_int(milliseconds);
       __sklib__delay__unsigned_int(__skparam__milliseconds);
     }
+    public static void DisplayDialog(string title, string msg, Font outputFont, int fontSize)
+    {
+      __sklib_string __skparam__title;
+      __sklib_string __skparam__msg;
+      __sklib_ptr __skparam__output_font;
+      int __skparam__font_size;
+      __skparam__title = __skadapter__to_sklib_string(title);
+      __skparam__msg = __skadapter__to_sklib_string(msg);
+      __skparam__output_font = __skadapter__to_sklib_font(outputFont);
+      __skparam__font_size = __skadapter__to_sklib_int(fontSize);
+      __sklib__display_dialog__string_ref__string_ref__font__int(__skparam__title, __skparam__msg, __skparam__output_font, __skparam__font_size);
+    __skadapter__free__sklib_string(ref __skparam__title);
+    __skadapter__free__sklib_string(ref __skparam__msg);
+    }
     public static string FileAsString(string filename, ResourceKind kind)
-{
+    {
       __sklib_string __skparam__filename;
       int __skparam__kind;
       __sklib_string __skreturn;
@@ -11567,7 +13020,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static float AngleBetween(Vector2D v1, Vector2D v2)
-{
+    {
       __sklib_vector_2d __skparam__v1;
       __sklib_vector_2d __skparam__v2;
       float __skreturn;
@@ -11577,7 +13030,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float DotProduct(Vector2D v1, Vector2D v2)
-{
+    {
       __sklib_vector_2d __skparam__v1;
       __sklib_vector_2d __skparam__v2;
       float __skreturn;
@@ -11587,7 +13040,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static bool IsZeroVector(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       int __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
@@ -11595,7 +13048,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool RayIntersectionPoint(Point2D fromPt, Vector2D heading, Line l, ref Point2D pt)
-{
+    {
       __sklib_point_2d __skparam__from_pt;
       __sklib_vector_2d __skparam__heading;
       __sklib_line __skparam__l;
@@ -11610,7 +13063,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Vector2D UnitVector(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       __sklib_vector_2d __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
@@ -11618,7 +13071,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorAdd(Vector2D v1, Vector2D v2)
-{
+    {
       __sklib_vector_2d __skparam__v1;
       __sklib_vector_2d __skparam__v2;
       __sklib_vector_2d __skreturn;
@@ -11628,7 +13081,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static float VectorAngle(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       float __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
@@ -11636,7 +13089,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Vector2D VectorFromAngle(float angle, float magnitude)
-{
+    {
       float __skparam__angle;
       float __skparam__magnitude;
       __sklib_vector_2d __skreturn;
@@ -11646,7 +13099,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorFromLine(Line l)
-{
+    {
       __sklib_line __skparam__l;
       __sklib_vector_2d __skreturn;
       __skparam__l = __skadapter__to_sklib_line(l);
@@ -11654,7 +13107,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorFromPointToRect(Point2D pt, Rectangle rect)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_rectangle __skparam__rect;
       __sklib_vector_2d __skreturn;
@@ -11664,7 +13117,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static bool VectorInRect(Vector2D v, Rectangle rect)
-{
+    {
       __sklib_vector_2d __skparam__v;
       __sklib_rectangle __skparam__rect;
       int __skreturn;
@@ -11674,7 +13127,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Vector2D VectorInvert(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       __sklib_vector_2d __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
@@ -11682,7 +13135,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorLimit(Vector2D v, float limit)
-{
+    {
       __sklib_vector_2d __skparam__v;
       float __skparam__limit;
       __sklib_vector_2d __skreturn;
@@ -11692,7 +13145,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static float VectorMagnitude(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       float __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
@@ -11700,7 +13153,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static float VectorMagnitudeSqared(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       float __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
@@ -11708,7 +13161,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_float(__skreturn);
     }
     public static Vector2D VectorMultiply(Vector2D v1, float s)
-{
+    {
       __sklib_vector_2d __skparam__v1;
       float __skparam__s;
       __sklib_vector_2d __skreturn;
@@ -11718,7 +13171,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorNormal(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       __sklib_vector_2d __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
@@ -11726,7 +13179,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorOutOfCircleFromCircle(Circle src, Circle bounds, Vector2D velocity)
-{
+    {
       __sklib_circle __skparam__src;
       __sklib_circle __skparam__bounds;
       __sklib_vector_2d __skparam__velocity;
@@ -11738,7 +13191,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorOutOfCircleFromPoint(Point2D pt, Circle c, Vector2D velocity)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_circle __skparam__c;
       __sklib_vector_2d __skparam__velocity;
@@ -11750,7 +13203,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorOutOfRectFromCircle(Circle c, Rectangle rect, Vector2D velocity)
-{
+    {
       __sklib_circle __skparam__c;
       __sklib_rectangle __skparam__rect;
       __sklib_vector_2d __skparam__velocity;
@@ -11762,7 +13215,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorOutOfRectFromPoint(Point2D pt, Rectangle rect, Vector2D velocity)
-{
+    {
       __sklib_point_2d __skparam__pt;
       __sklib_rectangle __skparam__rect;
       __sklib_vector_2d __skparam__velocity;
@@ -11774,7 +13227,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorOutOfRectFromRect(Rectangle src, Rectangle bounds, Vector2D velocity)
-{
+    {
       __sklib_rectangle __skparam__src;
       __sklib_rectangle __skparam__bounds;
       __sklib_vector_2d __skparam__velocity;
@@ -11786,7 +13239,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorPointToPoint(Point2D start, Point2D endPt)
-{
+    {
       __sklib_point_2d __skparam__start;
       __sklib_point_2d __skparam__end_pt;
       __sklib_vector_2d __skreturn;
@@ -11796,7 +13249,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorSubtract(Vector2D v1, Vector2D v2)
-{
+    {
       __sklib_vector_2d __skparam__v1;
       __sklib_vector_2d __skparam__v2;
       __sklib_vector_2d __skreturn;
@@ -11806,25 +13259,25 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static Vector2D VectorTo(Point2D p1)
-{
+    {
       __sklib_point_2d __skparam__p1;
       __sklib_vector_2d __skreturn;
       __skparam__p1 = __skadapter__to_sklib_point_2d(p1);
       __skreturn = __sklib__vector_to__point_2d_ref(__skparam__p1);
       return __skadapter__to_vector_2d(__skreturn);
     }
-    public static Vector2D VectorTo(float x, float y)
-{
-      float __skparam__x;
-      float __skparam__y;
+    public static Vector2D VectorTo(double x, double y)
+    {
+      double __skparam__x;
+      double __skparam__y;
       __sklib_vector_2d __skreturn;
-      __skparam__x = __skadapter__to_sklib_float(x);
-      __skparam__y = __skadapter__to_sklib_float(y);
-      __skreturn = __sklib__vector_to__float__float(__skparam__x, __skparam__y);
+      __skparam__x = __skadapter__to_sklib_double(x);
+      __skparam__y = __skadapter__to_sklib_double(y);
+      __skreturn = __sklib__vector_to__double__double(__skparam__x, __skparam__y);
       return __skadapter__to_vector_2d(__skreturn);
     }
     public static string VectorToString(Vector2D v)
-{
+    {
       __sklib_vector_2d __skparam__v;
       __sklib_string __skreturn;
       __skparam__v = __skadapter__to_sklib_vector_2d(v);
@@ -11832,7 +13285,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static bool VectorsEqual(Vector2D v1, Vector2D v2)
-{
+    {
       __sklib_vector_2d __skparam__v1;
       __sklib_vector_2d __skparam__v2;
       int __skreturn;
@@ -11842,7 +13295,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool VectorsNotEqual(Vector2D v1, Vector2D v2)
-{
+    {
       __sklib_vector_2d __skparam__v1;
       __sklib_vector_2d __skparam__v2;
       int __skreturn;
@@ -11852,7 +13305,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Bitmap DownloadBitmap(string name, string url, ushort port)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__url;
       ushort __skparam__port;
@@ -11866,7 +13319,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bitmap(__skreturn);
     }
     public static Font DownloadFont(string name, string url, ushort port)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__url;
       ushort __skparam__port;
@@ -11880,7 +13333,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_font(__skreturn);
     }
     public static Music DownloadMusic(string name, string url, ushort port)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__url;
       ushort __skparam__port;
@@ -11894,7 +13347,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_music(__skreturn);
     }
     public static SoundEffect DownloadSoundEffect(string name, string url, ushort port)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_string __skparam__url;
       ushort __skparam__port;
@@ -11908,13 +13361,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_sound_effect(__skreturn);
     }
     public static void FreeResponse(HttpResponse response)
-{
+    {
       __sklib_ptr __skparam__response;
       __skparam__response = __skadapter__to_sklib_http_response(response);
       __sklib__free_response__http_response(__skparam__response);
     }
     public static HttpResponse HttpGet(string url, ushort port)
-{
+    {
       __sklib_string __skparam__url;
       ushort __skparam__port;
       __sklib_ptr __skreturn;
@@ -11925,7 +13378,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_http_response(__skreturn);
     }
     public static HttpResponse HttpPost(string url, ushort port, string body, List<string> headers)
-{
+    {
       __sklib_string __skparam__url;
       ushort __skparam__port;
       __sklib_string __skparam__body;
@@ -11942,7 +13395,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_http_response(__skreturn);
     }
     public static HttpResponse HttpPost(string url, ushort port, string body)
-{
+    {
       __sklib_string __skparam__url;
       ushort __skparam__port;
       __sklib_string __skparam__body;
@@ -11956,7 +13409,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_http_response(__skreturn);
     }
     public static string HttpResponseToString(HttpResponse response)
-{
+    {
       __sklib_ptr __skparam__response;
       __sklib_string __skreturn;
       __skparam__response = __skadapter__to_sklib_http_response(response);
@@ -11964,7 +13417,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static void SaveResponseToFile(HttpResponse response, string path)
-{
+    {
       __sklib_ptr __skparam__response;
       __sklib_string __skparam__path;
       __skparam__response = __skadapter__to_sklib_http_response(response);
@@ -11973,7 +13426,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__path);
     }
     public static bool HasIncomingRequests(WebServer server)
-{
+    {
       __sklib_ptr __skparam__server;
       int __skreturn;
       __skparam__server = __skadapter__to_sklib_web_server(server);
@@ -11981,7 +13434,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool IsDeleteRequestFor(HttpRequest request, string path)
-{
+    {
       __sklib_ptr __skparam__request;
       __sklib_string __skparam__path;
       int __skreturn;
@@ -11992,7 +13445,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool IsGetRequestFor(HttpRequest request, string path)
-{
+    {
       __sklib_ptr __skparam__request;
       __sklib_string __skparam__path;
       int __skreturn;
@@ -12003,7 +13456,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool IsOptionsRequestFor(HttpRequest request, string path)
-{
+    {
       __sklib_ptr __skparam__request;
       __sklib_string __skparam__path;
       int __skreturn;
@@ -12014,7 +13467,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool IsPostRequestFor(HttpRequest request, string path)
-{
+    {
       __sklib_ptr __skparam__request;
       __sklib_string __skparam__path;
       int __skreturn;
@@ -12025,7 +13478,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool IsPutRequestFor(HttpRequest request, string path)
-{
+    {
       __sklib_ptr __skparam__request;
       __sklib_string __skparam__path;
       int __skreturn;
@@ -12036,7 +13489,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool IsRequestFor(HttpRequest request, HttpMethod method, string path)
-{
+    {
       __sklib_ptr __skparam__request;
       int __skparam__method;
       __sklib_string __skparam__path;
@@ -12049,7 +13502,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool IsTraceRequestFor(HttpRequest request, string path)
-{
+    {
       __sklib_ptr __skparam__request;
       __sklib_string __skparam__path;
       int __skreturn;
@@ -12060,7 +13513,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static HttpRequest NextWebRequest(WebServer server)
-{
+    {
       __sklib_ptr __skparam__server;
       __sklib_ptr __skreturn;
       __skparam__server = __skadapter__to_sklib_web_server(server);
@@ -12068,7 +13521,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_http_request(__skreturn);
     }
     public static string RequestBody(HttpRequest r)
-{
+    {
       __sklib_ptr __skparam__r;
       __sklib_string __skreturn;
       __skparam__r = __skadapter__to_sklib_http_request(r);
@@ -12076,7 +13529,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static HttpMethod RequestMethod(HttpRequest r)
-{
+    {
       __sklib_ptr __skparam__r;
       int __skreturn;
       __skparam__r = __skadapter__to_sklib_http_request(r);
@@ -12084,7 +13537,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_http_method(__skreturn);
     }
     public static string RequestUri(HttpRequest r)
-{
+    {
       __sklib_ptr __skparam__r;
       __sklib_string __skreturn;
       __skparam__r = __skadapter__to_sklib_http_request(r);
@@ -12092,7 +13545,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static List<string> RequestUriStubs(HttpRequest r)
-{
+    {
       __sklib_ptr __skparam__r;
       __sklib_vector_string __skreturn;
       __skparam__r = __skadapter__to_sklib_http_request(r);
@@ -12100,7 +13553,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_string(__skreturn);
     }
     public static void SendHtmlFileResponse(HttpRequest r, string filename)
-{
+    {
       __sklib_ptr __skparam__r;
       __sklib_string __skparam__filename;
       __skparam__r = __skadapter__to_sklib_http_request(r);
@@ -12109,13 +13562,13 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__filename);
     }
     public static void SendResponse(HttpRequest r)
-{
+    {
       __sklib_ptr __skparam__r;
       __skparam__r = __skadapter__to_sklib_http_request(r);
       __sklib__send_response__http_request(__skparam__r);
     }
     public static void SendResponse(HttpRequest r, string message)
-{
+    {
       __sklib_ptr __skparam__r;
       __sklib_string __skparam__message;
       __skparam__r = __skadapter__to_sklib_http_request(r);
@@ -12124,7 +13577,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__message);
     }
     public static void SendResponse(HttpRequest r, HttpStatusCode code)
-{
+    {
       __sklib_ptr __skparam__r;
       int __skparam__code;
       __skparam__r = __skadapter__to_sklib_http_request(r);
@@ -12132,7 +13585,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__send_response__http_request__http_status_code(__skparam__r, __skparam__code);
     }
     public static void SendResponse(HttpRequest r, HttpStatusCode code, string message)
-{
+    {
       __sklib_ptr __skparam__r;
       int __skparam__code;
       __sklib_string __skparam__message;
@@ -12143,7 +13596,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__message);
     }
     public static void SendResponse(HttpRequest r, HttpStatusCode code, string message, string contentType)
-{
+    {
       __sklib_ptr __skparam__r;
       int __skparam__code;
       __sklib_string __skparam__message;
@@ -12157,7 +13610,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__content_type);
     }
     public static void SendResponse(HttpRequest r, Json j)
-{
+    {
       __sklib_ptr __skparam__r;
       __sklib_ptr __skparam__j;
       __skparam__r = __skadapter__to_sklib_http_request(r);
@@ -12165,7 +13618,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__send_response__http_request__json(__skparam__r, __skparam__j);
     }
     public static List<string> SplitUriStubs(string uri)
-{
+    {
       __sklib_string __skparam__uri;
       __sklib_vector_string __skreturn;
       __skparam__uri = __skadapter__to_sklib_string(uri);
@@ -12174,13 +13627,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_vector_string(__skreturn);
     }
     public static WebServer StartWebServer()
-{
+    {
       __sklib_ptr __skreturn;
       __skreturn = __sklib__start_web_server();
       return __skadapter__to_web_server(__skreturn);
     }
     public static WebServer StartWebServer(ushort port)
-{
+    {
       ushort __skparam__port;
       __sklib_ptr __skreturn;
       __skparam__port = __skadapter__to_sklib_unsigned_short(port);
@@ -12188,13 +13641,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_web_server(__skreturn);
     }
     public static void StopWebServer(WebServer server)
-{
+    {
       __sklib_ptr __skparam__server;
       __skparam__server = __skadapter__to_sklib_web_server(server);
       __sklib__stop_web_server__web_server(__skparam__server);
     }
     public static void ClearWindow(Window wind, Color clr)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_color __skparam__clr;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -12202,84 +13655,84 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__clear_window__window__color(__skparam__wind, __skparam__clr);
     }
     public static void CloseAllWindows()
-{
+    {
       __sklib__close_all_windows();
     }
     public static void CloseCurrentWindow()
-{
+    {
       __sklib__close_current_window();
     }
     public static void CloseWindow(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__close_window__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void CloseWindow(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __sklib__close_window__window(__skparam__wind);
     }
     public static Window CurrentWindow()
-{
+    {
       __sklib_ptr __skreturn;
       __skreturn = __sklib__current_window();
       return __skadapter__to_window(__skreturn);
     }
     public static bool CurrentWindowHasBorder()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__current_window_has_border();
       return __skadapter__to_bool(__skreturn);
     }
     public static int CurrentWindowHeight()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__current_window_height();
       return __skadapter__to_int(__skreturn);
     }
     public static bool CurrentWindowIsFullscreen()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__current_window_is_fullscreen();
       return __skadapter__to_bool(__skreturn);
     }
     public static Point2D CurrentWindowPosition()
-{
+    {
       __sklib_point_2d __skreturn;
       __skreturn = __sklib__current_window_position();
       return __skadapter__to_point_2d(__skreturn);
     }
     public static void CurrentWindowToggleBorder()
-{
+    {
       __sklib__current_window_toggle_border();
     }
     public static void CurrentWindowToggleFullscreen()
-{
+    {
       __sklib__current_window_toggle_fullscreen();
     }
     public static int CurrentWindowWidth()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__current_window_width();
       return __skadapter__to_int(__skreturn);
     }
     public static int CurrentWindowX()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__current_window_x();
       return __skadapter__to_int(__skreturn);
     }
     public static int CurrentWindowY()
-{
+    {
       int __skreturn;
       __skreturn = __sklib__current_window_y();
       return __skadapter__to_int(__skreturn);
     }
     public static bool HasWindow(string caption)
-{
+    {
       __sklib_string __skparam__caption;
       int __skreturn;
       __skparam__caption = __skadapter__to_sklib_string(caption);
@@ -12288,7 +13741,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool IsCurrentWindow(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       int __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -12296,7 +13749,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static void MoveCurrentWindowTo(int x, int y)
-{
+    {
       int __skparam__x;
       int __skparam__y;
       __skparam__x = __skadapter__to_sklib_int(x);
@@ -12304,7 +13757,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__move_current_window_to__int__int(__skparam__x, __skparam__y);
     }
     public static void MoveWindowTo(string name, int x, int y)
-{
+    {
       __sklib_string __skparam__name;
       int __skparam__x;
       int __skparam__y;
@@ -12315,7 +13768,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void MoveWindowTo(Window wind, int x, int y)
-{
+    {
       __sklib_ptr __skparam__wind;
       int __skparam__x;
       int __skparam__y;
@@ -12325,7 +13778,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__move_window_to__window__int__int(__skparam__wind, __skparam__x, __skparam__y);
     }
     public static Window OpenWindow(string caption, int width, int height)
-{
+    {
       __sklib_string __skparam__caption;
       int __skparam__width;
       int __skparam__height;
@@ -12338,13 +13791,21 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_window(__skreturn);
     }
     public static void RefreshWindow(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __sklib__refresh_window__window(__skparam__wind);
     }
+    public static void RefreshWindow(Window wind, uint targetFps)
+    {
+      __sklib_ptr __skparam__wind;
+      uint __skparam__target_fps;
+      __skparam__wind = __skadapter__to_sklib_window(wind);
+      __skparam__target_fps = __skadapter__to_sklib_unsigned_int(targetFps);
+      __sklib__refresh_window__window__unsigned_int(__skparam__wind, __skparam__target_fps);
+    }
     public static void ResizeCurrentWindow(int width, int height)
-{
+    {
       int __skparam__width;
       int __skparam__height;
       __skparam__width = __skadapter__to_sklib_int(width);
@@ -12352,7 +13813,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__resize_current_window__int__int(__skparam__width, __skparam__height);
     }
     public static void ResizeWindow(Window wnd, int width, int height)
-{
+    {
       __sklib_ptr __skparam__wnd;
       int __skparam__width;
       int __skparam__height;
@@ -12362,20 +13823,20 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__resize_window__window__int__int(__skparam__wnd, __skparam__width, __skparam__height);
     }
     public static void SetCurrentWindow(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__set_current_window__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void SetCurrentWindow(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       __skparam__wind = __skadapter__to_sklib_window(wind);
       __sklib__set_current_window__window(__skparam__wind);
     }
     public static string WindowCaption(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_string __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -12383,7 +13844,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_string(__skreturn);
     }
     public static bool WindowCloseRequested(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -12392,7 +13853,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool WindowCloseRequested(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       int __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -12400,7 +13861,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool WindowHasBorder(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -12409,7 +13870,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool WindowHasBorder(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       int __skreturn;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
@@ -12417,7 +13878,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool WindowHasFocus(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       int __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -12425,7 +13886,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static int WindowHeight(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -12434,7 +13895,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int WindowHeight(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       int __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -12442,7 +13903,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static bool WindowIsFullscreen(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -12451,7 +13912,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static bool WindowIsFullscreen(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       int __skreturn;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
@@ -12459,7 +13920,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_bool(__skreturn);
     }
     public static Window WindowNamed(string caption)
-{
+    {
       __sklib_string __skparam__caption;
       __sklib_ptr __skreturn;
       __skparam__caption = __skadapter__to_sklib_string(caption);
@@ -12468,7 +13929,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_window(__skreturn);
     }
     public static Point2D WindowPosition(string name)
-{
+    {
       __sklib_string __skparam__name;
       __sklib_point_2d __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -12477,7 +13938,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static Point2D WindowPosition(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __sklib_point_2d __skreturn;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
@@ -12485,7 +13946,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_point_2d(__skreturn);
     }
     public static void WindowSetIcon(Window wind, Bitmap bmp)
-{
+    {
       __sklib_ptr __skparam__wind;
       __sklib_ptr __skparam__bmp;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -12493,33 +13954,33 @@ internal static Window __skadapter__to_window(IntPtr v)
       __sklib__window_set_icon__window__bitmap(__skparam__wind, __skparam__bmp);
     }
     public static void WindowToggleBorder(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__window_toggle_border__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void WindowToggleBorder(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
       __sklib__window_toggle_border__window(__skparam__wnd);
     }
     public static void WindowToggleFullscreen(string name)
-{
+    {
       __sklib_string __skparam__name;
       __skparam__name = __skadapter__to_sklib_string(name);
       __sklib__window_toggle_fullscreen__string_ref(__skparam__name);
     __skadapter__free__sklib_string(ref __skparam__name);
     }
     public static void WindowToggleFullscreen(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
       __sklib__window_toggle_fullscreen__window(__skparam__wnd);
     }
     public static int WindowWidth(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -12528,7 +13989,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int WindowWidth(Window wind)
-{
+    {
       __sklib_ptr __skparam__wind;
       int __skreturn;
       __skparam__wind = __skadapter__to_sklib_window(wind);
@@ -12536,13 +13997,13 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static Window WindowWithFocus()
-{
+    {
       __sklib_ptr __skreturn;
       __skreturn = __sklib__window_with_focus();
       return __skadapter__to_window(__skreturn);
     }
     public static int WindowX(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -12551,7 +14012,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int WindowX(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       int __skreturn;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
@@ -12559,7 +14020,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int WindowY(string name)
-{
+    {
       __sklib_string __skparam__name;
       int __skreturn;
       __skparam__name = __skadapter__to_sklib_string(name);
@@ -12568,7 +14029,7 @@ internal static Window __skadapter__to_window(IntPtr v)
       return __skadapter__to_int(__skreturn);
     }
     public static int WindowY(Window wnd)
-{
+    {
       __sklib_ptr __skparam__wnd;
       int __skreturn;
       __skparam__wnd = __skadapter__to_sklib_window(wnd);
@@ -12577,7 +14038,8 @@ internal static Window __skadapter__to_window(IntPtr v)
     }
   }
 
-      public enum KeyCode    {
+    public enum KeyCode
+  {
     UnknownKey = 0,
     BackspaceKey = 8,
     TabKey = 9,
@@ -12707,21 +14169,24 @@ internal static Window __skadapter__to_window(IntPtr v)
     SysReqKey = 317,
     MenuKey = 319,
     PowerKey = 320
-    }
-    public enum MouseButton    {
+  }
+  public enum MouseButton
+  {
     NoButton,
     LeftButton,
     MiddleButton,
     RightButton,
     MouseX1Button,
     MouseX2Button
-    }
-    public enum ConnectionType    {
+  }
+  public enum ConnectionType
+  {
     Tcp,
     Udp,
     Unknown
-    }
-    public enum ResourceKind    {
+  }
+  public enum ResourceKind
+  {
     AnimationResource,
     BundleResource,
     DatabaseResource,
@@ -12733,29 +14198,34 @@ internal static Window __skadapter__to_window(IntPtr v)
     SoundResource,
     TimerResource,
     OtherResource
-    }
-    public enum CollisionTestKind    {
+  }
+  public enum CollisionTestKind
+  {
     PixelCollisions,
     AabbCollisions
-    }
-    public enum SpriteEventKind    {
+  }
+  public enum SpriteEventKind
+  {
     SpriteArrivedEvent,
     SpriteAnimationEndedEvent,
     SpriteTouchedEvent,
     SpriteClickedEvent
-    }
-    public enum DrawingDest    {
+  }
+  public enum DrawingDest
+  {
     DrawToScreen,
     DrawToWorld,
     DrawDefault
-    }
-    public enum FontStyle    {
+  }
+  public enum FontStyle
+  {
     NormalFont = 0,
     BoldFont = 1,
     ItalicFont = 2,
     UnderlineFont = 4
-    }
-    public enum HttpStatusCode    {
+  }
+  public enum HttpStatusCode
+  {
     HttpStatusOk = 200,
     HttpStatusCreated = 201,
     HttpStatusNoContent = 204,
@@ -12768,8 +14238,9 @@ internal static Window __skadapter__to_window(IntPtr v)
     HttpStatusInternalServerError = 500,
     HttpStatusNotImplemented = 501,
     HttpStatusServiceUnavailable = 503
-    }
-    public enum HttpMethod    {
+  }
+  public enum HttpMethod
+  {
     HttpGetMethod,
     HttpPostMethod,
     HttpPutMethod,
@@ -12777,7 +14248,7 @@ internal static Window __skadapter__to_window(IntPtr v)
     HttpOptionsMethod,
     HttpTraceMethod,
     UnknownHttpMethod
-    }
+  }
     [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
     internal struct __sklib_matrix_2d
     {
@@ -12791,24 +14262,24 @@ internal static Window __skadapter__to_window(IntPtr v)
     [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
     internal struct __sklib_point_2d
     {
-        public float x;
-        public float y;
+        public double x;
+        public double y;
     }
 
     public struct Point2D    {
-      public float x;
-      public float y;
+      public double x;
+      public double y;
   }
     [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
     internal struct __sklib_circle
     {
         public __sklib_point_2d center;
-        public float radius;
+        public double radius;
     }
 
     public struct Circle    {
       public Point2D center;
-      public float radius;
+      public double radius;
 
     public void Draw(Color clr)
     {
@@ -13436,17 +14907,17 @@ internal static Window __skadapter__to_window(IntPtr v)
     [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
     internal struct __sklib_rectangle
     {
-        public float x;
-        public float y;
-        public float width;
-        public float height;
+        public double x;
+        public double y;
+        public double width;
+        public double height;
     }
 
     public struct Rectangle    {
-      public float x;
-      public float y;
-      public float width;
-      public float height;
+      public double x;
+      public double y;
+      public double width;
+      public double height;
   }
     [ StructLayout( LayoutKind.Sequential, CharSet=CharSet.Ansi ) ]
     internal struct __sklib_drawing_options
@@ -14169,6 +15640,12 @@ public class SoundEffect : PointerWrapper
     }
 
 
+    public void Close()
+    {
+        SplashKit.FreeSoundEffect(this);
+    }
+
+
     public void Play()
     {
         SplashKit.PlaySoundEffect(this);
@@ -14198,13 +15675,17 @@ public class SoundEffect : PointerWrapper
         SplashKit.StopSoundEffect(this);
     }
 
-    public bool Filename
+    public string Filename
     {
-        get { return SplashKit.SoundEffectPlaying(this); }
+        get { return SplashKit.SoundEffectFilename(this); }
     }
     public string Name
     {
         get { return SplashKit.SoundEffectName(this); }
+    }
+    public bool IsPlaying
+    {
+        get { return SplashKit.SoundEffectPlaying(this); }
     }
 }
 public class Sprite : PointerWrapper
@@ -14260,7 +15741,7 @@ public class Sprite : PointerWrapper
     }
 
 
-    public void Draw(float xOffset, float yOffset)
+    public void Draw(double xOffset, double yOffset)
     {
         SplashKit.DrawSprite(this, xOffset, yOffset);
     }
@@ -14290,7 +15771,7 @@ public class Sprite : PointerWrapper
     }
 
 
-    public void MoveTo(float x, float y)
+    public void MoveTo(double x, double y)
     {
         SplashKit.MoveSpriteTo(this, x, y);
     }
@@ -14470,7 +15951,7 @@ public class Sprite : PointerWrapper
     }
 
 
-    public bool OnScreenAt(float x, float y)
+    public bool OnScreenAt(double x, double y)
     {
         return SplashKit.SpriteOnScreenAt(this, x, y);
     }
@@ -15035,15 +16516,15 @@ public class Bitmap : PointerWrapper
         SplashKit.FreeBitmap(this);
     }
 
-    public void DrawCircle(Color clr, float x, float y, float radius)
+    public void DrawCircle(Color clr, double x, double y, double radius)
     {
-        SplashKit.BitmapDrawCircle(this, clr, x, y, radius);
+        SplashKit.DrawCircleOnBitmap(this, clr, x, y, radius);
     }
 
 
-    public void DrawCircle(Color clr, float x, float y, float radius, DrawingOptions opts)
+    public void DrawCircle(Color clr, double x, double y, double radius, DrawingOptions opts)
     {
-        SplashKit.BitmapDrawCircle(this, clr, x, y, radius, opts);
+        SplashKit.DrawCircleOnBitmap(this, clr, x, y, radius, opts);
     }
 
 
@@ -15059,13 +16540,13 @@ public class Bitmap : PointerWrapper
     }
 
 
-    public Rectangle BoundingRectangle(float x, float y)
+    public Rectangle BoundingRectangle(double x, double y)
     {
         return SplashKit.BitmapBoundingRectangle(this, x, y);
     }
 
 
-    public Circle CellCircle(float x, float y)
+    public Circle CellCircle(double x, double y)
     {
         return SplashKit.BitmapCellCircle(this, x, y);
     }
@@ -15077,7 +16558,7 @@ public class Bitmap : PointerWrapper
     }
 
 
-    public Circle CellCircle(Point2D pt, float scale)
+    public Circle CellCircle(Point2D pt, double scale)
     {
         return SplashKit.BitmapCellCircle(this, pt, scale);
     }
@@ -15119,15 +16600,27 @@ public class Bitmap : PointerWrapper
     }
 
 
-    public void Draw(float x, float y)
+    public void Draw(double x, double y)
     {
         SplashKit.DrawBitmap(this, x, y);
     }
 
 
-    public void Draw(float x, float y, DrawingOptions opts)
+    public void Draw(double x, double y, DrawingOptions opts)
     {
         SplashKit.DrawBitmap(this, x, y, opts);
+    }
+
+
+    public void Draw(Bitmap destination, double x, double y)
+    {
+        SplashKit.DrawBitmapOnBitmap(destination, this, x, y);
+    }
+
+
+    public void Draw(Bitmap destination, double x, double y, DrawingOptions opts)
+    {
+        SplashKit.DrawBitmapOnBitmap(destination, this, x, y, opts);
     }
 
 
@@ -15143,7 +16636,7 @@ public class Bitmap : PointerWrapper
     }
 
 
-    public bool PixelDrawnAtPoint(float x, float y)
+    public bool PixelDrawnAtPoint(double x, double y)
     {
         return SplashKit.PixelDrawnAtPoint(this, x, y);
     }
@@ -15155,9 +16648,69 @@ public class Bitmap : PointerWrapper
     }
 
 
-    public bool PixelDrawnAtPoint(int cell, float x, float y)
+    public bool PixelDrawnAtPoint(int cell, double x, double y)
     {
         return SplashKit.PixelDrawnAtPoint(this, cell, x, y);
+    }
+
+
+    public void DrawRectangle(Color clr, Rectangle rect)
+    {
+        SplashKit.DrawRectangleOnBitmap(this, clr, rect);
+    }
+
+
+    public void DrawRectangle(Color clr, Rectangle rect, DrawingOptions opts)
+    {
+        SplashKit.DrawRectangleOnBitmap(this, clr, rect, opts);
+    }
+
+
+    public void DrawRectangle(Color clr, double x, double y, double width, double height)
+    {
+        SplashKit.DrawRectangleOnBitmap(this, clr, x, y, width, height);
+    }
+
+
+    public void DrawRectangle(Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+        SplashKit.DrawRectangleOnBitmap(this, clr, x, y, width, height, opts);
+    }
+
+
+    public void DrawText(string text, Color clr, string fnt, int fontSize, double x, double y)
+    {
+        SplashKit.DrawTextOnBitmap(this, text, clr, fnt, fontSize, x, y);
+    }
+
+
+    public void DrawText(string text, Color clr, string fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
+        SplashKit.DrawTextOnBitmap(this, text, clr, fnt, fontSize, x, y, opts);
+    }
+
+
+    public void DrawText(string text, Color clr, double x, double y)
+    {
+        SplashKit.DrawTextOnBitmap(this, text, clr, x, y);
+    }
+
+
+    public void DrawText(string text, Color clr, double x, double y, DrawingOptions opts)
+    {
+        SplashKit.DrawTextOnBitmap(this, text, clr, x, y, opts);
+    }
+
+
+    public void DrawText(string text, Color clr, Font fnt, int fontSize, double x, double y)
+    {
+        SplashKit.DrawTextOnBitmap(this, text, clr, fnt, fontSize, x, y);
+    }
+
+
+    public void DrawText(string text, Color clr, Font fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
+        SplashKit.DrawTextOnBitmap(this, text, clr, fnt, fontSize, x, y, opts);
     }
 
     public Point2D CellCenter
@@ -15364,15 +16917,87 @@ public class Window : PointerWrapper
         SplashKit.CloseWindow(this);
     }
 
-    public void DrawCircle(Color clr, float x, float y, float radius)
+    public void DrawCircle(Color clr, double x, double y, double radius)
     {
-        SplashKit.WindowDrawCircle(this, clr, x, y, radius);
+        SplashKit.DrawCircleOnWindow(this, clr, x, y, radius);
     }
 
 
-    public void DrawCircle(Color clr, float x, float y, float radius, DrawingOptions opts)
+    public void DrawCircle(Color clr, double x, double y, double radius, DrawingOptions opts)
     {
-        SplashKit.WindowDrawCircle(this, clr, x, y, radius, opts);
+        SplashKit.DrawCircleOnWindow(this, clr, x, y, radius, opts);
+    }
+
+
+    public void Draw(Bitmap bmp, double x, double y)
+    {
+        SplashKit.DrawBitmapOnWindow(this, bmp, x, y);
+    }
+
+
+    public void Draw(Bitmap bmp, double x, double y, DrawingOptions opts)
+    {
+        SplashKit.DrawBitmapOnWindow(this, bmp, x, y, opts);
+    }
+
+
+    public void DrawRectangle(Color clr, Rectangle rect)
+    {
+        SplashKit.DrawRectangleOnWindow(this, clr, rect);
+    }
+
+
+    public void DrawRectangle(Color clr, Rectangle rect, DrawingOptions opts)
+    {
+        SplashKit.DrawRectangleOnWindow(this, clr, rect, opts);
+    }
+
+
+    public void DrawRectangle(Color clr, double x, double y, double width, double height)
+    {
+        SplashKit.DrawRectangleOnWindow(this, clr, x, y, width, height);
+    }
+
+
+    public void DrawRectangle(Color clr, double x, double y, double width, double height, DrawingOptions opts)
+    {
+        SplashKit.DrawRectangleOnWindow(this, clr, x, y, width, height, opts);
+    }
+
+
+    public void DrawText(string text, Color clr, string fnt, int fontSize, double x, double y)
+    {
+        SplashKit.DrawTextOnWindow(this, text, clr, fnt, fontSize, x, y);
+    }
+
+
+    public void DrawText(string text, Color clr, string fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
+        SplashKit.DrawTextOnWindow(this, text, clr, fnt, fontSize, x, y, opts);
+    }
+
+
+    public void DrawText(string text, Color clr, double x, double y)
+    {
+        SplashKit.DrawTextOnWindow(this, text, clr, x, y);
+    }
+
+
+    public void DrawText(string text, Color clr, double x, double y, DrawingOptions opts)
+    {
+        SplashKit.DrawTextOnWindow(this, text, clr, x, y, opts);
+    }
+
+
+    public void DrawText(string text, Color clr, Font fnt, int fontSize, double x, double y)
+    {
+        SplashKit.DrawTextOnWindow(this, text, clr, fnt, fontSize, x, y);
+    }
+
+
+    public void DrawText(string text, Color clr, Font fnt, int fontSize, double x, double y, DrawingOptions opts)
+    {
+        SplashKit.DrawTextOnWindow(this, text, clr, fnt, fontSize, x, y, opts);
     }
 
 
@@ -15397,6 +17022,12 @@ public class Window : PointerWrapper
     public void Refresh()
     {
         SplashKit.RefreshWindow(this);
+    }
+
+
+    public void Refresh(uint targetFps)
+    {
+        SplashKit.RefreshWindow(this, targetFps);
     }
 
 
@@ -15553,7 +17184,7 @@ public static class Camera{
     }
 
 
-    public static void MoveTo(float x, float y)
+    public static void MoveTo(double x, double y)
     {
         SplashKit.MoveCameraTo(x, y);
     }

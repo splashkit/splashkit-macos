@@ -7,17 +7,30 @@
 #define __text_h
 
 #include "types.h"
+#include "window_manager.h"
 #include <string>
 #include <vector>
 using std::string;
 using std::vector;
 
-void draw_text(const string &text, const color &clr, const string &fnt, int font_size, float x, float y);
-void draw_text(const string &text, const color &clr, const string &fnt, int font_size, float x, float y, const drawing_options &opts);
-void draw_text(const string &text, const color &clr, float x, float y);
-void draw_text(const string &text, const color &clr, float x, float y, const drawing_options &opts);
-void draw_text(const string &text, const color &clr, font fnt, int font_size, float x, float y);
-void draw_text(const string &text, const color &clr, font fnt, int font_size, float x, float y, const drawing_options &opts);
+void draw_text(const string &text, const color &clr, const string &fnt, int font_size, double x, double y);
+void draw_text(const string &text, const color &clr, const string &fnt, int font_size, double x, double y, const drawing_options &opts);
+void draw_text(const string &text, const color &clr, double x, double y);
+void draw_text(const string &text, const color &clr, double x, double y, const drawing_options &opts);
+void draw_text(const string &text, const color &clr, font fnt, int font_size, double x, double y);
+void draw_text(const string &text, const color &clr, font fnt, int font_size, double x, double y, const drawing_options &opts);
+void draw_text_on_bitmap(bitmap bmp, const string &text, const color &clr, const string &fnt, int font_size, double x, double y);
+void draw_text_on_bitmap(bitmap bmp, const string &text, const color &clr, const string &fnt, int font_size, double x, double y, const drawing_options &opts);
+void draw_text_on_bitmap(bitmap bmp, const string &text, const color &clr, double x, double y);
+void draw_text_on_bitmap(bitmap bmp, const string &text, const color &clr, double x, double y, const drawing_options &opts);
+void draw_text_on_bitmap(bitmap bmp, const string &text, const color &clr, font fnt, int font_size, double x, double y);
+void draw_text_on_bitmap(bitmap bmp, const string &text, const color &clr, font fnt, int font_size, double x, double y, const drawing_options &opts);
+void draw_text_on_window(window wnd, const string &text, const color &clr, const string &fnt, int font_size, double x, double y);
+void draw_text_on_window(window wnd, const string &text, const color &clr, const string &fnt, int font_size, double x, double y, const drawing_options &opts);
+void draw_text_on_window(window wnd, const string &text, const color &clr, double x, double y);
+void draw_text_on_window(window wnd, const string &text, const color &clr, double x, double y, const drawing_options &opts);
+void draw_text_on_window(window wnd, const string &text, const color &clr, font fnt, int font_size, double x, double y);
+void draw_text_on_window(window wnd, const string &text, const color &clr, font fnt, int font_size, double x, double y, const drawing_options &opts);
 bool font_has_size(const string &name, int font_size);
 bool font_has_size(font fnt, int font_size);
 void font_load_size(const string &name, int font_size);
