@@ -270,8 +270,8 @@ int __sklib__bitmap_collision__bitmap__int__matrix_2d_ref__bitmap__int__matrix_2
 int __sklib__bitmap_collision__bitmap__int__point_2d_ref__bitmap__int__point_2d_ref(__sklib_bitmap bmp1, int cell1, const __sklib_point_2d pt1, __sklib_bitmap bmp2, int cell2, const __sklib_point_2d pt2);
 int __sklib__bitmap_collision__bitmap__int__double__double__bitmap__int__double__double(__sklib_bitmap bmp1, int cell1, double x1, double y1, __sklib_bitmap bmp2, int cell2, double x2, double y2);
 int __sklib__bitmap_point_collision__bitmap__matrix_2d_ref__point_2d_ref(__sklib_bitmap bmp, const __sklib_matrix_2d translation, const __sklib_point_2d pt);
-int __sklib__bitmap_point_collision__bitmap__point_2d_ref__point_2d_ref(__sklib_bitmap bmp, const __sklib_point_2d pt, const __sklib_point_2d bmp_pt);
-int __sklib__bitmap_point_collision__bitmap__float__float__double__double(__sklib_bitmap bmp, float bmp_x, float bmp_y, double x, double y);
+int __sklib__bitmap_point_collision__bitmap__point_2d_ref__point_2d_ref(__sklib_bitmap bmp, const __sklib_point_2d bmp_pt, const __sklib_point_2d pt);
+int __sklib__bitmap_point_collision__bitmap__double__double__double__double(__sklib_bitmap bmp, double bmp_x, double bmp_y, double x, double y);
 int __sklib__bitmap_point_collision__bitmap__int__matrix_2d_ref__point_2d_ref(__sklib_bitmap bmp, int cell, const __sklib_matrix_2d translation, const __sklib_point_2d pt);
 int __sklib__bitmap_rectangle_collision__bitmap__int__matrix_2d_ref__rectangle_ref(__sklib_bitmap bmp, int cell, const __sklib_matrix_2d translation, const __sklib_rectangle rect);
 int __sklib__bitmap_rectangle_collision__bitmap__int__point_2d_ref__rectangle_ref(__sklib_bitmap bmp, int cell, const __sklib_point_2d pt, const __sklib_rectangle rect);
