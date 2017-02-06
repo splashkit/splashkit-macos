@@ -18111,6 +18111,10 @@ public class HttpRequest : PointerWrapper
     {
         get { return SplashKit.RequestURI(this); }
     }
+    public string URIQueries
+    {
+        get { return SplashKit.RequestURIQueries(this); }
+    }
     public List<string> URIStubs
     {
         get { return SplashKit.RequestURIStubs(this); }
