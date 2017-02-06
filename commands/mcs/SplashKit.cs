@@ -4206,14 +4206,20 @@ namespace SplashKitSDK
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_body__http_request", CharSet=CharSet.Ansi)]
     private static extern __sklib_string __sklib__request_body__http_request(__sklib_ptr r);
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_has_query_parameter__http_request__string_ref", CharSet=CharSet.Ansi)]
+    private static extern int __sklib__request_has_query_parameter__http_request__string_ref(__sklib_ptr r, __sklib_string name);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_method__http_request", CharSet=CharSet.Ansi)]
     private static extern int __sklib__request_method__http_request(__sklib_ptr r);
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_query_parameter__http_request__string_ref__string_ref", CharSet=CharSet.Ansi)]
+    private static extern __sklib_string __sklib__request_query_parameter__http_request__string_ref__string_ref(__sklib_ptr r, __sklib_string name, __sklib_string defaultValue);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_query_string__http_request", CharSet=CharSet.Ansi)]
+    private static extern __sklib_string __sklib__request_query_string__http_request(__sklib_ptr r);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_uri__http_request", CharSet=CharSet.Ansi)]
     private static extern __sklib_string __sklib__request_uri__http_request(__sklib_ptr r);
-
-    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_uri_queries__http_request", CharSet=CharSet.Ansi)]
-    private static extern __sklib_string __sklib__request_uri_queries__http_request(__sklib_ptr r);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_uri_stubs__http_request", CharSet=CharSet.Ansi)]
     private static extern __sklib_vector_string __sklib__request_uri_stubs__http_request(__sklib_ptr r);
@@ -14163,6 +14169,17 @@ namespace SplashKitSDK
       __skreturn = __sklib__request_body__http_request(__skparam__r);
       return __skadapter__to_string(__skreturn);
     }
+    public static bool RequestHasQueryParameter(HttpRequest r, string name)
+    {
+      __sklib_ptr __skparam__r;
+      __sklib_string __skparam__name;
+      int __skreturn;
+      __skparam__r = __skadapter__to_sklib_http_request(r);
+      __skparam__name = __skadapter__to_sklib_string(name);
+      __skreturn = __sklib__request_has_query_parameter__http_request__string_ref(__skparam__r, __skparam__name);
+    __skadapter__free__sklib_string(ref __skparam__name);
+      return __skadapter__to_bool(__skreturn);
+    }
     public static HttpMethod RequestMethod(HttpRequest r)
     {
       __sklib_ptr __skparam__r;
@@ -14171,20 +14188,34 @@ namespace SplashKitSDK
       __skreturn = __sklib__request_method__http_request(__skparam__r);
       return __skadapter__to_http_method(__skreturn);
     }
+    public static string RequestQueryParameter(HttpRequest r, string name, string defaultValue)
+    {
+      __sklib_ptr __skparam__r;
+      __sklib_string __skparam__name;
+      __sklib_string __skparam__default_value;
+      __sklib_string __skreturn;
+      __skparam__r = __skadapter__to_sklib_http_request(r);
+      __skparam__name = __skadapter__to_sklib_string(name);
+      __skparam__default_value = __skadapter__to_sklib_string(defaultValue);
+      __skreturn = __sklib__request_query_parameter__http_request__string_ref__string_ref(__skparam__r, __skparam__name, __skparam__default_value);
+    __skadapter__free__sklib_string(ref __skparam__name);
+    __skadapter__free__sklib_string(ref __skparam__default_value);
+      return __skadapter__to_string(__skreturn);
+    }
+    public static string RequestQueryString(HttpRequest r)
+    {
+      __sklib_ptr __skparam__r;
+      __sklib_string __skreturn;
+      __skparam__r = __skadapter__to_sklib_http_request(r);
+      __skreturn = __sklib__request_query_string__http_request(__skparam__r);
+      return __skadapter__to_string(__skreturn);
+    }
     public static string RequestURI(HttpRequest r)
     {
       __sklib_ptr __skparam__r;
       __sklib_string __skreturn;
       __skparam__r = __skadapter__to_sklib_http_request(r);
       __skreturn = __sklib__request_uri__http_request(__skparam__r);
-      return __skadapter__to_string(__skreturn);
-    }
-    public static string RequestURIQueries(HttpRequest r)
-    {
-      __sklib_ptr __skparam__r;
-      __sklib_string __skreturn;
-      __skparam__r = __skadapter__to_sklib_http_request(r);
-      __skreturn = __sklib__request_uri_queries__http_request(__skparam__r);
       return __skadapter__to_string(__skreturn);
     }
     public static List<string> RequestURIStubs(HttpRequest r)
@@ -18040,6 +18071,18 @@ public class HttpRequest : PointerWrapper
     }
 
 
+    public bool HasQueryParameter(string name)
+    {
+        return SplashKit.RequestHasQueryParameter(this, name);
+    }
+
+
+    public string QueryParameter(string name, string defaultValue)
+    {
+        return SplashKit.RequestQueryParameter(this, name, defaultValue);
+    }
+
+
     public void SendCSSFileResponse(string filename)
     {
         SplashKit.SendCSSFileResponse(this, filename);
@@ -18107,13 +18150,13 @@ public class HttpRequest : PointerWrapper
     {
         get { return SplashKit.RequestMethod(this); }
     }
+    public string QueryString
+    {
+        get { return SplashKit.RequestQueryString(this); }
+    }
     public string URI
     {
         get { return SplashKit.RequestURI(this); }
-    }
-    public string URIQueries
-    {
-        get { return SplashKit.RequestURIQueries(this); }
     }
     public List<string> URIStubs
     {
