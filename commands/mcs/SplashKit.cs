@@ -123,6 +123,7 @@ namespace SplashKitSDK
 
     private static __sklib_string __skadapter__to_sklib_string(string s)
     {
+      s = s == null ? "": s;
       int totalLength = s.Length + 1;
       __sklib_string result;
       result.size = totalLength;
@@ -4210,6 +4211,9 @@ namespace SplashKitSDK
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_uri__http_request", CharSet=CharSet.Ansi)]
     private static extern __sklib_string __sklib__request_uri__http_request(__sklib_ptr r);
+
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_uri_queries__http_request", CharSet=CharSet.Ansi)]
+    private static extern __sklib_string __sklib__request_uri_queries__http_request(__sklib_ptr r);
 
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__request_uri_stubs__http_request", CharSet=CharSet.Ansi)]
     private static extern __sklib_vector_string __sklib__request_uri_stubs__http_request(__sklib_ptr r);
@@ -14173,6 +14177,14 @@ namespace SplashKitSDK
       __sklib_string __skreturn;
       __skparam__r = __skadapter__to_sklib_http_request(r);
       __skreturn = __sklib__request_uri__http_request(__skparam__r);
+      return __skadapter__to_string(__skreturn);
+    }
+    public static string RequestURIQueries(HttpRequest r)
+    {
+      __sklib_ptr __skparam__r;
+      __sklib_string __skreturn;
+      __skparam__r = __skadapter__to_sklib_http_request(r);
+      __skreturn = __sklib__request_uri_queries__http_request(__skparam__r);
       return __skadapter__to_string(__skreturn);
     }
     public static List<string> RequestURIStubs(HttpRequest r)

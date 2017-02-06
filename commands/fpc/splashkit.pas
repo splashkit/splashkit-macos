@@ -1374,6 +1374,7 @@ function NextWebRequest(server: WebServer): HttpRequest;
 function RequestBody(r: HttpRequest): String;
 function RequestMethod(r: HttpRequest): HttpMethod;
 function RequestURI(r: HttpRequest): String;
+function RequestURIQueries(r: HttpRequest): String;
 function RequestURIStubs(r: HttpRequest): ArrayOfString;
 procedure SendCSSFileResponse(r: HttpRequest; const filename: String);
 procedure SendFileResponse(r: HttpRequest; const filename: String; const contentType: String);
@@ -3428,6 +3429,7 @@ function __sklib__next_web_request__web_server(server: __sklib_ptr): __sklib_ptr
 function __sklib__request_body__http_request(r: __sklib_ptr): __sklib_string; cdecl; external;
 function __sklib__request_method__http_request(r: __sklib_ptr): LongInt; cdecl; external;
 function __sklib__request_uri__http_request(r: __sklib_ptr): __sklib_string; cdecl; external;
+function __sklib__request_uri_queries__http_request(r: __sklib_ptr): __sklib_string; cdecl; external;
 function __sklib__request_uri_stubs__http_request(r: __sklib_ptr): __sklib_vector_string; cdecl; external;
 procedure __sklib__send_css_file_response__http_request__string_ref(r: __sklib_ptr; const filename: __sklib_string); cdecl; external;
 procedure __sklib__send_file_response__http_request__string_ref__string_ref(r: __sklib_ptr; const filename: __sklib_string; const contentType: __sklib_string); cdecl; external;
@@ -14042,6 +14044,15 @@ var
 begin
   __skparam__r := __skadapter__to_sklib_http_request(r);
   __skreturn := __sklib__request_uri__http_request(__skparam__r);
+  result := __skadapter__to_string(__skreturn);
+end;
+function RequestURIQueries(r: HttpRequest): String;
+var
+  __skparam__r: __sklib_ptr;
+  __skreturn: __sklib_string;
+begin
+  __skparam__r := __skadapter__to_sklib_http_request(r);
+  __skreturn := __sklib__request_uri_queries__http_request(__skparam__r);
   result := __skadapter__to_string(__skreturn);
 end;
 function RequestURIStubs(r: HttpRequest): ArrayOfString;

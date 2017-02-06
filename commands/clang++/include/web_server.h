@@ -39,6 +39,7 @@ http_request next_web_request(web_server server);
 string request_body(http_request r);
 http_method request_method(http_request r);
 string request_uri(http_request r);
+string request_uri_queries(http_request r);
 vector<string> request_uri_stubs(http_request r);
 void send_css_file_response(http_request r, const string &filename);
 void send_file_response(http_request r, const string &filename, const string &content_type);
