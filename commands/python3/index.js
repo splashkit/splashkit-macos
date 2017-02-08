@@ -8,7 +8,7 @@ execute = function (argv, callback) {
   const userArgs = utils.argsToString(argv['original_string'])
   const pythonArgs = `"${skPythonLibrary}"`
 
-  utils.runCommand(`python3 ${userArgs} ${pythonArgs}`, function (err, data) {
+  utils.runCommand(`python3 ${userArgs} DYLD_LIBRARY_PATH=${pythonArgs}`, function (err, data) {
     if (err) {
       callback(err)
     } else {
