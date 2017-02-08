@@ -3,7 +3,7 @@ const home = process.env.HOME
 
 execute = function (argv, callback) {
   const sklibs = `${home}/.splashkit/lib`
-  const skPythonLibrary = `${home}/.splashkit/commands/python3/splashkit.py`
+  const skPythonLibrary = `${home}/.splashkit/commands/python3`
 
   const userArgs = utils.argsToString(argv['original_string'])
 
