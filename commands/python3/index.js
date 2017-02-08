@@ -6,9 +6,8 @@ execute = function (argv, callback) {
   const skPythonLibrary = `${home}/.splashkit/commands/python3/splashkit.py`
 
   const userArgs = utils.argsToString(argv['original_string'])
-  const pythonArgs = `"${skPythonLibrary}"`
 
-  utils.runCommand(`python3 ${userArgs} DYLD_LIBRARY_PATH=${pythonArgs}`, function (err, data) {
+  utils.runCommand(`python3 ${userArgs} DYLD_LIBRARY_PATH=${skPythonLibrary}`, function (err, data) {
     if (err) {
       callback(err)
     } else {
