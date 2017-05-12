@@ -1473,6 +1473,16 @@ sklib.__sklib__set_clip__bitmap__rectangle_ref.argtypes = [ c_void_p, _sklib_rec
 sklib.__sklib__set_clip__bitmap__rectangle_ref.restype = None
 sklib.__sklib__set_clip__window__rectangle_ref.argtypes = [ c_void_p, _sklib_rectangle ]
 sklib.__sklib__set_clip__window__rectangle_ref.restype = None
+sklib.__sklib__bitmap_circle_collision__bitmap__point_2d_ref__circle_ref.argtypes = [ c_void_p, _sklib_point_2d, _sklib_circle ]
+sklib.__sklib__bitmap_circle_collision__bitmap__point_2d_ref__circle_ref.restype = c_bool
+sklib.__sklib__bitmap_circle_collision__bitmap__double__double__circle_ref.argtypes = [ c_void_p, c_double, c_double, _sklib_circle ]
+sklib.__sklib__bitmap_circle_collision__bitmap__double__double__circle_ref.restype = c_bool
+sklib.__sklib__bitmap_circle_collision__bitmap__int__matrix_2d_ref__circle_ref.argtypes = [ c_void_p, c_int, _sklib_matrix_2d, _sklib_circle ]
+sklib.__sklib__bitmap_circle_collision__bitmap__int__matrix_2d_ref__circle_ref.restype = c_bool
+sklib.__sklib__bitmap_circle_collision__bitmap__int__point_2d_ref__circle_ref.argtypes = [ c_void_p, c_int, _sklib_point_2d, _sklib_circle ]
+sklib.__sklib__bitmap_circle_collision__bitmap__int__point_2d_ref__circle_ref.restype = c_bool
+sklib.__sklib__bitmap_circle_collision__bitmap__int__double__double__circle_ref.argtypes = [ c_void_p, c_int, c_double, c_double, _sklib_circle ]
+sklib.__sklib__bitmap_circle_collision__bitmap__int__double__double__circle_ref.restype = c_bool
 sklib.__sklib__bitmap_collision__bitmap__double__double__bitmap__double__double.argtypes = [ c_void_p, c_double, c_double, c_void_p, c_double, c_double ]
 sklib.__sklib__bitmap_collision__bitmap__double__double__bitmap__double__double.restype = c_bool
 sklib.__sklib__bitmap_collision__bitmap__point_2d_ref__bitmap__point_2d_ref.argtypes = [ c_void_p, _sklib_point_2d, c_void_p, _sklib_point_2d ]
@@ -1491,10 +1501,16 @@ sklib.__sklib__bitmap_point_collision__bitmap__double__double__double__double.ar
 sklib.__sklib__bitmap_point_collision__bitmap__double__double__double__double.restype = c_bool
 sklib.__sklib__bitmap_point_collision__bitmap__int__matrix_2d_ref__point_2d_ref.argtypes = [ c_void_p, c_int, _sklib_matrix_2d, _sklib_point_2d ]
 sklib.__sklib__bitmap_point_collision__bitmap__int__matrix_2d_ref__point_2d_ref.restype = c_bool
+sklib.__sklib__bitmap_rectangle_collision__bitmap__point_2d_ref__rectangle_ref.argtypes = [ c_void_p, _sklib_point_2d, _sklib_rectangle ]
+sklib.__sklib__bitmap_rectangle_collision__bitmap__point_2d_ref__rectangle_ref.restype = c_bool
+sklib.__sklib__bitmap_rectangle_collision__bitmap__double__double__rectangle_ref.argtypes = [ c_void_p, c_double, c_double, _sklib_rectangle ]
+sklib.__sklib__bitmap_rectangle_collision__bitmap__double__double__rectangle_ref.restype = c_bool
 sklib.__sklib__bitmap_rectangle_collision__bitmap__int__matrix_2d_ref__rectangle_ref.argtypes = [ c_void_p, c_int, _sklib_matrix_2d, _sklib_rectangle ]
 sklib.__sklib__bitmap_rectangle_collision__bitmap__int__matrix_2d_ref__rectangle_ref.restype = c_bool
 sklib.__sklib__bitmap_rectangle_collision__bitmap__int__point_2d_ref__rectangle_ref.argtypes = [ c_void_p, c_int, _sklib_point_2d, _sklib_rectangle ]
 sklib.__sklib__bitmap_rectangle_collision__bitmap__int__point_2d_ref__rectangle_ref.restype = c_bool
+sklib.__sklib__bitmap_rectangle_collision__bitmap__int__double__double__rectangle_ref.argtypes = [ c_void_p, c_int, c_double, c_double, _sklib_rectangle ]
+sklib.__sklib__bitmap_rectangle_collision__bitmap__int__double__double__rectangle_ref.restype = c_bool
 sklib.__sklib__sprite_bitmap_collision__sprite__bitmap__double__double.argtypes = [ c_void_p, c_void_p, c_double, c_double ]
 sklib.__sklib__sprite_bitmap_collision__sprite__bitmap__double__double.restype = c_bool
 sklib.__sklib__sprite_bitmap_collision__sprite__bitmap__int__point_2d_ref.argtypes = [ c_void_p, c_void_p, c_int, _sklib_point_2d ]
@@ -1512,7 +1528,7 @@ sklib.__sklib__alpha_of__color.restype = c_int
 sklib.__sklib__blue_of__color.argtypes = [ _sklib_color ]
 sklib.__sklib__blue_of__color.restype = c_int
 sklib.__sklib__brightness_of__color.argtypes = [ _sklib_color ]
-sklib.__sklib__brightness_of__color.restype = c_float
+sklib.__sklib__brightness_of__color.restype = c_double
 sklib.__sklib__color_alice_blue.argtypes = [  ]
 sklib.__sklib__color_alice_blue.restype = _sklib_color
 sklib.__sklib__color_antique_white.argtypes = [  ]
@@ -1803,26 +1819,26 @@ sklib.__sklib__color_yellow_green.argtypes = [  ]
 sklib.__sklib__color_yellow_green.restype = _sklib_color
 sklib.__sklib__green_of__color.argtypes = [ _sklib_color ]
 sklib.__sklib__green_of__color.restype = c_int
-sklib.__sklib__hsb_color__float__float__float.argtypes = [ c_float, c_float, c_float ]
-sklib.__sklib__hsb_color__float__float__float.restype = _sklib_color
+sklib.__sklib__hsb_color__double__double__double.argtypes = [ c_double, c_double, c_double ]
+sklib.__sklib__hsb_color__double__double__double.restype = _sklib_color
 sklib.__sklib__hue_of__color.argtypes = [ _sklib_color ]
-sklib.__sklib__hue_of__color.restype = c_float
+sklib.__sklib__hue_of__color.restype = c_double
 sklib.__sklib__random_color.argtypes = [  ]
 sklib.__sklib__random_color.restype = _sklib_color
 sklib.__sklib__random_rgb_color__int.argtypes = [ c_int ]
 sklib.__sklib__random_rgb_color__int.restype = _sklib_color
 sklib.__sklib__red_of__color.argtypes = [ _sklib_color ]
 sklib.__sklib__red_of__color.restype = c_int
-sklib.__sklib__rgb_color__float__float__float.argtypes = [ c_float, c_float, c_float ]
-sklib.__sklib__rgb_color__float__float__float.restype = _sklib_color
+sklib.__sklib__rgb_color__double__double__double.argtypes = [ c_double, c_double, c_double ]
+sklib.__sklib__rgb_color__double__double__double.restype = _sklib_color
 sklib.__sklib__rgb_color__int__int__int.argtypes = [ c_int, c_int, c_int ]
 sklib.__sklib__rgb_color__int__int__int.restype = _sklib_color
-sklib.__sklib__rgba_color__float__float__float__float.argtypes = [ c_float, c_float, c_float, c_float ]
-sklib.__sklib__rgba_color__float__float__float__float.restype = _sklib_color
+sklib.__sklib__rgba_color__double__double__double__double.argtypes = [ c_double, c_double, c_double, c_double ]
+sklib.__sklib__rgba_color__double__double__double__double.restype = _sklib_color
 sklib.__sklib__rgba_color__int__int__int__int.argtypes = [ c_int, c_int, c_int, c_int ]
 sklib.__sklib__rgba_color__int__int__int__int.restype = _sklib_color
 sklib.__sklib__saturation_of__color.argtypes = [ _sklib_color ]
-sklib.__sklib__saturation_of__color.restype = c_float
+sklib.__sklib__saturation_of__color.restype = c_double
 sklib.__sklib__string_to_color__string.argtypes = [ _sklib_string ]
 sklib.__sklib__string_to_color__string.restype = _sklib_color
 sklib.__sklib__database_named__string.argtypes = [ _sklib_string ]
@@ -2423,6 +2439,8 @@ sklib.__sklib__create_server__string_ref__unsigned_short__connection_type.argtyp
 sklib.__sklib__create_server__string_ref__unsigned_short__connection_type.restype = c_void_p
 sklib.__sklib__dec_to_hex__unsigned_int.argtypes = [ c_uint ]
 sklib.__sklib__dec_to_hex__unsigned_int.restype = _sklib_string
+sklib.__sklib__fetch_new_connection__server_socket.argtypes = [ c_void_p ]
+sklib.__sklib__fetch_new_connection__server_socket.restype = c_void_p
 sklib.__sklib__has_connection__string_ref.argtypes = [ _sklib_string ]
 sklib.__sklib__has_connection__string_ref.restype = c_bool
 sklib.__sklib__has_messages.argtypes = [  ]
@@ -2477,6 +2495,8 @@ sklib.__sklib__my_ip.argtypes = [  ]
 sklib.__sklib__my_ip.restype = _sklib_string
 sklib.__sklib__name_for_connection__string__unsigned_int.argtypes = [ _sklib_string, c_uint ]
 sklib.__sklib__name_for_connection__string__unsigned_int.restype = _sklib_string
+sklib.__sklib__new_connection_count__server_socket.argtypes = [ c_void_p ]
+sklib.__sklib__new_connection_count__server_socket.restype = c_int
 sklib.__sklib__open_connection__string_ref__string_ref__unsigned_short.argtypes = [ _sklib_string, _sklib_string, c_ushort ]
 sklib.__sklib__open_connection__string_ref__string_ref__unsigned_short.restype = c_void_p
 sklib.__sklib__open_connection__string_ref__string_ref__unsigned_short__connection_type.argtypes = [ _sklib_string, _sklib_string, c_ushort, c_int ]
@@ -2501,6 +2521,8 @@ sklib.__sklib__reconnect__string_ref.argtypes = [ _sklib_string ]
 sklib.__sklib__reconnect__string_ref.restype = None
 sklib.__sklib__release_all_connections.argtypes = [  ]
 sklib.__sklib__release_all_connections.restype = None
+sklib.__sklib__reset_new_connection_count__server_socket.argtypes = [ c_void_p ]
+sklib.__sklib__reset_new_connection_count__server_socket.restype = None
 sklib.__sklib__retrieve_connection__string_ref__int.argtypes = [ _sklib_string, c_int ]
 sklib.__sklib__retrieve_connection__string_ref__int.restype = c_void_p
 sklib.__sklib__retrieve_connection__server_socket__int.argtypes = [ c_void_p, c_int ]
@@ -3385,8 +3407,14 @@ sklib.__sklib__next_web_request__web_server.argtypes = [ c_void_p ]
 sklib.__sklib__next_web_request__web_server.restype = c_void_p
 sklib.__sklib__request_body__http_request.argtypes = [ c_void_p ]
 sklib.__sklib__request_body__http_request.restype = _sklib_string
+sklib.__sklib__request_has_query_parameter__http_request__string_ref.argtypes = [ c_void_p, _sklib_string ]
+sklib.__sklib__request_has_query_parameter__http_request__string_ref.restype = c_bool
 sklib.__sklib__request_method__http_request.argtypes = [ c_void_p ]
 sklib.__sklib__request_method__http_request.restype = c_int
+sklib.__sklib__request_query_parameter__http_request__string_ref__string_ref.argtypes = [ c_void_p, _sklib_string, _sklib_string ]
+sklib.__sklib__request_query_parameter__http_request__string_ref__string_ref.restype = _sklib_string
+sklib.__sklib__request_query_string__http_request.argtypes = [ c_void_p ]
+sklib.__sklib__request_query_string__http_request.restype = _sklib_string
 sklib.__sklib__request_uri__http_request.argtypes = [ c_void_p ]
 sklib.__sklib__request_uri__http_request.restype = _sklib_string
 sklib.__sklib__request_uri_stubs__http_request.argtypes = [ c_void_p ]
@@ -4021,6 +4049,41 @@ def set_clip_for_window ( wnd, r ):
     __skparam__wnd = __skadapter__to_sklib_window(wnd)
     __skparam__r = __skadapter__to_sklib_rectangle(r)
     sklib.__sklib__set_clip__window__rectangle_ref(__skparam__wnd, __skparam__r)
+def bitmap_circle_collision_at_point ( bmp, pt, circ ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    __skparam__pt = __skadapter__to_sklib_point_2d(pt)
+    __skparam__circ = __skadapter__to_sklib_circle(circ)
+    __skreturn = sklib.__sklib__bitmap_circle_collision__bitmap__point_2d_ref__circle_ref(__skparam__bmp, __skparam__pt, __skparam__circ)
+    return __skadapter__to_bool(__skreturn)
+def bitmap_circle_collision ( bmp, x, y, circ ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    __skparam__x = __skadapter__to_sklib_double(x)
+    __skparam__y = __skadapter__to_sklib_double(y)
+    __skparam__circ = __skadapter__to_sklib_circle(circ)
+    __skreturn = sklib.__sklib__bitmap_circle_collision__bitmap__double__double__circle_ref(__skparam__bmp, __skparam__x, __skparam__y, __skparam__circ)
+    return __skadapter__to_bool(__skreturn)
+def bitmap_circle_collision_for_cell_with_translation ( bmp, cell, translation, circ ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    __skparam__cell = __skadapter__to_sklib_int(cell)
+    __skparam__translation = __skadapter__to_sklib_matrix_2d(translation)
+    __skparam__circ = __skadapter__to_sklib_circle(circ)
+    __skreturn = sklib.__sklib__bitmap_circle_collision__bitmap__int__matrix_2d_ref__circle_ref(__skparam__bmp, __skparam__cell, __skparam__translation, __skparam__circ)
+    return __skadapter__to_bool(__skreturn)
+def bitmap_circle_collision_for_cell_at_point ( bmp, cell, pt, circ ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    __skparam__cell = __skadapter__to_sklib_int(cell)
+    __skparam__pt = __skadapter__to_sklib_point_2d(pt)
+    __skparam__circ = __skadapter__to_sklib_circle(circ)
+    __skreturn = sklib.__sklib__bitmap_circle_collision__bitmap__int__point_2d_ref__circle_ref(__skparam__bmp, __skparam__cell, __skparam__pt, __skparam__circ)
+    return __skadapter__to_bool(__skreturn)
+def bitmap_circle_collision_for_cell ( bmp, cell, x, y, circ ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    __skparam__cell = __skadapter__to_sklib_int(cell)
+    __skparam__x = __skadapter__to_sklib_double(x)
+    __skparam__y = __skadapter__to_sklib_double(y)
+    __skparam__circ = __skadapter__to_sklib_circle(circ)
+    __skreturn = sklib.__sklib__bitmap_circle_collision__bitmap__int__double__double__circle_ref(__skparam__bmp, __skparam__cell, __skparam__x, __skparam__y, __skparam__circ)
+    return __skadapter__to_bool(__skreturn)
 def bitmap_collision ( bmp1, x1, y1, bmp2, x2, y2 ):
     __skparam__bmp1 = __skadapter__to_sklib_bitmap(bmp1)
     __skparam__x1 = __skadapter__to_sklib_double(x1)
@@ -4093,6 +4156,19 @@ def bitmap_point_collision_for_cell_with_translation ( bmp, cell, translation, p
     __skparam__pt = __skadapter__to_sklib_point_2d(pt)
     __skreturn = sklib.__sklib__bitmap_point_collision__bitmap__int__matrix_2d_ref__point_2d_ref(__skparam__bmp, __skparam__cell, __skparam__translation, __skparam__pt)
     return __skadapter__to_bool(__skreturn)
+def bitmap_rectangle_collision_at_point ( bmp, pt, rect ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    __skparam__pt = __skadapter__to_sklib_point_2d(pt)
+    __skparam__rect = __skadapter__to_sklib_rectangle(rect)
+    __skreturn = sklib.__sklib__bitmap_rectangle_collision__bitmap__point_2d_ref__rectangle_ref(__skparam__bmp, __skparam__pt, __skparam__rect)
+    return __skadapter__to_bool(__skreturn)
+def bitmap_rectangle_collision ( bmp, x, y, rect ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    __skparam__x = __skadapter__to_sklib_double(x)
+    __skparam__y = __skadapter__to_sklib_double(y)
+    __skparam__rect = __skadapter__to_sklib_rectangle(rect)
+    __skreturn = sklib.__sklib__bitmap_rectangle_collision__bitmap__double__double__rectangle_ref(__skparam__bmp, __skparam__x, __skparam__y, __skparam__rect)
+    return __skadapter__to_bool(__skreturn)
 def bitmap_rectangle_collision_for_cell_with_translation ( bmp, cell, translation, rect ):
     __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
     __skparam__cell = __skadapter__to_sklib_int(cell)
@@ -4106,6 +4182,14 @@ def bitmap_rectangle_collision_for_cell_at_point ( bmp, cell, pt, rect ):
     __skparam__pt = __skadapter__to_sklib_point_2d(pt)
     __skparam__rect = __skadapter__to_sklib_rectangle(rect)
     __skreturn = sklib.__sklib__bitmap_rectangle_collision__bitmap__int__point_2d_ref__rectangle_ref(__skparam__bmp, __skparam__cell, __skparam__pt, __skparam__rect)
+    return __skadapter__to_bool(__skreturn)
+def bitmap_rectangle_collision_for_cell ( bmp, cell, x, y, rect ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    __skparam__cell = __skadapter__to_sklib_int(cell)
+    __skparam__x = __skadapter__to_sklib_double(x)
+    __skparam__y = __skadapter__to_sklib_double(y)
+    __skparam__rect = __skadapter__to_sklib_rectangle(rect)
+    __skreturn = sklib.__sklib__bitmap_rectangle_collision__bitmap__int__double__double__rectangle_ref(__skparam__bmp, __skparam__cell, __skparam__x, __skparam__y, __skparam__rect)
     return __skadapter__to_bool(__skreturn)
 def sprite_bitmap_collision ( s, bmp, x, y ):
     __skparam__s = __skadapter__to_sklib_sprite(s)
@@ -4155,7 +4239,7 @@ def blue_of ( c ):
 def brightness_of ( c ):
     __skparam__c = __skadapter__to_sklib_color(c)
     __skreturn = sklib.__sklib__brightness_of__color(__skparam__c)
-    return __skadapter__to_float(__skreturn)
+    return __skadapter__to_double(__skreturn)
 def color_alice_blue (  ):
     __skreturn = sklib.__sklib__color_alice_blue()
     return __skadapter__to_color(__skreturn)
@@ -4594,15 +4678,15 @@ def green_of ( c ):
     __skreturn = sklib.__sklib__green_of__color(__skparam__c)
     return __skadapter__to_int(__skreturn)
 def hsb_color ( hue, saturation, brightness ):
-    __skparam__hue = __skadapter__to_sklib_float(hue)
-    __skparam__saturation = __skadapter__to_sklib_float(saturation)
-    __skparam__brightness = __skadapter__to_sklib_float(brightness)
-    __skreturn = sklib.__sklib__hsb_color__float__float__float(__skparam__hue, __skparam__saturation, __skparam__brightness)
+    __skparam__hue = __skadapter__to_sklib_double(hue)
+    __skparam__saturation = __skadapter__to_sklib_double(saturation)
+    __skparam__brightness = __skadapter__to_sklib_double(brightness)
+    __skreturn = sklib.__sklib__hsb_color__double__double__double(__skparam__hue, __skparam__saturation, __skparam__brightness)
     return __skadapter__to_color(__skreturn)
 def hue_of ( c ):
     __skparam__c = __skadapter__to_sklib_color(c)
     __skreturn = sklib.__sklib__hue_of__color(__skparam__c)
-    return __skadapter__to_float(__skreturn)
+    return __skadapter__to_double(__skreturn)
 def random_color (  ):
     __skreturn = sklib.__sklib__random_color()
     return __skadapter__to_color(__skreturn)
@@ -4614,11 +4698,11 @@ def red_of ( c ):
     __skparam__c = __skadapter__to_sklib_color(c)
     __skreturn = sklib.__sklib__red_of__color(__skparam__c)
     return __skadapter__to_int(__skreturn)
-def rgb_color_from_float ( red, green, blue ):
-    __skparam__red = __skadapter__to_sklib_float(red)
-    __skparam__green = __skadapter__to_sklib_float(green)
-    __skparam__blue = __skadapter__to_sklib_float(blue)
-    __skreturn = sklib.__sklib__rgb_color__float__float__float(__skparam__red, __skparam__green, __skparam__blue)
+def rgb_color_from_double ( red, green, blue ):
+    __skparam__red = __skadapter__to_sklib_double(red)
+    __skparam__green = __skadapter__to_sklib_double(green)
+    __skparam__blue = __skadapter__to_sklib_double(blue)
+    __skreturn = sklib.__sklib__rgb_color__double__double__double(__skparam__red, __skparam__green, __skparam__blue)
     return __skadapter__to_color(__skreturn)
 def rgb_color ( red, green, blue ):
     __skparam__red = __skadapter__to_sklib_int(red)
@@ -4626,12 +4710,12 @@ def rgb_color ( red, green, blue ):
     __skparam__blue = __skadapter__to_sklib_int(blue)
     __skreturn = sklib.__sklib__rgb_color__int__int__int(__skparam__red, __skparam__green, __skparam__blue)
     return __skadapter__to_color(__skreturn)
-def rgba_color_from_float ( red, green, blue, alpha ):
-    __skparam__red = __skadapter__to_sklib_float(red)
-    __skparam__green = __skadapter__to_sklib_float(green)
-    __skparam__blue = __skadapter__to_sklib_float(blue)
-    __skparam__alpha = __skadapter__to_sklib_float(alpha)
-    __skreturn = sklib.__sklib__rgba_color__float__float__float__float(__skparam__red, __skparam__green, __skparam__blue, __skparam__alpha)
+def rgba_color_from_double ( red, green, blue, alpha ):
+    __skparam__red = __skadapter__to_sklib_double(red)
+    __skparam__green = __skadapter__to_sklib_double(green)
+    __skparam__blue = __skadapter__to_sklib_double(blue)
+    __skparam__alpha = __skadapter__to_sklib_double(alpha)
+    __skreturn = sklib.__sklib__rgba_color__double__double__double__double(__skparam__red, __skparam__green, __skparam__blue, __skparam__alpha)
     return __skadapter__to_color(__skreturn)
 def rgba_color ( red, green, blue, alpha ):
     __skparam__red = __skadapter__to_sklib_int(red)
@@ -4643,7 +4727,7 @@ def rgba_color ( red, green, blue, alpha ):
 def saturation_of ( c ):
     __skparam__c = __skadapter__to_sklib_color(c)
     __skreturn = sklib.__sklib__saturation_of__color(__skparam__c)
-    return __skadapter__to_float(__skreturn)
+    return __skadapter__to_double(__skreturn)
 def string_to_color ( str ):
     __skparam__str = __skadapter__to_sklib_string(str)
     __skreturn = sklib.__sklib__string_to_color__string(__skparam__str)
@@ -5996,6 +6080,10 @@ def dec_to_hex ( a_dec ):
     __skparam__a_dec = __skadapter__to_sklib_unsigned_int(a_dec)
     __skreturn = sklib.__sklib__dec_to_hex__unsigned_int(__skparam__a_dec)
     return __skadapter__to_string(__skreturn)
+def fetch_new_connection ( server ):
+    __skparam__server = __skadapter__to_sklib_server_socket(server)
+    __skreturn = sklib.__sklib__fetch_new_connection__server_socket(__skparam__server)
+    return __skadapter__to_connection(__skreturn)
 def has_connection ( name ):
     __skparam__name = __skadapter__to_sklib_string(name)
     __skreturn = sklib.__sklib__has_connection__string_ref(__skparam__name)
@@ -6102,6 +6190,10 @@ def name_for_connection ( host, port ):
     __skparam__port = __skadapter__to_sklib_unsigned_int(port)
     __skreturn = sklib.__sklib__name_for_connection__string__unsigned_int(__skparam__host, __skparam__port)
     return __skadapter__to_string(__skreturn)
+def new_connection_count ( server ):
+    __skparam__server = __skadapter__to_sklib_server_socket(server)
+    __skreturn = sklib.__sklib__new_connection_count__server_socket(__skparam__server)
+    return __skadapter__to_int(__skreturn)
 def open_connection ( name, host, port ):
     __skparam__name = __skadapter__to_sklib_string(name)
     __skparam__host = __skadapter__to_sklib_string(host)
@@ -6150,6 +6242,9 @@ def reconnect_from_name ( name ):
     sklib.__sklib__reconnect__string_ref(__skparam__name)
 def release_all_connections (  ):
     sklib.__sklib__release_all_connections()
+def reset_new_connection_count ( server ):
+    __skparam__server = __skadapter__to_sklib_server_socket(server)
+    sklib.__sklib__reset_new_connection_count__server_socket(__skparam__server)
 def retrieve_connection_named ( name, idx ):
     __skparam__name = __skadapter__to_sklib_string(name)
     __skparam__idx = __skadapter__to_sklib_int(idx)
@@ -8281,10 +8376,25 @@ def request_body ( r ):
     __skparam__r = __skadapter__to_sklib_http_request(r)
     __skreturn = sklib.__sklib__request_body__http_request(__skparam__r)
     return __skadapter__to_string(__skreturn)
+def request_has_query_parameter ( r, name ):
+    __skparam__r = __skadapter__to_sklib_http_request(r)
+    __skparam__name = __skadapter__to_sklib_string(name)
+    __skreturn = sklib.__sklib__request_has_query_parameter__http_request__string_ref(__skparam__r, __skparam__name)
+    return __skadapter__to_bool(__skreturn)
 def request_method ( r ):
     __skparam__r = __skadapter__to_sklib_http_request(r)
     __skreturn = sklib.__sklib__request_method__http_request(__skparam__r)
     return __skadapter__to_http_method(__skreturn)
+def request_query_parameter ( r, name, default_value ):
+    __skparam__r = __skadapter__to_sklib_http_request(r)
+    __skparam__name = __skadapter__to_sklib_string(name)
+    __skparam__default_value = __skadapter__to_sklib_string(default_value)
+    __skreturn = sklib.__sklib__request_query_parameter__http_request__string_ref__string_ref(__skparam__r, __skparam__name, __skparam__default_value)
+    return __skadapter__to_string(__skreturn)
+def request_query_string ( r ):
+    __skparam__r = __skadapter__to_sklib_http_request(r)
+    __skreturn = sklib.__sklib__request_query_string__http_request(__skparam__r)
+    return __skadapter__to_string(__skreturn)
 def request_uri ( r ):
     __skparam__r = __skadapter__to_sklib_http_request(r)
     __skreturn = sklib.__sklib__request_uri__http_request(__skparam__r)
