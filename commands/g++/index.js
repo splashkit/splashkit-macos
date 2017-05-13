@@ -9,7 +9,7 @@ execute = function (argv, callback) {
   }
 
   const userArgs = utils.argsToString(argv['original_string'])
-  const gppArgs = `-L${sklibs.dynamic} -lSplashKit -L${sklibs.static} -lSplashKitCpp -I ${cppBuild}/include -rpath @loader_path -rpath ${sklibs.dynamic} -rpath /usr/local/lib`
+  const gppArgs = `-g -std=c++14 -L${sklibs.dynamic} -lSplashKit -L${sklibs.static} -lSplashKitCpp -I ${cppBuild}/include -rpath @loader_path -rpath ${sklibs.dynamic} -rpath /usr/local/lib`
 
   utils.runCommand(`g++ ${gppArgs} ${userArgs}`, function (err, data) {
       if (err) {
