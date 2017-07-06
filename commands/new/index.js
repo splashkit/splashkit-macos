@@ -29,8 +29,7 @@ execute = function (argv, callback) {
   {
     utils.runCommand(`cp -r -n "${skLanguageResources[userLang]["files"]}/" .`, function (err1, data) {
         if (err1) {
-            callback(err1)
-            return
+            callback(null, `Some files may not have been copied. ${err1}`)
         }
     })
 
