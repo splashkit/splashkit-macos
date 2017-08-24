@@ -6,9 +6,6 @@ compilers/fpc/splashkit.ppu
 .AppleDouble
 .LSOverride
 
-### VSCode ###
-.vscode
-
 # Icon must end with two \r
 Icon
 
