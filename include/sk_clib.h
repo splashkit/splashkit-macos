@@ -93,10 +93,10 @@ typedef struct {
     __sklib_bool flip_y;
     __sklib_bool is_part;
     __sklib_rectangle part;
+    __sklib_int draw_cell;
     __sklib_drawing_dest camera;
     __sklib_int line_width;
     __sklib_animation anim;
-    __sklib_int draw_cell;
 } __sklib_drawing_options;
 typedef struct {
     __sklib_point_2d start_point;

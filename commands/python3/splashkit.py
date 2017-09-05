@@ -294,10 +294,10 @@ class _sklib_drawing_options(Structure):
         ("flip_y", c_bool),
         ("is_part", c_bool),
         ("part", _sklib_rectangle),
+        ("draw_cell", c_int),
         ("_camera", c_int),
         ("line_width", c_int),
         ("anim", c_void_p),
-        ("draw_cell", c_int),
     ]
 
     def __init__(self):
@@ -722,10 +722,10 @@ def __skadapter__to_sklib_drawing_options(v):
     result.flip_y = __skadapter__to_sklib_bool(v.flip_y)
     result.is_part = __skadapter__to_sklib_bool(v.is_part)
     result.part = __skadapter__to_sklib_rectangle(v.part)
+    result.draw_cell = __skadapter__to_sklib_int(v.draw_cell)
     result.camera = __skadapter__to_sklib_drawing_dest(v.camera)
     result.line_width = __skadapter__to_sklib_int(v.line_width)
     result.anim = __skadapter__to_sklib_animation(v.anim)
-    result.draw_cell = __skadapter__to_sklib_int(v.draw_cell)
     return result
 def __skadapter__to_drawing_options(v):
     if isinstance(v, DrawingOptions):
@@ -741,10 +741,10 @@ def __skadapter__to_drawing_options(v):
     result.flip_y = __skadapter__to_bool(v.flip_y)
     result.is_part = __skadapter__to_bool(v.is_part)
     result.part = __skadapter__to_rectangle(v.part)
+    result.draw_cell = __skadapter__to_int(v.draw_cell)
     result.camera = __skadapter__to_drawing_dest(v.camera)
     result.line_width = __skadapter__to_int(v.line_width)
     result.anim = __skadapter__to_animation(v.anim)
-    result.draw_cell = __skadapter__to_int(v.draw_cell)
     return result
 def __skadapter__to_sklib_line(v):
     if isinstance(v, _sklib_line):

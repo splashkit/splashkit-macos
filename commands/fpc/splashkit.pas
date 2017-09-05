@@ -275,10 +275,10 @@ type DrawingOptions = record
   flipY: Boolean;
   isPart: Boolean;
   part: Rectangle;
+  drawCell: Integer;
   camera: DrawingDest;
   lineWidth: Integer;
   anim: Animation;
-  drawCell: Integer;
 end;
 type Line = record
   startPoint: Point2D;
@@ -1519,10 +1519,10 @@ type __sklib_drawing_options = record
   flipY: LongInt;
   isPart: LongInt;
   part: __sklib_rectangle;
+  drawCell: Integer;
   camera: LongInt;
   lineWidth: Integer;
   anim: __sklib_ptr;
-  drawCell: Integer;
 end;
 type __sklib_line = record
   startPoint: __sklib_point_2d;
@@ -1975,10 +1975,10 @@ begin
   result.flipY := __skadapter__to_sklib_bool(v.flipY);
   result.isPart := __skadapter__to_sklib_bool(v.isPart);
   result.part := __skadapter__to_sklib_rectangle(v.part);
+  result.drawCell := __skadapter__to_sklib_int(v.drawCell);
   result.camera := __skadapter__to_sklib_drawing_dest(v.camera);
   result.lineWidth := __skadapter__to_sklib_int(v.lineWidth);
   result.anim := __skadapter__to_sklib_animation(v.anim);
-  result.drawCell := __skadapter__to_sklib_int(v.drawCell);
 end;
 function __skadapter__to_drawing_options(v: __sklib_drawing_options): DrawingOptions;
 begin
@@ -1992,10 +1992,10 @@ begin
   result.flipY := __skadapter__to_bool(v.flipY);
   result.isPart := __skadapter__to_bool(v.isPart);
   result.part := __skadapter__to_rectangle(v.part);
+  result.drawCell := __skadapter__to_int(v.drawCell);
   result.camera := __skadapter__to_drawing_dest(v.camera);
   result.lineWidth := __skadapter__to_int(v.lineWidth);
   result.anim := __skadapter__to_animation(v.anim);
-  result.drawCell := __skadapter__to_int(v.drawCell);
 end;
 function __skadapter__to_sklib_line(v: Line): __sklib_line;
 begin
