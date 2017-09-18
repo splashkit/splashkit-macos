@@ -2345,6 +2345,9 @@ namespace SplashKitSDK
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__pixel_drawn_at_point__bitmap__int__double__double", CharSet=CharSet.Ansi)]
     private static extern int __sklib__pixel_drawn_at_point__bitmap__int__double__double(__sklib_ptr bmp, int cell, double x, double y);
 
+    [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__setup_collision_mask__bitmap", CharSet=CharSet.Ansi)]
+    private static extern void __sklib__setup_collision_mask__bitmap(__sklib_ptr bmp);
+
     [DllImport("splashkit.dll", CallingConvention=CallingConvention.Cdecl, EntryPoint="__sklib__process_events", CharSet=CharSet.Ansi)]
     private static extern void __sklib__process_events();
 
@@ -8368,6 +8371,12 @@ namespace SplashKitSDK
       __skparam__y = __skadapter__to_sklib_double(y);
       __skreturn = __sklib__pixel_drawn_at_point__bitmap__int__double__double(__skparam__bmp, __skparam__cell, __skparam__x, __skparam__y);
       return __skadapter__to_bool(__skreturn);
+    }
+    public static void SetupCollisionMask(Bitmap bmp)
+    {
+      __sklib_ptr __skparam__bmp;
+      __skparam__bmp = __skadapter__to_sklib_bitmap(bmp);
+      __sklib__setup_collision_mask__bitmap(__skparam__bmp);
     }
     public static void ProcessEvents()
     {
@@ -18181,6 +18190,12 @@ public class Bitmap : PointerWrapper
     public bool PixelDrawnAtPoint(int cell, double x, double y)
     {
         return SplashKit.PixelDrawnAtPoint(this, cell, x, y);
+    }
+
+
+    public void SetupCollisionMask()
+    {
+        SplashKit.SetupCollisionMask(this);
     }
 
 

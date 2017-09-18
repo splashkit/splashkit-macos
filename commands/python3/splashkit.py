@@ -2146,6 +2146,8 @@ sklib.__sklib__pixel_drawn_at_point__bitmap__int__point_2d_ref.argtypes = [ c_vo
 sklib.__sklib__pixel_drawn_at_point__bitmap__int__point_2d_ref.restype = c_bool
 sklib.__sklib__pixel_drawn_at_point__bitmap__int__double__double.argtypes = [ c_void_p, c_int, c_double, c_double ]
 sklib.__sklib__pixel_drawn_at_point__bitmap__int__double__double.restype = c_bool
+sklib.__sklib__setup_collision_mask__bitmap.argtypes = [ c_void_p ]
+sklib.__sklib__setup_collision_mask__bitmap.restype = None
 sklib.__sklib__process_events.argtypes = [  ]
 sklib.__sklib__process_events.restype = None
 sklib.__sklib__quit_requested.argtypes = [  ]
@@ -5496,6 +5498,9 @@ def pixel_drawn_at_point_in_cell ( bmp, cell, x, y ):
     __skparam__y = __skadapter__to_sklib_double(y)
     __skreturn = sklib.__sklib__pixel_drawn_at_point__bitmap__int__double__double(__skparam__bmp, __skparam__cell, __skparam__x, __skparam__y)
     return __skadapter__to_bool(__skreturn)
+def setup_collision_mask ( bmp ):
+    __skparam__bmp = __skadapter__to_sklib_bitmap(bmp)
+    sklib.__sklib__setup_collision_mask__bitmap(__skparam__bmp)
 def process_events (  ):
     sklib.__sklib__process_events()
 def quit_requested (  ):

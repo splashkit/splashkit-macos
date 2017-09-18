@@ -752,6 +752,7 @@ function PixelDrawnAtPoint(bmp: Bitmap; const pt: Point2D): Boolean;
 function PixelDrawnAtPoint(bmp: Bitmap; x: Double; y: Double): Boolean;
 function PixelDrawnAtPoint(bmp: Bitmap; cell: Integer; const pt: Point2D): Boolean;
 function PixelDrawnAtPoint(bmp: Bitmap; cell: Integer; x: Double; y: Double): Boolean;
+procedure SetupCollisionMask(bmp: Bitmap);
 procedure ProcessEvents();
 function QuitRequested(): Boolean;
 procedure ResetQuit();
@@ -2842,6 +2843,7 @@ function __sklib__pixel_drawn_at_point__bitmap__point_2d_ref(bmp: __sklib_ptr; c
 function __sklib__pixel_drawn_at_point__bitmap__double__double(bmp: __sklib_ptr; x: Double; y: Double): LongInt; cdecl; external;
 function __sklib__pixel_drawn_at_point__bitmap__int__point_2d_ref(bmp: __sklib_ptr; cell: Integer; const pt: __sklib_point_2d): LongInt; cdecl; external;
 function __sklib__pixel_drawn_at_point__bitmap__int__double__double(bmp: __sklib_ptr; cell: Integer; x: Double; y: Double): LongInt; cdecl; external;
+procedure __sklib__setup_collision_mask__bitmap(bmp: __sklib_ptr); cdecl; external;
 procedure __sklib__process_events(); cdecl; external;
 function __sklib__quit_requested(): LongInt; cdecl; external;
 procedure __sklib__reset_quit(); cdecl; external;
@@ -7801,6 +7803,13 @@ begin
   __skparam__y := __skadapter__to_sklib_double(y);
   __skreturn := __sklib__pixel_drawn_at_point__bitmap__int__double__double(__skparam__bmp, __skparam__cell, __skparam__x, __skparam__y);
   result := __skadapter__to_bool(__skreturn);
+end;
+procedure SetupCollisionMask(bmp: Bitmap);
+var
+  __skparam__bmp: __sklib_ptr;
+begin
+  __skparam__bmp := __skadapter__to_sklib_bitmap(bmp);
+  __sklib__setup_collision_mask__bitmap(__skparam__bmp);
 end;
 procedure ProcessEvents();
 begin

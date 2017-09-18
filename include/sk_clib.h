@@ -612,6 +612,7 @@ int __sklib__pixel_drawn_at_point__bitmap__point_2d_ref(__sklib_bitmap bmp, cons
 int __sklib__pixel_drawn_at_point__bitmap__double__double(__sklib_bitmap bmp, double x, double y);
 int __sklib__pixel_drawn_at_point__bitmap__int__point_2d_ref(__sklib_bitmap bmp, int cell, const __sklib_point_2d pt);
 int __sklib__pixel_drawn_at_point__bitmap__int__double__double(__sklib_bitmap bmp, int cell, double x, double y);
+void __sklib__setup_collision_mask__bitmap(__sklib_bitmap bmp);
 void __sklib__process_events();
 int __sklib__quit_requested();
 void __sklib__reset_quit();
