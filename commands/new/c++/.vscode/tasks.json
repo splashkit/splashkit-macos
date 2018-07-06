@@ -4,7 +4,7 @@
     "version": "0.1.0",
     "command": "skm",
     "isShellCommand": true,
-    "args": ["clang++", "-g", "program.cpp", "-o", "${workspaceRootFolderName}"],
+    "args": ["clang++", "-g", "*.cpp", "-o", "${workspaceRootFolderName}"],
     "showOutput": "always",
     "problemMatcher": {
             "owner": "cpp",

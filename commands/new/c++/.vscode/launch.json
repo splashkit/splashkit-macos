@@ -1,25 +1,40 @@
 {
-   // Use IntelliSense to find out which attributes exist for C# debugging
-   // Use hover for the description of the existing attributes
-   // For further information visit https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md
-   "version": "0.2.0",
-   "configurations": [
+    "version": "0.2.0",
+    "configurations": [
         {
-            "name": ".NET Core Launch (console)",
-            "type": "coreclr",
+            "name": "SKM C++ Launch",
+            "type": "cppdbg",
             "request": "launch",
-            "preLaunchTask": "build",
-            // If you have changed target frameworks, make sure to update the program path.
-            "program": "${workspaceRoot}/bin/Debug/netcoreapp1.1/BalloonPopOOP.dll",
+            "program": "${workspaceRoot}/${workspaceRootFolderName}",
             "args": [],
-            "env": {
-                "DYLD_LIBRARY_PATH": "${env:HOME}/.splashkit/lib"
-            },
-            "cwd": "${workspaceRoot}",
-            // For more information about the 'console' field, see https://github.com/OmniSharp/omnisharp-vscode/blob/master/debugger-launchjson.md#console-terminal-window
-            "console": "integratedTerminal",
             "stopAtEntry": false,
-            "internalConsoleOptions": "openOnSessionStart"
+            "preLaunchTask": "skm",
+            "cwd": "${workspaceRoot}",
+            "environment": [],
+            "externalConsole": false,
+            "linux": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            },
+            "osx": {
+                "MIMode": "lldb"
+            },
+            "windows": {
+                "MIMode": "gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            }
         }
     ]
 }
